@@ -22,8 +22,9 @@ if(pageName.equalsIgnoreCase("search-result")){
       searchValue = selectors[0];
 }
 }
-if (currentStyle.get("searchbtnimg") != null) {
-    searchbuttonImage = currentStyle.get("searchbtnimg").toString();
+
+if (IntelUtil.getConfigValue(currentPage,"searchcomp","searchbtnimg",null) != null) {
+    searchbuttonImage = IntelUtil.getConfigValue(currentPage,"searchcomp", "searchbtnimg","");
 }
 
 
