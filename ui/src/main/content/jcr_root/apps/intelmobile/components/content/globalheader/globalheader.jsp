@@ -23,8 +23,9 @@
 	String homePagePath = "";
 	String rootPagePath = "";
 	String SearchIconImage = "";
-	logoUrl = currentStyle.get("logolink", "").toString();
-	List menulist = HeaderUtil.getHeaderInfo(currentStyle,
+	logoUrl = IntelUtil.getConfigValue(currentPage,"siteheader","logolink", ""); 
+
+	List menulist = HeaderUtil.getHeaderInfo(currentPage,
 			resourceResolver);
 	Map alterPage = HeaderUtil.getDefaultPage(currentPage);
     pageContext.setAttribute("componentId",IntelUtil.getComponentId(resource));
@@ -33,13 +34,13 @@
 	pageContext.setAttribute("alterpage", alterPage);
 	pageContext.setAttribute("logoUrl", IntelUtil.getLinkUrl(logoUrl,resourceResolver));
 %>
-
 <c:set var="label"
-	value="<%= currentStyle.get("menulabel", "").toString() %>" />
+	value="<%= IntelUtil.getConfigValue(currentPage,"siteheader","menulabel", "") %>" />
 <c:set var="logoImage"
-	value="<%= currentStyle.get("logoimage", "").toString() %>" />
+	value="<%= IntelUtil.getConfigValue(currentPage,"siteheader","logoimage", "") %>" />
 <c:set var="SearchIconImage"
-	value="<%= currentStyle.get("searchicon", "").toString() %>" />
+	value="<%= IntelUtil.getConfigValue(currentPage,"siteheader","searchicon", "") %>" />
+
 <header>
 <div class="component"
 	data-component="<c:out value="${pageScope.componentName}"/>"
