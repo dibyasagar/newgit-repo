@@ -22,7 +22,7 @@
 
   ==============================================================================
 
---%><%@page import="com.intel.mobile.util.IntelUtil"%>
+--%><%@page import="com.intel.mobile.util.IntelUtil,com.day.cq.wcm.api.WCMMode"%>
 <%@include file="/libs/foundation/global.jsp" %><%
 %><%@ page import="com.day.cq.commons.Doctype,
                    com.day.cq.wcm.mobile.api.device.DeviceGroup,
@@ -50,27 +50,27 @@
         <meta name="HandheldFriendly" content="True">
         <!-- PHONE -->
 
-		<meta name="mobileoptimized" content="320">
-		<meta name="handheldfriendly" content="true">
+        <meta name="mobileoptimized" content="320">
+        <meta name="handheldfriendly" content="true">
 
-		<meta name="viewport" content="
-					width=device-width,
-					minimum-scale=1.0,
-					maximum-scale=1.0,
-					initial-scale=1.0,
-					user-scalable=no">
+        <meta name="viewport" content="
+                    width=device-width,
+                    minimum-scale=1.0,
+                    maximum-scale=1.0,
+                    initial-scale=1.0,
+                    user-scalable=no">
 
-		<!-- APPLE -->
+        <!-- APPLE -->
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<meta name="format-detection" content="telephone=yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="format-detection" content="telephone=yes">
 
-		<!-- MSIES -->
+        <!-- MSIES -->
 
-		<meta http-equiv="cleartype" content="on">
+        <meta http-equiv="cleartype" content="on">
 
-		<!-- SHEET -->  
+        <!-- SHEET -->  
     <link rel="canonical" href="<%= xssAPI.getValidHref(canonicalURL) %>" />
     <cq:include script="/libs/wcm/core/components/init/init.jsp"/>
     <%
@@ -96,8 +96,23 @@
     <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/styles.v.css" media="all">
     <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/styles.360v.css" media="all and (min-width:321px) and (max-width:360px) and (orientation:portrait)">
     <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/styles.480v.css" media="all and (min-width:361px) and (orientation:portrait)">
-    <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/styles.h.css" media="all and (min-width:360px) and (orientation:landscape)">
     <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/styles.480h.css" media="all and (min-width:360px) and (max-width:480px) and (orientation:landscape)">
+    
+     <%
+        if (WCMMode.fromRequest(request) == WCMMode.EDIT||WCMMode.fromRequest(request) == WCMMode.PREVIEW||WCMMode.fromRequest(request) == WCMMode.DESIGN) 
+        {
+    %>
+       <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/styles.h.css" media="all and (max-width:360px) and (orientation:landscape)"> 
+    <%
+        }
+        else
+        {
+    %>
+        <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/styles.h.css" media="all and (min-width:360px) and (orientation:landscape)"> 
+    <%
+    }
+    %>   
+    
     <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/styles.640h.css" media="all and (min-width:481px) and (max-width:640px) and (orientation:landscape)">
     <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/styles.800h.css" media="all and (min-width:641px) and (orientation:landscape)">
       
@@ -106,10 +121,10 @@
     
     <script src="/etc/designs/intelmobile/appclientlibs/js/ultrabook/vendor/jquery-1.7.2.min.js"></script>
     <script src="/etc/designs/intelmobile/appclientlibs/js/ultrabook/vendor/modernizr-2.5.3.min.js"></script>
-	<script src="/etc/designs/intelmobile/appclientlibs/js/ultrabook/jquery/index.js"></script>
-		
+    <script src="/etc/designs/intelmobile/appclientlibs/js/ultrabook/jquery/index.js"></script>
+        
     
-   	
+    
    
    
    <!-- <script src="/etc/designs/intelmobile/appclientlibs/js/ultrabook/vendor/jquery.mobile-1.1.1.min.js"></script>-->
