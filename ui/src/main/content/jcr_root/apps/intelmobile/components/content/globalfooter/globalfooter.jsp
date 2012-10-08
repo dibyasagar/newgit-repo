@@ -28,12 +28,12 @@
     String strCurrentPage = currentPage.getProperties().get("cq:template", "");
     String strCurrentPagePath = currentPage.getPath();
  
-    footerlinkTitle = (Object[]) currentStyle.get("footerTitle", new Object[0]);
-    footerlinkUrl = (Object[]) currentStyle.get("footerUrl", new Object[0]);
-    newWindow =  (Object[]) currentStyle.get("newwindow", new Object[0]);
+    footerlinkTitle = IntelUtil.getConfigValues(currentPage,"footer", "footerTitle");
+    footerlinkUrl = IntelUtil.getConfigValues(currentPage,"footer", "footerUrl");
+    newWindow =  IntelUtil.getConfigValues(currentPage,"footer", "newwindow");
     if (footerlinkUrl != null){ validLink = IntelUtil.getDisplayUrl(footerlinkUrl,resourceResolver);}
-    if (currentStyle.get("fullsitelink", "")!= null) {
-        fullsiteLink = currentStyle.get("fullsitelink", "").toString();
+    if (IntelUtil.getConfigValue(currentPage,"footer", "fullsitelink","")!= null) {
+        fullsiteLink = IntelUtil.getConfigValue(currentPage,"footer", "fullsitelink","");
         fullLink = IntelUtil.getLinkUrl(fullsiteLink,resourceResolver);}
     
     pageContext.setAttribute("componentId",IntelUtil.getComponentId(resource));
@@ -45,23 +45,23 @@
 %>
 
 <c:set var="trademarkText"
-    value="<%= currentStyle.get("trademarktext", "").toString() %>" />
+    value="<%= IntelUtil.getConfigValue(currentPage,"footer", "trademarktext","") %>" />
 <c:set var="fullsiteText"
-    value="<%= currentStyle.get("fullsitelinktext", "").toString() %>" />
+    value="<%= IntelUtil.getConfigValue(currentPage,"footer", "fullsitelinktext","") %>" />
 
 <c:set var="region"
-    value="<%= currentStyle.get("region", "").toString() %>" />
+    value="<%= IntelUtil.getConfigValue(currentPage,"footer", "region","") %>" />
 <c:set var="regionUrl"
-    value="<%= currentStyle.get("regionurl", "").toString() %>" />
+    value="<%= IntelUtil.getConfigValue(currentPage,"footer", "regionurl","") %>" />
       <c:if test="${fn:startsWith(regionUrl,'/content')}">
        <c:set var="regionUrl" value="${regionUrl}.html" />
       </c:if>
 <c:set var="hideSitelink"
-    value="<%= currentStyle.get("hidefullsitelink", "false").toString() %>" />
+    value="<%= IntelUtil.getConfigValue(currentPage,"footer", "hidefullsitelink","") %>" />
 <c:set var="hideregionurl"
-    value="<%= currentStyle.get("hideregionurl", "false").toString() %>" /> 
+    value="<%= IntelUtil.getConfigValue(currentPage,"footer", "hideregionurl","false") %>" /> 
     <c:set var="openFullSiteInNewWindow"
-    value="<%= currentStyle.get("fullsiteinnewwindow", "yes").toString() %>" /> 
+    value="<%= IntelUtil.getConfigValue(currentPage,"footer","fullsiteinnewwindow", "yes") %>" /> 
 
 <c:set var="footerlinkTitle" value="<%=footerlinkTitle %>" />
 <!--  updated html code below -->
