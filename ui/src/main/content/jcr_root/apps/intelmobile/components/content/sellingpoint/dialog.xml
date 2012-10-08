@@ -101,18 +101,18 @@
                     </section-description>
                 </items>
             </tab1>
-            <tab2
+            <heroimage
                 jcr:primaryType="cq:Widget"
                 allowUpload="{Boolean}false"
                 ddGroups="[media]"
                 fileNameParameter="./imageFileName"
-                fileReferenceParameter="./imagePath"
-                name="./contentImage"
-                title="Image"
+                fileReferenceParameter="./heroImageFileReference"
+                name="./heroImage"
+                title="Hero Image"
                 xtype="smartimage"/>
             <tab4
                 jcr:primaryType="cq:Panel"
-                title="Button">
+                title="Shop Button">
                 <items jcr:primaryType="cq:WidgetCollection">
                     <linkpath
                         jcr:primaryType="cq:Widget"
@@ -149,14 +149,14 @@
                         xtype="textfield"/>
                 </items>
             </tab4>
-            <heroimage
+            <tab2
                 jcr:primaryType="cq:Widget"
                 allowUpload="{Boolean}false"
                 ddGroups="[media]"
                 fileNameParameter="./imageFileName"
-                fileReferenceParameter="./heroImageFileReference"
-                name="./heroImage"
-                title="Hero Image"
+                fileReferenceParameter="./imagePath"
+                name="./contentImage"
+                title="Image"
                 xtype="smartimage"/>
         </items>
     </items>
