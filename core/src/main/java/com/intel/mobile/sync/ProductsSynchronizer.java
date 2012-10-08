@@ -65,31 +65,36 @@ public class ProductsSynchronizer {
 			Node intelRootNode = jcrSession.getNode(IntelMobileConstants.INTEL_CONTENT_ROOT_NODE_PATH);
 			NodeIterator rootNodeIterator = intelRootNode.getNodes();
 			while(rootNodeIterator.hasNext()){
-				String msgLocale = null;
-				try {
-					Node localeNode = rootNodeIterator.nextNode();
-					if(localeNode.hasNode("jcr:content/locale")){
-						Node localeInfoNode =  localeNode.getNode("jcr:content/locale");
-						if(localeInfoNode.hasProperty("localeid")){
-							String localeId = localeInfoNode.getProperty("localeid").getString();
-							msgLocale = localeId;
-							syncLocaleSpecificProducts(jcrSession, productTypesMap,localeId,localeNode.getPath(), messages);
-							localeList.add(localeId);
+				Node countryNode = rootNodeIterator.nextNode();
+				NodeIterator countryNodeIterator = countryNode.getNodes();
+				while(countryNodeIterator.hasNext()){
+					String msgLocale = null;
+					try {
+						Node localeNode = countryNodeIterator.nextNode();
+						if(localeNode.hasNode("jcr:content/locale")){
+							Node localeInfoNode =  localeNode.getNode("jcr:content/locale");
+							if(localeInfoNode.hasProperty("localeid")){
+								String localeId = localeInfoNode.getProperty("localeid").getString();
+								msgLocale = localeId;
+								log.info("Starting Product Synchronization for locale - " + localeId);
+								syncLocaleSpecificProducts(jcrSession, productTypesMap,localeId,localeNode.getPath(), messages);
+								log.info("Completed Product Synchronization for locale - " + localeId);
+								localeList.add(localeId);
+							}
 						}
-
+						StringBuilder sb = new StringBuilder();
+						sb.append("Sync Products, Locale - ");
+						sb.append(msgLocale);
+						messages.addSuccessMessage(sb.toString());
+					} catch(Exception e) {
+						StringBuilder sb = new StringBuilder();
+						sb.append("Sync Products, Locale - ");
+						sb.append(msgLocale);
+						sb.append(", Exception - ");
+						sb.append(e.getMessage());					
+						messages.addFailureMessage(sb.toString());					
 					}
-					StringBuilder sb = new StringBuilder();
-					sb.append("Sync Products, Locale - ");
-					sb.append(msgLocale);
-					messages.addSuccessMessage(sb.toString());
-				} catch(Exception e) {
-					StringBuilder sb = new StringBuilder();
-					sb.append("Sync Products, Locale - ");
-					sb.append(msgLocale);
-					sb.append(", Exception - ");
-					sb.append(e.getMessage());					
-					messages.addFailureMessage(sb.toString());					
-				}
+				}				
 			}
 			log.debug("localeList :"+localeList);
 			messages.addSuccessMessage("Sync Products");			
@@ -133,6 +138,8 @@ public class ProductsSynchronizer {
 
 		log.debug("productTypesMap ::"+productTypesMap);
 		log.debug("Synching Data for locale "+locale+" at path "+localePath);
+		long totalModified = 0;
+		long totalSynced = 0;
 		Map<String, Map<String, Set<String>>> prodCatAttrs = new HashMap<String, Map<String, Set<String>>>();
 		
 		Map<String, Set<String>> prodAttrValues = null;
@@ -255,10 +262,10 @@ public class ProductsSynchronizer {
 							//if(product.getString("id").equals("219244") || product.getString("id").equals("219248")){
 
 							String normalizedProductName = IntelUtil.normalizeName(product.getString("name"));
-
+							Node jcrContent = null;
 							if(productCategoryListingNode.hasNode(normalizedProductName)){
 								productNode = productCategoryListingNode.getNode(normalizedProductName);
-								Node jcrContent = productNode.getNode(IntelMobileConstants.NODE_JCR_CONTENT);
+								jcrContent = productNode.getNode(IntelMobileConstants.NODE_JCR_CONTENT);
 								if(jcrContent != null)
 								{
 									if(jcrContent.hasProperty("cq:lastReplicationAction")) {
@@ -273,18 +280,13 @@ public class ProductsSynchronizer {
 										}
 									}
 									jcrContent.setProperty(IntelMobileConstants.PROPERTY_JCR_TITLE, StringEscapeUtils.unescapeHtml(product.getString("name")));
-									if(jcrSession.getUserID() != null)
-									{
-										jcrContent.setProperty(Property.JCR_LAST_MODIFIED_BY, jcrSession.getUserID());
-									}
-									jcrContent.setProperty(Property.JCR_LAST_MODIFIED,  Calendar.getInstance());
 									
 									details = jcrContent.getNode(IntelMobileConstants.NODE_NAME_DETAILS);
 								}
 								//log.info(product.getString("id")+ " - "+normalizedProductName+ " Product Node Exists.");
 							}else{
 								productNode = productCategoryListingNode.addNode(normalizedProductName,IntelMobileConstants.PRIMARY_TYPE_CQ_PAGE);
-								Node jcrContent =  productNode.addNode( IntelMobileConstants.NODE_JCR_CONTENT, IntelMobileConstants.PRIMARY_TYPE_CQ_PAGE_CONTENT);
+								jcrContent =  productNode.addNode( IntelMobileConstants.NODE_JCR_CONTENT, IntelMobileConstants.PRIMARY_TYPE_CQ_PAGE_CONTENT);
 								jcrContent.setProperty(IntelMobileConstants.PROPERTY_CQ_TEMPLATE, IntelMobileConstants.PRODUCT_DETAILS_TEMPLATE_PATH);
 								jcrContent.setProperty(IntelMobileConstants.PROPERTY_JCR_TITLE, StringEscapeUtils.unescapeHtml(product.getString("name")));
 								jcrContent.setProperty(IntelMobileConstants.PROPERTY_SLING_RESOURCETYPE, IntelMobileConstants.PRODUCT_DETAILS_PAGE_COMPONENT_PATH);
@@ -328,9 +330,18 @@ public class ProductsSynchronizer {
 							crxproducts++;
 
 							details.setProperty("LastSyncDate", Calendar.getInstance());
-							IntelUtil.saveAPIDataAsJCRProperty(details, product, prodAttrValues);
 							
-
+							
+							boolean changed = IntelUtil.saveAPIDataAsJCRProperty(details, product, prodAttrValues);
+							
+							if(changed && jcrContent != null) {
+								if(jcrSession.getUserID() != null) {
+									jcrContent.setProperty(Property.JCR_LAST_MODIFIED_BY, jcrSession.getUserID());
+								}								
+								jcrContent.setProperty(Property.JCR_LAST_MODIFIED,  Calendar.getInstance());
+								totalModified++;
+							}
+							totalSynced++;
 							if(intelConfigService.isSyncImage()){
 								try {
 									Node damintelRootNode = jcrSession.getNode(IntelMobileConstants.INTEL_DAM_CONTENT_ROOT_NODE_PATH);
@@ -368,7 +379,7 @@ public class ProductsSynchronizer {
 							}else{
 								log.debug("details node is null.");
 							}
-							
+														
 							//}
 							StringBuilder sb = new StringBuilder();
 							sb.append("Sync Products, Locale - ");
@@ -487,6 +498,8 @@ public class ProductsSynchronizer {
 					}
 				}
 			}
+			log.info("Total Products in CRX for locale " + locale + " - " + totalSynced);
+			log.info("Total Products Created/Modified for locale " + locale + " - " + totalModified);			
 		}
 		
 	}
