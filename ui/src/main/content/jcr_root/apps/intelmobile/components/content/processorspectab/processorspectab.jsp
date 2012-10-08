@@ -2,10 +2,12 @@
 %><%@page session="false" %>
 <%@page import="com.intel.mobile.util.ProductUtil, java.util.Map ,com.intel.mobile.util.IntelUtil, com.intel.mobile.util.ConfigUtil" %>
 <%
-
+	log.info("-------inside product details");
     Map specs = ProductUtil.getProcessorSpec(currentPage);
-    String heading = currentStyle.get("heading","Processor Specs");
-    String comparePath = currentStyle.get("comparePath", "");
+    log.info("-------After Prossorspec ---"+specs);
+
+	String heading = IntelUtil.getConfigValue(currentPage,"processorspecs", "heading","Processor Specs"); 
+    String comparePath = IntelUtil.getConfigValue(currentPage,"processorspecs", "comparePath","");
     
     if(comparePath.length()>0) {
     	comparePath = comparePath + ".html";
