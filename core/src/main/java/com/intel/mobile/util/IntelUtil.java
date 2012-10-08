@@ -11,12 +11,13 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-
+import javax.jcr.Value;
 import javax.jcr.Node;
 import javax.jcr.NodeIterator;
 import javax.jcr.PathNotFoundException;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+import javax.jcr.Value;
 import javax.jcr.ValueFormatException;
 import javax.jcr.lock.LockException;
 import javax.jcr.nodetype.ConstraintViolationException;
@@ -73,9 +74,10 @@ public class IntelUtil {
 		saveAPIDataAsJCRProperty(node, jsonObject, null);
 	}
 
-	public static void saveAPIDataAsJCRProperty(Node node, JSONObject jsonObject, Map<String, Set<String>> prodAttrValues){
+	public static boolean saveAPIDataAsJCRProperty(Node node, JSONObject jsonObject, Map<String, Set<String>> prodAttrValues){
 		Set<String> attrValues = null;
 
+		boolean changed = false;
 		try {
 			log.debug("Entering saveAPIDataAsJCRProperty :"+node.getName());
 		} catch (RepositoryException e1) {
@@ -94,8 +96,17 @@ public class IntelUtil {
 					JSONArray additionalProperties = jsonObject.getJSONArray(key);
 					for(int i=0;i<additionalProperties.length();i++){
 						JSONObject property = additionalProperties.getJSONObject(i);
-						node.setProperty(property.getString("id"), StringEscapeUtils.unescapeXml(property.getString("name"))+"|"+StringEscapeUtils.unescapeXml(property.getString("value")));
+						boolean same = false;
+						if(node.hasProperty(property.getString("id")) 
+								&& node.getProperty(property.getString("id")).getString().equals(
+										StringEscapeUtils.unescapeXml(property.getString("name"))+"|"+StringEscapeUtils.unescapeXml(property.getString("value")))) {
+							same = true;
+						}
+						if(!same) {
+							node.setProperty(property.getString("id"), StringEscapeUtils.unescapeXml(property.getString("name"))+"|"+StringEscapeUtils.unescapeXml(property.getString("value")));
 
+							changed = true;
+						}						
 					}
 				} else if(key.equals("productOffers")){
 					if(log.isDebugEnabled()) {
@@ -106,19 +117,37 @@ public class IntelUtil {
 						Node productOffersNode = null;
 						if(node.hasNode(IntelMobileConstants.NODE_NAME_PRODUCT_OFFERS)) {
 							productOffersNode = node.getNode(IntelMobileConstants.NODE_NAME_PRODUCT_OFFERS);
-							productOffersNode.remove();
-						} 
-						productOffersNode = node.addNode(IntelMobileConstants.NODE_NAME_PRODUCT_OFFERS, IntelMobileConstants.PRIMARY_TYPE_NT_UNSTRUCTURED);
+//							productOffersNode.remove();
+
+						} else {
+							productOffersNode = node.addNode(IntelMobileConstants.NODE_NAME_PRODUCT_OFFERS, IntelMobileConstants.PRIMARY_TYPE_NT_UNSTRUCTURED);	
+						}						
 						for(int i=0;i<productOffers.length();i++){
 							JSONObject property = productOffers.getJSONObject(i);
 							String nodeName = StringEscapeUtils.unescapeXml(property.getString("name"));
 							nodeName = normalizeName(nodeName);
 							try {						
-								Node retailerNode = productOffersNode.addNode(nodeName,IntelMobileConstants.PRIMARY_TYPE_NT_UNSTRUCTURED);						
+								Node retailerNode = null; 
+								if(productOffersNode.hasNode(nodeName)) {
+									retailerNode = productOffersNode.getNode(nodeName);
+								} else {
+									retailerNode = productOffersNode.addNode(nodeName,IntelMobileConstants.PRIMARY_TYPE_NT_UNSTRUCTURED);	
+								}
+														
 								Iterator<String> offersItr = property.keys();
 								while(offersItr.hasNext()) {
-									String offersKey = (String)offersItr.next();								
-									retailerNode.setProperty(offersKey, property.getString(offersKey));	
+									String offersKey = (String)offersItr.next();		
+
+									boolean same = false;
+									if(retailerNode.hasProperty(offersKey) 
+											&& retailerNode.getProperty(offersKey).getString().equals(
+													property.getString(offersKey))) {
+										same = true;
+									}
+									if(!same) {									
+										retailerNode.setProperty(offersKey, property.getString(offersKey));
+										changed = true;
+									}
 								}							
 							} catch(Exception e) {
 								log.error("[saveAPIDataAsJCRProperty] error occurred while saving product offers node - " + nodeName, e);
@@ -136,19 +165,36 @@ public class IntelUtil {
 						Node similarProductsNode = null;
 						if(node.hasNode(IntelMobileConstants.NODE_NAME_SIMILAR_PRODUCTS)) {
 							similarProductsNode = node.getNode(IntelMobileConstants.NODE_NAME_SIMILAR_PRODUCTS);
-							similarProductsNode.remove();
-						} 
-						similarProductsNode = node.addNode(IntelMobileConstants.NODE_NAME_SIMILAR_PRODUCTS, IntelMobileConstants.PRIMARY_TYPE_NT_UNSTRUCTURED);
+//							similarProductsNode.remove();
+
+						} else {
+							similarProductsNode = node.addNode(IntelMobileConstants.NODE_NAME_SIMILAR_PRODUCTS, IntelMobileConstants.PRIMARY_TYPE_NT_UNSTRUCTURED);	
+						}						
 						for(int i=0;i<productOffers.length();i++){
 							JSONObject property = productOffers.getJSONObject(i);
 							String nodeName = property.getString("id");
 							try {
 								nodeName = normalizeName(nodeName);
-								Node productNode = similarProductsNode.addNode(nodeName,IntelMobileConstants.PRIMARY_TYPE_NT_UNSTRUCTURED);
+								Node productNode = null;
+								if(similarProductsNode.hasNode(nodeName)) {
+									productNode = similarProductsNode.getNode(nodeName);
+								} else {
+									productNode = similarProductsNode.addNode(nodeName,IntelMobileConstants.PRIMARY_TYPE_NT_UNSTRUCTURED);
+								}
 								Iterator<String> similarItr = property.keys();
 								while(similarItr.hasNext()) {
-									String similarKey = (String)similarItr.next();								
-									productNode.setProperty(similarKey, property.getString(similarKey));	
+									String similarKey = (String)similarItr.next();	
+									
+									boolean same = false;
+									if(productNode.hasProperty(similarKey) 
+											&& productNode.getProperty(similarKey).getString().equals(
+													property.getString(similarKey))) {
+										same = true;
+									}
+									if(!same) {																		
+										productNode.setProperty(similarKey, property.getString(similarKey));
+										changed = true;
+									}
 								}							
 							} catch(Exception e) {
 								log.error("[saveAPIDataAsJCRProperty] error occurred while saving similar product - " + nodeName, e);
@@ -160,8 +206,19 @@ public class IntelUtil {
 				}
 				else{
 					String value = jsonObject.getString(key);
-					
-					node.setProperty(key, StringEscapeUtils.unescapeXml(value));
+
+
+					boolean same = false;
+					if(node.hasProperty(key) 
+							&& node.getProperty(key).getString().equals(
+									StringEscapeUtils.unescapeXml(value))) {
+						same = true;
+					}
+//					log.info(((same==true)?"Not Changed, ":"Changed, ")+"Product Synchroniser - " + node.getParent().getParent().getName() + ", Previous Value " + node.getProperty(key).getString() + ", New Value - " + StringEscapeUtils.unescapeXml(value));
+					if(!same) {									
+						node.setProperty(key, StringEscapeUtils.unescapeXml(value));
+						changed = true;
+					}
 					if(prodAttrValues != null)
 					{
 						attrValues = prodAttrValues.get(key);
@@ -173,31 +230,39 @@ public class IntelUtil {
 						attrValues.add(StringEscapeUtils.unescapeXml(value));
 						prodAttrValues.put(key, attrValues);
 
+							
 					}
 				}
 
 			} catch (JSONException e) {
 				log.error("JSONException :"+e.getMessage());
-				log.debug(e.getMessage(), e);
+
+//				e.printStackTrace();
 			} catch (ValueFormatException e) {
 				log.error("ValueFormatException :"+e.getMessage());
-				log.debug(e.getMessage(), e);
+
+//				e.printStackTrace();
 			} catch (VersionException e) {
 				log.error("VersionException :"+e.getMessage());
-				log.debug(e.getMessage(), e);
+
+//				e.printStackTrace();
 			} catch (LockException e) {
 				log.error("LockException :"+e.getMessage());
-				log.debug(e.getMessage(), e);
+
+//				e.printStackTrace();
 			} catch (ConstraintViolationException e) {
 				log.error("ConstraintViolationException :"+e.getMessage());
-				log.debug(e.getMessage(), e);
+
+//				e.printStackTrace();
 			} catch (RepositoryException e) {
 				log.error("RepositoryException :"+e.getMessage());
-				log.debug(e.getMessage(), e);
+
+//				e.printStackTrace();
 			}
 
 		}
 
+		return changed;
 	}
 
 	public static String normalizeName(String productName){
@@ -454,5 +519,52 @@ public class IntelUtil {
 			log.debug(e.getMessage(), e);
 		}
 		return gsv;
+	}
+	
+	public static String getConfigValue(Page currentPage,String nodeName, String property, String defaultValue) {
+		String value = defaultValue;
+
+		try {		
+			String configPath = getRootPath(currentPage) + "/jcr:content/"+nodeName;
+			Session session = currentPage.getContentResource().getResourceResolver().adaptTo(Session.class);
+			Node configNode = session.getNode(configPath);
+			if(configNode != null) {
+				if(configNode.hasProperty(property)) {
+					value = configNode.getProperty(property).getString();
+					if(value == null || value.length() ==0) {
+						value = defaultValue;
+					}
+				}
+			}
+		} catch(Exception e) {
+			log.error("Exception :",e);
+		}
+		return value;
+	}
+	public static String[] getConfigValues(Page currentPage,String nodeName, String property) {
+		String[] stringValues = null;
+
+		try {		
+			String configPath = getRootPath(currentPage) + "/jcr:content/"+nodeName;
+			Session session = currentPage.getContentResource().getResourceResolver().adaptTo(Session.class);
+			Node configNode = session.getNode(configPath);
+			if(configNode != null) {
+				if(configNode.hasProperty(property)) {
+					if(configNode.getProperty(property).isMultiple()) {
+						Value[] values = configNode.getProperty(property).getValues();
+						stringValues = new String[values.length];
+						for(int i=0;i<values.length;i++) {
+							stringValues[i] = values[i].getString();
+						}						
+					} else {
+						stringValues = new String[1];
+						stringValues[0] = configNode.getProperty(property).getString();
+					}
+				}
+			}
+		} catch(Exception e) {
+			log.error("Exception :",e);
+		}
+		return stringValues;
 	}
 }
