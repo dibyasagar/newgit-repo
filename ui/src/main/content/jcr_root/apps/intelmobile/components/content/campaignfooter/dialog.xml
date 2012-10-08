@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Campaign Footer Component"
+    width="100%"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Title Details">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <sectiontitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Title"
+                        name="./sectiontitle"
+                        xtype="textfield"/>
+                    <buttontext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Text"
+                        name="./buttontext"
+                        xtype="textfield"/>
+                    <legal
+                        jcr:primaryType="cq:Widget"
+                        boxMaxHeight="200"
+                        boxMaxWidth="500"
+                        fieldLabel="Information"
+                        name="./legal"
+                        validateOnBlur="true"
+                        xtype="richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <image
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <styles
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <subsuperscript
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                    </legal>
+                </items>
+            </tab1>
+            <tab2
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName"
+                fileReferenceParameter="./imagePath"
+                name="./contentImage"
+                title="Image"
+                xtype="smartimage"/>
+        </items>
+    </items>
+</jcr:root>
