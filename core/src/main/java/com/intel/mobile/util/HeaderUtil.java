@@ -22,7 +22,7 @@ public class HeaderUtil {
 
 	private static final Logger LOG = LoggerFactory.getLogger(HeaderUtil.class);
 
-	public static List getHeaderInfo( Style currentStyle,
+	public static List getHeaderInfo( Page currentPage,
 			ResourceResolver resolver) {
 		List<Map> headerList = new ArrayList<Map>();		
 		Object headlinkTitle[] = null;
@@ -34,11 +34,15 @@ public class HeaderUtil {
 		String headUrl = "";
 		// PageManager pageManager = ;
 
-		headlinkTitle = (Object[]) currentStyle.get("headerTitle",
+/*		headlinkTitle = (Object[]) currentStyle.get("headerTitle",
 				new Object[0]);
 		headlinkUrl = (Object[]) currentStyle.get("headerUrl", new Object[0]);
 		showsubpage = (Object[]) currentStyle.get("showsubpage", new Object[0]);
-
+*/
+		headlinkTitle = IntelUtil.getConfigValues(currentPage, "header","headerTitle");		
+		headlinkUrl = IntelUtil.getConfigValues(currentPage, "header","headerUrl");
+		showsubpage = IntelUtil.getConfigValues(currentPage, "header","showsubpage");
+			
 		if (headlinkTitle != null && headlinkTitle.length > 0) {
 			for (int i = 0; i < headlinkTitle.length; i++) {
 				Map<String, String> menuMap = new LinkedHashMap<String, String>();				
