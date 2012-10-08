@@ -10,14 +10,14 @@
 pageContext.setAttribute("componentId",IntelUtil.getComponentId(resource));
 pageContext.setAttribute("componentName",component.getName() );
 
-String disclaimerType = currentStyle.get("disclaimerType", "");
+String disclaimerType = IntelUtil.getConfigValue(currentPage,"shopdisclaimer", "disclaimerType","");
 if(disclaimerType!=null && !disclaimerType.isEmpty() && disclaimerType.equals("datadriven")){
-	pageContext.setAttribute("disclaimerText",IntelUtil.getDisclaimerForShop(currentPage,currentStyle.get("disclaimerNumber", "")));	
+	pageContext.setAttribute("disclaimerText",IntelUtil.getDisclaimerForShop(currentPage,IntelUtil.getConfigValue(currentPage,"shopdisclaimer", "disclaimerNumber","")));	
 }else{
-	pageContext.setAttribute("disclaimerText",currentStyle.get("authoredDisclaimer", ""));
+	pageContext.setAttribute("disclaimerText",IntelUtil.getConfigValue(currentPage,"shopdisclaimer", "authoredDisclaimer", ""));
 }
 
-pageContext.setAttribute("expand",currentStyle.get("expand", "open"));
+pageContext.setAttribute("expand",IntelUtil.getConfigValue(currentPage,"shopdisclaimer","expand","open"));
 %>
 <cq:setContentBundle />
 
