@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Productdetails CMS"
+    width="100%"
+    xtype="dialog">
+    <items jcr:primaryType="cq:TabPanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <productdetails
+                jcr:primaryType="cq:Panel"
+                title="Product Details">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Title of the Product."
+                        fieldLabel="Product Title"
+                        name="./name"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <description
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Product Description."
+                        fieldLabel="Description"
+                        name="./productdescription"
+                        validateOnBlur="true"
+                        xtype="richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <styles
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <subsuperscript
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <image
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                    </description>
+                    <bestprice
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}true"
+                        fieldLabel="Best Price"
+                        name="./bestPrice"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <addtocompare
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="hide"
+                        fieldDescription="Show/Hide Add to Compare button for this Product."
+                        fieldLabel="Add to Compare Button"
+                        name="./addtocompare"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <show
+                                jcr:primaryType="nt:unstructured"
+                                text="Show"
+                                value="show"/>
+                            <hide
+                                jcr:primaryType="nt:unstructured"
+                                text="Hide"
+                                value="hide"/>
+                        </options>
+                    </addtocompare>
+                </items>
+            </productdetails>
+            <productimage
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName"
+                fileReferenceParameter="./picture"
+                id="imagefield"
+                name="./contentImage"
+                title="Image"
+                xtype="smartimage"/>
+            <features
+                jcr:primaryType="cq:Panel"
+                title="Features">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <contenttitle
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}true"
+                        fieldDescription="Content Title of the tab."
+                        fieldLabel="Content Title"
+                        name="./contenttitle"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <carriervalue
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Carrier"
+                        name="./carriervalue"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <countryvalue
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Country"
+                        name="./countryvalue"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <processorfamilyvalue
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Processor Family"
+                        name="./processorvalue"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <convertabilityvalue
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Convertability"
+                        name="./convertvalue"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <screensizevalue
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Screen Size"
+                        name="./screenvalue"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <ramvalue
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="RAM"
+                        name="./ramvalue"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <wifivalue
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="WiFi"
+                        name="./wifivalue"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <_x0033_gvalue
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="3G"
+                        name="./threegvalue"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <thicknessvalue
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Thickness"
+                        name="./thicknessvalue"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <weightvalue
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Weight"
+                        name="./weightvalue"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                </items>
+            </features>
+            <additionalfeatures
+                jcr:primaryType="cq:Panel"
+                title="Additional Features">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <featuredproperty
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./featureproperty"
+                        fieldDescription="Click the '+' to add a new feature property"
+                        fieldLabel="Featured Property List"
+                        name="./featureproperty"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <propertylabel
+                                jcr:primaryType="nt:unstructured"
+                                allowBlank="{Boolean}false"
+                                fieldLabel="Property Label"
+                                name="./propertylabel"
+                                validateOnBlur="true"
+                                xtype="textfield"/>
+                            <propertyvalue
+                                jcr:primaryType="nt:unstructured"
+                                allowBlank="{Boolean}false"
+                                fieldLabel="Property Value"
+                                name="./propertyvalue"
+                                validateOnBlur="true"
+                                xtype="textfield"/>
+                        </fieldConfig>
+                    </featuredproperty>
+                </items>
+            </additionalfeatures>
+            <motherboardfeatures
+                jcr:primaryType="cq:Panel"
+                title="Motherboards Features">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <chipset
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Chipset"
+                        name="./736"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <socket
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Socket"
+                        name="./706"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <intggraphics
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Integrated Graphics"
+                        name="./731"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <boardseries
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Board Series"
+                        name="./733"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <boardfamily
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Board Family"
+                        name="./734"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <boardformfactor
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Board Form Factor"
+                        name="./735"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <memory
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Memory"
+                        name="./737"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                </items>
+            </motherboardfeatures>
+            <ultrabooksfeatures
+                jcr:primaryType="cq:Panel"
+                title="Ultrabooks Features">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <manufacturer
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Manufacturer"
+                        name="./manufacturer"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <processor
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Processor"
+                        name="./processor"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <speed
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Speed"
+                        name="./speed"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <ram
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="RAM"
+                        name="./ram"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <screen
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Screen Size"
+                        name="./screen"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <harddrive
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Hard Drive"
+                        name="./hardDrive"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <os
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Operating System"
+                        name="./os"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <weight
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Weight"
+                        name="./weight"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                </items>
+            </ultrabooksfeatures>
+            <ssdfeatures
+                jcr:primaryType="cq:Panel"
+                title="Solid State Drive Features">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <capacity
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Capacity"
+                        name="./3"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <sequentialreadwrite
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Sequential Read/write"
+                        name="./seqreadwrite"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <ranreadwrite
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Random 4KB Read/Write"
+                        name="./ranreadwrite"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <formfactor
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Form Factor"
+                        name="./740"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <interface
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Interface"
+                        name="./741"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                </items>
+            </ssdfeatures>
+        </items>
+    </items>
+</jcr:root>

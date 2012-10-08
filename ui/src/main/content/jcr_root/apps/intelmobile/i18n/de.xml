@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    cq:lastReplicated="{Date}2011-06-10T20:17:22.970Z"
+    cq:lastReplicatedBy="admin"
+    cq:lastReplicationAction="Activate"
+    jcr:language="de"
+    jcr:mixinTypes="[cq:ReplicationStatus,mix:language]"
+    jcr:primaryType="sling:Folder">
+    <countryselector.label.heading
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Selecteer een land"/>
+    <filterpage.button.back
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="filterpage.button.back"
+        sling:message="Terug"/>
+    <filterpage.button.cancel
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="filterpage.button.cancel"
+        sling:message="Annuleren"/>
+    <filterpage.button.continue
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="filterpage.button.continue"
+        sling:message="Voortzetten"/>
+    <filterpage.button.refine
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="filterpage.button.refine"
+        sling:message="Verfijnen"/>
+    <filterpage.label.defaultcount
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="filterpage.label.defaultcount"
+        sling:message="Alle"/>
+    <filterpage.label.relevancy
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Relevancy"/>
+    <filterpage.label.reset
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Reset"/>
+    <generic.button.filter
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="generic.button.filter"
+        sling:message="Filteren op"/>
+    <generic.button.sort
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="generic.button.sort"
+        sling:message="Sorteer op"/>
+    <generic.label.currency_symbol
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="$"/>
+    <productcompare.alert.diffcategory
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Products in the Comparison List have different category."/>
+    <productcompare.alert.limitreached
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Comparison list limit reached."/>
+    <productcompare.alert.productexists
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Product already in Comparison List."/>
+    <productcompare.button.compare
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Compare"/>
+    <productcompare.label.addupto
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Add up to"/>
+    <productcompare.label.moreitems
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="more item(s)"/>
+    <productcompare.label.remove
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Remove"/>
+    <productcompare.label.reset
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Reset"/>
+    <productcompare.label.title
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Compare"/>
+    <productdetails.label.addtocompare
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productdetails.label.addtocompare"
+        sling:message="Toevoegen aan vergelijken"/>
+    <productdetails.label.disclaimer_copy
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productdetails.label.disclaimer_copy"
+        sling:message="N/A"/>
+    <productdetails.label.disclaimer_heading
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productdetails.label.disclaimer_heading"
+        sling:message="Ontkenning"/>
+    <productdetails.label.expand_shop_options
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productdetailsCMS.label.expand_shop_options"
+        sling:message="From"/>
+    <productdetails.label.feature_harddrive
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Hard Drive"/>
+    <productdetails.label.feature_os
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Betriebssystem"/>
+    <productdetails.label.feature_processor
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Prozessor"/>
+    <productdetails.label.feature_ram
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="RAM"/>
+    <productdetails.label.feature_screen
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Bildschirmgröße"/>
+    <productdetails.label.feature_speed
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Prozessorgeschwindigkeit"/>
+    <productdetails.label.feature_weight
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Gewicht"/>
+    <productdetails.label.price
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productdetails.label.price"
+        sling:message="Van"/>
+    <productdetails.label.purchasing_options
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productdetailsCMS.label.purchasing_options"
+        sling:message="Inkoop Opties"/>
+    <productdetails.label.purchasing_options_subheading
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productdetailsCMS.label.purchasing_options_subheading"
+        sling:message="Inkoop Opties Sub rubriek"/>
+    <productdetails.label.shoplink
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productdetails.label.shoplink"
+        sling:message="Ga naar de winkel"/>
+    <productdetails.label.similar_products
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productdetails.label.similar_products"
+        sling:message="Vergelijkbare producten"/>
+    <productdetailsCMS.label.feature_3g
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="3G"/>
+    <productdetailsCMS.label.feature_carrier
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Bagagedrager"/>
+    <productdetailsCMS.label.feature_convertability
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Convertability"/>
+    <productdetailsCMS.label.feature_country
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Land"/>
+    <productdetailsCMS.label.feature_processorfamily
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Processor Family (Core, Atom)"/>
+    <productdetailsCMS.label.feature_ram
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="RAM"/>
+    <productdetailsCMS.label.feature_screensize
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Schermgrootte"/>
+    <productdetailsCMS.label.feature_thickness
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Dikte"/>
+    <productdetailsCMS.label.feature_weight
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Gewicht"/>
+    <productdetailsCMS.label.feature_wifi
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="WiFi"/>
+    <productlisting.label.loadmoreproducts
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Load 12 more Products"/>
+    <productlisting.label.pagination1
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productlisting.label.pagination1"
+        sling:message="resultaten van"/>
+    <productlisting.label.pagination2
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productlisting.label.pagination2"
+        sling:message="Laad &lt;count> meer producten"/>
+    <productlisting.label.pagination20
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="productlisting.label.pagination2"
+        sling:message="Load 12 More Products"/>
+    <productlisting.label.resultsof
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="results of"/>
+    <productlisting.message.nullresult
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productlisting.message.nullresult"
+        sling:message="Geen resultaten overeenkomen met .."/>
+    <searchresultspage.label.resultsfound
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Results Found"/>
+    <sitesearch.button.pagination
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Laad &lt;count> Meer Resultaten"/>
+    <sitesearch.label.best_match
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Beste Match:"/>
+    <sitesearch.label.category
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Categorie"/>
+    <sitesearch.label.loadmoreresults
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Load 12 more Results"/>
+    <sitesearch.label.matching_result
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Overeenkomende Resultaten:"/>
+    <sitesearch.label.pagination_copy
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="of"/>
+    <sitesearch.label.relatedsearches
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Related Searches"/>
+    <sitesearch.label.results_found
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Resultaten Gevonden"/>
+    <sitesearch.label.search
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Search"/>
+    <sitesearch.label.search_fullsite_link_copy
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Zoeken Intel.com"/>
+    <sitesearch.message.nullresult
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Sorry geen resultaten gevonden"/>
+</jcr:root>

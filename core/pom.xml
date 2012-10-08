@@ -1,0 +1,413 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.IntelM.cq5</groupId>
+	<artifactId>intel-core</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<name>intel Core</name>
+	<description>This is intel Core module.</description>
+	<packaging>bundle</packaging>
+
+	<properties>
+		<maven.test.skip>true</maven.test.skip>
+		<file.encoding>utf-8</file.encoding>
+	</properties>
+
+
+	<repositories>
+		
+		<repository>
+			<id>adobe-cq</id>
+			<name>Adobe CQ Repository</name>
+			<url>http://repo.adobe.com/archiva/repository/day-central/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+
+		<repository>
+			<id>adobe-public-releases</id>
+			<name>Adobe Public Repository</name>
+			<url>http://repo.adobe.com/nexus/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+
+		<repository>
+			<id>mvnrepository</id>
+			<url>http://mvnrepository.com/artifact/</url>
+		</repository>
+
+		<repository>
+			<id>felix</id>
+			<url>http://archive.apache.org/dist/felix/</url>
+		</repository>
+
+
+	</repositories>
+
+    <pluginRepositories>
+
+		  <pluginRepository>
+		  <id>internal</id>
+				<name>Central Repository</name>
+				<url>http://repo2.maven.org/maven2/</url>
+				<releases><enabled>true</enabled></releases>
+				<snapshots><enabled>false</enabled></snapshots>
+	      </pluginRepository>
+
+	      <pluginRepository>
+			<id>snapshots</id>
+			<name>Snapshots Repository</name>
+			<url>http://repo2.maven.org/maven2/</url>
+			<releases><enabled>false</enabled></releases>
+			<snapshots><enabled>true</enabled></snapshots>
+		</pluginRepository>
+
+	     <pluginRepository>
+         <id>adobe-cq</id>
+         <name>Adobe CQ Repository</name>
+         <url>http://repo.adobe.com/archiva/repository/day-central/</url>
+         <releases><enabled>true</enabled></releases>
+         <snapshots><enabled>true</enabled></snapshots>
+         </pluginRepository>
+
+		   <pluginRepository>
+			<id>felix</id>
+			<name>org.apache.felix</name>
+			<url>http://archive.apache.org/dist/felix/</url>
+			<releases><enabled>false</enabled></releases>
+			<snapshots><enabled>true</enabled></snapshots>
+		</pluginRepository>
+
+	</pluginRepositories>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources/resources-${env}</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>*.properties</include>
+				</includes>
+
+			</resource>
+
+
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>*.properties</include>
+				</includes>
+
+			</resource>
+		</resources>
+		<plugins>
+
+			<!--This plugin's configuration is used to store Eclipse m2e settings 
+				only. It has no influence on the Maven build itself. -->
+			<plugin>
+				<groupId>org.eclipse.m2e</groupId>
+				<artifactId>lifecycle-mapping</artifactId>
+				<version>1.0.0</version>
+				<configuration>
+					<lifecycleMappingMetadata>
+						<pluginExecutions>
+							<pluginExecution>
+								<pluginExecutionFilter>
+									<groupId>org.apache.felix</groupId>
+									<artifactId>maven-scr-plugin</artifactId>
+									<versionRange>[2.0.0,)</versionRange>
+									<goals>
+										<goal>scr</goal>
+									</goals>
+								</pluginExecutionFilter>
+								<action>
+									<execute />
+
+								</action>
+							</pluginExecution>
+						</pluginExecutions>
+					</lifecycleMappingMetadata>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.0.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+					</archive>
+					<!-- <manifestLocation>META-INF</manifestLocation> -->
+					<instructions>
+						<Bundle-SymbolicName>com.intel.cq5.intel-core</Bundle-SymbolicName>
+						<Import-Package>*</Import-Package>
+						<Export-Package>com.intel.*,org.json.simple,org.json.simple.*</Export-Package>
+						<!-- Bundle supplied resource prefixes -->
+						<Include-Resource>{maven-resources}</Include-Resource>
+					</instructions>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-scr-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>generate-scr-scrdescriptor</id>
+						<goals>
+							<goal>scr</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-scm-plugin</artifactId>
+				<version>1.0</version>
+				<configuration>
+					<goals>install</goals>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>1.2</version>
+				<configuration>
+					<findbugsXmlOutput>true</findbugsXmlOutput>
+					<findbugsXmlWithMessages>true</findbugsXmlWithMessages>
+					<xmlOutput>true</xmlOutput>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.4</version>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>2.1</version>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.4.3</version>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.3.1</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jdepend-maven-plugin</artifactId>
+				<version>2.0-beta-2</version>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.0-beta-9</version>
+			</plugin>
+			<!--
+ 		 	 <plugin>
+				<groupId>org.apache.sling</groupId>
+				<artifactId>maven-sling-plugin</artifactId>
+				<version>2.0.4-incubator</version>
+				<executions>
+					<execution>
+						<id>install-bundle-1</id>
+						<configuration>
+							<slingUrl>
+								http://127.0.0.1:7402/system/console/install
+							</slingUrl>
+							<user>admin</user>
+							<password>admin</password>
+						</configuration>
+						<goals>
+							<goal>install</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin> 
+			-->
+		</plugins>
+
+	</build>
+
+	<!-- ========================================================== -->
+	<!-- D E P E N D E N C I E S -->
+	<!-- ========================================================== -->
+	<!-- The list of dependencies below should be checked, but serve as a rough 
+		list based on typical usage. The versions are expected to change -->
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.scr.annotations</artifactId>
+		    <version>1.7.0</version> 
+		</dependency>
+		<dependency>
+			<groupId>org.apache.sling</groupId>
+			<artifactId>org.apache.sling.jcr.api</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.jcr</groupId>
+			<artifactId>jcr</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.sling</groupId>
+			<artifactId>org.apache.sling.commons.json</artifactId>
+			<version>2.0.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.sling</groupId>
+			<artifactId>org.apache.sling.api</artifactId>
+			<version>2.2.4</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4</version>
+		</dependency>
+				
+		<dependency>
+			<groupId>com.day.cq.wcm</groupId>
+			<artifactId>cq-wcm-api</artifactId>
+			<version>5.5.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.day.cq</groupId>
+			<artifactId>cq-commons</artifactId>
+			<version>5.5.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>osgi_R4_compendium</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.11</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.day.cq.dam</groupId>
+			<artifactId>cq-dam-core</artifactId>
+			<version>5.5.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.day.cq.dam</groupId>
+			<artifactId>cq-dam-api</artifactId>
+			<version>5.4.0</version>
+		</dependency>
+		<dependency>
+        <groupId>org.apache.sling</groupId>
+        <artifactId>org.apache.sling.commons.mime</artifactId>
+        <version>2.0.4-incubator</version>
+      </dependency>
+		<dependency>
+           <groupId>com.day.cq.wcm</groupId>
+           <artifactId>cq-wcm-foundation</artifactId>
+           <version>5.5.2</version>
+         </dependency>
+		
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.3</version>
+		</dependency>
+
+		<dependency>
+           <groupId>com.day.cq</groupId>
+           <artifactId>cq-search</artifactId>
+           <version>5.5.4</version>
+	    </dependency>
+	    
+		<dependency>
+			<groupId>org.apache.sling</groupId>
+			<artifactId>org.apache.sling.settings</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.day.cq</groupId>
+			<artifactId>cq-tagging</artifactId>
+			<version>5.4.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.day.cq</groupId>
+			<artifactId>cq-mailer</artifactId>
+			<version>5.4.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.day.cq</groupId>
+			<artifactId>cq-replication</artifactId>
+			<version>5.4.16</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.day.cq</groupId>
+			<artifactId>cq-i18n</artifactId>
+			<version>5.3.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.0</version>
+		</dependency>
+            				
+	</dependencies>
+
+</project>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Features"
+    width="100%"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Features">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <contenttitle
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Content Title of the tab."
+                        fieldLabel="Content Title"
+                        name="./contenttitle"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <filteritems
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./filteritems"
+                        fieldDescription="Click the '+' to add a new filter item."
+                        filedLabel="Filter items"
+                        maxItems="12"
+                        name="./filteritems"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <title
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                fieldLabel="Title"
+                                name="./title"
+                                xtype="textfield"/>
+                            <description
+                                jcr:primaryType="nt:unstructured"
+                                fieldDescription="Description of the tab."
+                                fieldLabel="Description"
+                                grow="true"
+                                name="./description"
+                                validateOnBlur="true"
+                                xtype="richtext">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <styles
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <paraformat
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <subsuperscript
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <misctools
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <image
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                </rtePlugins>
+                            </description>
+                        </fieldConfig>
+                    </filteritems>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

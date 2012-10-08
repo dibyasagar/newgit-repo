@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Featurephone Topic  Component"
+    width="100%"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <heroimage
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./heroImageName"
+                fileReferenceParameter="./heroImageReference"
+                id="heroimage"
+                name="./heroimagename"
+                title="Hero Image"
+                xtype="smartimage"/>
+            <content
+                jcr:primaryType="cq:Panel"
+                title="Content">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <heading
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Heading Copy of the Topic"
+                        fieldLabel="Heading"
+                        name="./heading"
+                        xtype="textfield"/>
+                    <bodycopy
+                        jcr:primaryType="nt:unstructured"
+                        fieldDescription="Body Copy of the Topic"
+                        fieldLabel="Body"
+                        grow="true"
+                        name="./bodycopy"
+                        validateOnBlur="true"
+                        xtype="richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <styles
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <subsuperscript
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                    </bodycopy>
+                </items>
+            </content>
+        </items>
+    </items>
+</jcr:root>

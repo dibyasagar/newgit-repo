@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Featurephone List Component"
+    width="100%"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <content
+                jcr:primaryType="cq:Panel"
+                title="Content">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <links
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./topiclinks"
+                        fieldDescription="Click the '+' to add a new filter item."
+                        fieldLabel="Links"
+                        maxItems="12"
+                        name="./topiclinks"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <linkcopy
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                fieldLabel="Link Copy"
+                                name="./linkcopy"
+                                xtype="textfield"/>
+                            <linkpath
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                editable="{Boolean}true"
+                                fieldLabel="Link Path"
+                                name="./linkpath"
+                                predicate="hierarchy"
+                                xtype="pathfield"/>
+                        </fieldConfig>
+                    </links>
+                </items>
+            </content>
+            <heroimage
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./heroImageName"
+                fileReferenceParameter="./heroImageReference"
+                name="./heroimagename"
+                title="Hero Image"
+                xtype="smartimage"/>
+        </items>
+    </items>
+</jcr:root>

@@ -1,0 +1,49 @@
+*
+{
+	MARGIN:0;
+	PADDING:0;
+	OUTLINE:0;
+	BORDER:0;
+
+}
+
+HTML,BODY
+{
+	OVERFLOW:hidden;
+	HEIGHT:100%;
+	WIDTH:100%;
+
+}
+
+BODY
+{
+	BACKGROUND:transparent;
+	POSITION:absolute;
+
+}
+
+.video
+{
+	OVERFLOW:hidden;
+	POSITION:relative;
+	HEIGHT:auto;
+	WIDTH:100%;
+
+}
+
+a
+{
+	DISPLAY:block;
+	HEIGHT:100%;
+	WIDTH:100%;
+
+
+}
+
+img {
+	max-width: 100%;
+}
+
+
+
+

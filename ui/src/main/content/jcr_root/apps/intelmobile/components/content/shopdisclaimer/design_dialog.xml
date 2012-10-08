@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Shop Disclaimer Component"
+    width="100%"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="SHOP Disclaimer">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <disclaimertype
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="datadriven"
+                        fieldLabel="Disclaimer Type"
+                        name="./disclaimerType"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <authored
+                                jcr:primaryType="nt:unstructured"
+                                text="Authored (Mention Disclaimer Text)"
+                                value="authored"/>
+                            <datadriven
+                                jcr:primaryType="nt:unstructured"
+                                text="Data Driven (Mention Disclaimer Number)"
+                                value="datadriven"/>
+                        </options>
+                        <listeners
+                            jcr:primaryType="nt:unstructured"
+                            loadcontent="function(box){ if (this.getValue()==&quot;datadriven&quot;){&#x9;box.findParentByType('tabpanel').findByType('richtext')[0].disable(); box.findParentByType('tabpanel').findByType('textfield')[1].enable();} else { box.findParentByType('tabpanel').findByType('richtext')[0].enable(); box.findParentByType('tabpanel').findByType('textfield')[1].disable();}return true;}"
+                            selectionchanged="function(box){ if (this.getValue()==&quot;datadriven&quot;){&#x9;box.findParentByType('tabpanel').findByType('richtext')[0].disable(); box.findParentByType('tabpanel').findByType('textfield')[1].enable();} else { box.findParentByType('tabpanel').findByType('richtext')[0].enable(); box.findParentByType('tabpanel').findByType('textfield')[1].disable();}return true;}"/>
+                    </disclaimertype>
+                    <disclaimernumber
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Disclaimer Number"
+                        name="./disclaimerNumber"
+                        xtype="textfield"/>
+                    <authoreddisclaimer
+                        jcr:primaryType="nt:unstructured"
+                        fieldDescription="Text of the Disclaimer"
+                        fieldLabel="Disclaimer Text"
+                        grow="true"
+                        name="./authoredDisclaimer"
+                        validateOnBlur="true"
+                        xtype="richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <styles
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <subsuperscript
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <image
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                    </authoreddisclaimer>
+                    <defaultexpand
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="yes"
+                        fieldLabel="Expand By Default ?"
+                        name="./expand"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <yes
+                                jcr:primaryType="nt:unstructured"
+                                text="Yes"
+                                value="yes"/>
+                            <no
+                                jcr:primaryType="nt:unstructured"
+                                text="No"
+                                value="no"/>
+                        </options>
+                    </defaultexpand>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

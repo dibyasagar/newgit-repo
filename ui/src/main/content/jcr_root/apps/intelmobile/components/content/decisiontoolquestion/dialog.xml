@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Dialog"
+    width="100%"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <heroimage
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./heroImageFileName"
+                fileReferenceParameter="./heroImageFileReference"
+                id="heroimagefield"
+                name="./heroImage"
+                title="Hero Image"
+                xtype="smartimage"/>
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Decision Tool Question">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Page Heading"
+                        maxLength="{Long}24"
+                        maxLengthText="The maximum length for this field is 24"
+                        name="./heading"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <subheading
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Hero Sub Heading"
+                        name="./subHeading"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <bodycopy
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Hero Body Copy"
+                        maxLength="{Long}150"
+                        maxLengthText="The maximum length for this field is 150"
+                        name="./bodyCopy"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <submitbutton
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Submit Button Copy"
+                        maxLength="{Long}26"
+                        maxLengthText="The maximum length for this field is 26"
+                        name="./submitButtonCopy"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <pathi3
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        editable="{Boolean}true"
+                        fieldLabel="i3 Page Path"
+                        name="./pathi3"
+                        predicate="hierarchy"
+                        validateOnBlur="true"
+                        xtype="pathfield"/>
+                    <pathi5
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        editable="{Boolean}true"
+                        fieldLabel="i5 Page Path"
+                        name="./pathi5"
+                        predicate="hierarchy"
+                        validateOnBlur="true"
+                        xtype="pathfield"/>
+                    <pathi7
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        editable="{Boolean}true"
+                        fieldLabel="i7 Page Path"
+                        name="./pathi7"
+                        predicate="hierarchy"
+                        validateOnBlur="true"
+                        xtype="pathfield"/>
+                </items>
+            </tab1>
+            <question1image
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./question1ImageFileName"
+                fileReferenceParameter="./question1ImageFileReference"
+                id="question1ImageField"
+                name="./question1Image"
+                title="Question 1 Image"
+                xtype="smartimage"/>
+            <tab2
+                jcr:primaryType="cq:Panel"
+                title="Question 1 Content">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <imagedisplaycopy
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Image Display Copy"
+                        name="./imageDisplayCopy1"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <answer1copy
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Answer 1 Copy"
+                        name="./answer1Copy1"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <answer2copy
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Answer 2 Copy"
+                        name="./answer2Copy1"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <answer3copy
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Answer 3 Copy"
+                        name="./answer3Copy1"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                </items>
+            </tab2>
+            <question2image
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./question2ImageFileName"
+                fileReferenceParameter="./question2ImageFileReference"
+                id="question2ImageField"
+                name="./question2Image"
+                title="Question 2 Image"
+                xtype="smartimage"/>
+            <tab3
+                jcr:primaryType="cq:Panel"
+                title="Question 2 Content">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <imagedisplaycopy
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Image Display Copy"
+                        name="./imageDisplayCopy2"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <answer1copy
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Answer 1 Copy"
+                        name="./answer1Copy2"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <answer2copy
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Answer 2 Copy"
+                        name="./answer2Copy2"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <answer3copy
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Answer 3 Copy"
+                        name="./answer3Copy2"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                </items>
+            </tab3>
+            <question3image
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./question3ImageFileName"
+                fileReferenceParameter="./question3ImageFileReference"
+                id="question3ImageField"
+                name="./question3Image"
+                title="Question 3 Image"
+                xtype="smartimage"/>
+            <tab4
+                jcr:primaryType="cq:Panel"
+                title="Question 3 Content">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <imagedisplaycopy
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Image Display Copy"
+                        name="./imageDisplayCopy3"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <answer1copy
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Answer 1 Copy"
+                        name="./answer1Copy3"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <answer2copy
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Answer 2 Copy"
+                        name="./answer2Copy3"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <answer3copy
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Answer 3 Copy"
+                        name="./answer3Copy3"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                </items>
+            </tab4>
+            <question4image
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./question4ImageFileName"
+                fileReferenceParameter="./question4ImageFileReference"
+                id="question4ImageField"
+                name="./question4Image"
+                title="Question 4 Image"
+                xtype="smartimage"/>
+            <tab5
+                jcr:primaryType="cq:Panel"
+                title="Question 4 Content">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <imagedisplaycopy
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Image Display Copy"
+                        name="./imageDisplayCopy4"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <answer1copy
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Answer 1 Copy"
+                        name="./answer1Copy4"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <answer2copy
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Answer 2 Copy"
+                        name="./answer2Copy4"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <answer3copy
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Answer 3 Copy"
+                        name="./answer3Copy4"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                </items>
+            </tab5>
+        </items>
+    </items>
+</jcr:root>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Article Details Podcast"
+    width="100%"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Podcast Content">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <videoid
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="Video ID (Brigthcove)"
+                        name="./videoid"
+                        xtype="textfield"/>
+                    <video
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+						editable="{Boolean}true"
+                        fieldDescription="Upload Content"
+                        fieldLabel="Video Thumbnail"
+						predicate="hierarchy"
+                        name="./heroimage"
+                        xtype="pathfield"/>
+                    <contenttitle
+                        jcr:primaryType="nt:unstructured"
+                        fieldDescription="Title of the Content"
+                        fieldLabel="Content Title"
+                        name="./contenttitle"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <content
+                        jcr:primaryType="nt:unstructured"
+                        fieldDescription="Text of the Content Item"
+                        fieldLabel="Content Text"
+                        grow="true"
+                        name="./contenttext"
+                        validateOnBlur="true"
+                        xtype="richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <image
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <styles
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <subsuperscript
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                    </content>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

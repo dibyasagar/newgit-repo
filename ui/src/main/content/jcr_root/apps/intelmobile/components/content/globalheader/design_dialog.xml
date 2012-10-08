@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Global Header Component"
+    width="100%"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Menu Links">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <multifrontfeeds
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./headerlinks"
+                        fieldDescription="Click '+' to add a new link"
+                        fieldLabel="Menu Options"
+                        maxItems="6"
+                        name="./headerlinks"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <title
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                fieldLabel="Link Display Text"
+                                name="./headerTitle"
+                                regex="/^[a-zA-Z ]/"
+                                regexText="please enter letters only"
+                                xtype="textfield"/>
+                            <url
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                editable="{Boolean}true"
+                                fieldLabel="Link url"
+                                name="./headerUrl"
+                                predicate="hierarchy"
+                                xtype="pathfield"/>
+                            <showsubpage
+                                jcr:primaryType="cq:Widget"
+                                autoWidth="{Boolean}true"
+                                defaultValue="no"
+                                fieldLabel="Show Subpage"
+                                name="./showsubpage"
+                                type="select"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="yes"
+                                        value="yes"/>
+                                    <no
+                                        jcr:primaryType="nt:unstructured"
+                                        text="no"
+                                        value="no"/>
+                                </options>
+                            </showsubpage>
+                        </fieldConfig>
+                    </multifrontfeeds>
+                </items>
+            </tab1>
+            <tab2
+                jcr:primaryType="cq:Panel"
+                title="Logo and Icons">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <logolink
+                        jcr:primaryType="cq:Widget"
+                        editable="{Boolean}true"
+                        fieldLabel="Logo Link"
+                        name="./logolink"
+                        predicate="hierarchy"
+                        xtype="pathfield"/>
+                    <logoimage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Logo Image"
+                        name="./logoimage"
+                        xtype="pathfield"/>
+                    <menulabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        defaultValue="Menu"
+                        fieldLabel="Menu Label"
+                        maxLength="{Long}15"
+                        maxLengthText="The maximum length for this field is 15"
+                        name="./menulabel"
+                        xtype="textfield"/>
+                    <Searchicon
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Search Icon "
+                        name="./searchicon"
+                        xtype="pathfield"/>
+                </items>
+            </tab2>
+        </items>
+    </items>
+</jcr:root>
