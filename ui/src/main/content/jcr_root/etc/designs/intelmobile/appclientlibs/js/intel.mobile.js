@@ -43,6 +43,7 @@ intel.mobile = {
         globalHeader:   $('header'),
         headerBar:      $('#header-bar'),
         main:           $('#main'),
+        ultrabook:      $('.ultrabook.content'),
         footer:         $('.footer'),
         searchTerm:     $('#search-term'),
         searchClear:    $('#clear-search'),
@@ -199,8 +200,11 @@ intel.mobile = {
                           {
                             
                             // Move main content down
+                           
+                           
                             cachedElements.main.attr( 'style', openStyle3d );
                             cachedElements.footer.attr( 'style', openStyle3d );
+                            cachedElements.ultrabook.attr( 'style', openStyle3d );
                             }
                        
                         // open keyboard
@@ -246,6 +250,7 @@ intel.mobile = {
                             // Move main content down
                              cachedElements.main.attr( 'style', closeStyle3d );
                             cachedElements.footer.attr( 'style', closeStyle3d );
+                            cachedElements.ultrabook.attr( 'style', closeStyle3d );
                             }
                             // Move main content down
                            
