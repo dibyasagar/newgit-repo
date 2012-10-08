@@ -2,14 +2,16 @@
 <%@page session="false" %>
 <%@page import="com.intel.mobile.util.IntelUtil"%>
 <%
-    String link1copy = currentStyle.get("link1copy", "");
-    String link1url = currentStyle.get("link1url", "");
+	IntelUtil.getConfigValue(currentPage,"featurefooter", "link3url","");
     
-    String link2copy = currentStyle.get("link2copy", "");
-    String link2url = currentStyle.get("link2url", "");
+	String link1copy = IntelUtil.getConfigValue(currentPage,"featurefooter","link1copy","");
+    String link1url = IntelUtil.getConfigValue(currentPage,"featurefooter","link1url","");
+    
+    String link2copy = IntelUtil.getConfigValue(currentPage,"featurefooter","link2copy","");
+    String link2url = IntelUtil.getConfigValue(currentPage,"featurefooter","link2url","");
 
-    String link3copy = currentStyle.get("link3copy", "");
-    String link3url = currentStyle.get("link3url", "");
+    String link3copy = IntelUtil.getConfigValue(currentPage,"featurefooter","link3copy","");
+    String link3url = IntelUtil.getConfigValue(currentPage,"featurefooter","link3url","");
 
     pageContext.setAttribute("link1copy", link1copy);
     pageContext.setAttribute("link1url", link1url);
@@ -20,7 +22,7 @@
     pageContext.setAttribute("link3copy", link3copy);
     pageContext.setAttribute("link3url", link3url); 
     pageContext.setAttribute("componentId",IntelUtil.getComponentId(resource));
-    pageContext.setAttribute("componentName",component.getName() );
+    pageContext.setAttribute("componentName",component.getName());
 %>
  <div class="component" data-component="<c:out value="${pageScope.componentName}"/>" data-component-id="<c:out value="${pageScope.componentId}"/>">
     <div id="footer">
