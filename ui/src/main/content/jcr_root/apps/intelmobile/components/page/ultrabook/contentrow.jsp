@@ -1,11 +1,26 @@
 <%@page import="com.intel.mobile.util.CampaignMenuUtil"%>
 <%@page import="com.intel.mobile.vo.UltrabookMenuItemVO"%>
+<%@page import="org.apache.sling.api.resource.ResourceResolver"%>
+<%@page import="javax.jcr.Node"%>
 <%@include file="/libs/foundation/global.jsp"%>
 <%@page session="false"%>
 <%
 
 pageContext.setAttribute("leftMenuItems",CampaignMenuUtil.getLeftMenuItems(resource,currentPage));
 pageContext.setAttribute("rightMenuItems",CampaignMenuUtil.getRightMenuItems(resource,currentPage));
+
+Resource campaignHeaderResource = resourceResolver.getResource(currentPage.getPath() + "/jcr:content/contentPar/campaignheader");
+Resource campaignFooterResource = resourceResolver.getResource(currentPage.getPath() + "/jcr:content/contentPar/campaignfooter");
+if(campaignHeaderResource!=null && campaignFooterResource!=null ){
+Node campaignHeaderNode = campaignHeaderResource.adaptTo(Node.class);
+Node campaignFooterNode = campaignFooterResource.adaptTo(Node.class);
+if(campaignHeaderNode.hasProperty("sectiontitle")&& campaignFooterNode.hasProperty("buttontext")){
+  String sectiontitle=campaignHeaderNode.getProperty("sectiontitle").getString();
+  String buttontext=campaignFooterNode.getProperty("buttontext").getString();
+  pageContext.setAttribute("title",sectiontitle);
+  pageContext.setAttribute("buttontext",buttontext);
+}
+}
   
 %>
 <!-- Menus -->
@@ -15,7 +30,7 @@ pageContext.setAttribute("rightMenuItems",CampaignMenuUtil.getRightMenuItems(res
 			<nav class="menus-a clear">
 
 				<div class="head">
-				<h1>Ultrabook™</h1>
+				<h1>${title}</h1>
 				</div>
 
 				<div class="close"></div>
@@ -44,7 +59,7 @@ pageContext.setAttribute("rightMenuItems",CampaignMenuUtil.getRightMenuItems(res
 					
 					<div class="shop">
 						<a class="ui-link" href="#" title="Shop Ultrabook™" target="_blank">
-						<span>Shop Ultrabook™</span></a>
+						<span>${buttontext}</span></a>
 					</div>
 
 				</div>
