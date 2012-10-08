@@ -71,7 +71,7 @@ public class IntelMobileConstants {
 	public static final String PRODUCT_PATH= PRODUCT_DETAIL_PAGES_PATH+"/%/details";
 	public static final String SIMILAR_PRODUCT_PATH = "/products/%/details";
 	
-	public static final String INTEL_CONTENT_ROOT_NODE_PATH = "/content/intelmobile/us";
+	public static final String INTEL_CONTENT_ROOT_NODE_PATH = "/content/intelmobile";
 	public static final String NODE_NAME_ARK = "ark";
 	
 	public static final String ARK_PRODUCT_TYPE_PROCESSORS = "Processors";
