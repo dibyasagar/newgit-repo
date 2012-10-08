@@ -2,8 +2,8 @@
 <%@page session="false" %>
 <%@page import="com.intel.mobile.util.IntelUtil"%>
 <%
-    String logoImage = currentStyle.get("logoImageReference", "");
-    String logoLink = currentStyle.get("linkpath", "#");
+	String logoImage = IntelUtil.getConfigValue(currentPage,"featureheader", "logoImageReference","");
+    String logoLink = IntelUtil.getConfigValue(currentPage, "featureheader" ,"linkpath","");
     
     pageContext.setAttribute("logoLink", logoLink);
     pageContext.setAttribute("logoImage", logoImage);
