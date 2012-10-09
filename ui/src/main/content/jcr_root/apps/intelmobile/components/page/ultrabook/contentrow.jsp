@@ -54,7 +54,7 @@ if(campaignHeaderNode.hasProperty("sectiontitle")&& campaignFooterNode.hasProper
                      <c:forEach  items="${leftMenuItems}" var="item">  
                      
                      <div class="item menus-2">
-                     	<img src="/etc/designs/intelmobile/img/ultrabook/640v/menus.2.icon.png"/> 
+                     	<img src="${item.imagePath}"/> 
 						<a class="inside ui-link" href="#slide-${item.cellId}" title="${item.name}">${item.name}</a>
 					 </div>
                      
@@ -66,7 +66,7 @@ if(campaignHeaderNode.hasProperty("sectiontitle")&& campaignFooterNode.hasProper
 
 					<c:forEach  items="${rightMenuItems}" var="item">  
 					<div class="item menus-4">
-					<img src="/etc/designs/intelmobile/img/ultrabook/640v/menus.4.icon.png"/> 
+					<img src="${item.imagePath}"/> 
 					<a class="inside ui-link" href="#slide-${item.cellId}" title="${item.name}">${item.name}</a>
 					</div>
 					</c:forEach>
