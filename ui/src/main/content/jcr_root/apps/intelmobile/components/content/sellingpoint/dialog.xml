@@ -157,6 +157,15 @@
                 name="./contentImage"
                 title="Image"
                 xtype="smartimage"/>
+            <tab3
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName"
+                fileReferenceParameter="./thumbnailReference"
+                name="./contentImage"
+                title="Sticky menu Image"
+                xtype="smartimage"/>
         </items>
     </items>
 </jcr:root>

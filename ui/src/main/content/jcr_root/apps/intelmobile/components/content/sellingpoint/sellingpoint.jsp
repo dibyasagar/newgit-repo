@@ -77,7 +77,7 @@ pageContext.setAttribute("validLink",validLink);
 
                         </p></div>
 
-                        <span class="learn" data-more="Learn More" data-less="Close">
+                        <span class="learn" data-more="<%=properties.get("learn-more","")%>" data-less="<%=properties.get("close","")%>">
                         <%=properties.get("learn-more","")%>
                         </span>
 
