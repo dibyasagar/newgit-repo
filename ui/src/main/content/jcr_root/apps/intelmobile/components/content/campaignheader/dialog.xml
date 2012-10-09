@@ -46,6 +46,27 @@
                                 features="*"/>
                         </rtePlugins>
                     </description>
+                    <displaysocial
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}true"
+                        defaultValue="no"
+                        fieldLabel="Display Social"
+                        name="./displaysocial"
+                        type="select"
+                        value="no"
+                        width="20"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <no
+                                jcr:primaryType="nt:unstructured"
+                                text="No"
+                                value="no"/>
+                            <yes
+                                jcr:primaryType="nt:unstructured"
+                                text="Yes"
+                                value="yes"/>
+                        </options>
+                    </displaysocial>
                 </items>
             </tab1>
             <tab2
