@@ -5,12 +5,19 @@
   NA
 
 --%><%@page import="com.intel.mobile.util.CampaignMenuUtil"%>
+<%@page import="com.intel.mobile.util.IntelUtil"%>
 <%@page import="com.day.cq.wcm.api.WCMMode,javax.jcr.Node"%>
 <%@include file="/libs/foundation/global.jsp"%><%
 %><%@page session="false" %>
 <%
 String title = properties.get("title","");
 String description = properties.get("description", "");
+String internalLink = "";
+String validLink = "";
+if (properties.get("linkUrl") != null) {
+internalLink = properties.get("linkUrl").toString();
+validLink = IntelUtil.getLinkUrl(internalLink,resourceResolver);}
+pageContext.setAttribute("validLink",validLink);
 %>
 
 <a class="ui-link" name="slide-<%=CampaignMenuUtil.getComponentCellId(resource)%>"></a>
@@ -41,8 +48,8 @@ String description = properties.get("description", "");
                         </div>
 
                         <div class="shop landscape">
-                            <a class="ui-link" href="<%=properties.get("linkpath","")%>" title="Shop Ultrabook™" target="_blank">
-                            <span><%=properties.get("text","")%></span></a>
+                            <a class="ui-link" href="${validLink}" title="Shop Ultrabook™" target="_blank">
+                            <span><c:out value="${properties.text}" escapeXml="false"/></span></a>
                         </div>
 
                     </div>
@@ -50,7 +57,7 @@ String description = properties.get("description", "");
                     <div class="body">
 
                         <h3>
-                            <%=properties.get("heading","")%>
+                             <c:out value="${properties.heading}" escapeXml="false"/>
                         </h3>
                         <p>
                         <%=properties.get("sub-heading","")%>
@@ -79,8 +86,8 @@ String description = properties.get("description", "");
                     <div class="spacer"></div>
 
                     <div class="shop portrait">
-                        <a class="ui-link" href="#" title="Shop Ultrabook™" target="_blank">
-                        <span>Shop Ultrabook™</span></a>
+                        <a class="ui-link" href="${validLink}" title="Shop Ultrabook™" target="_blank">
+                        <span><c:out value="${properties.text}" escapeXml="false"/></span></a>
                     </div>
 
                 </article>

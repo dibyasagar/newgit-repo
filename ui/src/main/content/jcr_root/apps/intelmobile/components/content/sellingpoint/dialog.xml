@@ -114,14 +114,6 @@
                 jcr:primaryType="cq:Panel"
                 title="Shop Button">
                 <items jcr:primaryType="cq:WidgetCollection">
-                    <linkpath
-                        jcr:primaryType="cq:Widget"
-                        editable="{Boolean}true"
-                        fieldDescription="For External URL start the URL with 'http://'"
-                        fieldLabel="Link Path"
-                        name="./linkpath"
-                        predicate="hierarchy"
-                        xtype="pathfield"/>
                     <sameornewwindow
                         jcr:primaryType="cq:Widget"
                         defaultValue="no"
@@ -147,6 +139,13 @@
                         fieldLabel="Link Copy"
                         name="./text"
                         xtype="textfield"/>
+                    <linkUrl
+                        jcr:primaryType="cq:Widget"
+                        editable="{Boolean}true"
+                        fieldLabel="Link Url"
+                        name="./linkUrl"
+                        predicate="hierarchy"
+                        xtype="pathfield"/>
                 </items>
             </tab4>
             <tab2
