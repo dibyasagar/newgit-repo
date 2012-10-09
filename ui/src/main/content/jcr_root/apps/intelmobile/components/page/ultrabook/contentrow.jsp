@@ -73,35 +73,11 @@ if(campaignHeaderNode.hasProperty("sectiontitle")&& campaignFooterNode.hasProper
 <div class="ultrabook content">
 			
 			<!-- Nav -->
-
 			<div style="top: 70px; " role="banner" class="sticky ui-header ui-bar-a" data-role="header"></div>
 
-			<!-- 0 -->
-			
-			<!-- <cq:include path="campaignheader" resourceType="intelmobile/components/content/campaignheader"/> -->
-			<!--<cq:include path="contentPar" resourceType="foundation/components/parsys"/>
-			--><!-- Include Campaign Header Component -->
-
-			<!-- 2 -->
- 			<!-- <cq:include path="sellingpoint" resourceType="intelmobile/components/content/sellingpoint"/> -->
+ 	
+ 			<!-- Parsys Component Start -->
 			<cq:include path="contentPar" resourceType="foundation/components/parsys"/>
-			<!-- Include Selling Point Component -->
-
-			<!-- 1 -->
-
-
-
-			<!-- 3 -->
-
-		
-			<!-- 4 -->
-
-		
-			<!-- 5 -->
-
-			
-			<!-- Z -->
-
-			
-
-		</div>
+			<!-- Parys Component End-->
+<cq:include path="disclaimer" resourceType="intelmobile/components/content/disclaimer"/>
+</div>
