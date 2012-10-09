@@ -26,7 +26,7 @@ String description = properties.get("description", "");
                     <div class="head" style="">
 
                         <h2><%=properties.get("sectiontitle","")%></h2>
-                        <h2><%=properties.get("description","")%></h2>
+                        <h2><c:out value="${properties.description}" escapeXml="false"/></h2>
                         
                         <div class="spacer"></div>
                         <div class="ultra"></div>
