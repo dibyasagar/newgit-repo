@@ -25,12 +25,12 @@ if(campaignHeaderNode.hasProperty("sectiontitle")&& campaignFooterNode.hasProper
 
 	  validLink = IntelUtil.getLinkUrl(linkUrl,resourceResolver);
 	  } */
-	 
-}
-
   pageContext.setAttribute("title",sectiontitle);
   pageContext.setAttribute("buttontext",buttontext);
-  pageContext.setAttribute("validLink",validLink);
+  pageContext.setAttribute("validLink",validLink); 
+}
+
+  
 }
 
 
