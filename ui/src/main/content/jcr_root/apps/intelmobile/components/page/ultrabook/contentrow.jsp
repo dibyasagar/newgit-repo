@@ -19,12 +19,12 @@ Node campaignFooterNode = campaignFooterResource.adaptTo(Node.class);
 if(campaignHeaderNode.hasProperty("sectiontitle")&& campaignFooterNode.hasProperty("buttontext")){
   String sectiontitle=campaignHeaderNode.getProperty("sectiontitle").getString();
   String buttontext=campaignFooterNode.getProperty("buttontext").getString();
-  /* String linkUrl=campaignFooterNode.getProperty("linkUrl").getString();
+   String linkUrl=campaignFooterNode.getProperty("linkUrl").getString();
   log.info("linkUrl :"+linkUrl);
   if (linkUrl != null) {
 
 	  validLink = IntelUtil.getLinkUrl(linkUrl,resourceResolver);
-	  } */
+	  } 
   pageContext.setAttribute("title",sectiontitle);
   pageContext.setAttribute("buttontext",buttontext);
   pageContext.setAttribute("validLink",validLink); 
@@ -72,7 +72,7 @@ if(campaignHeaderNode.hasProperty("sectiontitle")&& campaignFooterNode.hasProper
 					</c:forEach>
 					
 					<div class="shop">
-						<a class="ui-link" href="#" title="Shop Ultrabook™" target="_blank">
+						<a class="ui-link" href="${validLink}" title="Shop Ultrabook™" target="_blank">
 						<span>${buttontext}</span></a>
 					</div>
 
