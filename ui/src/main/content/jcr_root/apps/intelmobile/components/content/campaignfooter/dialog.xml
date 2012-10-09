@@ -51,6 +51,33 @@
                                 features="*"/>
                         </rtePlugins>
                     </legal>
+                    <linkUrl
+                        jcr:primaryType="cq:Widget"
+                        editable="{Boolean}true"
+                        fieldLabel="Link Url"
+                        name="./linkUrl"
+                        predicate="hierarchy"
+                        xtype="pathfield"/>
+                    <sameornewwindow
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="no"
+                        fieldLabel="Open in new window"
+                        name="./newwindow"
+                        type="select"
+                        value="no"
+                        width="20"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <no
+                                jcr:primaryType="nt:unstructured"
+                                text="No"
+                                value="no"/>
+                            <yes
+                                jcr:primaryType="nt:unstructured"
+                                text="Yes"
+                                value="yes"/>
+                        </options>
+                    </sameornewwindow>
                 </items>
             </tab1>
             <tab2
