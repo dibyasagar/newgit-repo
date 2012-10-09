@@ -15,81 +15,81 @@ String description = properties.get("description", "");
 
 <a class="ui-link" name="slide-<%=CampaignMenuUtil.getComponentCellId(resource)%>"></a>
 
-			<section class="slide">
-				<div class="slide-2">
-				<div class="item">
-				<article class="inside clear">
+            <section class="slide">
+                <div class="slide-2">
+                <div class="item">
+                <article class="inside clear">
 
-					<div class="title clear">
+                    <div class="title clear">
 
-						<div class="icon">
-							<img src="<%=properties.get("imagePath","")%>" class="icon"/>
-						</div>
+                        <div class="icon">
+                            <img src="<%=properties.get("imagePath","")%>" class="icon"/>
+                        </div>
 
-						<div class="head">
-							<h1><%=properties.get("title","")%></h1>
-						</div>
+                        <div class="head">
+                            <h1><%=properties.get("title","")%></h1>
+                        </div>
 
-					</div>
+                    </div>
 
-					<div class="asset clear">
+                    <div class="asset clear">
 
-						<div class="video">
-							<div class="video-container">
-								<div class="video-aa" id="<%=properties.get("videoid","")%>" ></div>
+                        <div class="video">
+                            <div class="video-container">
+                                <div class="video-aa" id="<%=properties.get("videoid","")%>" ></div>
                             </div> 
-						</div>
+                        </div>
 
-						<div class="shop landscape">
-							<a class="ui-link" href="<%=properties.get("linkpath","")%>" title="Shop Ultrabook™" target="_blank">
-							<span><%=properties.get("text","")%></span></a>
-						</div>
+                        <div class="shop landscape">
+                            <a class="ui-link" href="<%=properties.get("linkpath","")%>" title="Shop Ultrabook™" target="_blank">
+                            <span><%=properties.get("text","")%></span></a>
+                        </div>
 
-					</div>
+                    </div>
 
-					<div class="body">
+                    <div class="body">
 
-						<h3>
-							<%=properties.get("heading","")%>
-						</h3>
-						<p>
-						<%=properties.get("sub-heading","")%>
-						</p>
+                        <h3>
+                            <%=properties.get("heading","")%>
+                        </h3>
+                        <p>
+                        <%=properties.get("sub-heading","")%>
+                        </p>
 
-						<div class="more">
+                        <div class="more">
 
-							<h4>
-							<%=properties.get("section-heading","")%>
-							</h4>
+                            <h4>
+                            <%=properties.get("section-heading","")%>
+                            </h4>
 
-							<hr>
+                            <hr>
 
-							<p>
-							<%=properties.get("section-description","")%>
-							</p><p>
+                            <p>
+                            <%=properties.get("section-description","")%>
+                            </p><p>
 
-						</p></div>
+                        </p></div>
 
-						<span class="learn" data-more="Learn More" data-less="Close">
-						<%=properties.get("learn-more","")%>
-						</span>
+                        <span class="learn" data-more="Learn More" data-less="Close">
+                        <%=properties.get("learn-more","")%>
+                        </span>
 
-					</div>
+                    </div>
 
-					<div class="spacer"></div>
+                    <div class="spacer"></div>
 
-					<div class="shop portrait">
-						<a class="ui-link" href="#" title="Shop Ultrabook™" target="_blank">
-						<span>Shop Ultrabook™</span></a>
-					</div>
+                    <div class="shop portrait">
+                        <a class="ui-link" href="#" title="Shop Ultrabook™" target="_blank">
+                        <span>Shop Ultrabook™</span></a>
+                    </div>
 
-				</article>
-				</div>
-				</div>
-			</section>
+                </article>
+                </div>
+                </div>
+            </section>
 
-			<section class="space">
-				<div class="space-2">
-					<img src="<%=properties.get("heroImageFileReference","")%>" class="space space-2"/>
-				</div>
-			</section>
+            <section class="space">
+                <div class="space-2">
+                    <img src="<%=properties.get("heroImageFileReference","")%>" class="space space-2"/>
+                </div>
+            </section>
