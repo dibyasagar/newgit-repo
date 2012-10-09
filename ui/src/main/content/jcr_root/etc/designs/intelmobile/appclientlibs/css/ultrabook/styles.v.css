@@ -91,7 +91,7 @@ p {
 
 }
 .ultrabook a {
-  color: #0061A5;
+  color: #0061A5 !important;
 }
 .ultrabook a:hover {
   color: #000;
@@ -184,13 +184,13 @@ p {
   background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/menus.1.icon.png");
 }
 .ultrabook.menus nav .menus-2 {
-  background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/menus.2.icon.png");
+  /*background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/menus.2.icon.png");*/
 }
 .ultrabook.menus nav .menus-3 {
   background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/menus.3.icon.png");
 }
 .ultrabook.menus nav .menus-4 {
-  background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/menus.4.icon.png");
+ /* background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/menus.4.icon.png");*/
 }
 .ultrabook.menus nav .menus-5 {
   background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/menus.5.icon.png");

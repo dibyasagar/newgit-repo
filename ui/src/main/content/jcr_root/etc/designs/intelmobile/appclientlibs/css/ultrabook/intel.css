@@ -655,7 +655,7 @@ ul.accordion .content {
   text-indent: -1.25em;
 }
 #product-details .features li:before {
-  content: "•";
+  content: "?";
   padding-right: 0.85em;
   color: #00aeef;
 }
@@ -3333,7 +3333,7 @@ footer li {
 .products div.bd div.view-pref input[type='button'] {
   width: 100%;
   height: 42px;
-  /*		    background   : url(../img/spr-view-pref.png) no-repeat 8px 6px;
+  /*            background   : url(../img/spr-view-pref.png) no-repeat 8px 6px;
   */
   background: url(../img/spr-view-pref.png) no-repeat 6px 8px;
   background-size: 85%;

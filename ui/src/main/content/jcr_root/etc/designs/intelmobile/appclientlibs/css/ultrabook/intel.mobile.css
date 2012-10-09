@@ -95,3 +95,14 @@ html.csstransforms3d header.ics404 #search-menu {
 {
 	clear: both;
 }
+
+.ultrabook.menus nav .menus-4 img
+{
+    float: left;
+    height: 40px;
+}
+.ultrabook.menus nav .menus-2 img
+{
+    float: left;
+    height: 40px;
+}
