@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.IntelM.cq5</groupId>
   <artifactId>intel-ui</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.1-SNAPSHOT</version>
   <name>IntelM UI</name>
   <description>This is IntelM UI module</description>
 
