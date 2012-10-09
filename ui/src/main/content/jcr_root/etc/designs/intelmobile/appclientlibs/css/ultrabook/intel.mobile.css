@@ -63,3 +63,35 @@ html.csstransforms3d header.ics404 #search-menu {
 {
     text-align: center;
 }
+
+ #social-share {
+  text-align: center;
+  /*padding: 1em 0 0 0;*/ 
+  margin-top: 1em;
+  /*overflow: hidden;*/
+  
+}
+
+ #social-share span {
+  display: inline-block;
+  /*height: 22px;*/
+ /* top:-4px */ /* added by Shishir */
+ float: left;
+}
+ #social-share .st_sharethis_custom {
+  background: url(/etc/designs/intelmobile/img/btn-share.png) no-repeat;
+  width: 58px;
+  background-size: 100%;
+  position: relative;
+  top: 0px; /* changed by shishir */
+  height: 22px;
+}
+ #social-share .social-share-align
+{
+    margin: 0 auto;
+  width: 278px;
+}
+.ultrabook .slide
+{
+	clear: both;
+}
