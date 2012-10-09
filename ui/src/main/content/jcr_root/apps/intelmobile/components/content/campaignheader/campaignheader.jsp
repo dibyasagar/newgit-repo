@@ -37,13 +37,13 @@ String description = properties.get("description", "");
 					
                 </article>
                 
-                  		 <c:if test="${properties.displaysocial ne '' && not empty properties.displaysocial}">
+                 
+                  		 
+                </div>
+                </div>
+				<c:if test="${properties.displaysocial ne '' && not empty properties.displaysocial}">
 					    <c:if test="${properties.displaysocial eq 'yes'}">
 					        <cq:include script="/apps/intelmobile/components/content/socialmedia/socialmedia.jsp"/>
 					    </c:if>             
-					</c:if>
-                  	
-                </div>
-                </div>
-
+					</c:if> 	
             </section>
