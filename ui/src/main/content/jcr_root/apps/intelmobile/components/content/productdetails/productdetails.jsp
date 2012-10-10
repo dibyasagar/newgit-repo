@@ -63,7 +63,7 @@
 		</div>
 		<div class="content">
 					<div class="price">
-						<fmt:message key="productdetails.label.price"/> <fmt:message key="generic.label.currency_symbol"/> <c:out value="${properties.bestPrice}" /> 
+						<fmt:message key="productdetails.label.price"/> <fmt:message key="generic.label.currency_symbol"/><c:out value="${properties.bestPrice}" /> 
 					</div>
 					
 					<c:if test="${not empty properties.tagline}">
