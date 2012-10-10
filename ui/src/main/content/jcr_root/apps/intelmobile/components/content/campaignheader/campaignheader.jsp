@@ -7,10 +7,6 @@
 --%><%@page import="com.day.cq.wcm.api.WCMMode"%>
 <%@include file="/libs/foundation/global.jsp"%><%
 %><%@page session="false" %>
-<%
-String title = properties.get("title","");
-String description = properties.get("description", "");
-%>
 
             <section class="slide">
                 <div class="slide-0">
@@ -20,12 +16,12 @@ String description = properties.get("description", "");
                 <article class="inside clear">
                     <div class="inside_image">
                         <div class="camp_headerimg">
-                            <img src="<%=properties.get("imagePath","")%>" class="slide slide-0"/>
+                            <img src="<c:out value="${properties.imagePath}"/>" class="slide slide-0"/>
                         </div>
                     
                     <div class="head" style="">
 
-                        <h2><%=properties.get("sectiontitle","")%></h2>
+                        <h2><c:out value="${properties.sectiontitle}" escapeXml="false"/></h2>
                         <h2><c:out value="${properties.description}" escapeXml="false"/></h2>
                         
                         <div class="spacer"></div>
