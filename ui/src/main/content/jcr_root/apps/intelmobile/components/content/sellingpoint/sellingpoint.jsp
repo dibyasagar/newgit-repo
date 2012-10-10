@@ -10,8 +10,11 @@
 <%@include file="/libs/foundation/global.jsp"%><%
 %><%@page session="false" %>
 <%
-String title = properties.get("title","");
-String description = properties.get("description", "");
+pageContext.setAttribute("subheading",properties.get("sub-heading"));
+pageContext.setAttribute("sectionheading",properties.get("section-heading"));
+pageContext.setAttribute("sectiondescription",properties.get("section-description"));
+pageContext.setAttribute("learnmore",properties.get("learn-more"));
+
 String internalLink = "";
 String validLink = "";
 if (properties.get("linkUrl") != null) {
@@ -30,11 +33,11 @@ pageContext.setAttribute("validLink",validLink);
                     <div class="title clear">
 
                         <div class="icon">
-                            <img src="<%=properties.get("imagePath","")%>" class="icon"/>
+                            <img src="<c:out value="${properties.imagePath}"/>" class="icon"/>
                         </div>
 
                         <div class="head">
-                            <h1><%=properties.get("title","")%></h1>
+                            <h1><c:out value="${properties.title}" escapeXml="false"/></h1>
                         </div>
 
                     </div>
@@ -43,7 +46,7 @@ pageContext.setAttribute("validLink",validLink);
 
                         <div class="video">
                             <div class="video-container">
-                                <div class="video-aa" id="<%=properties.get("videoid","")%>" ></div>
+                                <div class="video-aa" id="<c:out value="${properties.videoid}"/>" ></div>
                             </div> 
                         </div>
 
@@ -60,35 +63,43 @@ pageContext.setAttribute("validLink",validLink);
                              <c:out value="${properties.heading}" escapeXml="false"/>
                         </h3>
                         <p>
-                        <%=properties.get("sub-heading","")%>
+                        <c:out value="${subheading}" escapeXml="false"/>
                         </p>
 
                         <div class="more">
 
                             <h4>
-                            <%=properties.get("section-heading","")%>
+                            <c:out value="${sectionheading}" escapeXml="false"/>
                             </h4>
 
                             <hr>
 
                             <p>
-                            <%=properties.get("section-description","")%>
+                            <c:out value="${sectiondescription}" escapeXml="false"/>
                             </p><p>
 
                         </p></div>
 
-                        <span class="learn" data-more="<%=properties.get("learn-more","")%>" data-less="<%=properties.get("close","")%>">
-                        <%=properties.get("learn-more","")%>
+                        <span class="learn" data-more="<c:out value="${properties.learn-more}" escapeXml="false"/>" data-less="<c:out value="${properties.close}" escapeXml="false"/>">
+                        <c:out value="${learnmore}" escapeXml="false"/>
                         </span>
 
                     </div>
 
                     <div class="spacer"></div>
 
-                    <div class="shop portrait">
-                        <a class="ui-link" href="${validLink}" title="Shop Ultrabook™" target="_blank">
+                  <c:if test="${validLink ne '' && not empty validLink}">
+        	            <c:set var="window" value="" />
+				        <c:if test="${properties.newwindow eq 'yes'}">
+                           <c:set var="window" value="_blank" />
+                        </c:if>
+        		    <div class="shop portrait">
+        		        <a class="ui-link" href="${validLink}" title="Shop Ultrabook™" target="${window}">
                         <span><c:out value="${properties.text}" escapeXml="false"/></span></a>
-                    </div>
+        		    </div>
+				
+        	      </c:if>
+                        
 
                 </article>
                 </div>
@@ -97,6 +108,6 @@ pageContext.setAttribute("validLink",validLink);
 
             <section class="space">
                 <div class="space-2">
-                    <img src="<%=properties.get("heroImageFileReference","")%>" class="space space-2"/>
+                    <img src="<c:out value="${properties.heroImageFileReference}"/>" class="space space-2"/>
                 </div>
             </section>
