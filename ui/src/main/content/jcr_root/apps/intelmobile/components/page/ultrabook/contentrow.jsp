@@ -42,7 +42,7 @@ if(campaignHeaderNode.hasProperty("sectiontitle")&& campaignFooterNode.hasProper
 			<nav class="menus-a clear">
 
 				<div class="head">
-				<h1>${title}</h1>
+				<h1><c:out value="${title}" escapeXml="false"/></h1>
 				</div>
 
 				<div class="close"></div>
@@ -78,7 +78,7 @@ if(campaignHeaderNode.hasProperty("sectiontitle")&& campaignFooterNode.hasProper
                         </c:if>
         		    <div class="shop">
         		        <a class="ui-link" href="${validLink}" title="Shop Ultrabook™" target="${window}">
-                        <span>${buttontext}</span></a>
+                        <span><c:out value="${buttontext}" escapeXml="false"/></span></a>
         		    </div>
 				
         	      </c:if>
