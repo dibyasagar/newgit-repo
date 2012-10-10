@@ -19,15 +19,15 @@ Node campaignFooterNode = campaignFooterResource.adaptTo(Node.class);
 if(campaignHeaderNode.hasProperty("sectiontitle")&& campaignFooterNode.hasProperty("buttontext")){
   String sectiontitle=campaignHeaderNode.getProperty("sectiontitle").getString();
   String buttontext=campaignFooterNode.getProperty("buttontext").getString();
-   String linkUrl=campaignFooterNode.getProperty("linkUrl").getString();
-  log.info("linkUrl :"+linkUrl);
+  String newwindow=campaignFooterNode.getProperty("newwindow").getString();
+  String linkUrl=campaignFooterNode.getProperty("linkUrl").getString();
   if (linkUrl != null) {
-
 	  validLink = IntelUtil.getLinkUrl(linkUrl,resourceResolver);
-	  } 
+  }    
   pageContext.setAttribute("title",sectiontitle);
   pageContext.setAttribute("buttontext",buttontext);
   pageContext.setAttribute("validLink",validLink); 
+  pageContext.setAttribute("newwindow",newwindow);
 }
 
   
@@ -71,11 +71,18 @@ if(campaignHeaderNode.hasProperty("sectiontitle")&& campaignFooterNode.hasProper
 					</div>
 					</c:forEach>
 					
-					<div class="shop">
-						<a class="ui-link" href="${validLink}" title="Shop Ultrabook™" target="_blank">
-						<span>${buttontext}</span></a>
-					</div>
-
+					<c:if test="${validLink ne '' && not empty validLink}">
+        	            <c:set var="window" value="" />
+				        <c:if test="${newwindow eq 'yes'}">
+                           <c:set var="window" value="_blank" />
+                        </c:if>
+        		    <div class="shop">
+        		        <a class="ui-link" href="${validLink}" title="Shop Ultrabook™" target="${window}">
+                        <span>${buttontext}</span></a>
+        		    </div>
+				
+        	      </c:if>
+				
 				</div>
 
 			</nav>
