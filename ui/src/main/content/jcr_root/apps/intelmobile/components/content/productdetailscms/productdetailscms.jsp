@@ -81,14 +81,14 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
 	<ul class="features">
    <c:if test="${not empty properties.carriervalue && (properties.carriervalue ne 'null') }">
     <li><c:if test="${fn:contains(displayLabels,'carrier')}">
-			<b><fmt:message key="productdetailsCMS.label.feature_carrier"/>:</b>
+			<b> <fmt:message key="productdetailsCMS.label.feature_carrier"/>:</b>
 	   </c:if>
 	   <cq:text property="carriervalue" escapeXml="false"/>
 	 </li>  	
   </c:if>
    <c:if test="${not empty properties.countryvalue && (properties.countryvalue ne 'null')}">
     <li><c:if test="${fn:contains(displayLabels,'country')}">
-          <b><fmt:message key="productdetailsCMS.label.feature_country"/>:</b>
+          <b> <fmt:message key="productdetailsCMS.label.feature_country"/>:</b>
         </c:if>
         <cq:text property="countryvalue" escapeXml="false"/> 
     </li>
@@ -96,7 +96,7 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
    <c:if test="${not empty properties.processorvalue && (properties.processorvalue ne 'null')}">
     <li>
      <c:if test="${fn:contains(displayLabels,'processorfamily')}">
-     <b><fmt:message key="productdetailsCMS.label.feature_processorfamily"/>:</b>
+     <b> <fmt:message key="productdetailsCMS.label.feature_processorfamily"/>:</b>
      </c:if>
      <cq:text property="processorvalue" escapeXml="false"/> 
     </li>
@@ -104,7 +104,7 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
    <c:if test="${not empty properties.convertvalue && (properties.convertvalue ne 'null')}">
     <li>
     <c:if test="${fn:contains(displayLabels,'convertability')}">
-     <b><fmt:message key="productdetailsCMS.label.feature_convertability"/>:</b>
+     <b> <fmt:message key="productdetailsCMS.label.feature_convertability"/>:</b>
      </c:if>
      <cq:text property="convertvalue" escapeXml="false"/>
      </li>
@@ -112,7 +112,7 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
    <c:if test="${not empty properties.screenvalue && (properties.screenvalue ne 'null')}">
     <li>
     <c:if test="${fn:contains(displayLabels,'screensize')}">
-    <b><fmt:message key="productdetailsCMS.label.feature_screensize"/>:</b>
+    <b> <fmt:message key="productdetailsCMS.label.feature_screensize"/>:</b>
     </c:if>
     <cq:text property="screenvalue" escapeXml="false"/> 
     </li>
@@ -120,7 +120,7 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
    <c:if test="${not empty properties.ramvalue && (properties.ramvalue ne 'null')}">
     <li>
     <c:if test="${fn:contains(displayLabels,'ram')}">
-    <b><fmt:message key="productdetailsCMS.label.feature_ram"/>:</b>
+    <b> <fmt:message key="productdetailsCMS.label.feature_ram"/>:</b>
     </c:if>
     <cq:text property="ramvalue" escapeXml="false"/> 
     </li>
@@ -128,7 +128,7 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
    <c:if test="${not empty properties.wifivalue && (properties.wifivalue ne 'null')}">
     <li>
      <c:if test="${fn:contains(displayLabels,'wifi')}">
-    <b><fmt:message key="productdetailsCMS.label.feature_wifi"/>:</b>
+    <b> <fmt:message key="productdetailsCMS.label.feature_wifi"/>:</b>
     </c:if>
     <cq:text property="wifivalue" escapeXml="false"/>
     </li>
@@ -136,7 +136,7 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
    <c:if test="${not empty properties.threegvalue && (properties.threegvalue ne 'null')}">
     <li> 
     <c:if test="${fn:contains(displayLabels,'3g')}">
-    <b><fmt:message key="productdetailsCMS.label.feature_3g"/>:</b>
+    <b> <fmt:message key="productdetailsCMS.label.feature_3g"/>:</b>
     </c:if>
     <cq:text property="threegvalue" escapeXml="false"/>
     </li>
@@ -144,7 +144,7 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
    <c:if test="${not empty properties.thicknessvalue && (properties.thicknessvalue ne 'null')}">
     <li> 
     <c:if test="${fn:contains(displayLabels,'thickness')}">
-    <b><fmt:message key="productdetailsCMS.label.feature_thickness"/>:</b>
+    <b> <fmt:message key="productdetailsCMS.label.feature_thickness"/>:</b>
     </c:if>
     <cq:text property="thicknessvalue" escapeXml="false"/>
     </li>
@@ -152,7 +152,7 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
    <c:if test="${not empty properties.weightvalue && (properties.weightvalue ne 'null')}">
     <li>
     <c:if test="${fn:contains(displayLabels,'weight')}">
-    <b><fmt:message key="productdetailsCMS.label.feature_weight"/>:</b>
+    <b> <fmt:message key="productdetailsCMS.label.feature_weight"/>:</b>
     </c:if>
     <cq:text property="weightvalue" escapeXml="false"/> 
     </li>
@@ -160,34 +160,34 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
 
 	<!-- Features List for Ultrabooks -->
    <c:if test="${properties.processor ne null && not empty properties.processor}">
-    <li><b><fmt:message key="productdetails.label.feature_processor"/>:</b>
+    <li><b> <fmt:message key="productdetails.label.feature_processor"/>:</b>
     <cq:text property="processor" escapeXml="false"/> 
     </li>
    </c:if>
 
    <c:if test="${properties.speed ne null && not empty properties.speed}">
     <li>
-    <b><fmt:message key="productdetails.label.feature_speed"/>:</b>
+    <b> <fmt:message key="productdetails.label.feature_speed"/>:</b>
     <cq:text property="speed" escapeXml="false"/> 
     </li>
    </c:if>
 
    <c:if test="${properties.ram ne null && not empty properties.ram}">
-    <li><b><fmt:message key="productdetails.label.feature_ram"/>:</b>
+    <li><b> <fmt:message key="productdetails.label.feature_ram"/>:</b>
     <cq:text property="ram" escapeXml="false"/> 
    
     </li>
    </c:if>
 
    <c:if test="${properties.screen ne null && not empty properties.screen}">
-    <li><b><fmt:message key="productdetails.label.feature_screen"/>:</b>
+    <li><b> <fmt:message key="productdetails.label.feature_screen"/>:</b>
     <cq:text property="screen" escapeXml="false"/> 
     </li>
    </c:if>
 
    <c:if test="${properties.hardDrive ne null && not empty properties.hardDrive}">
     <li>
-     <b><fmt:message key="productdetails.label.feature_harddrive"/>:</b>
+     <b> <fmt:message key="productdetails.label.feature_harddrive"/>:</b>
     <cq:text property="hardDrive" escapeXml="false"/> 
 
     </li>
@@ -195,13 +195,13 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
 
    <c:if test="${properties.os ne null && not empty properties.os}">
     <li>
-    <b><fmt:message key="productdetails.label.feature_os"/>:</b>
+    <b> <fmt:message key="productdetails.label.feature_os"/>:</b>
     <cq:text property="os" escapeXml="false"/> 
     </li>
    </c:if>
 
    <c:if test="${properties.weight ne null && not empty properties.weight}">
-    <li><b><fmt:message key="productdetails.label.feature_weight"/>:</b>
+    <li><b> <fmt:message key="productdetails.label.feature_weight"/>:</b>
     <cq:text property="weight" escapeXml="false"/> 
     </li>
    </c:if>
@@ -210,49 +210,49 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
 	<!-- Features List for Motherboards -->
    <c:if test="${boardfamily ne null && not empty boardfamily}">
     <li>
-    <b><fmt:message key="productdetails.label.feature_boardfamily"/>:</b>
+    <b> <fmt:message key="productdetails.label.feature_boardfamily"/>:</b>
     <c:out value="${boardfamily}" escapeXml="false"/> 
     </li>
    </c:if>
 
    <c:if test="${boardformfactor ne null && not empty boardformfactor}">
     <li>
-     <b><fmt:message key="productdetails.label.feature_boardformfactor"/>:</b>
+     <b> <fmt:message key="productdetails.label.feature_boardformfactor"/>:</b>
     <c:out value="${boardformfactor}" escapeXml="false"/> 
     </li>
    </c:if>
 
    <c:if test="${boardseries ne null && not empty boardseries}">
     <li> 
-    <b><fmt:message key="productdetails.label.feature_boardseries"/>:</b>
+    <b> <fmt:message key="productdetails.label.feature_boardseries"/>:</b>
     <c:out value="${boardseries}" escapeXml="false"/>
     </li>
    </c:if>
 
    <c:if test="${chipset ne null && not empty chipset}">
     <li> 
-    <b><fmt:message key="productdetails.label.feature_chipset"/>:</b>
+    <b> <fmt:message key="productdetails.label.feature_chipset"/>:</b>
     <c:out value="${chipset}" escapeXml="false"/>
     </li>
    </c:if>
 
    <c:if test="${integratedgraphics ne null && not empty integratedgraphics}">
     <c:if test= "${fn:toUpperCase(integratedgraphics) eq 'YES' or  fn:toUpperCase(integratedgraphics) eq 'TRUE'}">
-    	<li><b><fmt:message key="productdetails.label.feature_integratedgraphics"/>:</b>
+    	<li><b> <fmt:message key="productdetails.label.feature_integratedgraphics"/>:</b>
     	<c:out value="${integratedgraphics}" />
     	</li>
     </c:if>
    </c:if>
 
    <c:if test="${memory ne null && not empty memory}">
-    <li><b><fmt:message key="productdetails.label.feature_memory"/>:</b>
+    <li><b> <fmt:message key="productdetails.label.feature_memory"/>:</b>
     <c:out value="${memory}" escapeXml="false"/> 
    </li>
    </c:if>
   
    <c:if test="${socket ne null && not empty socket}">
     <li> 
-    <b><fmt:message key="productdetails.label.feature_socket"/>:</b>
+    <b> <fmt:message key="productdetails.label.feature_socket"/>:</b>
     <c:out value="${socket}" escapeXml="false"/>
     </li>
    </c:if>
@@ -260,34 +260,34 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
 	<!-- Features List for Solid State Devices -->
 	 <c:if test="${capacity ne null && not empty capacity}">
     <li>
-    <b><fmt:message key="productdetails.label.feature_capacity"/>:</b>
+    <b> <fmt:message key="productdetails.label.feature_capacity"/>:</b>
     <c:out value="${capacity}" escapeXml="false"/> 
     </li>
    </c:if>
 
    <c:if test="${formfactor ne null && not empty formfactor}">
     <li>
-     <b><fmt:message key="productdetails.label.feature_formfactor"/>:</b>
+     <b> <fmt:message key="productdetails.label.feature_formfactor"/>:</b>
     <c:out value="${formfactor}" escapeXml="false"/> 
     </li>
    </c:if>
 
    <c:if test="${interface ne null && not empty interface}">
     <li> 
-    <b><fmt:message key="productdetails.label.feature_interface"/>:</b>
+    <b> <fmt:message key="productdetails.label.feature_interface"/>:</b>
     <c:out value="${interface}" escapeXml="false"/>
     </li>
    </c:if>
 
    <c:if test="${properties.seqreadwrite ne null && not empty properties.seqreadwrite}">
     <li> 
-    <b><fmt:message key="productdetails.label.feature_seqreadwrite"/>:</b>
+    <b> <fmt:message key="productdetails.label.feature_seqreadwrite"/>:</b>
     <cq:text property="seqreadwrite" escapeXml="false"/> 
     </li>
    </c:if>
    <c:if test="${properties.ranreadwrite ne null && not empty properties.ranreadwrite}">
     <li> 
-    <b><fmt:message key="productdetails.label.feature_ranreadwrite"/>:</b>
+    <b> <fmt:message key="productdetails.label.feature_ranreadwrite"/>:</b>
     <cq:text property="ranreadwrite" escapeXml="false"/> 
     </li>
    </c:if>
@@ -295,7 +295,7 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
    
    <c:if test="${(fn:length(propertynames) gt 0)}">
 				<c:forEach items="${propertynames}" var="name" varStatus="status">
-                     <li><b>${name}:</b> ${propertyvalues[status.index]} 
+                     <li><b> ${name}:</b> ${propertyvalues[status.index]} 
                      </li>
 				</c:forEach>
 		    </c:if>
