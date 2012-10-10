@@ -1,5 +1,40 @@
 
 /* added by Shishir */
+.ultrabook.menus a:visited
+{
+    color: #0061A5 !important;
+}
+header #header-bar
+{
+    font-family: Arial,Helvetica,sans-serif;
+}
+header #category-menu
+{
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+header #search-menu
+{
+    font-family: Arial,Helvetica,sans-serif;
+}
+#disclaimers #disclaimer-content.open
+{
+    font-family: Arial,Helvetica,sans-serif;
+}
+#disclaimers
+{
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+#language
+{
+    font-family: Arial,Helvetica,sans-serif;
+}
+footer nav
+{
+	font-family: Arial,Helvetica,sans-serif;
+}
+
 div.ultrabook.content
 {
     background: #fff;
