@@ -26,23 +26,30 @@ pageContext.setAttribute("validLink",validLink);
 					<div class="ultra"></div>
 
 					<div class="head">
-						<h2><%=properties.get("sectiontitle","")%></h2>
+						<h2><c:out value="${properties.sectiontitle}" escapeXml="false"/></h2>
 					</div>
 
 					<div class="laptop">
-						<img src="<%=properties.get("imagePath","")%>" class="laptop"/>
+						<img src="<c:out value="${properties.imagePath}"/>" class="laptop"/>
 					</div>
-
-					<div class="shop">
-						<a class="ui-link" href="${validLink}" title="Shop Ultrabook™" target="_blank">
-						<span><c:out value="${properties.buttontext}" escapeXml="false"/>™</span></a>
-					</div>
+					
+					 <c:if test="${validLink ne '' && not empty validLink}">
+        	            <c:set var="window" value="" />
+				        <c:if test="${properties.newwindow eq 'yes'}">
+                           <c:set var="window" value="_blank" />
+                        </c:if>
+        		    <div class="shop">
+        		        <a class="ui-link" href="${validLink}" title="Shop Ultrabookâ„¢" target="${window}">
+                        <span><c:out value="${properties.buttontext}" escapeXml="false"/></span></a>
+        		    </div>
+				
+        	      </c:if> 
 
 					<div class="spacer"></div>
 					<div class="spacer"></div>
 
 					<div class="legal">
-						<%=properties.get("legal","")%> 
+						<c:out value="${properties.legal}" escapeXml="false"/>
 					</div>
 
 				</article>
