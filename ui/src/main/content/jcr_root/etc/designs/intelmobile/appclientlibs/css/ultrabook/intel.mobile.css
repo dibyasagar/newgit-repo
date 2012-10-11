@@ -4,6 +4,19 @@
 {
     color: #0061A5 !important;
 }
+.ultrabook.content a:hover,a:visited
+{
+    color: #0061A5 !important;
+}
+.more a
+{
+   color: #0061A5 !important; 
+}
+.more p a
+{
+   color: #0061A5 !important; 
+}
+
 header #header-bar
 {
     font-family: Arial,Helvetica,sans-serif;
