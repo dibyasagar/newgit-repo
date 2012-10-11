@@ -524,7 +524,7 @@ public class IntelUtil {
 	public static String getConfigValue(Page currentPage,String nodeName, String property, String defaultValue) {
 		String value = defaultValue;
 
-		try {		
+		try {	
 			String configPath = getRootPath(currentPage) + "/jcr:content/"+nodeName;
 			Session session = currentPage.getContentResource().getResourceResolver().adaptTo(Session.class);
 			Node configNode = session.getNode(configPath);
@@ -537,14 +537,14 @@ public class IntelUtil {
 				}
 			}
 		} catch(Exception e) {
-			log.error("Exception :",e);
+			log.error("Exception in getConfigValue:",e);
 		}
 		return value;
 	}
 	public static String[] getConfigValues(Page currentPage,String nodeName, String property) {
 		String[] stringValues = null;
 
-		try {		
+		try {
 			String configPath = getRootPath(currentPage) + "/jcr:content/"+nodeName;
 			Session session = currentPage.getContentResource().getResourceResolver().adaptTo(Session.class);
 			Node configNode = session.getNode(configPath);
@@ -563,7 +563,7 @@ public class IntelUtil {
 				}
 			}
 		} catch(Exception e) {
-			log.error("Exception :",e);
+			log.error("Exception in getconfig values:",e);
 		}
 		return stringValues;
 	}
