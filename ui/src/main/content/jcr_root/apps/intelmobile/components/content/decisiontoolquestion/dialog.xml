@@ -26,8 +26,6 @@
                         jcr:primaryType="nt:unstructured"
                         allowBlank="{Boolean}false"
                         fieldLabel="Page Heading"
-                        maxLength="{Long}24"
-                        maxLengthText="The maximum length for this field is 24"
                         name="./heading"
                         validateOnBlur="true"
                         xtype="textfield"/>
