@@ -88,8 +88,6 @@
                         jcr:primaryType="nt:unstructured"
                         fieldDescription="Link Label of the Content Item"
                         fieldLabel="Link Label"
-                        maxLength="{Long}85"
-                        maxLengthText="The maximum length for this field is 85"
                         name="./linklabel"
                         validateOnBlur="true"
                         xtype="textfield"/>
