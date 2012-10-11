@@ -39,9 +39,9 @@ public class HeaderUtil {
 		headlinkUrl = (Object[]) currentStyle.get("headerUrl", new Object[0]);
 		showsubpage = (Object[]) currentStyle.get("showsubpage", new Object[0]);
 */
-		headlinkTitle = IntelUtil.getConfigValues(currentPage, "header","headerTitle");		
-		headlinkUrl = IntelUtil.getConfigValues(currentPage, "header","headerUrl");
-		showsubpage = IntelUtil.getConfigValues(currentPage, "header","showsubpage");
+		headlinkTitle = IntelUtil.getConfigValues(currentPage, "siteheader","headerTitle");		
+		headlinkUrl = IntelUtil.getConfigValues(currentPage, "siteheader","headerUrl");
+		showsubpage = IntelUtil.getConfigValues(currentPage, "siteheader","showsubpage");
 			
 		if (headlinkTitle != null && headlinkTitle.length > 0) {
 			for (int i = 0; i < headlinkTitle.length; i++) {
