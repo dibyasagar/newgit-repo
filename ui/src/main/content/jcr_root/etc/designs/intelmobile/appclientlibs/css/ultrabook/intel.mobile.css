@@ -154,3 +154,11 @@ html.csstransforms3d header.ics404 #search-menu {
     float: left;
     height: 40px;
 }
+.legal a:visited
+{
+    color: #0061A5 !important;
+}
+.legal p a:visited
+{
+    color: #0061A5 !important;
+}
