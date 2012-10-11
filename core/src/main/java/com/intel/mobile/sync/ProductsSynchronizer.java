@@ -197,7 +197,7 @@ public class ProductsSynchronizer {
 				productsNode =  IntelUtil.createNode(intelRootNode, IntelMobileConstants.NODE_NAME_PRODUCTS, IntelMobileConstants.PRIMARY_TYPE_CQ_PAGE);
 				Node jcrContentProducts = productsNode.addNode( IntelMobileConstants.NODE_JCR_CONTENT, IntelMobileConstants.PRIMARY_TYPE_CQ_PAGE_CONTENT);
 				jcrContentProducts.setProperty(IntelMobileConstants.PROPERTY_CQ_TEMPLATE, IntelMobileConstants.PRODUCT_DETAILS_TEMPLATE_PATH);
-				jcrContentProducts.setProperty(IntelMobileConstants.PROPERTY_JCR_TITLE, "Products");
+				jcrContentProducts.setProperty(IntelMobileConstants.PROPERTY_JCR_TITLE, "Shop Intel Products");
 				jcrContentProducts.setProperty(IntelMobileConstants.PROPERTY_SLING_RESOURCETYPE, IntelMobileConstants.PRODUCT_DETAILS_PAGE_COMPONENT_PATH);
 				log.debug("products node created.");
 			}
