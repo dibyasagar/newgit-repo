@@ -80,7 +80,7 @@ pageContext.setAttribute("validLink",validLink);
 
                         </p></div>
 
-                        <span class="learn" data-more="<c:out value="${properties.learn-more}" escapeXml="false"/>" data-less="<c:out value="${properties.close}" escapeXml="false"/>">
+                        <span class="learn" data-more="<c:out value="${learnmore}" escapeXml="false"/>" data-less="<c:out value="${properties.close}" escapeXml="false"/>">
                         <c:out value="${learnmore}" escapeXml="false"/>
                         </span>
 
