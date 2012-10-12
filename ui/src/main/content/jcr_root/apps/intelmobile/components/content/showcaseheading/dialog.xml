@@ -25,8 +25,6 @@
                         allowBlank="{Boolean}false"
                         fieldDescription="Content heading  of the tab."
                         fieldLabel="Heading of Content"
-                        maxLength="{Long}69"
-                        maxLengthText="The maximum length for this field is 69"
                         name="./headingcopy"
                         validateOnBlur="true"
                         xtype="textfield"/>
