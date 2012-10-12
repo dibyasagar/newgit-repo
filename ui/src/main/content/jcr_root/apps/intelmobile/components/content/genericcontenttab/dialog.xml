@@ -50,8 +50,6 @@
                         jcr:primaryType="nt:unstructured"
                         fieldDescription="Title of the Content Item"
                         fieldLabel="Content Title"
-                        maxLength="{Long}72"
-                        maxLengthText="The maximum length for this field is 72"
                         name="./contenttitle"
                         validateOnBlur="true"
                         xtype="textfield"/>
