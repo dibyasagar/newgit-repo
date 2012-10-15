@@ -2,7 +2,7 @@
    Social media component
 --%>
 
-<%@page import="com.day.cq.wcm.api.Page,com.intel.mobile.util.IntelUtil"%>
+<%@page import="com.day.cq.wcm.api.Page,com.intel.mobile.util.IntelUtil,org.apache.commons.lang3.StringEscapeUtils"%>
 <%@page import="com.day.cq.wcm.api.WCMMode, com.intel.mobile.util.IntelUtil"%>
 
 <%@include file="/libs/foundation/global.jsp"%>
@@ -67,9 +67,29 @@
                 <%  if(showFacebook.equalsIgnoreCase("yes")){%>
                      <span class='st_facebook_hcount' displayText='Facebook'></span>
                 <% } 
-                                
+                 
+                String tweetOrg="";    
+                           
                 if(showTweeter.equalsIgnoreCase("yes")){%>
-                    <span class='st_twitter_hcount' displayText='Tweet'></span>
+                    <span class='st_twitter_hcount' 
+                          displayText='Tweet' 
+                          <%
+                          
+                          if(pageDesc==null || pageDesc.isEmpty()){
+                              tweetOrg = currentPage.getTitle()==null ? StringEscapeUtils.escapeHtml4(currentPage.getName()) : StringEscapeUtils.escapeHtml4(currentPage.getTitle());
+                          }
+                          else{
+                              tweetOrg = pageDesc;
+                          }
+                          
+                          if(tweetOrg!=null && tweetOrg.length()>105 ){
+                              tweetOrg=tweetOrg.substring(0,105)+"..";
+                          }
+                          %>
+                          st_title="<%= tweetOrg %>" 
+                          st_via="Intel">
+                    </span>
+
                 <% }%>
             </div>
             <div style="clear:both"></div>    

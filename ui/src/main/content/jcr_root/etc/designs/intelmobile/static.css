@@ -3513,6 +3513,8 @@ html.csstransforms3d header:not(.ics404) .dropdown-menu.inited {
   background: linear-gradient(to right, #023c65 0%, #01558f 50%, #023c65 100%);
   /* W3C */
   border-top: solid 1px rgba(0, 0, 0, 0.2);
+  background-color: #023C65;
+  
 }
 #disclaimers a {
   display: inline-block;

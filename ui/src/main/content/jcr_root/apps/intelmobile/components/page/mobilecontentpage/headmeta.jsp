@@ -1,7 +1,7 @@
 <%@page import="com.intel.mobile.util.ArticletUtil"%>
 <%@ page session="false" %>
 <%@include file="/libs/foundation/global.jsp" %>
-<%@page import="com.intel.mobile.constants.IntelMobileConstants, com.intel.mobile.util.IntelUtil,com.intel.mobile.util.ProductUtil, java.util.Map, java.util.HashMap"%>
+<%@page import="com.intel.mobile.constants.IntelMobileConstants, com.intel.mobile.util.IntelUtil,com.intel.mobile.util.ProductUtil, java.util.Map, java.util.HashMap,com.day.cq.commons.Externalizer"%>
 <%
 	Map<String, String> metatags = new HashMap<String, String>();
 
@@ -69,6 +69,9 @@
 	pageContext.setAttribute("gsv", IntelUtil.getGoogleSiteVerificationCode(currentPage));
 	pageContext.setAttribute("metatags", metatags);
 	
+	 final Externalizer externalizer = resourceResolver.adaptTo(Externalizer.class);
+	 final String canonicalURL  = externalizer.absoluteLink(slingRequest, "http", properties.get("ogimage",""));
+	
 %>
 <c:if test="${properties.fbadmins ne null and properties.fbadmins ne '' }">
 	<meta property="fb:admins" content="${properties.fbadmins}" />
@@ -91,7 +94,7 @@
 </c:if>
 
 <c:if test="${properties.ogimage ne null and properties.ogimage ne '' }">
-	<meta property="og:image" content="${properties.ogimage}" />
+	<meta property="og:image" content="<%= xssAPI.getValidHref(canonicalURL) %>"/>
 </c:if>
 
 <meta property="og:site_name" content="Intel-Mobile" />

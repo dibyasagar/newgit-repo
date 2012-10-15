@@ -31,21 +31,21 @@
                 </c:if> 
                 
                 <c:choose>
-         			 <c:when test="${buttoncolor[status.index] eq 'grey'}">
+                     <c:when test="${buttoncolor[status.index] eq 'grey'}">
                         <c:set var="buttontype" value="button secondary" />
-                	</c:when>
-                	<c:otherwise>
-                		<c:set var="buttontype" value="button primary" />
-                	</c:otherwise>
-                </c:choose>	
-              <a class="<c:out value="${buttontype}"/>" href="${links[status.index]}#shopthirdparty" target="${window}"><c:out value="${name}" escapeXml="false"/></a>
+                    </c:when>
+                    <c:otherwise>
+                        <c:set var="buttontype" value="button primary" />
+                    </c:otherwise>
+                </c:choose> 
+              <a class="<c:out value="${buttontype}"/>" href="${links[status.index]}" target="${window}"><c:out value="${name}" escapeXml="false"/></a>
              </c:forEach>
               </div>
           </c:when>
           <c:otherwise>
                <c:if test="${editmode eq 'true'}">
-		           <div>Double Click to Edit Externallink Component</div>
-	           </c:if>
+                   <div>Double Click to Edit Externallink Component</div>
+               </c:if>
            </c:otherwise>
       </c:choose>  
            
