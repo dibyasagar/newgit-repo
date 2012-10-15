@@ -215,21 +215,24 @@ public class ConfigUtil {
 	   if(LOG.isDebugEnabled()) {
 			LOG.debug("-----Setting jcr language------ "+langValue); 
 	   }
+
 	    String value = "";
 	    String path = currentPage.getPath();
 	    Node tempNode = null;
 	    try{
           tempNode = currentPage.getContentResource().adaptTo(Node.class);
+ 
           if(LOG.isDebugEnabled()) {
   			LOG.debug("-----temp node is------ "+tempNode.getName()); 
           }
-		   if(tempNode.hasProperty("jcr:language")){
+		  
 			   tempNode.setProperty("jcr:language", langValue); 
 			   tempNode.save();
+
 			   if(LOG.isDebugEnabled()) {
 					LOG.debug("-----jcr lang property is------ "+tempNode.getProperty("jcr:language").getString()); 
 			   }
-		   }
+		
 		   
 	    }
 	    catch (RepositoryException e) {
