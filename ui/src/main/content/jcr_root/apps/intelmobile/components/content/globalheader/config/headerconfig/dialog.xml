@@ -56,6 +56,8 @@
                                 allowBlank="{Boolean}false"
                                 fieldLabel="Link Display Text"
                                 name="./headerTitle"
+                                regex="/^[a-zA-Z ]/"
+                                regexText="please enter letters only"
                                 xtype="textfield"/>
                             <url
                                 jcr:primaryType="cq:Widget"
