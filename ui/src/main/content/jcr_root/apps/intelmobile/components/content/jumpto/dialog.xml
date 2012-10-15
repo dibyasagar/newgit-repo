@@ -29,6 +29,8 @@
                                 jcr:primaryType="cq:Widget"
                                 allowBlank="{Boolean}false"
                                 fieldLabel="Copy Text"
+                                maxLength="{Long}27"
+                                maxLengthText="The maximum length for this field is 27"
                                 name="./copytext"
                                 xtype="textfield"/>
                             <internal_x0020_url
