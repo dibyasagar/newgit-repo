@@ -45,6 +45,7 @@ intel.mobile = {
         main:           $('#main'),
         ultra_content:  $('#ultrabook_content'),
         footer:         $('.footer'),
+        ultra_content:  $('#ultrabook_content'),
         searchTerm:     $('#search-term'),
         searchClear:    $('#clear-search'),
         disclaimer:     $('#disclaimers'),
@@ -251,6 +252,7 @@ intel.mobile = {
                             cachedElements.main.attr( 'style', closeStyle3d );
                             cachedElements.footer.attr( 'style', closeStyle3d );
                             cachedElements.ultra_content.attr('style', closeStyle3d );
+
                             }
                             // Move main content down
                            
