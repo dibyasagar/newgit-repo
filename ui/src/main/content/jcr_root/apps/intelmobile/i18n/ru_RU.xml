@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    cq:lastReplicated="{Date}2011-06-10T20:17:22.970Z"
+    cq:lastReplicatedBy="admin"
+    cq:lastReplicationAction="Activate"
+    jcr:language="ru_RU"
+    jcr:mixinTypes="[cq:ReplicationStatus,mix:language]"
+    jcr:primaryType="sling:Folder">
+    <countryselector.label.heading
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Выберите страну"/>
+    <filterpage.button.back
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="filterpage.button.back"
+        sling:message="Назад"/>
+    <filterpage.button.cancel
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="filterpage.button.cancel"
+        sling:message="Отмена"/>
+    <filterpage.button.continue
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="filterpage.button.continue"
+        sling:message="Продолжить"/>
+    <filterpage.button.refine
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="filterpage.button.refine"
+        sling:message="Применить"/>
+    <filterpage.label.defaultcount
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="filterpage.label.defaultcount"
+        sling:message="Все"/>
+    <filterpage.label.relevancy
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Релевантность"/>
+    <filterpage.label.reset
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Сбросить"/>
+    <generic.button.filter
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="generic.button.filter"
+        sling:message="Фильтровать по"/>
+    <generic.button.sort
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="generic.button.sort"
+        sling:message="Сортировать по"/>
+    <generic.label.currency_symbol
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="€"/>
+    <productcompare.alert.diffcategory
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Продукты в сравнительном списке относятся к другой категории."/>
+    <productcompare.alert.limitreached
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Достигнут конец сравнительного списка."/>
+    <productcompare.alert.productexists
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Продукт уже находится в сравнительном списке."/>
+    <productcompare.button.compare
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Сравнить"/>
+    <productcompare.label.addupto
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Добавить еще"/>
+    <productcompare.label.moreitems
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="пункт(ов)"/>
+    <productcompare.label.remove
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Удалить"/>
+    <productcompare.label.reset
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Сбросить"/>
+    <productcompare.label.title
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Сравнить"/>
+    <productdetails.label.addtocompare
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productdetails.label.addtocompare"
+        sling:message="Добавить для сравнения"/>
+    <productdetails.label.disclaimer_copy
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productdetails.label.disclaimer_copy"
+        sling:message="Н/д"/>
+    <productdetails.label.disclaimer_heading
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productdetails.label.disclaimer_heading"
+        sling:message="Отказ от ответственности"/>
+    <productdetails.label.expand_shop_options
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productdetailsCMS.label.expand_shop_options"
+        sling:message="От:"/>
+    <productdetails.label.feature_boardfamily
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Семейство плат"/>
+    <productdetails.label.feature_boardformfactor
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Формфактор платы"/>
+    <productdetails.label.feature_boardseries
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Серия платы"/>
+    <productdetails.label.feature_capacity
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Емкость"/>
+    <productdetails.label.feature_chipset
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Набор микросхем"/>
+    <productdetails.label.feature_formfactor
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Форм-фактор"/>
+    <productdetails.label.feature_harddrive
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Жесткий диск"/>
+    <productdetails.label.feature_integratedgraphics
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Интегрированная графическая подсистема"/>
+    <productdetails.label.feature_interface
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Интерфейс"/>
+    <productdetails.label.feature_memory
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Память"/>
+    <productdetails.label.feature_os
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Операционная система"/>
+    <productdetails.label.feature_processor
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Процессор"/>
+    <productdetails.label.feature_ram
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Память"/>
+    <productdetails.label.feature_ranreadwrite
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Скорость произвольного чтения/записи"/>
+    <productdetails.label.feature_screen
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Размер экрана"/>
+    <productdetails.label.feature_seqreadwrite
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Скорость последовательного чтения/записи"/>
+    <productdetails.label.feature_socket
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Разъем"/>
+    <productdetails.label.feature_speed
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Тактовая частота процессора"/>
+    <productdetails.label.feature_weight
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Вес"/>
+    <productdetails.label.price
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productdetails.label.price"
+        sling:message="От:"/>
+    <productdetails.label.purchasing_options
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productdetailsCMS.label.purchasing_options"
+        sling:message="Способы приобретения"/>
+    <productdetails.label.purchasing_options_subheading
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productdetailsCMS.label.purchasing_options_subheading"
+        sling:message="Способы приобретения - подзаголовок"/>
+    <productdetails.label.shoplink
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productdetails.label.shoplink"
+        sling:message="Ссылка на магазин"/>
+    <productdetails.label.similar_products
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productdetails.label.similar_products"
+        sling:message="Похожие продукты"/>
+    <productdetailsCMS.label.feature_3g
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="3G"/>
+    <productdetailsCMS.label.feature_carrier
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Контейнер"/>
+    <productdetailsCMS.label.feature_convertability
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Трансформируемость"/>
+    <productdetailsCMS.label.feature_country
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Страна"/>
+    <productdetailsCMS.label.feature_processorfamily
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Семейство процессоров"/>
+    <productdetailsCMS.label.feature_ram
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Память"/>
+    <productdetailsCMS.label.feature_screensize
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Размер экрана"/>
+    <productdetailsCMS.label.feature_thickness
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Толщина корпуса"/>
+    <productdetailsCMS.label.feature_weight
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Вес"/>
+    <productdetailsCMS.label.feature_wifi
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="WiFi"/>
+    <productlisting.label.loadmoreproducts
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Загрузить еще 12 продуктов"/>
+    <productlisting.label.pagination1
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productlisting.label.pagination1"
+        sling:message="результаты"/>
+    <productlisting.label.pagination2
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productlisting.label.pagination2"
+        sling:message="Загрузить еще 12 продуктов"/>
+    <productlisting.label.resultsof
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="результаты"/>
+    <productlisting.message.nullresult
+        cq:lastReplicated="{Date}2011-06-10T20:17:23.006Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="productlisting.message.nullresult"
+        sling:message="Поиск не дал результатов."/>
+    <searchresultspage.label.resultsfound
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Найдено результатов:"/>
+    <sitesearch.button.pagination
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Загрузить еще результаты"/>
+    <sitesearch.label.best_match
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Наиболее точное соответствие:"/>
+    <sitesearch.label.category
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Категория"/>
+    <sitesearch.label.loadmoreresults
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Загрузить еще 12 результатов"/>
+    <sitesearch.label.matching_result
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Совпадающие результаты:"/>
+    <sitesearch.label.pagination_copy
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="из"/>
+    <sitesearch.label.relatedsearches
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Похожие результаты поиска"/>
+    <sitesearch.label.results_found
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Найдено результатов:"/>
+    <sitesearch.label.search
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Поиск"/>
+    <sitesearch.label.search_fullsite_link_copy
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Поиск по сайту Intel.com"/>
+    <sitesearch.message.nullresult
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="К сожалению, поиск не дал результатов."/>
+</jcr:root>
