@@ -146,10 +146,46 @@
         jcr:primaryType="sling:MessageEntry"
         sling:key="productdetailsCMS.label.expand_shop_options"
         sling:message="From"/>
+    <productdetails.label.feature_boardfamily
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Board Family"/>
+    <productdetails.label.feature_boardformfactor
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Board Form Factor"/>
+    <productdetails.label.feature_boardseries
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Board Series"/>
+    <productdetails.label.feature_capacity
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Capacity"/>
+    <productdetails.label.feature_chipset
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Chipset"/>
+    <productdetails.label.feature_formfactor
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Form Factor"/>
     <productdetails.label.feature_harddrive
         jcr:mixinTypes="[sling:Message]"
         jcr:primaryType="nt:folder"
         sling:message="Hard Drive"/>
+    <productdetails.label.feature_integratedgraphics
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Integrated Graphics"/>
+    <productdetails.label.feature_interface
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Interface"/>
+    <productdetails.label.feature_memory
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Memory"/>
     <productdetails.label.feature_os
         jcr:mixinTypes="[sling:Message]"
         jcr:primaryType="nt:folder"
@@ -162,10 +198,22 @@
         jcr:mixinTypes="[sling:Message]"
         jcr:primaryType="nt:folder"
         sling:message="RAM"/>
+    <productdetails.label.feature_ranreadwrite
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Random Read/Write"/>
     <productdetails.label.feature_screen
         jcr:mixinTypes="[sling:Message]"
         jcr:primaryType="nt:folder"
         sling:message="Screen Size"/>
+    <productdetails.label.feature_seqreadwrite
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Sequential Read/Write"/>
+    <productdetails.label.feature_socket
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Socket"/>
     <productdetails.label.feature_speed
         jcr:mixinTypes="[sling:Message]"
         jcr:primaryType="nt:folder"
@@ -285,7 +333,7 @@
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="sling:MessageEntry"
         sling:key="productlisting.message.nullresult"
-        sling:message="No Results match.."/>
+        sling:message="No Results Found"/>
     <searchresultspage.label.resultsfound
         jcr:mixinTypes="[sling:Message]"
         jcr:primaryType="nt:folder"
