@@ -28,7 +28,7 @@
                   </li>
                  </ul>  
                        
-                    <ul id="prodList" class="items clearfix" style="display:block">
+                    <ul id="prodList" class="items clearfix" style="display:none">
                         <c:forEach var="result" items="${results.results}">
                             <li id="li_${result.productId}" class="newclass">
                                 <a href="${result.productUrl}" class="copy">
@@ -620,17 +620,33 @@ $(document).ready(function(){
         changeImage();
     });    
 
+    /* Sticky View Code Start */
+    var selected_view = getCookie("intelmobile_selectedview");
+    //alert(selected_view);
+    if(selected_view == "grid"){
+    	document.getElementById('prodGrid').style.display="block";
+    	document.getElementById('prodList').style.display="none";
+    	$("#btn_toggle").attr("style","background: url(/etc/designs/intelmobile/img/spr-view-pref-grid.png) no-repeat scroll 4px 0 transparent");
+    }else{
+    	document.getElementById('prodList').style.display="block";
+    	document.getElementById('prodGrid').style.display="none";
+    	 $("#btn_toggle").attr("style","background: url(/etc/designs/intelmobile/img/spr-view-pref-list.png) no-repeat scroll 4px 0 transparent");
+    }
+    /* Sticky View Code End */
+    
     function changeImage()
     {
-        
+    	var expiration_date = new Date();
+    	expiration_date.setTime(expiration_date.getTime()+(90*24*60*60*1000));
+    	expiration_date = expiration_date.toGMTString();
         if(document.getElementById('prodList').style.display=="none")
         {
-
+        	document.cookie = "intelmobile_selectedview=grid;expires="+expiration_date+";path=/";
             $("#btn_toggle").attr("style","background: url(/etc/designs/intelmobile/img/spr-view-pref-grid.png) no-repeat scroll 4px 0 transparent");
         }
         else if(document.getElementById('prodGrid').style.display=="none")
         {
-
+        	document.cookie = "intelmobile_selectedview=list;expires="+expiration_date+";path=/";
             $("#btn_toggle").attr("style","background: url(/etc/designs/intelmobile/img/spr-view-pref-list.png) no-repeat scroll 4px 0 transparent");
         }
     }
