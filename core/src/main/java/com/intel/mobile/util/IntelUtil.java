@@ -322,6 +322,9 @@ public class IntelUtil {
 		if(log.isDebugEnabled()) {
 			log.debug("retuning from getLocale method and locale is ....." + locale);
 		}
+		if(locale.equals("en_GB")){
+			locale = "en_UK";
+		}
 		return locale;
 	}
 
