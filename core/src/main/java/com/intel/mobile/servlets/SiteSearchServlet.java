@@ -12,11 +12,13 @@ import javax.jcr.query.Query;
 import javax.jcr.query.QueryManager;
 import javax.jcr.query.QueryResult;
 
+import com.day.cq.wcm.api.Page;
 import com.intel.mobile.search.ISearchDAO;
 import com.intel.mobile.search.SearchController;
 import com.intel.mobile.search.SearchBeanList;
 import com.intel.mobile.search.SearchBean;
 import com.intel.mobile.search.SearchDAOImpl;
+import com.intel.mobile.util.IntelUtil;
 
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Properties;
@@ -76,16 +78,15 @@ public class SiteSearchServlet extends SlingAllMethodsServlet{
 		@SuppressWarnings("deprecation")
 		private void doKeywordSearch(SlingHttpServletRequest request,SlingHttpServletResponse response) throws IOException {
 			try{
-                
+				
 				//String requestSearchQuery = StringEscapeUtils.escapeXml(request.getParameter("search-text"));
 				ArrayList<String> resultList = new ArrayList<String>();
 				String requestSearchQuery = request.getParameter("keyword");
-				String langCode = request.getParameter("langcode");
-				//String langCode = currentPage.getLanguage(false).getLanguage();
-				//String country = currentPage.getLanguage(false).getCountry();
 				String url = "http://search.intel.com/SearchLookup/DataProvider.ashx";
 				String m = "GetTypeAheadSuggestions";
-				String languageCode = "en_US"; // lang e.g. en
+				//String languageCode = "en_US"; // lang e.g. en
+				String languageCode = request.getParameter("locale"); // lang e.g. en
+				LOGGER.info("languageCode ::"+languageCode);
 				String searchRealm = "Mobile"; // # of results
 				String includeBestMatch = "yes";
 				//String q10 = "url:" + siteName + ":exactphrase^urls:"+deviceGroupName+".html:exactphrase";        // url:intel-xx:exactphrase

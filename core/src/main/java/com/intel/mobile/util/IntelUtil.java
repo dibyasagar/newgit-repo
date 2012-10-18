@@ -325,6 +325,18 @@ public class IntelUtil {
 		return locale;
 	}
 
+	public static String getLocaleLanguage(Page currentPage){
+		String locale = getLocale(currentPage);
+		String lang = "";
+		if(locale != null && locale.indexOf("_") > 0)
+		{
+			lang = locale.substring(0, (locale.indexOf("_")-1));
+			log.debug("Language :"+lang);
+		}
+		
+		return lang;
+	}
+	
 	/*
 	 *  This method returns the current root node.
 	 *  Accepts the currentPage Page Object.

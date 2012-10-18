@@ -130,7 +130,7 @@ public class ComponentsUtil {
 				  pageContext.setAttribute("noOfProducts",noOfProducts);
 				
 				  String category = currentPage.getName();
-				  Map<String,Object> results = ProductUtil.getProductListing(category, noOfProducts);
+				  Map<String,Object> results = ProductUtil.getProductListing(category, noOfProducts,currentPage);
 				  pageContext.setAttribute("results", results);				
 			} catch(Exception e) {
 				LOGGER.error("[processProductListing] Exception occurred - ",e);

@@ -483,7 +483,7 @@ public class ProductUtil {
 		return metaTagsMaster;
 	}
 	
-	public static Map<String, Object> getProductListing(String product, int noOfProducts) {
+	public static Map<String, Object> getProductListing(String product, int noOfProducts, Page currentPage) {
 		Map<String, Object> results = new HashMap<String, Object>();
 
 		results.put("totalCount", null);
@@ -501,7 +501,8 @@ public class ProductUtil {
 			StringBuffer searchUrlString = new StringBuffer();
 			searchUrlString.append(fastUrl);
 			searchUrlString.append("?q1=").append(language);
-			searchUrlString.append("&q2=en");
+			//searchUrlString.append("&q2=en");
+			searchUrlString.append("&q2=").append(IntelUtil.getLocaleLanguage(currentPage));
 			searchUrlString.append("&q3="+noOfProducts);
 			searchUrlString.append("&q6=0");
 			searchUrlString.append("&q10=reimaginesublevelcategory:Mobile^pagetype^Product:anyword~reimaginesublevelcategory:Mobile^category^").append(product).append(":anyword");
@@ -510,6 +511,7 @@ public class ProductUtil {
 			searchUrlString.append("&q24=~");
 			searchUrlString.append("&q32=and");
 	
+			LOGGER.info("searchUrlString :"+searchUrlString.toString());
 			URL searchUrl = new URL(searchUrlString.toString());
 			InputStream resultsStream = searchUrl.openStream();
 				
