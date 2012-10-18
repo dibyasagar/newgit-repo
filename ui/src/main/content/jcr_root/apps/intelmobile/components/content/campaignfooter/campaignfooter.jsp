@@ -9,11 +9,18 @@
 <%@include file="/libs/foundation/global.jsp"%><%
 %><%@page session="false" %>
 <%
+pageContext.setAttribute("wcmMode",WCMMode.fromRequest(request));
+if(WCMMode.fromRequest(request) == WCMMode.EDIT) {
+%>       
+  <br/><p> Right click to edit the Campaign Footer Component </p>                  
+ <%
+}
 String internalLink = "";
 String validLink = "";
-if (properties.get("linkUrl") != null) {
-internalLink = properties.get("linkUrl").toString();
-validLink = IntelUtil.getLinkUrl(internalLink,resourceResolver);}
+if(properties.get("linkUrl") != null) {
+ internalLink = properties.get("linkUrl").toString();
+ validLink = IntelUtil.getLinkUrl(internalLink,resourceResolver);
+}
 pageContext.setAttribute("validLink",validLink);
 
 %>
