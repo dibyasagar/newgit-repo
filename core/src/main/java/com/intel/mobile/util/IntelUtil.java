@@ -330,7 +330,7 @@ public class IntelUtil {
 		String lang = "";
 		if(locale != null && locale.indexOf("_") > 0)
 		{
-			lang = locale.substring(0, (locale.indexOf("_")-1));
+			lang = locale.substring(0, locale.indexOf("_"));
 			log.debug("Language :"+lang);
 		}
 		
