@@ -10,6 +10,12 @@
 <%@include file="/libs/foundation/global.jsp"%><%
 %><%@page session="false" %>
 <%
+pageContext.setAttribute("wcmMode",WCMMode.fromRequest(request));
+if(WCMMode.fromRequest(request) == WCMMode.EDIT) {
+%>       
+  <br/><p> Right click to edit the Selling Point Component </p>                  
+ <%
+}
 pageContext.setAttribute("subheading",properties.get("sub-heading"));
 pageContext.setAttribute("sectionheading",properties.get("section-heading"));
 pageContext.setAttribute("sectiondescription",properties.get("section-description"));
@@ -49,11 +55,16 @@ pageContext.setAttribute("validLink",validLink);
                                 <div class="video-aa" id="<c:out value="${properties.videoid}"/>" ></div>
                             </div> 
                         </div>
-
+						<c:if test="${validLink ne '' && not empty validLink}">
+        	            <c:set var="window" value="" />
+				        <c:if test="${properties.newwindow eq 'yes'}">
+                           <c:set var="window" value="_blank" />
+                        </c:if>
                         <div class="shop landscape">
-                            <a class="ui-link" href="${validLink}" title="Shop Ultrabook™" target="_blank">
+                            <a class="ui-link" href="${validLink}" title="<c:out value="${properties.text}" escapeXml="false"/>" target="${window}" data-wap="{&quot;linktype&quot;:&quot;shop&quot;}">
                             <span><c:out value="${properties.text}" escapeXml="false"/></span></a>
                         </div>
+						</c:if>
 
                     </div>
 
@@ -94,7 +105,7 @@ pageContext.setAttribute("validLink",validLink);
                            <c:set var="window" value="_blank" />
                         </c:if>
         		    <div class="shop portrait">
-        		        <a class="ui-link" href="${validLink}" title="Shop Ultrabook™" target="${window}">
+        		        <a class="ui-link" href="${validLink}" title="<c:out value="${properties.text}" escapeXml="false"/>" target="${window}" data-wap="{&quot;linktype&quot;:&quot;shop&quot;}">
                         <span><c:out value="${properties.text}" escapeXml="false"/></span></a>
         		    </div>
 				
