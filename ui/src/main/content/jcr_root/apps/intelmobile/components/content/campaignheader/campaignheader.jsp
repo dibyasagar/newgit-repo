@@ -7,6 +7,14 @@
 --%><%@page import="com.day.cq.wcm.api.WCMMode"%>
 <%@include file="/libs/foundation/global.jsp"%><%
 %><%@page session="false" %>
+<% 
+    pageContext.setAttribute("wcmMode",WCMMode.fromRequest(request));
+    if(WCMMode.fromRequest(request) == WCMMode.EDIT) {
+    %>       
+        <br/><p> Right click to edit the Campaign Header Component </p>                  
+   <%    
+   }
+%>
 
             <section class="slide">
                 <div class="slide-0">
