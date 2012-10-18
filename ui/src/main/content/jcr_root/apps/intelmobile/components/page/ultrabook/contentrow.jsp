@@ -18,9 +18,18 @@ Node campaignHeaderNode = campaignHeaderResource.adaptTo(Node.class);
 Node campaignFooterNode = campaignFooterResource.adaptTo(Node.class);
 if(campaignHeaderNode.hasProperty("sectiontitle")&& campaignFooterNode.hasProperty("buttontext")){
   String sectiontitle=campaignHeaderNode.getProperty("sectiontitle").getString();
-  String buttontext=campaignFooterNode.getProperty("buttontext").getString();
-  String newwindow=campaignFooterNode.getProperty("newwindow").getString();
-  String linkUrl=campaignFooterNode.getProperty("linkUrl").getString();
+  String buttontext = "";
+  String newwindow = "";
+  String linkUrl= "";
+  if(campaignFooterNode.hasProperty("buttontext")){
+	  buttontext=campaignFooterNode.getProperty("buttontext").getString();
+  }
+  if(campaignFooterNode.hasProperty("newwindow")){
+	  newwindow=campaignFooterNode.getProperty("newwindow").getString(); 
+  }
+  if(campaignFooterNode.hasProperty("newwindow")){
+	  linkUrl=campaignFooterNode.getProperty("linkUrl").getString(); 
+  }
   if (linkUrl != null) {
 	  validLink = IntelUtil.getLinkUrl(linkUrl,resourceResolver);
   }    
@@ -37,7 +46,7 @@ if(campaignHeaderNode.hasProperty("sectiontitle")&& campaignFooterNode.hasProper
 %>
 <!-- Menus -->
 
-		<div class="ultrabook menus">
+		<div class="ultrabook menus wapwrapper" data-component-id="1" data-component="ubholiday-usp-nav-mobile">
 
 			<nav class="menus-a clear">
 
@@ -77,7 +86,7 @@ if(campaignHeaderNode.hasProperty("sectiontitle")&& campaignFooterNode.hasProper
                            <c:set var="window" value="_blank" />
                         </c:if>
         		    <div class="shop">
-        		        <a class="ui-link" href="${validLink}" title="Shop Ultrabook™" target="${window}">
+        		        <a class="ui-link" href="${validLink}" title="Shop Ultrabook™" target="${window}" data-wap="{&quot;linktype&quot;:&quot;shop&quot;}">
                         <span><c:out value="${buttontext}" escapeXml="false"/></span></a>
         		    </div>
 				
