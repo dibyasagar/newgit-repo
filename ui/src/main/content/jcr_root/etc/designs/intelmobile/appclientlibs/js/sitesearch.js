@@ -14,7 +14,7 @@ function submitSearchForm() {
     window.location = formSelectorAction;
     return false;
  }
-function getKeys() {
+function getKeys(locale) {
     
      var searchtext= $('#search-term').val();
      if (searchtext == ""){
@@ -25,7 +25,7 @@ function getKeys() {
    var searchParams={"keyword":searchtext}
     $.ajax( {
 
-        url : "/bin/SiteSearch" ,
+        url : "/bin/SiteSearch?locale="+locale ,
         type : 'GET',
         dataType : "json",
         data:searchParams,

@@ -194,7 +194,7 @@ function populateResults(event) {
 		searchURL += "&q17=" + searchtype;
     } else if (searchscope == "intel") {
         searchURL = "${fastSearchUrl}"
-        searchURL+= "?q1=reimagine&q2=en";
+        searchURL+= "?q1=reimagine&q2=<%=IntelUtil.getLocaleLanguage(currentPage)%>";
         searchURL+= "&q4=" + searchtext;
         searchURL+= "&q10=localecode:" + localecode + ":allword";
         searchURL+= "&q23=:";

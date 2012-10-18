@@ -201,7 +201,9 @@
         
         var URL = "${fastSearchUrl}"
         var q1 = "${fastSearchAppId}"; // Application Id
-        var q2 = "en"; //Language
+        //var q2 = "en"; //Language
+        var q2 = "<%=IntelUtil.getLocaleLanguage(currentPage)%>"; //Language
+        //alert("q2 :"+q2);
         var q3 = hits; //Numbers of Records to Fetch
         var q4 = keyword;
         var q6 = offset ; //Result Offset
