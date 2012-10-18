@@ -107,7 +107,10 @@ pageContext.setAttribute("validLink",validLink);
             </section>
 
             <section class="space">
-                <div class="space-2">
-                    <img src="<c:out value="${properties.heroImageFileReference}"/>" class="space space-2"/>
+                <div class="space-2 vertical">
+                    <img src="<c:out value="${properties.heroImageFileReferencePotrait}" />"  alt="${properties.alttext}" title="${properties.alttext}" class="space space-2"/>
+                </div>
+				 <div class="space-2 imgland" style="display:none">
+                    <img src="<c:out value="${properties.heroImageFileReferenceLandscape}"/>"  alt="${properties.alttext}" title="${properties.alttext}" class="space space-2"/>
                 </div>
             </section>

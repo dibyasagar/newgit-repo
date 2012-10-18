@@ -99,6 +99,14 @@
                                 features="*"/>
                         </rtePlugins>
                     </section-description>
+                    <imagealttext
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}true"
+                        fieldDescription="Alt Text for Image"
+                        fieldLabel="Image Alt Text"
+                        name="./alttext"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
                 </items>
             </tab1>
             <heroimage

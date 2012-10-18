@@ -56,9 +56,33 @@
 				$iCurScrollTop = xGetScrollTop() ;
 				$("html,body").scrollTop( 0 ) ;
 
-				$oContent.hide() ;
-				$oHeader.hide() ;
-				$oFooter.hide() ;
+            this.xClose = function( $b )
+            {
+                
+                
+                var isiPhone3=(navigator.userAgent.match(/iPhone/i)) ? true : false;
+               
+                if(isiPhone3)
+                {
+                    var video=$('.video-container');
+                   
+                    if(video.length>0)
+                    {
+                        for(i=0;i<video.length;i++)
+                        {
+                          
+                           var newsrc=video[i].getElementsByTagName('iframe')[0].src;
+                           video[i].getElementsByTagName('iframe')[0].src=newsrc;
+                        }
+                    }
+                }
+                
+                
+                $oHeader.show() ;
+                $oFooter.show() ;
+                $oContent.show() ;
+                
+              
 
 			} ;
 
@@ -363,6 +387,127 @@ function vTempsLoads( $k )
 
 }
 
+/* added by shishir for image change on device rotation Start*/
+/*
+
+function tImage()
+{
+           
+           //alert(window.orientation);
+           var isIE= (navigator.userAgent.toLowerCase().indexOf("msie") > -1) ? true : false;
+            //alert(isIE);
+            if(isIE)
+            {
+                if(window.innerWidth>window.innerHeight)
+                {
+                    //landscape
+                     var pImage=$('.vertical');
+                          var lImage=$('.imgland');
+                          var hImage=$('.camp_vertical');
+                          var vImage=$('.camp_landscape');
+                  
+                          hImage.attr("style","display:none");
+                          vImage.attr("style","display:block");
+                          
+                          pImage.attr("style","display:none");
+                          lImage.attr("style","display:block");
+                }
+                else
+                {
+                    //portrait
+                    var pImage=$('.vertical');
+                  var lImage=$('.imgland');
+                  var hImage=$('.camp_vertical');
+                  var vImage=$('.camp_landscape');
+                  
+                  hImage.attr("style","display:block");
+                  vImage.attr("style","display:none");
+                  pImage.attr("style","display:block");
+                  lImage.attr("style","display:none");
+                }
+            }
+            
+            else
+            {
+            if(window.orientation == 0) {
+                  // do something
+
+                  var pImage=$('.vertical');
+                  var lImage=$('.imgland');
+                  var hImage=$('.camp_vertical');
+                  var vImage=$('.camp_landscape');
+                  
+                  hImage.attr("style","display:block");
+                  vImage.attr("style","display:none");
+                  pImage.attr("style","display:block");
+                  lImage.attr("style","display:none");
+                       
+          
+              } 
+              else if (window.orientation == 90 || window.orientation == -90) {
+                       // do something else 
+                         
+                          var pImage=$('.vertical');
+                          var lImage=$('.imgland');
+                          var hImage=$('.camp_vertical');
+                          var vImage=$('.camp_landscape');
+                  
+                          hImage.attr("style","display:none");
+                          vImage.attr("style","display:block");
+                          
+                          pImage.attr("style","display:none");
+                          lImage.attr("style","display:block");
+                               
+                       }
+               } 
+                       
+                
+          
 
 
 
+$(window).bind('orientationchange resize', _imgHandler);
+function _imgHandler()
+{
+    alert(window.innerWidth);
+    //setTimeout('tImage()',100);
+}
+
+*/
+
+
+/* added by shishir for image change on device rotation END*/
+
+$(document).ready(function(){
+    
+    $("#wrapper").addClass("wapwrapper");
+    $("#wrapper").attr("data-component-id","1");
+    $("#wrapper").attr("data-component","ultrabook-mobile-campaign-2012");
+    var isAndroidOS2=(navigator.userAgent.toLowerCase().indexOf("android 2.3") > -1) ? true : false;
+    var isiPhone3g= (navigator.userAgent.toLowerCase().indexOf("iphone os 5_1_1") > -1) ? true : false;
+    var isIE= (navigator.userAgent.toLowerCase().indexOf("msie") > -1) ? true : false;
+   
+    if(isAndroidOS2)
+    {
+        //alert(isAndroidOS2);
+        //alert("my: "+$(".ultrabook .slide .item .inside"));
+        $(".ultrabook .slide .item .inside").addClass("s2_orig");
+        
+    }
+    if(isiPhone3g)
+    {
+        
+        //alert("my: "+$(".ultrabook .slide .item .inside"));
+        $(".ultrabook .slide .item .inside").addClass("iphone_orig");
+        
+    }
+    if(isIE)
+    {
+        
+        //alert("my: "+$(".ultrabook .slide .item .inside"));
+        $(".ultrabook .slide .item .inside").addClass("ie_orig");
+        
+    }
+    
+    
+});

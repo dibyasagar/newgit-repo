@@ -137,7 +137,7 @@ html.csstransforms3d header.ics404 #search-menu {
  #social-share .social-share-align
 {
     margin: 0 auto;
-  width: 278px;
+  width: 250px; /* changed from 278px */
 }
 .ultrabook .slide
 {
@@ -162,3 +162,71 @@ html.csstransforms3d header.ics404 #search-menu {
 {
     color: #0061A5 !important;
 }
+
+footer #language a
+{
+    color:#fff !important;
+}
+footer #language a:visited
+{
+    color:#fff !important;
+}
+footer nav a
+{
+    color:#fff !important;
+}
+footer nav a:visited
+{
+    color:#fff !important;
+}
+#disclaimers a,#disclaimers a:hover,#disclaimers a:visited
+{
+    color:#fff !important;
+}
+/*
+.ultrabook sup
+{
+    font-size: 50% !important;
+ 
+}
+*/
+@media only screen and (min-width: 400px) {
+  /* Styles */
+  .ultrabook div.camp_vertical
+  {
+      display:none !important;
+  }
+  .ultrabook div.camp_landscape
+  {
+      display:block !important;
+  }
+  .ultrabook div.vertical
+  {
+      display:none !important;
+  }
+  .ultrabook div.imgland
+  {
+      display:block !important;
+  }
+  .ultrabook .slide .item .s2_orig
+  {
+      padding-right: 75px !important;
+  }
+  .ultrabook .slide .item .iphone_orig
+  {
+      padding-right: 15px !important;
+  }
+  .ultrabook .slide .item .ie_orig
+  {
+      padding-right: 15px !important;
+  }
+  
+}
+
+.ultrabook .slide .item .inside .head h3
+{
+   color: #0097E0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 130%;
+   }

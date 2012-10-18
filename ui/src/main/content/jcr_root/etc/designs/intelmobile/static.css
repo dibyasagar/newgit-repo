@@ -4359,3 +4359,7 @@ html.csstransforms3d header.ics404 #category-menu.dropdown-menu.inited {
 html.csstransforms3d header.ics404 #search-menu {
   position: relative;
 }
+.design_auth
+{
+    width: 300px !important;
+}

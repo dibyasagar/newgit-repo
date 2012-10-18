@@ -30,7 +30,7 @@ pageContext.setAttribute("validLink",validLink);
 					</div>
 
 					<div class="laptop">
-						<img src="<c:out value="${properties.imagePath}"/>" class="laptop"/>
+						<img src="<c:out value="${properties.imagePath}"/>" alt="${properties.alttext}" title="${properties.alttext}" class="laptop"/>
 					</div>
 					
 					 <c:if test="${validLink ne '' && not empty validLink}">
@@ -39,7 +39,7 @@ pageContext.setAttribute("validLink",validLink);
                            <c:set var="window" value="_blank" />
                         </c:if>
         		    <div class="shop">
-        		        <a class="ui-link" href="${validLink}" title="Shop Ultrabook™" target="${window}">
+        		        <a class="ui-link" href="${validLink}" title="<c:out value="${properties.buttontext}" escapeXml="false"/>" target="${window}">
                         <span><c:out value="${properties.buttontext}" escapeXml="false"/></span></a>
         		    </div>
 				

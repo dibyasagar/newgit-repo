@@ -34,9 +34,10 @@
 .ultrabook .slide .item .inside .asset .shop {
   margin-right: -8px;
   padding-top: 2px;
-  float: right;
+  float: left; /* changed from right to left */
   width: 230px;
   height: 45px;
+  margin-left:-3px;
 }
 .ultrabook .slide-0 .item .inside {
   /*padding-top: 25px;*/
