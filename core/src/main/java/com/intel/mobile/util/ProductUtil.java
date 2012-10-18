@@ -505,7 +505,7 @@ public class ProductUtil {
 			searchUrlString.append("&q2=").append(IntelUtil.getLocaleLanguage(currentPage));
 			searchUrlString.append("&q3="+noOfProducts);
 			searchUrlString.append("&q6=0");
-			searchUrlString.append("&q10=reimaginesublevelcategory:Mobile^pagetype^Product:anyword~reimaginesublevelcategory:Mobile^category^").append(product).append(":anyword");
+			searchUrlString.append("&q10=localecode:"+IntelUtil.getLocale(currentPage)+":exactphrase~reimaginesublevelcategory:Mobile^pagetype^Product:anyword~reimaginesublevelcategory:Mobile^category^").append(product).append(":anyword");
 			searchUrlString.append("&q11=reimaginesublevelcategory,url");
 			searchUrlString.append("&q23=:");
 			searchUrlString.append("&q24=~");
