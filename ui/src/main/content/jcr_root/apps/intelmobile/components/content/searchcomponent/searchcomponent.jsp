@@ -40,7 +40,7 @@ if (IntelUtil.getConfigValue(currentPage,"searchcomp","searchbtnimg",null) != nu
     <form action="${searchresultpath}" method="get" id="form-search" name="form-search" onsubmit="return submitSearchForm();">
 
              <div class="text-input">
-                 <input id="search-term" name="search-term" type="text" class="text" onkeyup="getKeys('<%=IntelUtil.getLocaleLanguage(currentPage)%>')" value="${searchValue}">
+                 <input id="search-term" name="search-term" type="text" class="text" onkeyup="getKeys('<%=IntelUtil.getLocale(currentPage)%>')" value="${searchValue}">
                  <a id="clear-search" title="Clear" href="#">Clear</a>
                  <c:if test="${ searchbuttonImage ne '' && not empty searchbuttonImage }">
                  <input type="image" src="${searchbuttonImage}">
