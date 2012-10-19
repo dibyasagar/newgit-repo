@@ -33,7 +33,8 @@
                     
                     <div class="head" style="">
 
-                        <h3><c:out value="${properties.sectiontitle}" escapeXml="false"/></h3>
+                        <h2 class="super"><c:out value="${properties.sectiontitle}" escapeXml="false"/></h2>
+						<!--h3><c:out value="${properties.sectiontitle}" escapeXml="false"/></h3> -->
                         <h2><c:out value="${properties.description}" escapeXml="false"/></h2>
                         
                         <div class="spacer"></div>
