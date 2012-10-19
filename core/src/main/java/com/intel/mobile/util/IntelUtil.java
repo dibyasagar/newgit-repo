@@ -112,11 +112,14 @@ public class IntelUtil {
 
 						} else {
 							productOffersNode = node.addNode(IntelMobileConstants.NODE_NAME_PRODUCT_OFFERS, IntelMobileConstants.PRIMARY_TYPE_NT_UNSTRUCTURED);	
-						}						
+						}	
+						log.info("Product Offers :"+productOffers);
+						log.info("product offer node :"+productOffersNode);
 						for(int i=0;i<productOffers.length();i++){
 							JSONObject property = productOffers.getJSONObject(i);
 							String nodeName = StringEscapeUtils.unescapeXml(property.getString("name"));
 							nodeName = normalizeName(nodeName);
+							log.info("Entering nodeName :"+nodeName);
 							try {						
 								Node retailerNode = null; 
 								if(productOffersNode.hasNode(nodeName)) {
@@ -124,11 +127,11 @@ public class IntelUtil {
 								} else {
 									retailerNode = productOffersNode.addNode(nodeName,IntelMobileConstants.PRIMARY_TYPE_NT_UNSTRUCTURED);	
 								}
-														
+								log.info("Entering retailerNode :"+retailerNode);						
 								Iterator<String> offersItr = property.keys();
 								while(offersItr.hasNext()) {
 									String offersKey = (String)offersItr.next();		
-
+									log.info("Inside offersItr :"+offersKey );	
 									boolean same = false;
 									if(retailerNode.hasProperty(offersKey) 
 											&& retailerNode.getProperty(offersKey).getString().equals(
@@ -300,6 +303,39 @@ public class IntelUtil {
 		if(locale.equals("en_GB")){
 			locale = "en_UK";
 		}
+		return locale;
+	}
+	/*
+	 *  This method returns the current locale.
+	 *  Accepts the currentPage Page Object.
+	 */
+	public static String getLocaleWithoutChangingUK(Page currentPage){
+		String locale=IntelMobileConstants.DEFALUT_LOCALE;
+		String jcrLanguage= null;
+		if(log.isDebugEnabled()) {
+			log.debug("Inside getLocale Method");
+		}
+		while(currentPage != null){
+			if(currentPage.getProperties().get("cq:template", "").
+					equals(IntelMobileConstants.LOCALE_CONFIG_TEMPLATE)){
+				if(log.isDebugEnabled()) {
+					log.debug("found localconfig template page ..." + currentPage.getName());
+				}
+				jcrLanguage = currentPage.getProperties().get("jcr:language", "");
+				if(jcrLanguage !=null && (!jcrLanguage.toString().trim().equals(""))){
+					if(log.isDebugEnabled()) {
+						log.debug("current Locale is ..." + locale);
+					}
+					locale = jcrLanguage;
+					break;
+				}        	 
+			}        	
+			currentPage = currentPage.getParent();
+		}
+		if(log.isDebugEnabled()) {
+			log.debug("retuning from getLocale method and locale is ....." + locale);
+		}
+
 		return locale;
 	}
 
@@ -511,11 +547,14 @@ public class IntelUtil {
 	
 	public static String getConfigValue(Page currentPage,String nodeName, String property, String defaultValue) {
 		String value = defaultValue;
-
+		Node configNode = null;  
 		try {	
 			String configPath = getRootPath(currentPage) + "/jcr:content/"+nodeName;
 			Session session = currentPage.getContentResource().getResourceResolver().adaptTo(Session.class);
-			Node configNode = session.getNode(configPath);
+			log.info("path:",session.getNode(configPath));
+			if(session.getNode(configPath)!= null){
+			configNode = session.getNode(configPath);
+			}
 			if(configNode != null) {
 				if(configNode.hasProperty(property)) {
 					value = configNode.getProperty(property).getString();
