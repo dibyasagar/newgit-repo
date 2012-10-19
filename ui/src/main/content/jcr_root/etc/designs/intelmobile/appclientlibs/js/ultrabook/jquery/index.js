@@ -50,10 +50,10 @@
             var isAndroidOS2=(navigator.userAgent.toLowerCase().indexOf("android") > -1) ? true : false;
             var isBB= (navigator.userAgent.toLowerCase().indexOf("blackberry") > -1) ? true : false;
             
-            setTimeout(function(){
+            setTimeout(function() {
            
-            if(isAndroidOS2||isBB)
-            {
+            //if(isAndroidOS2||isBB)
+            //{
            
                 if($("#menu-item").attr("class")=="active")
                 {
@@ -79,12 +79,13 @@
                   $oSticky.css( { "top":$iScroll +30 } ) ; 
               }
                
-           }
-           else
-           {
-           $iScroll = ( $iScroll <= 40 ) ? 40 : 0 ;
-           $oSticky.css( { "top":$iScroll +30 } ) ; 
-           }
+           //}
+           //else
+           //{
+		   //alert("called");
+           //$iScroll = ( $iScroll <= 40 ) ? 40 : 0 ;
+           //$oSticky.css( { "top":$iScroll +30 } ) ; 
+           //}
            },1000);
                 
 
@@ -596,3 +597,4 @@ $(document).ready(function(){
     
     
 });
+
