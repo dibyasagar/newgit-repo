@@ -42,8 +42,7 @@
   src: url("../fonts/neo-sans-intel-medium-italic.eot?#msies") format("embedded-opentype"), url("../fonts/neo-sans-intel-medium-italic.woff") format("woff"), url("../fonts/neo-sans-intel-medium-italic.ttf") format("truetype"), url("../fonts/neo-sans-intel-medium-italic.svg") format("svg");
 }
 /* Main */
-body,
-html {
+body, html {
   background-color: #ffffff;
   font-family: neo-sans-intel !important;
 }
@@ -230,10 +229,8 @@ p {
   padding-top: 25px;
   padding-left: 25px;
   padding-right: 25px;
-  
 }
-.ultrabook .slide .item .inside .icon,
-.ultrabook .slide .item .inside .head {
+.ultrabook .slide .item .inside .icon, .ultrabook .slide .item .inside .head {
   float: left;
 }
 .ultrabook .slide .item .inside .icon {
@@ -260,6 +257,10 @@ p {
   line-height: 130%;
   color: #0061A5;
 }
+.ultrabook .slide .item .inside .head h2.super {
+  font-size: 14px;
+  color: #0097e0;
+}
 .ultrabook .slide .item .inside .asset {
   margin-bottom: 15px;
 }
@@ -270,8 +271,7 @@ p {
   margin-bottom: 10px;
   width: auto;
 }
-.ultrabook .slide .item .inside .asset .video .video-a .video-aa,
-.ultrabook .slide .item .inside .asset .video .video-a .video-ab {
+.ultrabook .slide .item .inside .asset .video .video-a .video-aa, .ultrabook .slide .item .inside .asset .video .video-a .video-ab {
   background: #000;
   border: #FFF 1px solid;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4px;
@@ -358,10 +358,9 @@ p {
 }
 .ultrabook .slide-0 {
   /*background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/slide.0.jpg");*/
-  height: 553px;
+  height: 503px;
 }
-.ultrabook .slide-0 .item .inside .icon,
-.ultrabook .slide-0 .item .inside .head {
+.ultrabook .slide-0 .item .inside .icon, .ultrabook .slide-0 .item .inside .head {
   float: none;
 }
 .ultrabook .slide-0 .item .inside .head {
@@ -417,8 +416,7 @@ p {
 .ultrabook .slide-z .item .inside {
   padding-bottom: 30px;
 }
-.ultrabook .slide-z .item .inside .icon,
-.ultrabook .slide-z .item .inside .head {
+.ultrabook .slide-z .item .inside .icon, .ultrabook .slide-z .item .inside .head {
   float: none;
 }
 .ultrabook .slide-z .item .inside .head {
@@ -427,9 +425,7 @@ p {
 .ultrabook .slide-z .item .inside .head h2 {
   text-align: center;
 }
-.ultrabook .slide-z .item .inside .shop,
-.ultrabook .slide-z .item .inside .ultra,
-.ultrabook .slide-z .item .inside .laptop {
+.ultrabook .slide-z .item .inside .shop, .ultrabook .slide-z .item .inside .ultra, .ultrabook .slide-z .item .inside .laptop {
   margin: 0 auto;
 }
 .ultrabook .slide-z .item .inside .laptop {

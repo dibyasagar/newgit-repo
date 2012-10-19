@@ -43,8 +43,7 @@
   /*padding-top: 25px;*/
   padding-top: 0px !important;
 }
-.ultrabook .slide-0 .item .inside .icon,
-.ultrabook .slide-0 .item .inside .head {
+.ultrabook .slide-0 .item .inside .icon, .ultrabook .slide-0 .item .inside .head {
   float: none;
 }
 .ultrabook .slide-0 .item .inside .head {
