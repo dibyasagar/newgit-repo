@@ -2019,7 +2019,7 @@ small {
 
 /* Position subscript and superscript content without affecting line-height: h5bp.com/k */
 sub, sup {
-  font-size: 75%;
+  font-size: 60% !important;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
