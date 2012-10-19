@@ -49,11 +49,18 @@
             
             var isAndroidOS2=(navigator.userAgent.toLowerCase().indexOf("android") > -1) ? true : false;
             var isBB= (navigator.userAgent.toLowerCase().indexOf("blackberry") > -1) ? true : false;
+            var isiPhone3=(navigator.userAgent.match(/iPhone/i)) ? true : false;
+            var isIE= (navigator.userAgent.toLowerCase().indexOf("msie") > -1) ? true : false;
             
             setTimeout(function() {
-           
-            //if(isAndroidOS2||isBB)
-            //{
+            if(isIE)
+            {
+                 $iScroll = ( $iScroll <= 40 ) ? 40 : 0 ;
+                 $oSticky.css( { "top":$iScroll +30 } ) ; 
+            }
+            //if(isAndroidOS2||isBB||isiPhone3)
+            else
+            {
            
                 if($("#menu-item").attr("class")=="active")
                 {
@@ -79,10 +86,10 @@
                   $oSticky.css( { "top":$iScroll +30 } ) ; 
               }
                
-           //}
-           //else
-           //{
-		   //alert("called");
+           }
+          // else
+          // {
+           
            //$iScroll = ( $iScroll <= 40 ) ? 40 : 0 ;
            //$oSticky.css( { "top":$iScroll +30 } ) ; 
            //}
@@ -597,4 +604,3 @@ $(document).ready(function(){
     
     
 });
-
