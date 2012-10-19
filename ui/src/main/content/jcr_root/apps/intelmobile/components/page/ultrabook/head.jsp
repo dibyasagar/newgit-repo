@@ -97,7 +97,7 @@
     <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/styles.360v.css" media="all and (min-width:321px) and (max-width:360px) and (orientation:portrait)">
     <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/styles.480v.css" media="all and (min-width:361px) and (orientation:portrait)">
     <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/styles.480h.css" media="all and (min-width:360px) and (max-width:480px) and (orientation:landscape)">
-    
+    <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/styles.533h.css?v0.850a" media="all and (min-width:481px) and (max-width:533px) and (orientation:landscape)" />
      <%
         if (WCMMode.fromRequest(request) == WCMMode.EDIT||WCMMode.fromRequest(request) == WCMMode.PREVIEW||WCMMode.fromRequest(request) == WCMMode.DESIGN) 
         {
