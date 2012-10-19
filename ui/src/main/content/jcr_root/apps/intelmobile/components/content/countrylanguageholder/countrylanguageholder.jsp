@@ -20,7 +20,7 @@
 <%
    String regionHolderPath = currentNode.getPath().toString().trim()+ "/regionHolder";
    String language_Node = "en_US";
-   language_Node = IntelUtil.getLocale(currentPage); 
+   language_Node = IntelUtil.getLocaleWithoutChangingUK(currentPage); 
    request.setAttribute("language_Node",language_Node);
    if(WCMMode.fromRequest(request) != WCMMode.EDIT) {
    Node regionHolderNode = null;
@@ -136,6 +136,8 @@
                                             CountryName = CountryName.replaceAll("\\s","").toLowerCase();
                                             homePage = pageManager.getPage(countryhomepageurls[j].toString());
                                             localeLanguage = locales[j].toString();
+                                            log.info("locale language "+localeLanguage);
+                                            log.info("locale Node "+language_Node);
                                             if(localeLanguage.trim().equals(language_Node)){
                                                 if(countryhomepageurls[j].toString().startsWith("/content")){
                                                     languageURL = countryhomepageurls[j].toString() + ".html";
