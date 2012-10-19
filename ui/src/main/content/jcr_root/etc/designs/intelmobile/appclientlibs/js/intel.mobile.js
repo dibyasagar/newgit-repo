@@ -341,7 +341,9 @@ intel.mobile = {
                 var dislaimerContent = $('#disclaimer-content');
                 intel.mobile.cache.disclaimer.find('.expand').on('click', function(ev) {
                     ev.preventDefault();
-                    intel.mobile.cache.disclaimer.find('.expand').toggleClass("open")
+                    intel.mobile.cache.disclaimer.find('.expand').toggleClass("open");
+					// added new line to toogle +,- buttons 
+					intel.mobile.cache.disclaimer.find('.expand_btn').toggleClass("open");
                     dislaimerContent.toggleClass("open");
                 });
             }
