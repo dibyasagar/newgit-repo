@@ -38,7 +38,8 @@ pageContext.setAttribute("hide",hideComponent);
 <c:if test="${(disclaimerText ne '' && not empty disclaimerText ) || 'EDIT' eq wcmMode}">
 <div class="component" data-component="<c:out value="${pageScope.componentName}"/>" data-component-id="<c:out value="${pageScope.componentId}"/>">
 <div id="disclaimers" class="clearfix">
-		<a class="expand <c:out value="${class}" default="open"  />" href="#disclaimer-content"><fmt:message key="productdetails.label.disclaimer_heading"/></a>
+		<!-- added span tag for image -->
+		<a class="expand <c:out value="${class}" default="open"  />" href="#disclaimer-content"><fmt:message key="productdetails.label.disclaimer_heading"/><span class="expand_btn <c:out value="${class}"/>"></span></a>
 	    <div id="disclaimer-content" class="<c:out value="${class}" default="open"  />">
            <p><c:out value="${pageScope.disclaimerText}" default="[Disclaimer]" escapeXml="false" /></p>
     </div>
