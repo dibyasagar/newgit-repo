@@ -109,14 +109,23 @@
                         xtype="textfield"/>
                 </items>
             </tab1>
-            <heroimage
+            <heroimagepotrait
                 jcr:primaryType="cq:Widget"
                 allowUpload="{Boolean}false"
                 ddGroups="[media]"
                 fileNameParameter="./imageFileName"
-                fileReferenceParameter="./heroImageFileReference"
-                name="./heroImage"
-                title="Hero Image"
+                fileReferenceParameter="./heroImageFileReferencePotrait"
+                name="./heroImagePotrait"
+                title="Hero Image Potrait"
+                xtype="smartimage"/>
+            <heroimagelandscape
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName"
+                fileReferenceParameter="./heroImageFileReferenceLandscape"
+                name="./heroImageLandscape"
+                title="Hero Image Landscape"
                 xtype="smartimage"/>
             <tab4
                 jcr:primaryType="cq:Panel"

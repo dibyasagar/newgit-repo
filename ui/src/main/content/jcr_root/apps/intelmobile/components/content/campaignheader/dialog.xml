@@ -82,9 +82,18 @@
                 allowUpload="{Boolean}false"
                 ddGroups="[media]"
                 fileNameParameter="./imageFileName"
-                fileReferenceParameter="./imagePath"
-                name="./contentImage"
-                title="Image"
+                fileReferenceParameter="./imagePathPotrait"
+                name="./contentImagePotrait"
+                title="Image Potrait"
+                xtype="smartimage"/>
+            <tab3
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName"
+                fileReferenceParameter="./imagePathLandscape"
+                name="./contentImageLandscape"
+                title="Image Landscape"
                 xtype="smartimage"/>
         </items>
     </items>
