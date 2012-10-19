@@ -3,9 +3,7 @@
  */
 package com.intel.mobile.util;
 
-import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -17,18 +15,12 @@ import javax.jcr.NodeIterator;
 import javax.jcr.PathNotFoundException;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
-import javax.jcr.Value;
-import javax.jcr.ValueFormatException;
-import javax.jcr.lock.LockException;
-import javax.jcr.nodetype.ConstraintViolationException;
-import javax.jcr.version.VersionException;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.commons.json.JSONArray;
-import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.FrameworkUtil;
@@ -36,7 +28,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.day.cq.commons.jcr.JcrConstants;
-import com.day.cq.wcm.api.PageManager;
 import com.day.cq.wcm.api.Page;
 
 import com.intel.mobile.constants.IntelMobileConstants;
@@ -234,31 +225,15 @@ public class IntelUtil {
 					}
 				}
 
-			} catch (JSONException e) {
-				log.error("JSONException :"+e.getMessage());
-
-//				e.printStackTrace();
-			} catch (ValueFormatException e) {
-				log.error("ValueFormatException :"+e.getMessage());
-
-//				e.printStackTrace();
-			} catch (VersionException e) {
-				log.error("VersionException :"+e.getMessage());
-
-//				e.printStackTrace();
-			} catch (LockException e) {
-				log.error("LockException :"+e.getMessage());
-
-//				e.printStackTrace();
-			} catch (ConstraintViolationException e) {
-				log.error("ConstraintViolationException :"+e.getMessage());
-
-//				e.printStackTrace();
-			} catch (RepositoryException e) {
-				log.error("RepositoryException :"+e.getMessage());
-
-//				e.printStackTrace();
+			} catch (Exception e) {
+				String exceptionMsg = e.getMessage();
+				if(exceptionMsg != null && exceptionMsg.length() > 50)
+				{
+					exceptionMsg = exceptionMsg.substring(0, 50);
+				}
+				log.error("Exception :"+exceptionMsg);
 			}
+
 
 		}
 
@@ -495,15 +470,13 @@ public class IntelUtil {
 			if(log.isDebugEnabled()) {
 				log.debug("disclaimerText :"+disclaimerText);
 			}
-		} catch (MalformedURLException e) {
-			log.error("MalformedURLException :"+e.getMessage());
-			log.debug(e.getMessage(), e);
-		} catch (IOException e) {
-			log.error("IOException :"+e.getMessage());
-			log.debug(e.getMessage(), e);
-		} catch (JSONException e) {
-			log.error("JSONException :"+e.getMessage());
-			log.debug(e.getMessage(), e);
+		} catch (Exception e) {
+			String exceptionMsg = e.getMessage();
+			if(exceptionMsg != null && exceptionMsg.length() > 50)
+			{
+				exceptionMsg = exceptionMsg.substring(0, 50);
+			}
+			log.error("Exception :"+exceptionMsg);
 		}
 		return disclaimerText;
 	}
