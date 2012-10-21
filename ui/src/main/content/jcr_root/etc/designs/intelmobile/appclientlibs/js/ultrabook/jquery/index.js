@@ -573,14 +573,21 @@ function _imgHandler()
 
 $(document).ready(function(){
     
-    $("#wrapper").addClass("wapwrapper");
+    
+	$("#wrapper").addClass("wapwrapper");
     $("#wrapper").attr("data-component-id","1");
     $("#wrapper").attr("data-component","ultrabook-mobile-campaign-2012");
     var isAndroidOS2=(navigator.userAgent.toLowerCase().indexOf("android 2.3") > -1) ? true : false;
     var isiPhone3g= (navigator.userAgent.toLowerCase().indexOf("iphone os 5_1_1") > -1) ? true : false;
     var isIE= (navigator.userAgent.toLowerCase().indexOf("msie") > -1) ? true : false;
+	var isAndroidOS3=(navigator.userAgent.toLowerCase().indexOf("android 4.0.4") > -1) ? true : false;
+	
    
-    if(isAndroidOS2)
+    if(isAndroidOS3)
+	{
+		$(".ultrabook .slide-0 .camp_headerimg").addClass("s3_orig");
+	}
+	if(isAndroidOS2)
     {
         //alert(isAndroidOS2);
         //alert("my: "+$(".ultrabook .slide .item .inside"));
