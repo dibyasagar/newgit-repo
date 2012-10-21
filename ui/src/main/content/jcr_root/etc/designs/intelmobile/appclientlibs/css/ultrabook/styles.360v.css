@@ -1,4 +1,9 @@
 .ultrabook .slide-0{height:566px;}
+.ultrabook .slide-0 .camp_headerimg.s3_orig img
+{
+	margin-top: -30px !important;
+	
+} 
 .ultrabook .space-1{height:350px;}
 .ultrabook .space-2{height:350px;}
 .ultrabook .space-3{height:350px;}
