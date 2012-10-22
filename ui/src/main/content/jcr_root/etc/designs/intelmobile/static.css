@@ -1540,6 +1540,7 @@ ul.accordion li {
   #main .questions .bd ul li a {
     font-size: 120%;
   }
+  
 }
 /* #language-selector */
 #language-selector {
@@ -2133,6 +2134,7 @@ and (max-device-width : 480px) {
   .tiles div span + span {
     font-size: 89%;
   }
+  
 }
 /* Smartphones (Landscape 480 px) ___________________________________*/
 @media only screen 
@@ -4368,4 +4370,12 @@ html.csstransforms3d header.ics404 #search-menu {
 .design_auth
 {
     width: 300px !important;
+}
+
+@media only screen and (max-width: 380px) {
+#category-menu .select-title.menu_set
+  {
+	line-height: 23px;
+	top: 0px;
+ }
 }
