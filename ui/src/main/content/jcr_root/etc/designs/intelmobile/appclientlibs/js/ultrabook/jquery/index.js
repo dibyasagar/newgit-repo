@@ -581,7 +581,7 @@ $(document).ready(function(){
     var isiPhone3g= (navigator.userAgent.toLowerCase().indexOf("iphone os 5_1_1") > -1) ? true : false;
     var isIE= (navigator.userAgent.toLowerCase().indexOf("msie") > -1) ? true : false;
 	var isAndroidOS3=(navigator.userAgent.toLowerCase().indexOf("android 4.0.4") > -1) ? true : false;
-	
+	var isBB= (navigator.userAgent.toLowerCase().indexOf("blackberry") > -1) ? true : false;
    
     if(isAndroidOS3)
 	{
@@ -592,6 +592,7 @@ $(document).ready(function(){
         //alert(isAndroidOS2);
         //alert("my: "+$(".ultrabook .slide .item .inside"));
         $(".ultrabook .slide .item .inside").addClass("s2_orig");
+		$(".ultrabook .slide-0 .camp_headerimg").addClass("s2_space");
         
     }
     if(isiPhone3g)
@@ -607,6 +608,10 @@ $(document).ready(function(){
         //alert("my: "+$(".ultrabook .slide .item .inside"));
         $(".ultrabook .slide .item .inside").addClass("ie_orig");
         
+    }
+	if(isBB)
+    {
+        $(".ultrabook .slide-0 .camp_headerimg").addClass("bb_space");
     }
     
     
