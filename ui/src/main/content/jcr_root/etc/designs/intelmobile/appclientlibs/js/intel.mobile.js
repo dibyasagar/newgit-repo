@@ -438,3 +438,17 @@ intel.mobile = {
 
 // Start the Framework
 intel.mobile.init();
+
+$(document).ready(function(){
+    
+	for(i=0;i<$(".select-title").length;i++)
+	{
+		
+		if($(".select-title")[i].innerHTML.length>25)
+		{
+	
+			$(".select-title")[i].className="select-title menu_set";
+		}
+	}
+    
+});
