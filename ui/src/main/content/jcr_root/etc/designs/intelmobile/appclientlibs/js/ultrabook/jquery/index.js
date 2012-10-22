@@ -54,16 +54,11 @@
             var isiPhone3=(navigator.userAgent.match(/iPhone/i)) ? true : false;
             var isIE= (navigator.userAgent.toLowerCase().indexOf("msie") > -1) ? true : false;
             
-            setTimeout(function() {
-            if(isIE)
+            setTimeout(function(){
+           
+            if(isAndroidOS2||isBB||isiPhone3)
             {
-                 $iScroll = ( $iScroll <= 40 ) ? 40 : 0 ;
-                 $oSticky.css( { "top":$iScroll +30 } ) ; 
-            }
-            //if(isAndroidOS2||isBB||isiPhone3)
-            else
-            {
-				
+           
                 if($("#menu-item").attr("class")=="active")
                 {
                     
@@ -77,34 +72,51 @@
                     $mScroll=$isearchMenu+30;
                    
                 }
-              if($mScroll!="")
-              {
-			  
-			  if($iScroll-$mScroll<0)
+				
+			  if(isiPhone3)
 			  {
-				$mScroll=40;
+				if($mScroll!="")
+				  {
+					  
+					  if($iScroll-$mScroll<0)
+					  {
+						$mScroll=40;
+					  }
+					  else
+					  {
+						$mScroll=($iScroll-$mScroll);
+					  }
+					  //$mScroll = ( $iScroll <= 40 ) ? 40 : ($iScroll-$mScroll) ;
+					  $oSticky.css( { "top":$mScroll} ) ; 
+				  }
+				  else
+				  {
+					  
+					  $iScroll = ( $iScroll <= 40 ) ? 40 : $iScroll;
+					  
+					  $oSticky.css( { "top":$iScroll +30 } ) ; 
+				  }
 			  }
 			  else
 			  {
-				$mScroll=($iScroll-$mScroll);
-			  }
-              //$mScroll = ( $iScroll <= 40 ) ? 40 : ($iScroll-$mScroll) ;
-              $oSticky.css( { "top":$mScroll} ) ; 
+              if($mScroll!="")
+              {
+              $mScroll = ( $mScroll <= 40 ) ? 40 : $mScroll ;
+              $oSticky.css( { "top":$mScroll +30 } ) ; 
               }
               else
               {
-				  
                   $iScroll = ( $iScroll <= 40 ) ? 40 : 0 ;
                   $oSticky.css( { "top":$iScroll +30 } ) ; 
               }
+			  }
                
            }
-          // else
-          // {
-           
-           //$iScroll = ( $iScroll <= 40 ) ? 40 : 0 ;
-           //$oSticky.css( { "top":$iScroll +30 } ) ; 
-           //}
+           else
+           {
+           $iScroll = ( $iScroll <= 40 ) ? 40 : 0 ;
+           $oSticky.css( { "top":$iScroll +30 } ) ; 
+           }
            },1000);
                 
 
