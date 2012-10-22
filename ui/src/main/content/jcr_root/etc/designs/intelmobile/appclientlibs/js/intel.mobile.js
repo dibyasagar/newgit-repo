@@ -44,6 +44,7 @@ intel.mobile = {
         headerBar:      $('#header-bar'),
         main:           $('#main'),
         footer:         $('.footer'),
+        ultra_content:  $('#ultrabook_content'),
         searchTerm:     $('#search-term'),
         searchClear:    $('#clear-search'),
         disclaimer:     $('#disclaimers'),
@@ -201,6 +202,7 @@ intel.mobile = {
                             // Move main content down
                             cachedElements.main.attr( 'style', openStyle3d );
                             cachedElements.footer.attr( 'style', openStyle3d );
+                            cachedElements.ultra_content.attr( 'style', openStyle3d );
                             }
                        
                         // open keyboard
@@ -244,8 +246,10 @@ intel.mobile = {
                           else
                           {
                             // Move main content down
-                             cachedElements.main.attr( 'style', closeStyle3d );
+                            cachedElements.main.attr( 'style', closeStyle3d );
                             cachedElements.footer.attr( 'style', closeStyle3d );
+                            cachedElements.ultra_content.attr('style', closeStyle3d );
+
                             }
                             // Move main content down
                            
