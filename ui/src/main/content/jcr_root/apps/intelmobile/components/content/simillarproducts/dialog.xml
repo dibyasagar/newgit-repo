@@ -15,7 +15,6 @@
                         allowBlank="{Boolean}false"
                         defaultValue="Similar Products"
                         fieldLabel="Heading"
-                        maxLength="{Long}48"
                         name="./heading"
                         xtype="textfield"/>
                     <pages
