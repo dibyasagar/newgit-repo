@@ -45,7 +45,9 @@
             this.xSticky = function()
             {
             var $iScroll = xGetScrollTop() ;
+			
             var $mScroll="";
+			
             
             var isAndroidOS2=(navigator.userAgent.toLowerCase().indexOf("android") > -1) ? true : false;
             var isBB= (navigator.userAgent.toLowerCase().indexOf("blackberry") > -1) ? true : false;
@@ -61,7 +63,7 @@
             //if(isAndroidOS2||isBB||isiPhone3)
             else
             {
-           
+				
                 if($("#menu-item").attr("class")=="active")
                 {
                     
@@ -77,11 +79,21 @@
                 }
               if($mScroll!="")
               {
-              $mScroll = ( $mScroll <= 40 ) ? 40 : $mScroll ;
-              $oSticky.css( { "top":$mScroll +30 } ) ; 
+			  
+			  if($iScroll-$mScroll<0)
+			  {
+				$mScroll=40;
+			  }
+			  else
+			  {
+				$mScroll=($iScroll-$mScroll);
+			  }
+              //$mScroll = ( $iScroll <= 40 ) ? 40 : ($iScroll-$mScroll) ;
+              $oSticky.css( { "top":$mScroll} ) ; 
               }
               else
               {
+				  
                   $iScroll = ( $iScroll <= 40 ) ? 40 : 0 ;
                   $oSticky.css( { "top":$iScroll +30 } ) ; 
               }
@@ -457,7 +469,7 @@
 
 function vTempsLoads( $k )
 {
-    // console.log( $k ) ;
+    
 
 // var $oModulA = brightcove.api.getExperience( $k ) ;
 
@@ -485,9 +497,9 @@ function vTempsLoads( $k )
 function tImage()
 {
            
-           //alert(window.orientation);
+           
            var isIE= (navigator.userAgent.toLowerCase().indexOf("msie") > -1) ? true : false;
-            //alert(isIE);
+            
             if(isIE)
             {
                 if(window.innerWidth>window.innerHeight)
@@ -562,7 +574,7 @@ function tImage()
 $(window).bind('orientationchange resize', _imgHandler);
 function _imgHandler()
 {
-    alert(window.innerWidth);
+    
     //setTimeout('tImage()',100);
 }
 
@@ -589,8 +601,8 @@ $(document).ready(function(){
 	}
 	if(isAndroidOS2)
     {
-        //alert(isAndroidOS2);
-        //alert("my: "+$(".ultrabook .slide .item .inside"));
+        
+        
         $(".ultrabook .slide .item .inside").addClass("s2_orig");
 		$(".ultrabook .slide-0 .camp_headerimg").addClass("s2_space");
         
@@ -598,14 +610,14 @@ $(document).ready(function(){
     if(isiPhone3g)
     {
         
-        //alert("my: "+$(".ultrabook .slide .item .inside"));
+        
         $(".ultrabook .slide .item .inside").addClass("iphone_orig");
         
     }
     if(isIE)
     {
         
-        //alert("my: "+$(".ultrabook .slide .item .inside"));
+        
         $(".ultrabook .slide .item .inside").addClass("ie_orig");
         
     }
