@@ -220,6 +220,14 @@ footer nav a:visited
   {
       padding-right: 15px !important;
   }
+  .ultrabook .slide-0 .camp_headerimg.s2_space img
+  {
+      margin-top: -130px !important;
+  }
+  .ultrabook .slide-0 .camp_headerimg.bb_space img
+  {
+      margin-top: -40px !important;
+  }
   
 }
 
