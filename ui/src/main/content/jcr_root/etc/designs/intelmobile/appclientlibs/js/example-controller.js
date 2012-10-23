@@ -1381,7 +1381,7 @@ intel && intel.mobile && intel.mobile.register('videoPlayer', {
 
         player = new YT.Player(ytID, {
             width: pWidth,
-            height: "auto",
+            height: "200",
             videoId: ytID,
             fs: 1,
             playerVars: { 
