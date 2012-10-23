@@ -1381,7 +1381,7 @@ intel && intel.mobile && intel.mobile.register('videoPlayer', {
 
         player = new YT.Player(ytID, {
             width: pWidth,
-            height: "200",
+            height: "auto",
             videoId: ytID,
             fs: 1,
             playerVars: { 
@@ -1391,6 +1391,8 @@ intel && intel.mobile && intel.mobile.register('videoPlayer', {
 
             events: {
             //'onReady': self.onPlayerReady
+            //'onReady': onPlayerReady,
+            //'onStateChange': onPlayerStateChange
             }
         });
     },
@@ -1401,6 +1403,13 @@ intel && intel.mobile && intel.mobile.register('videoPlayer', {
     }
 });
 
+/*
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING) {
+        event.target.setPlaybackQuality('hd720');  // <-- WORKS!
+    }
+}
+*/
 // global scope for youtube API
 function onYouTubeIframeAPIReady() {
     var el = $('.video-container'),
