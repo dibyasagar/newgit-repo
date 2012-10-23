@@ -2095,8 +2095,8 @@ div.filter ul.level2 li label {
 }
 .tiles sup {
   line-height: 0;
-  font-size: 104%;
-  vertical-align: bottom;
+  /*font-size: 104%;*/ /* changed by shishir 23-10-12*/
+ /* vertical-align: bottom;*/ /* changed by shishir 23-10-12*/
 }
 .tiles a {
   text-decoration: none;
