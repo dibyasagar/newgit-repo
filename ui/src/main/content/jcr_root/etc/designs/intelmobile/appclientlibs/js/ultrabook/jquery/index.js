@@ -45,9 +45,9 @@
             this.xSticky = function()
             {
             var $iScroll = xGetScrollTop() ;
-			
+            
             var $mScroll="";
-			
+            
             
             var isAndroidOS2=(navigator.userAgent.toLowerCase().indexOf("android") > -1) ? true : false;
             var isBB= (navigator.userAgent.toLowerCase().indexOf("blackberry") > -1) ? true : false;
@@ -72,33 +72,37 @@
                     $mScroll=$isearchMenu+30;
                    
                 }
-				
-			  if(isiPhone3)
-			  {
-				if($mScroll!="")
-				  {
-					  
-					  if($iScroll-$mScroll<0)
-					  {
-						$mScroll=40;
-					  }
-					  else
-					  {
-						$mScroll=($iScroll-$mScroll);
-					  }
-					  //$mScroll = ( $iScroll <= 40 ) ? 40 : ($iScroll-$mScroll) ;
-					  $oSticky.css( { "top":$mScroll} ) ; 
-				  }
-				  else
-				  {
-					  
-					  $iScroll = ( $iScroll <= 40 ) ? 40 : $iScroll;
-					  
-					  $oSticky.css( { "top":$iScroll +30 } ) ; 
-				  }
-			  }
-			  else
-			  {
+                
+              if(isiPhone3)
+              {
+                
+                if($mScroll!="")
+                  {
+                      
+                      if($iScroll-$mScroll<0)
+                      {
+                        $mScroll=40;
+                      }
+                      else
+                      {
+                        $mScroll=($iScroll-$mScroll);
+                      }
+                      //$mScroll = ( $iScroll <= 40 ) ? 40 : ($iScroll-$mScroll) ;
+                      $oSticky.css( { "top":$mScroll} ) ; 
+                  }
+                  else
+                  {
+                      document.getElementById("ultrabook_content").removeAttribute("style");
+                      $(".footer").removeAttr("style");
+                      document.getElementById("category-menu").removeAttribute("style");
+                      
+                      $iScroll = ( $iScroll <= 40 ) ? 40 : 0;
+                      
+                      $oSticky.css( { "top":$iScroll +30 } ) ; 
+                  }
+              }
+              else
+              {
               if($mScroll!="")
               {
               $mScroll = ( $mScroll <= 40 ) ? 40 : $mScroll ;
@@ -109,13 +113,52 @@
                   $iScroll = ( $iScroll <= 40 ) ? 40 : 0 ;
                   $oSticky.css( { "top":$iScroll +30 } ) ; 
               }
-			  }
+              }
                
            }
            else
            {
-           $iScroll = ( $iScroll <= 40 ) ? 40 : 0 ;
-           $oSticky.css( { "top":$iScroll +30 } ) ; 
+                if($("#menu-item").attr("class")=="active")
+                {
+                    
+                    var $iMenu=  $("#category-menu").height();
+                    $mScroll=$iMenu+30;
+                   
+                }
+                else if($("#search-item").attr("class")=="active")
+                {
+                    var $isearchMenu=  $("#search-menu").height();
+                    $mScroll=$isearchMenu+30;
+                   
+                }
+           
+           
+           if($mScroll!="")
+                  {
+                      
+                      if($iScroll-$mScroll<0)
+                      {
+                        $mScroll=40;
+                      }
+                      else
+                      {
+                        $mScroll=($iScroll-$mScroll);
+                      }
+                      //$mScroll = ( $iScroll <= 40 ) ? 40 : ($iScroll-$mScroll) ;
+                      $oSticky.css( { "top":$mScroll} ) ; 
+                  }
+                  else
+                  {
+                      
+                      document.getElementById("ultrabook_content").removeAttribute("style");
+                      $(".footer").removeAttr("style");
+                      document.getElementById("category-menu").removeAttribute("style");
+                      //document.getElementById("ultrabook_content").style="";
+                      
+                      $iScroll = ( $iScroll <= 40 ) ? 40 : 0;
+                      
+                      $oSticky.css( { "top":$iScroll +30 } ) ; 
+                  }
            }
            },1000);
                 
@@ -598,25 +641,25 @@ function _imgHandler()
 $(document).ready(function(){
     
     
-	$("#wrapper").addClass("wapwrapper");
+    $("#wrapper").addClass("wapwrapper");
     $("#wrapper").attr("data-component-id","1");
     $("#wrapper").attr("data-component","ultrabook-mobile-campaign-2012");
     var isAndroidOS2=(navigator.userAgent.toLowerCase().indexOf("android 2.3") > -1) ? true : false;
     var isiPhone3g= (navigator.userAgent.toLowerCase().indexOf("iphone os 5_1_1") > -1) ? true : false;
     var isIE= (navigator.userAgent.toLowerCase().indexOf("msie") > -1) ? true : false;
-	var isAndroidOS3=(navigator.userAgent.toLowerCase().indexOf("android 4.0.4") > -1) ? true : false;
-	var isBB= (navigator.userAgent.toLowerCase().indexOf("blackberry") > -1) ? true : false;
+    var isAndroidOS3=(navigator.userAgent.toLowerCase().indexOf("android 4.0.4") > -1) ? true : false;
+    var isBB= (navigator.userAgent.toLowerCase().indexOf("blackberry") > -1) ? true : false;
    
     if(isAndroidOS3)
-	{
-		$(".ultrabook .slide-0 .camp_headerimg").addClass("s3_orig");
-	}
-	if(isAndroidOS2)
+    {
+        $(".ultrabook .slide-0 .camp_headerimg").addClass("s3_orig");
+    }
+    if(isAndroidOS2)
     {
         
         
         $(".ultrabook .slide .item .inside").addClass("s2_orig");
-		$(".ultrabook .slide-0 .camp_headerimg").addClass("s2_space");
+        $(".ultrabook .slide-0 .camp_headerimg").addClass("s2_space");
         
     }
     if(isiPhone3g)
@@ -633,7 +676,7 @@ $(document).ready(function(){
         $(".ultrabook .slide .item .inside").addClass("ie_orig");
         
     }
-	if(isBB)
+    if(isBB)
     {
         $(".ultrabook .slide-0 .camp_headerimg").addClass("bb_space");
     }
