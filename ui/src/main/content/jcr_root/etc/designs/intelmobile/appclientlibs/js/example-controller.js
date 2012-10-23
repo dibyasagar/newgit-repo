@@ -1384,6 +1384,11 @@ intel && intel.mobile && intel.mobile.register('videoPlayer', {
             height: "200",
             videoId: ytID,
             fs: 1,
+            playerVars: { 
+              'rel': 0, 
+              'enablejsapi': 1 
+            },
+
             events: {
             //'onReady': self.onPlayerReady
             }
