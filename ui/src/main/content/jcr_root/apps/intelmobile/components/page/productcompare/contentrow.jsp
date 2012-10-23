@@ -17,7 +17,7 @@
 <%@page import="com.intel.mobile.util.IntelUtil"%>
 <%
   String rootPath = resourceResolver.map(IntelUtil.getRootPath(currentPage));
-  pageContext.setAttribute("locale", IntelUtil.getLocale(currentPage));
+  pageContext.setAttribute("locale", IntelUtil.getLocaleWithoutChangingUK(currentPage));
   pageContext.setAttribute("rootpath", rootPath);
 %>
                 
