@@ -152,7 +152,7 @@
 			</ul>
 		</div>
 		<c:if test="${fn:length(retailerValues) gt 2}">
-			<a class="view-more-control" data-opencopy="See less purchasing options" data-closedcopy="See more purchasing options" href="javascript:void(0)">See more purchasing options</a>
+			<a class="view-more-control" data-opencopy="See less purchasing options" data-closedcopy="See more purchasing options" href="javascript:void(0)"><fmt:message key="retailer.label.seemore"/></a>
 		</c:if>
 		</div>
 		</c:when>
