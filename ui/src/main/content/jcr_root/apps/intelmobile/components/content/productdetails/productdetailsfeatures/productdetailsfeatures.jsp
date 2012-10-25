@@ -20,7 +20,7 @@ String pagepath = currentPage.getPath();
 	pageContext.setAttribute("customfeatures", customFeatures);
 %>
 <c:if test="${fn:length(features)>0 or fn:length(customfeatures)>0}">
-		<h4 class="grad">Features:</h4>
+		<h4 class="grad"><fmt:message key="productdetails.label.feature" /></h4>
 		<ul class="features">						
 		<c:forEach var="entry" items="${features}">
 				<li>
