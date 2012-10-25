@@ -25,7 +25,7 @@ public class FilterSortUtil {
 		TagManager tagManager = resolver.adaptTo(TagManager.class);
 		try {
 			//String category = page.getName();
-			String locale = IntelUtil.getLocale(page);
+			String locale = IntelUtil.getLocaleWithoutChangingUK(page);
 			String tagPath = "";
 			if(section.equals(TAG_SECTION_SEARCH)) {
 				tagPath = TAG_BASE_PATH + locale 
@@ -72,7 +72,7 @@ public class FilterSortUtil {
 		TagManager tagManager = resolver.adaptTo(TagManager.class);
 		try {
 			//String category = page.getName();
-			String locale = IntelUtil.getLocale(page);
+			String locale = IntelUtil.getLocaleWithoutChangingUK(page);
 			String tagPath = "";
 			if(section.equals(TAG_SECTION_SEARCH)) {
 				tagPath = TAG_BASE_PATH + locale 
