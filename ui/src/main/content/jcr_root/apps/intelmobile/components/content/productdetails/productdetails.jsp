@@ -94,7 +94,7 @@
 				<c:when test="${fn:length(retailerValues) gt 0 && fn:length(retailerValues) <= 2}">
 					<c:forEach items="${retailerValues}" var="retailer" varStatus="rowCounter">
 						 <li><img src="<c:out value="${retailer.logo}"/>">
-						<span class="price"><c:out value="${labels['currencysymbol']}" /><c:out value="${retailer.price}" /></span>
+						<span class="price"><fmt:message key="generic.label.currency_symbol"/><c:out value="${retailer.price}" /></span>
 						
 						<a href="<c:out value="${retailer.url}"/>" data-wap='{"linktype":"seeproduct","manufacturer":"${wapData.manufacturer}","processor":"${wapData.processor}","retailer":"${retailer.name}","model":"${wapData.name}","price":"${retailer.price}","formFactor":"${wapData.formFactor}"}' target="${window}"><c:out value="${retailer.name}" escapeXml="false"/></a>
 						
@@ -108,7 +108,7 @@
 					<c:when test="${rowCounter.count <= 2}">
 					     <li>
 						   <img src="<c:out value="${retailer.logo}"/>">
-						   <span class="price"><c:out value="${labels['currencysymbol']}" /><c:out value="${retailer.price}" /></span>
+						   <span class="price"><fmt:message key="generic.label.currency_symbol"/><c:out value="${retailer.price}" /></span>
 						   <a href="<c:out value="${retailer.url}"/>" data-wap='{"linktype":"seeproduct","manufacturer":"${wapData.manufacturer}","processor":"${wapData.processor}","retailer":"${retailer.name}","model":"${wapData.name}","price":"${retailer.price}","formFactor":"${wapData.formFactor}"}' target="${window}"><c:out value="${retailer.name}" escapeXml="false"/></a>
 					     </li>
 					</c:when>
@@ -120,7 +120,7 @@
 			                     <ul class="items">
 			                       <li>
 							        <img src="<c:out value="${retailer.logo}"/>">
-							        <span class="price"><c:out value="${labels['currencysymbol']}" /><c:out value="${retailer.price}" /></span>
+							        <span class="price"><fmt:message key="generic.label.currency_symbol"/><c:out value="${retailer.price}" /></span>
 							        <a href="<c:out value="${retailer.url}" />" data-wap='{"linktype":"seeproduct","manufacturer":"${wapData.manufacturer}","processor":"${wapData.processor}","retailer":"${retailer.name}","model":"${wapData.name}","price":"${retailer.price}","formFactor":"${wapData.formFactor}"}' target="${window}"><c:out value="${retailer.name}" escapeXml="false"/></a>
 						           </li>
 				            </c:when>
@@ -130,7 +130,7 @@
 						 <c:when test="${rowCounter.count > 2}">
 					       <li>
 							<img src="<c:out value="${retailer.logo}"/>">
-							<span class="price"><c:out value="${labels['currencysymbol']}" /><c:out value="${retailer.price}" /></span>
+							<span class="price"><fmt:message key="generic.label.currency_symbol"/><c:out value="${retailer.price}" /></span>
 							<a href="<c:out value="${retailer.url}" />" data-wap='{"linktype":"seeproduct","manufacturer":"${wapData.manufacturer}","processor":"${wapData.processor}","retailer":"${retailer.name}","model":"${wapData.name}","price":"${retailer.price}","formFactor":"${wapData.formFactor}"}' target="${window}"><c:out value="${retailer.name}" escapeXml="false"/></a>
 						   </li>	
 						  </c:when>
@@ -194,7 +194,7 @@
                        <img src="<c:out value="${similarProds.picture}"/>" />
                           <div class="tile-info">
 		                    <span><c:out value="${similarProds.name}" escapeXml="false"/></span>
-		                    <span><c:out value="${labels['currencysymbol']}" /><c:out value="${similarProds.bestPrice}" escapeXml="false"/></span>
+		                    <span><fmt:message key="generic.label.currency_symbol"/><c:out value="${similarProds.bestPrice}" escapeXml="false"/></span>
 		                   </div>
 		               </a> 
                </li>
