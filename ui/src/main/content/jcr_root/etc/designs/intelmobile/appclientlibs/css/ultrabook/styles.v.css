@@ -92,6 +92,9 @@ p {
 .ultrabook a {
   color: #0061A5 ;
 }
+.ultrabook.menus a{
+  color: #0061A5 !important;
+}
 .ultrabook a:hover {
   /*color: #000;*/
 }

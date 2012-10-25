@@ -1,6 +1,6 @@
 
 /* added by Shishir */
-.ultrabook.menus a:visited
+.ultrabook.menus a:hover,a:visited
 {
     color: #0061A5 !important;
 }
