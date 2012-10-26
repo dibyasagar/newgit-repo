@@ -3526,7 +3526,7 @@ html.csstransforms3d header:not(.ics404) .dropdown-menu.inited {
 /* changed by shishir classname from expand to expand_btn */
 #disclaimers .expand_btn {
   background: transparent url("/etc/designs/intelmobile/img/icon_FOOTER-disclaimer.png") no-repeat;
-  background-size: 78%;
+  background-size: 74%;
   padding-right: 2.5em;
 }
 #disclaimers .expand_btn.open {
