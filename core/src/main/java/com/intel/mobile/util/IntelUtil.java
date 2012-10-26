@@ -395,8 +395,8 @@ public class IntelUtil {
 					}
 					componentCustomId = Integer.parseInt(comppnentCellName)+ 2;
 				}
-			} catch (RepositoryException e) {
-				log.error("RepositoryException :"+e.getMessage());
+			} catch (Exception e) {
+				log.error("Exception :"+e.getMessage());
 				log.debug(e.getMessage(), e);
 			}
 		}
