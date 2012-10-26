@@ -137,7 +137,10 @@ html.csstransforms3d header.ics404 #search-menu {
  #social-share .social-share-align
 {
     margin: 0 auto;
-  width: 250px; /* changed from 278px */
+  /*width: 250px;*/ /* changed from 278px */
+  display: inline-block;
+  
+  
 }
 .ultrabook .slide
 {
