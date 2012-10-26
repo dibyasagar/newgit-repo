@@ -1390,7 +1390,7 @@ intel && intel.mobile && intel.mobile.register('videoPlayer', {
             },
 
             events: {
-            //'onReady': self.onPlayerReady
+            'onReady': self.onPlayerReady
             //'onReady': onPlayerReady,
             //'onStateChange': onPlayerStateChange
             }
@@ -1399,7 +1399,8 @@ intel && intel.mobile && intel.mobile.register('videoPlayer', {
 
     // 4. The API will call this function when the video player is ready.
     onPlayerReady : function onPlayerReady(event) {
-        event.target.playVideo();
+       //event.target.playVideo();
+        event.target.setPlaybackQuality('medium');
     }
 });
 
