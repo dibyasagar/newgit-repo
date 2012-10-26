@@ -133,5 +133,5 @@
     <!-- Additional Script Inclusion End -->
     <% currentDesign.writeCssIncludes(pageContext); %>
     <title><%= currentPage.getTitle() == null ? StringEscapeUtils.escapeHtml4(currentPage.getName()) : StringEscapeUtils.escapeHtml4(currentPage.getTitle()) %></title>
-    
+    <cq:include script="/apps/intelmobile/components/page/mobilecontentpage/headmeta.jsp"/>
 </head>
