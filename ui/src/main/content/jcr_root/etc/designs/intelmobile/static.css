@@ -3335,7 +3335,8 @@ html.csstransforms3d header:not(.ics404) .dropdown-menu.inited {
 #main #social-share .social-share-align
 {
     margin: 0 auto;
-  width: 278px;
+  /*width: 278px;*/
+  display: inline-block;
 }
 #main div.filter {
   display: none;
@@ -4375,7 +4376,7 @@ html.csstransforms3d header.ics404 #search-menu {
 @media only screen and (max-width: 380px) {
 #category-menu .select-title.menu_set
   {
-	line-height: 23px;
-	top: 0px;
+    line-height: 23px;
+    top: 0px;
  }
 }
