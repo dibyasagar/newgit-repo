@@ -33,7 +33,7 @@
                             <li id="li_${result.productId}" class="newclass">
                                 <a href="${result.productUrl}" class="copy">
                                     <div class="tile-compare-text">
-                                        <span>Item Added to Compare</span>
+                                        <span><fmt:message key='products.label.compareaddeditem'/></span>
                                     </div>
                                     <img id="li_picture_${result.productId}" src="${result.pictureUrl}" alt="${result.productName}">
                                     <div class="tile-info">
@@ -71,7 +71,7 @@
                             <li id="li_${result.productId}" class="newclass">
                                 <a href="${result.productUrl}" class="copy">
                                     <div class="tile-compare-text">
-                                        <span>Item Added to Compare</span>
+                                        <span><fmt:message key='products.label.compareaddeditem'/></span>
                                     </div>
                                     <img id="li_picture_${result.productId}" src="${result.pictureUrl}" alt="${result.productName}">
                                     <div class="tile-info">
@@ -494,7 +494,7 @@ function populateResults(event) {
                  var prodList =
                   liTag +
                   '<a href="'+ producturl + '" class="copy">' +
-                  "<div class='tile-compare-text'><span>Item Added to Compare</span></div>" + 
+                  "<div class='tile-compare-text'><span><fmt:message key='products.label.compareaddeditem'/></span></div>" + 
 
                          '<img id="li_picture_'+productid+'" src="'+ pictureurl +'" alt="'+
                          productname + '" />'+
