@@ -4380,3 +4380,20 @@ html.csstransforms3d header.ics404 #search-menu {
     top: 0px;
  }
 }
+
+.compareImg
+{
+	background: white url(/etc/designs/intelmobile/img/img_COMPARE-add-item.jpg) no-repeat;
+	width: 302px;
+	height: 288px;
+}
+.Comparetxt
+{
+	display: inline-block;
+    font-size: 150%;
+    left: 0;
+    padding-top: 15%;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
