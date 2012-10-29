@@ -205,7 +205,7 @@ function removeProductFromCookie(productPath) {
                     //htmlText+="</a>";   
 					htmlText+="<a href='"+comparepath+"'>";
 					htmlText+="<img src='/etc/designs/intelmobile/img/img_COMPARE-add-item.jpg' alt='' />";
-					htmlText+="<span class='Comparetxt'>Add a Product to Compare</span></a>";  
+					htmlText+="<span class='Comparetxt'><fmt:message key='productcompare.label.add' /></span></a>";  
                     htmlText+="</li>";
                 }
                 htmlText+="</ul>";
@@ -251,7 +251,7 @@ function removeProductFromCookie(productPath) {
                // htmlText+="</a>";   
 				htmlText+="<a href='"+comparepath+"'>";
 				htmlText+="<img src='/etc/designs/intelmobile/img/img_COMPARE-add-item.jpg' alt='' />";
-				htmlText+="<span class='Comparetxt'>Add a Product to Compare</span></a>"; 
+				htmlText+="<span class='Comparetxt'><fmt:message key='productcompare.label.add' /></span></a>"; 
                 htmlText+="</li>";
                 htmlText+="</ul>"; 
 				htmlText+="<div class='pagination'>";
