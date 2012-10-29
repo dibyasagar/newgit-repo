@@ -199,9 +199,13 @@ function removeProductFromCookie(productPath) {
                 		
                 	}
                     htmlText+="<li class='compare-item'>";
-                    htmlText+="<a href='"+comparepath+"'>";
-                    htmlText+="<img src='/etc/designs/intelmobile/img/img_COMPARE-add-item.jpg' alt='' />";
-                    htmlText+="</a>";   
+                    //htmlText+="<a href='"+comparepath+"' class='compareImg'><span class='Comparetxt'>Add a Product to Compare</span></a>";
+                    //htmlText+="<img src='/etc/designs/intelmobile/img/img_COMPARE-add-item.jpg' alt='' />";
+					
+                    //htmlText+="</a>";   
+					htmlText+="<a href='"+comparepath+"'>";
+					htmlText+="<img src='/etc/designs/intelmobile/img/img_COMPARE-add-item.jpg' alt='' />";
+					htmlText+="<span class='Comparetxt'>Add a Product to Compare</span></a>";  
                     htmlText+="</li>";
                 }
                 htmlText+="</ul>";
@@ -242,9 +246,12 @@ function removeProductFromCookie(productPath) {
                 htmlText+="<div class='sections'>";
                 htmlText+="<ul class='tiles'>";
                 htmlText+="<li class='compare-item'>";
-                htmlText+="<a href='"+comparepath+"'>";
-                htmlText+="<img src='/etc/designs/intelmobile/img/img_COMPARE-add-item.jpg' alt='' />";
-                htmlText+="</a>";   
+                //htmlText+="<a href='"+comparepath+"'>";
+                //htmlText+="<img src='/etc/designs/intelmobile/img/img_COMPARE-add-item.jpg' alt='' />";
+               // htmlText+="</a>";   
+				htmlText+="<a href='"+comparepath+"'>";
+				htmlText+="<img src='/etc/designs/intelmobile/img/img_COMPARE-add-item.jpg' alt='' />";
+				htmlText+="<span class='Comparetxt'>Add a Product to Compare</span></a>"; 
                 htmlText+="</li>";
                 htmlText+="</ul>"; 
 				htmlText+="<div class='pagination'>";
