@@ -14,7 +14,7 @@
 %><%@page session="false"%><%@page
 	import="com.day.cq.wcm.foundation.Image,java.util.Map,com.day.cq.wcm.api.PageFilter,com.day.cq.wcm.api.Page,java.util.Iterator,java.util.List,
            com.intel.mobile.constants.IntelMobileConstants,com.intel.mobile.util.IntelUtil,com.day.cq.wcm.api.WCMMode,com.intel.mobile.util.HeaderUtil"%>
-
+<cq:setContentBundle />
 <%
     String label = "";
 	String logoUrl = "";
@@ -77,7 +77,7 @@
 									<li>
 										<span class="select-title">${title.key}</span>
 										<select id="${title.key}">
-											<option value="">${'Select a '}${title.key}</option>
+											<option value=""><fmt:message key="subpage.label.select"/> ${title.key}</option>
 									</c:when>
 									<c:otherwise>
 										<c:if test="${status.index gt 0}">
