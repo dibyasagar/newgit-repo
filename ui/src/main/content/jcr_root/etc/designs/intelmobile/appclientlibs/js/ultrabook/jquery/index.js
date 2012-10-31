@@ -680,6 +680,11 @@ $(document).ready(function(){
     {
         $(".ultrabook .slide-0 .camp_headerimg").addClass("bb_space");
     }
-    
+   //alert("text: "+$(".ultrabook .shop a span").html().length); 
+   if($(".ultrabook .shop a span").html().length>19)
+   {
+		$(".ultrabook .shop a span").addClass("WrapNew");
+		$(".ultrabook .slide-z .shop a span").addClass("WrapLast");
+   }
     
 });
