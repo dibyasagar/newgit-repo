@@ -89,3 +89,11 @@
 .ultrabook .body > p {
   width: 200px;
 }
+
+.ultrabook .shop a span.WrapNew {
+padding-top: 0px !important;
+}
+
+.ultrabook .slide-z .shop a span.WrapLast {
+padding-top: 8px !important;
+}
