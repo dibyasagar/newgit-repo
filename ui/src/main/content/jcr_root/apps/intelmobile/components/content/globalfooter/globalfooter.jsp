@@ -150,7 +150,7 @@ document.cookie = "intelmobile_last_visited_page="+val +";expires="+expiration_d
   <!-- Add this -->
 <script type="text/javascript">var switchTo5x=true;</script>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript">stLight.options({publisher: "ur-661b55e5-341-5a95-e973-c4ac96945400"}); </script>
+<script type="text/javascript">stLight.options({publisher: "ur-661b55e5-341-5a95-e973-c4ac96945400",shorten:false}); </script>
 <!-- end scripts-->
 <script type="text/javascript" src="/etc/designs/intelmobile/appclientlibs/js/plugins.js"></script>
 <script type="text/javascript" src="/etc/designs/intelmobile/appclientlibs/js/example-controller.js"></script>
