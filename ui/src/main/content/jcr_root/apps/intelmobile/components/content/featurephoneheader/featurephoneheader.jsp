@@ -2,14 +2,13 @@
 <%@page session="false" %>
 <%@page import="com.intel.mobile.util.IntelUtil"%>
 <%
-    String logoImage = currentStyle.get("logoImageReference", "");
-    String logoLink = currentStyle.get("linkpath", "#");
+    String logoImage = IntelUtil.getConfigValue(currentPage,"featureheader", "logoImageReference","");
+    String logoLink = IntelUtil.getConfigValue(currentPage, "featureheader" ,"linkpath","");
    
     String validLink = "";
     if (logoLink != null) {
     	validLink = IntelUtil.getLinkUrl(logoLink,resourceResolver);}
-    
-    pageContext.setAttribute("validLink", validLink);
+
     pageContext.setAttribute("logoImage", logoImage);
     pageContext.setAttribute("validLink",validLink);
     pageContext.setAttribute("componentId",IntelUtil.getComponentId(resource));
