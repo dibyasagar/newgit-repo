@@ -6,8 +6,5 @@
 	</filter>
     <filter root="/etc/designs/intelmobile" >
 	<exclude pattern="/etc/designs/intelmobile/jcr:content(/.*)?" />
-	 
 
-	</filter>
-	<filter root="/etc/languages" />
 </workspaceFilter>
