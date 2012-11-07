@@ -133,12 +133,12 @@ function getRelatedKeys() {
                if(strbrnd.length>0 && strbrnd[0]!="") {
                    if(relateditemsno > 0 && strbrnd.length > relateditemsno){
                        for (i=0;i<relateditemsno;i++){
-                           sugg_html += "<li><a data-wap='{"linktype":"related"}' href='"+currentpageName+"."+strbrnd[i]+"."+searchscope+".html'>"+strbrnd[i]+"</a></li>";          
+                           sugg_html += "<li><a href='"+currentpageName+"."+strbrnd[i]+"."+searchscope+".html'>"+strbrnd[i]+"</a></li>";          
                        } 
                        }
                        else{
                            for (i=0;i<strbrnd.length;i++){
-                           sugg_html += "<li><a data-wap='{"linktype":"related"}' href='"+currentpageName+"."+strbrnd[i]+"."+searchscope+".html'>"+strbrnd[i]+"</a></li>"; 
+                           sugg_html += "<li><a href='"+currentpageName+"."+strbrnd[i]+"."+searchscope+".html'>"+strbrnd[i]+"</a></li>"; 
                            }
                        }               
                        $("#relatedsearch").append(sugg_html);                          	   
@@ -276,13 +276,13 @@ function populateResults(event) {
                    htmlText += '<li>'
                    if(searchscope == "intelmobile") {
                         htmlText += '<div class="thumb">'
-                        htmlText += '<a data-wap=\'{"linktype":"bestmatch"}\' href="'+v_url+'">'                 
+                        htmlText += '<a href="'+v_url+'">'                 
                         htmlText += '<img src="'+ v_img +'" alt="'+v_title+'">'
                         htmlText += '</a>'
                         htmlText += '</div>'
                     }
                    htmlText += '<div>'
-                   htmlText += '<h3><a data-wap=\'{"linktype":"bestmatch"}\' href="'+v_url+'">'+v_title+'</a></h3>'
+                   htmlText += '<h3><a href="'+v_url+'">'+v_title+'</a></h3>'
                    htmlText += v_teaser;
                    if(searchscope == "intelmobile") {
                         if(v_category == "Product") {
@@ -312,13 +312,13 @@ function populateResults(event) {
                    htmlText += '<li>'
                    if(searchscope == "intelmobile") {
                         htmlText += '<div class="thumb">'
-                        htmlText += '<a data-wap=\'{"linktype":"matching-results"}\' href="'+v_url+'">'                 
+                        htmlText += '<a href="'+v_url+'">'                 
                         htmlText += '<img src="'+ v_img +'" alt="'+v_title+'">'
                         htmlText += '</a>'
                         htmlText += '</div>'                        
                    }
                    htmlText += '<div>'
-                   htmlText += '<h3><a data-wap=\'{"linktype":"matching-results"}\' href="'+v_url+'">'+v_title+'</a></h3>'
+                   htmlText += '<h3><a href="'+v_url+'">'+v_title+'</a></h3>'
                    htmlText += v_teaser;
                    if(searchscope == "intelmobile") {
                         if(v_category == "Product") {
