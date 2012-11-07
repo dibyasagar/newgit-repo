@@ -19,6 +19,8 @@
   String rootPath = resourceResolver.map(IntelUtil.getRootPath(currentPage));
   pageContext.setAttribute("locale", IntelUtil.getLocaleWithoutChangingUK(currentPage));
   pageContext.setAttribute("rootpath", rootPath);
+  pageContext.setAttribute("locale",IntelUtil.getLocale(currentPage));
+ 
 %>
                 
 <cq:setContentBundle />
@@ -56,6 +58,7 @@ var categoryPath = "";
 var lastCategoryValue = "";
 var lastCategoryTitle = "";
 var lastCategoryPath = "";
+var currentLocale = "${locale}";
 
 function getCookie(cookieName) {
     var allCookies = document.cookie.split('; ');
@@ -178,7 +181,14 @@ function removeProductFromCookie(productPath) {
                         htmlText+="<div class='tile-info'>";
                         htmlText+="<span>" + productList[j].name + "</span>";
 						if(productList[j].bestPrice != "") {
-							htmlText+="<span>" + label_currency + productList[j].bestPrice + "</span>";
+							if("ru_RU" == currentLocale){
+								bestPrice = productList[j].bestPrice.replace(","," ");
+								bestPrice = bestPrice.replace(".", ",");
+								htmlText+="<span>" + bestPrice + " "+ label_currency + "</span>";
+							}
+							else {
+								htmlText+="<span>" + label_currency + productList[j].bestPrice + "</span>";
+							}
 						}
 						htmlText+="</div>";
                         htmlText+="</a>";
