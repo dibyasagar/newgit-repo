@@ -32,6 +32,7 @@
 	pageContext.setAttribute("similarProd",similarProd);
 	pageContext.setAttribute("labels",labels);
 	pageContext.setAttribute("wapData",ProductUtil.getWapData(currentPage)); 
+	pageContext.setAttribute("locale",IntelUtil.getLocale(currentPage));
 	try {
 		Resource res = currentPage.getParent().getContentResource();				
 		Node node = res.adaptTo(Node.class);
@@ -41,7 +42,8 @@
 	} catch(Exception e) {
 	}
 %>
- <div class="component" data-component="<c:out value="${pageScope.componentName}"/>" data-component-id="<c:out value="${pageScope.componentId}"/>">	
+
+<div class="component" data-component="<c:out value="${pageScope.componentName}"/>" data-component-id="<c:out value="${pageScope.componentId}"/>">	
 <div id="main" role="main">
 <c:if test="${properties.addtocompare eq 'show'}">
 	<ul class="compare accordion" style="display:block" id="comparebox">
@@ -62,10 +64,20 @@
 		<img src="${properties.picture}" alt="${properties.name}">
 		</div>
 		<div class="content">
+		          <c:choose>
+		          <c:when test="${locale eq 'ru_RU'}">
+                       <c:set var="bestPrice" value="${fn:replace(properties.bestPrice,',',' ')}" />
+                       <c:set var="bestPrice" value="${fn:replace(bestPrice,'.',',')}" />
+                       <div class="price">
+				         <fmt:message key="productdetails.label.price"/> <c:out value="${bestPrice}" /><fmt:message key="generic.label.currency_symbol"/>
+					   </div>
+                  </c:when>
+                  <c:otherwise>
 					<div class="price">
-						<fmt:message key="productdetails.label.price"/> <fmt:message key="generic.label.currency_symbol"/><c:out value="${properties.bestPrice}" /> 
+				         <fmt:message key="productdetails.label.price"/> <fmt:message key="generic.label.currency_symbol"/><c:out value="${properties.bestPrice}" /> 
 					</div>
-					
+				 </c:otherwise>
+				  </c:choose>	
 					<c:if test="${not empty properties.tagline}">
 						<h3><c:out value="${properties.tagline}" escapeXml="false"/></h3>
 					</c:if>
@@ -94,8 +106,16 @@
 				<c:when test="${fn:length(retailerValues) gt 0 && fn:length(retailerValues) <= 2}">
 					<c:forEach items="${retailerValues}" var="retailer" varStatus="rowCounter">
 						 <li><img src="<c:out value="${retailer.logo}"/>">
+				  <c:choose>
+		             <c:when test="${locale eq 'ru_RU'}">
+		               <c:set var="retailPrice" value="${fn:replace(retailer.price,',',' ')}" />
+                       <c:set var="retailPrice" value="${fn:replace(retailPrice,'.',',')}" />
+		               <span class="price"><c:out value="${retailPrice}" /><fmt:message key="generic.label.currency_symbol"/></span>
+		             </c:when>
+		             <c:otherwise>
 						<span class="price"><fmt:message key="generic.label.currency_symbol"/><c:out value="${retailer.price}" /></span>
-						
+					</c:otherwise>	
+				 </c:choose>
 						<a href="<c:out value="${retailer.url}"/>" data-wap='{"linktype":"seeproduct","manufacturer":"${wapData.manufacturer}","processor":"${wapData.processor}","retailer":"${retailer.name}","model":"${wapData.name}","price":"${retailer.price}","formFactor":"${wapData.formFactor}"}' target="${window}"><c:out value="${retailer.name}" escapeXml="false"/></a>
 						
 					    </li>
@@ -105,10 +125,19 @@
 					<c:if test="${fn:length(retailerValues) gt 2}">
 					<c:forEach var="retailer" items="${retailerValues}" varStatus="rowCounter">
 				<c:choose>
-					<c:when test="${rowCounter.count <= 2}">
+					 <c:when test="${rowCounter.count <= 2}">
 					     <li>
 						   <img src="<c:out value="${retailer.logo}"/>">
-						   <span class="price"><fmt:message key="generic.label.currency_symbol"/><c:out value="${retailer.price}" /></span>
+						    <c:choose>
+		                       <c:when test="${locale eq 'ru_RU'}">
+		                        <c:set var="retailPrice" value="${fn:replace(retailer.price,',',' ')}" />
+                                <c:set var="retailPrice" value="${fn:replace(retailPrice,'.',',')}" />
+		                        <span class="price"><c:out value="${retailPrice}" /><fmt:message key="generic.label.currency_symbol"/></span>
+		            </c:when>
+		            <c:otherwise>
+						<span class="price"><fmt:message key="generic.label.currency_symbol"/><c:out value="${retailer.price}" /></span>
+					</c:otherwise>	
+				 </c:choose>
 						   <a href="<c:out value="${retailer.url}"/>" data-wap='{"linktype":"seeproduct","manufacturer":"${wapData.manufacturer}","processor":"${wapData.processor}","retailer":"${retailer.name}","model":"${wapData.name}","price":"${retailer.price}","formFactor":"${wapData.formFactor}"}' target="${window}"><c:out value="${retailer.name}" escapeXml="false"/></a>
 					     </li>
 					</c:when>
@@ -120,7 +149,16 @@
 			                     <ul class="items">
 			                       <li>
 							        <img src="<c:out value="${retailer.logo}"/>">
-							        <span class="price"><fmt:message key="generic.label.currency_symbol"/><c:out value="${retailer.price}" /></span>
+						   <c:choose>
+		                      <c:when test="${locale eq 'ru_RU'}">
+		                        <c:set var="retailPrice" value="${fn:replace(retailer.price,',',' ')}" />
+                                <c:set var="retailPrice" value="${fn:replace(retailPrice,'.',',')}" />
+		                        <span class="price"><c:out value="${retailPrice}" /><fmt:message key="generic.label.currency_symbol"/></span>
+		                     </c:when>
+		                   <c:otherwise>
+						     <span class="price"><fmt:message key="generic.label.currency_symbol"/><c:out value="${retailer.price}" /></span>
+					      </c:otherwise>	
+				        </c:choose>
 							        <a href="<c:out value="${retailer.url}" />" data-wap='{"linktype":"seeproduct","manufacturer":"${wapData.manufacturer}","processor":"${wapData.processor}","retailer":"${retailer.name}","model":"${wapData.name}","price":"${retailer.price}","formFactor":"${wapData.formFactor}"}' target="${window}"><c:out value="${retailer.name}" escapeXml="false"/></a>
 						           </li>
 				            </c:when>
@@ -130,7 +168,16 @@
 						 <c:when test="${rowCounter.count > 2}">
 					       <li>
 							<img src="<c:out value="${retailer.logo}"/>">
-							<span class="price"><fmt:message key="generic.label.currency_symbol"/><c:out value="${retailer.price}" /></span>
+							<c:choose>
+		                      <c:when test="${locale eq 'ru_RU'}">
+		                        <c:set var="retailPrice" value="${fn:replace(retailer.price,',',' ')}" />
+                                <c:set var="retailPrice" value="${fn:replace(retailPrice,'.',',')}" />
+		                        <span class="price"><c:out value="${retailPrice}" /><fmt:message key="generic.label.currency_symbol"/></span>
+		                     </c:when>
+		                   <c:otherwise>
+						     <span class="price"><fmt:message key="generic.label.currency_symbol"/><c:out value="${retailer.price}" /></span>
+					      </c:otherwise>	
+				        </c:choose>
 							<a href="<c:out value="${retailer.url}" />" data-wap='{"linktype":"seeproduct","manufacturer":"${wapData.manufacturer}","processor":"${wapData.processor}","retailer":"${retailer.name}","model":"${wapData.name}","price":"${retailer.price}","formFactor":"${wapData.formFactor}"}' target="${window}"><c:out value="${retailer.name}" escapeXml="false"/></a>
 						   </li>	
 						  </c:when>
@@ -194,8 +241,17 @@
                        <img src="<c:out value="${similarProds.picture}"/>" />
                           <div class="tile-info">
 		                    <span><c:out value="${similarProds.name}" escapeXml="false"/></span>
-		                    <span><fmt:message key="generic.label.currency_symbol"/><c:out value="${similarProds.bestPrice}" escapeXml="false"/></span>
-		                   </div>
+		                   <c:choose>
+		                     <c:when test="${locale eq 'ru_RU'}">
+		                        <c:set var="similarPrice" value="${fn:replace(similarProds.bestPrice,',',' ')}" />
+                                <c:set var="similarPrice" value="${fn:replace(similarPrice,'.',',')}" />
+		                        <span class="price"><c:out value="${similarPrice}" /><fmt:message key="generic.label.currency_symbol"/></span>
+		                     </c:when>
+		                      <c:otherwise>
+						       <span><fmt:message key="generic.label.currency_symbol"/><c:out value="${similarProds.bestPrice}" escapeXml="false"/></span>
+					          </c:otherwise>	
+				            </c:choose>
+		                  </div>
 		               </a> 
                </li>
            </c:forEach>
