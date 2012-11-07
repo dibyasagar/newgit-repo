@@ -31,6 +31,7 @@ pageContext.setAttribute("labels",labels);
 pageContext.setAttribute("propertynames",propertynames);
 pageContext.setAttribute("propertyvalues",propertyvalues);
 pageContext.setAttribute("displayLabels",displayLabels);
+pageContext.setAttribute("locale",IntelUtil.getLocale(currentPage));
 
 pageContext.setAttribute("boardfamily",currentNode!=null && currentNode.hasProperty("734")?currentNode.getProperty("734").getString():"");
 pageContext.setAttribute("boardformfactor",currentNode!=null && currentNode.hasProperty("735")?currentNode.getProperty("735").getString():"");
@@ -68,7 +69,14 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
 		   <div class="content">
 		            <c:if test="${not empty properties.bestPrice && (properties.bestPrice ne 'null')}">
             		<div class="price">
-						<fmt:message key="productdetails.label.price"/> <fmt:message key="generic.label.currency_symbol"/><c:out value="${properties.bestPrice}" /> 
+            		   <c:choose>
+		                 <c:when test="${locale eq 'ru_RU'}">
+						  <fmt:message key="productdetails.label.price"/> <c:out value="${properties.bestPrice}" /><fmt:message key="generic.label.currency_symbol"/>
+						 </c:when>
+						 <c:otherwise> 
+						      <fmt:message key="productdetails.label.price"/> <fmt:message key="generic.label.currency_symbol"/><c:out value="${properties.bestPrice}" />
+						 </c:otherwise>
+						</c:choose> 
 					</div>
 					</c:if>
             			<c:if test="${not empty properties.productdescription && (properties.productdescription ne 'null')}">
