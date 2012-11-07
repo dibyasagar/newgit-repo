@@ -537,7 +537,10 @@ function populateResults(event) {
                  if(producturl.charAt(0) != "/") {
                      producturl = "/" + producturl;
                  }
-                 
+                 if("ru_RU" == currentLocale){
+						price = price.replace(","," ");
+						price = price.replace(".", ",");
+				 }
                  var compareClass = "";
                  if(cookieProductPaths.search(productpath) > -1) {
                      compareClass="cta-tile-remove";
@@ -559,7 +562,7 @@ function populateResults(event) {
 
                              (tagLine!=''?'<span>' + tagLine + '</span>':'') +   
                              
-                             (price!=''?'<span id="li_price_'+productid+'">' + fromLabel + " " + label_currency + price + '</span>':'') +
+                             ("ru_RU" == currentLocale ? (price!=''?'<span id="li_price_'+productid+'">' + fromLabel + " " + price +" "+ label_currency + '</span>':'') : (price!=''?'<span id="li_price_'+productid+'">' + fromLabel + " " + label_currency + price + '</span>':'') )+
                          '</div>' +
                      '</a>' +
                      '<label id="label_name_'+productid+'" style="display:none">' + productname + '</label>' +
