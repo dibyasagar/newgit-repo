@@ -24,6 +24,7 @@ pageContext.setAttribute("similarProd",similarProdList);
 pageContext.setAttribute("editmode",WCMMode.fromRequest(request) == WCMMode.EDIT);
 pageContext.setAttribute("componentId",IntelUtil.getComponentId(resource));
 pageContext.setAttribute("componentName",component.getName() );
+pageContext.setAttribute("locale",IntelUtil.getLocale(currentPage));
 %>
 <c:choose>
 <c:when test="${fn:length(similarProd)>0}">
@@ -39,7 +40,18 @@ pageContext.setAttribute("componentName",component.getName() );
               <div class="tile-info">
                 <span><c:out value="${similarProds.name}" escapeXml="false"/></span>
                 <c:if test="${similarProds.bestPrice ne '' && not empty similarProds.bestPrice}">
-                <span><fmt:message key="generic.label.currency_symbol"/><c:out value="${similarProds.bestPrice}"/></span>
+                <c:choose>
+                 <c:when test="${locale eq 'ru_RU'}">
+                       <c:set var="bestPrice" value="${fn:replace(similarProds.bestPrice,',',' ')}" />
+                       <c:set var="bestPrice" value="${fn:replace(bestPrice,'.',',')}" />
+                      
+				         <span><c:out value="${bestPrice}"/><fmt:message key="generic.label.currency_symbol"/></span>
+					  
+                  </c:when>
+                  <c:otherwise>
+					   <span><fmt:message key="generic.label.currency_symbol"/><c:out value="${similarProds.bestPrice}"/></span>
+				 </c:otherwise>
+                  </c:choose>
                 </c:if>
                </div>
            </a> 
