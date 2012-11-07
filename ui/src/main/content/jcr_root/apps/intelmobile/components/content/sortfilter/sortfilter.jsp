@@ -324,14 +324,14 @@
 
     <div class="level1 cta">
         <a href="#" class="cancel" onclick="updateFilters()"><fmt:message key='filterpage.button.cancel' /></a>
-        <a href="#" class="continue active" onclick="updateCookies()"><fmt:message key='filterpage.button.refine' /></a>
+        <a data-wap='{"linktype":"filter"}' href="#" class="continue active" onclick="updateCookies()"><fmt:message key='filterpage.button.refine' /></a>
     </div>
     <div class="level2 cta">
         <a href="#" class="cancel" onclick="updateFilters()" style="display:none;"><fmt:message key='filterpage.button.cancel' /></a>
         <a href="#" class="continue active" onclick="updateCookies()"><fmt:message key='filterpage.button.continue' /></a>
     </div>
     <ul class="level1" id="level1" style="display:block">
-        <li><fmt:message key='generic.button.filter' />: <a href="javascript:void(0)" onclick="resetFilters();">(<fmt:message key='filterpage.label.reset' />)</a> </li> 
+        <li><fmt:message key='generic.button.filter' />: <a data-wap='{"linktype":"reset"}' href="javascript:void(0)" onclick="resetFilters();">(<fmt:message key='filterpage.label.reset' />)</a> </li> 
         <c:forEach var="entry" items="${filters}">
             <c:set var="n" value="${fn:substringBefore(entry.key,'`')}" />  
             <c:set var="t" value="${fn:substringAfter(entry.key,'`')}" />
@@ -343,7 +343,7 @@
             <c:set var="n" value="${fn:substringBefore(entry.key,'`')}" />  
             <c:set var="t" value="${fn:substringAfter(entry.key,'`')}" />
             <ul class="level2 hiddenlevel" id="filterl2_${n}">              
-                <li><c:out value="${t}" />: <a href="javascript:void(0)" onclick="document.getElementById('form_${n}').reset();">(<fmt:message key='filterpage.label.reset' />)</a></li>            
+                <li><c:out value="${t}" />: <a data-wap='{"linktype":"reset"}' href="javascript:void(0)" onclick="document.getElementById('form_${n}').reset();">(<fmt:message key='filterpage.label.reset' />)</a></li>            
                 <form id="form_${n}">
                 <c:forEach var="subfilter" items = "${entry.value}">
                     <li><input type="checkbox" value="${subfilter.key}" id="chk_${n}_${subfilter.key}"><label id="label_${n}_${subfilter.key}" for="chk_${n}_${subfilter.key}"><c:out value="${subfilter.value}" /></label></li>
