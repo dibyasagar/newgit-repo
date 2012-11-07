@@ -562,7 +562,7 @@ function populateResults(event) {
 
                              (tagLine!=''?'<span>' + tagLine + '</span>':'') +   
                              
-                             ("ru_RU" == currentLocale ? (price!=''?'<span id="li_price_'+productid+'">' + fromLabel + " " + price +" "+ label_currency + '</span>':'') : (price!=''?'<span id="li_price_'+productid+'">' + fromLabel + " " + label_currency + price + '</span>':'') )+
+                             ("ru_RU" == currentLocale ? (price!=''?'<span id="li_price_'+productid+'">' + fromLabel + price +" "+ label_currency + '</span>':'') : (price!=''?'<span id="li_price_'+productid+'">' + fromLabel + " " + label_currency + price + '</span>':'') )+
                          '</div>' +
                      '</a>' +
                      '<label id="label_name_'+productid+'" style="display:none">' + productname + '</label>' +
