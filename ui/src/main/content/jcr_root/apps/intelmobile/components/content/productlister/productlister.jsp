@@ -9,6 +9,7 @@
   ComponentsUtil.processProductListing(resourceResolver,pageContext, currentPage, properties);
   pageContext.setAttribute("componentId",IntelUtil.getComponentId(resource));
   pageContext.setAttribute("componentName",component.getName() );
+  pageContext.setAttribute("locale",IntelUtil.getLocale(currentPage));
 %>
 <div class="component" data-component="<c:out value="${pageScope.componentName}"/>" data-component-id="<c:out value="${pageScope.componentId}"/>">
     <div id="main" role="main">
@@ -42,12 +43,33 @@
                                             <span><c:out value="${result.tagLine}" escapeXml="false"/></span>
                                         </c:if>
                                         <c:if test="${result.price ne null and result.price ne ''}">
-                                            <span id="li_price_${result.productId}"><fmt:message key='productdetails.label.price' /> <fmt:message key='generic.label.currency_symbol'/><c:out value="${result.price}" /></span>
+                                        
+                                           <c:choose>
+		                                     <c:when test="${locale eq 'ru_RU'}">
+		                                        <c:set var="resultPrice" value="${fn:replace(result.price,',',' ')}" />
+                                                <c:set var="resultPrice" value="${fn:replace(resultPrice,'.',',')}" />
+		                                         <span id="li_price_${result.productId}"><fmt:message key='productdetails.label.price' /> <c:out value="${resultPrice}" /><fmt:message key='generic.label.currency_symbol'/></span>
+		                                     </c:when>
+		                                     <c:otherwise>
+						                          <span id="li_price_${result.productId}"><fmt:message key='productdetails.label.price' /> <fmt:message key='generic.label.currency_symbol'/><c:out value="${result.price}" /></span>
+					                         </c:otherwise>	
+				                          </c:choose>
                                         </c:if>
                                     </div>
                                 </a>
                                 <label id="label_name_${result.productId}" style="display:none"><c:out value="${result.productName}" escapeXml="false"/></label>
-                                <label id="label_price_${result.productId}" style="display:none"><c:out value="${result.price}" /></label>
+                                
+                                <c:choose>
+		                                     <c:when test="${locale eq 'ru_RU'}">
+		                                        <c:set var="resultPrice" value="${fn:replace(result.price,',',' ')}" />
+                                                <c:set var="resultPrice" value="${fn:replace(resultPrice,'.',',')}" />
+		                                          <label id="label_price_${result.productId}" style="display:none"><c:out value="${resultPrice}" /></label>
+		                                     </c:when>
+		                                     <c:otherwise>
+						                           <label id="label_price_${result.productId}" style="display:none"><c:out value="${result.price}" /></label>
+					                         </c:otherwise>	
+				                </c:choose>
+                          
                                 <label id="label_picture_${result.productId}" style="display:none"><c:out value="${result.pictureUrl}" /></label>
                                 <span style="display:none"><c:out value="${result.productId}" /></span>
                                 <span style="display:none"><c:out value="${result.productPath}" /></span>
@@ -80,12 +102,33 @@
                                             <span><c:out value="${result.tagLine}" escapeXml="false"/></span>
                                         </c:if>
                                         <c:if test="${result.price ne null and result.price ne ''}">
-                                            <span id="li_price_${result.productId}"><fmt:message key='productdetails.label.price' /> <fmt:message key='generic.label.currency_symbol'/><c:out value="${result.price}" /></span>
+                                        
+                                          <c:choose>
+		                                     <c:when test="${locale eq 'ru_RU'}">
+		                                        <c:set var="resultPrice" value="${fn:replace(result.price,',',' ')}" />
+                                                <c:set var="resultPrice" value="${fn:replace(resultPrice,'.',',')}" />
+		                                          <span id="li_price_${result.productId}"><fmt:message key='productdetails.label.price' /> <c:out value="${resultPrice}" /><fmt:message key='generic.label.currency_symbol'/></span>
+		                                     </c:when>
+		                                     <c:otherwise>
+						                           <span id="li_price_${result.productId}"><fmt:message key='productdetails.label.price' /> <fmt:message key='generic.label.currency_symbol'/><c:out value="${result.price}" /></span>
+					                         </c:otherwise>	
+				                          </c:choose>
                                         </c:if>
                                     </div>
                                 </a>
                                 <label id="label_name_${result.productId}" style="display:none"><c:out value="${result.productName}" escapeXml="false"/></label>
-                                <label id="label_price_${result.productId}" style="display:none"><c:out value="${result.price}" /></label>
+                                
+                                <c:choose>
+		                                     <c:when test="${locale eq 'ru_RU'}">
+		                                        <c:set var="resultPrice" value="${fn:replace(result.price,',',' ')}" />
+                                                <c:set var="resultPrice" value="${fn:replace(resultPrice,'.',',')}" />
+		                                          <label id="label_price_${result.productId}" style="display:none"><c:out value="${resultPrice}" /></label>
+		                                     </c:when>
+		                                     <c:otherwise>
+						                           <label id="label_price_${result.productId}" style="display:none"><c:out value="${result.price}" /></label>
+					                         </c:otherwise>	
+				                </c:choose>
+                                
                                 <label id="label_picture_${result.productId}" style="display:none"><c:out value="${result.pictureUrl}" /></label>
                                 <span style="display:none"><c:out value="${result.productId}" /></span>
                                 <span style="display:none"><c:out value="${result.productPath}" /></span>
@@ -139,6 +182,7 @@ var COOKIE_NAME_CATEGORY_TITLE = "intelmobile_pc_category_title";
 var COOKIE_NAME_CATEGORY_PATH = "intelmobile_pc_category_path";
 var COOKIE_NAME_PRODUCT_PATHS = "intelmobile_productcomparepaths";
 var COOKIE_PREFIX_PRODUCT_DETAILS = "intelmobile_pd_";
+var COOKIE_NAME_LOCALE = "intelmobile_locale_";
 
 var  productnameMeta = "${productnameMeta}";
 var  priceMeta = "${priceMeta}";
@@ -165,6 +209,7 @@ var label_nullresult = "<fmt:message key='productlisting.message.nullresult' />"
 var productCategory = "${currentPageName}"
 var productCategoryTitle = "${currentPageTitle}"
 var productCategoryPath = "${currentPagePath}"
+var currentLocale = "${locale}"
 
 var productComparePagePath = "${rootPath}/compare.html";
 var searchOffset = ${noOfProducts};
@@ -220,13 +265,14 @@ function addProductToCookie(productPath,
         productImage,
         productPrice,
         productId) {     
-    
+
     var cki_category = getCookie(COOKIE_NAME_CATEGORY);
+  
     if(cki_category != "" && cki_category != productCategory) {
         removeAllProducts();
         cki_category = "";
     }
-    
+   
     var cki_productPaths = getCookie(COOKIE_NAME_PRODUCT_PATHS);
     var cki_productDetail = "";
     
@@ -237,9 +283,10 @@ function addProductToCookie(productPath,
     if(arr_productPaths[0]!="") {
         arr_length = arr_productPaths.length;
     }
+   
     if(arr_productPaths == null || arr_length <6) {
         if(cki_category == "" || cki_category == productCategory) {
-            if(cki_category == "") {
+        	if(cki_category == "") {
                 
                 setCookie(COOKIE_NAME_CATEGORY, productCategory);
                 setCookie(COOKIE_NAME_CATEGORY_TITLE, encodeURIComponent(productCategoryTitle));
@@ -344,6 +391,7 @@ function repaintCompareBox() {
     var cki_productCategoryTitle = getCookie(COOKIE_NAME_CATEGORY_TITLE);
     var arr_productPaths = cki_productPaths.split("|");
     var arr_length = 0;
+
     if(arr_productPaths[0]!="") {
         arr_length = arr_productPaths.length;
     }   
@@ -357,7 +405,15 @@ function repaintCompareBox() {
             compareBoxHtml = compareBoxHtml + "<li>";
             compareBoxHtml = compareBoxHtml + "<img src='"+ pdetails[1] +"' alt='"+ pdetails[0] +"' />";
             compareBoxHtml = compareBoxHtml + "<div>";
-            compareBoxHtml = compareBoxHtml + "<h3>" + pdetails[0] + "</h3> " + (pdetails[2]!=""?fromLabel+" "+label_currency+"<span class='price'>" + pdetails[2] + "</span>":"");            
+            
+            if("ru_RU" == currentLocale){
+            	compareBoxHtml = compareBoxHtml + "<h3>" + pdetails[0] + "</h3> " + (pdetails[2]!=""?fromLabel+" "+"<span class='price'>" + pdetails[2]+ "</span> " +label_currency:"");
+            }
+            else{
+            	compareBoxHtml = compareBoxHtml + "<h3>" + pdetails[0] + "</h3> " + (pdetails[2]!=""?fromLabel+" "+label_currency+"<span class='price'>" + pdetails[2] + "</span>":"");
+            }
+            //alert("locale"+currentLocale);
+            //compareBoxHtml = compareBoxHtml + "<h3>" + pdetails[0] + "</h3> " + (pdetails[2]!=""?fromLabel+" "+label_currency+"<span class='price'>" + pdetails[2] + "</span>":"");
             compareBoxHtml = compareBoxHtml + "<span class='category'>"+categoryLabel+ " "+ cki_productCategoryTitle + "</span>";
             compareBoxHtml = compareBoxHtml + "</div>";
             compareBoxHtml = compareBoxHtml + "<span style='display:none'>"+pdetails[3]+"</span>";
@@ -580,7 +636,13 @@ function populateResults(event) {
 $(document).ready(function(){
     var totalFilters = getTotalFilters();
     
+    var cki_locale = getCookie(COOKIE_NAME_LOCALE);
     var cki_category = getCookie(COOKIE_NAME_CATEGORY);
+    if(cki_locale != "" && cki_locale != currentLocale){
+    	//alert("current Locale is"+currentLocale);
+    	removeAllProducts();
+     }
+    setCookie(COOKIE_NAME_LOCALE, currentLocale);
     if(cki_category != "" && cki_category != productCategory) {
         removeAllProducts();        
     }
