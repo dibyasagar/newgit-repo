@@ -27,6 +27,18 @@
                         fieldLabel="Processor Comparison Page"
                         name="./comparePath"
                         xtype="pathfield"/>
+                    <seefullspecLabel
+                        jcr:primaryType="nt:unstructured"
+                        fieldDescription="Label for See Full Processor Specification"
+                        fieldLabel="See Full Processor Specs Label"
+                        name="./seefullspecslabel"
+                        xtype="textfield"/>
+                    <comparespecLabel
+                        jcr:primaryType="nt:unstructured"
+                        fieldDescription="Label for Compare Processor Specification"
+                        fieldLabel="Compare Processor Specs Label"
+                        name="./compspecslabel"
+                        xtype="textfield"/>
                 </items>
             </labels>
         </items>
