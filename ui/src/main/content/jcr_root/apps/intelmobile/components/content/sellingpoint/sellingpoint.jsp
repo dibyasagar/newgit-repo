@@ -20,6 +20,7 @@ pageContext.setAttribute("subheading",properties.get("sub-heading"));
 pageContext.setAttribute("sectionheading",properties.get("section-heading"));
 pageContext.setAttribute("sectiondescription",properties.get("section-description"));
 pageContext.setAttribute("learnmore",properties.get("learn-more"));
+pageContext.setAttribute("locale",IntelUtil.getLocale(currentPage));
 
 String internalLink = "";
 String validLink = "";
@@ -38,14 +39,16 @@ pageContext.setAttribute("validLink",validLink);
 
                     <div class="title clear">
 
+                       
                         <div class="icon">
                             <img src="<c:out value="${properties.imagePath}"/>" class="icon"/>
                         </div>
-
-                        <div class="head">
+                        
+                                <div class="head">
                             <h1><c:out value="${properties.title}" escapeXml="false"/></h1>
                         </div>
-
+                       
+                        
                     </div>
 
                     <div class="asset clear">
@@ -55,24 +58,33 @@ pageContext.setAttribute("validLink",validLink);
                                 <div class="video-aa" id="<c:out value="${properties.videoid}"/>" ></div>
                             </div> 
                         </div>
-						<c:if test="${validLink ne '' && not empty validLink}">
-        	            <c:set var="window" value="" />
-				        <c:if test="${properties.newwindow eq 'yes'}">
+                        <c:if test="${validLink ne '' && not empty validLink}">
+                        <c:set var="window" value="" />
+                        <c:if test="${properties.newwindow eq 'yes'}">
                            <c:set var="window" value="_blank" />
                         </c:if>
                         <div class="shop landscape">
                             <a class="ui-link" href="${validLink}" title="<c:out value="${properties.text}" escapeXml="false"/>" target="${window}" data-wap="{&quot;linktype&quot;:&quot;shop&quot;}">
                             <span><c:out value="${properties.text}" escapeXml="false"/></span></a>
                         </div>
-						</c:if>
+                        </c:if>
 
                     </div>
 
                     <div class="body">
 
-                        <h3>
-                             <c:out value="${properties.heading}" escapeXml="false"/>
-                        </h3>
+                        <c:choose>
+                              <c:when test="${locale eq 'ru_RU'}">
+                                   <h3 class="ru_style">
+                                        <c:out value="${properties.heading}" escapeXml="false"/>
+                                   </h3>
+                              </c:when>
+                              <c:otherwise>
+                                <h3>
+                                    <c:out value="${properties.heading}" escapeXml="false"/>
+                                </h3>
+                             </c:otherwise>
+                        </c:choose>   
                         <p>
                         <c:out value="${subheading}" escapeXml="false"/>
                         </p>
@@ -100,16 +112,16 @@ pageContext.setAttribute("validLink",validLink);
                     <div class="spacer"></div>
 
                   <c:if test="${validLink ne '' && not empty validLink}">
-        	            <c:set var="window" value="" />
-				        <c:if test="${properties.newwindow eq 'yes'}">
+                        <c:set var="window" value="" />
+                        <c:if test="${properties.newwindow eq 'yes'}">
                            <c:set var="window" value="_blank" />
                         </c:if>
-        		    <div class="shop portrait">
-        		        <a class="ui-link" href="${validLink}" title="<c:out value="${properties.text}" escapeXml="false"/>" target="${window}" data-wap="{&quot;linktype&quot;:&quot;shop&quot;}">
+                    <div class="shop portrait">
+                        <a class="ui-link" href="${validLink}" title="<c:out value="${properties.text}" escapeXml="false"/>" target="${window}" data-wap="{&quot;linktype&quot;:&quot;shop&quot;}">
                         <span><c:out value="${properties.text}" escapeXml="false"/></span></a>
-        		    </div>
-				
-        	      </c:if>
+                    </div>
+                
+                  </c:if>
                         
 
                 </article>
@@ -121,7 +133,7 @@ pageContext.setAttribute("validLink",validLink);
                 <div class="space-2 vertical">
                     <img src="<c:out value="${properties.heroImageFileReferencePotrait}" />"  alt="${properties.alttext}" title="${properties.alttext}" class="space space-2"/>
                 </div>
-				 <div class="space-2 imgland" style="display:none">
+                 <div class="space-2 imgland" style="display:none">
                     <img src="<c:out value="${properties.heroImageFileReferenceLandscape}"/>"  alt="${properties.alttext}" title="${properties.alttext}" class="space space-2"/>
                 </div>
             </section>
