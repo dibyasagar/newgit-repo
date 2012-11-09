@@ -78,16 +78,20 @@ pageContext.setAttribute("validLink",validLink);
                                    <h3 class="ru_style">
                                         <c:out value="${properties.heading}" escapeXml="false"/>
                                    </h3>
+                                   <div class="ru_style">
+                                        <c:out value="${subheading}" escapeXml="false"/>
+                                   </div>
                               </c:when>
                               <c:otherwise>
                                 <h3>
                                     <c:out value="${properties.heading}" escapeXml="false"/>
                                 </h3>
-                             </c:otherwise>
-                        </c:choose>   
-                        <p>
+                                <p>
                         <c:out value="${subheading}" escapeXml="false"/>
                         </p>
+                             </c:otherwise>
+                        </c:choose>   
+                        
 
                         <div class="more">
 
