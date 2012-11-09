@@ -311,9 +311,13 @@ p {
   
   
 }
+.ultrabook .slide .item .inside .body div.ru_style p
+{
+    font-weight: 300 !important;
+}
 .ultrabook .slide .item .inside .body p {
   font-size: 15px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 150%;
   color: #0097E0;
   margin-bottom: 10px;
