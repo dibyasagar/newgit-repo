@@ -2,12 +2,14 @@
 %><%@page session="false" %>
 <%@page import="com.intel.mobile.util.ProductUtil, java.util.Map ,com.intel.mobile.util.IntelUtil, com.intel.mobile.util.ConfigUtil" %>
 <%
-	log.info("-------inside product details");
+	
     Map specs = ProductUtil.getProcessorSpec(currentPage);
-    log.info("-------After Prossorspec ---"+specs);
-
+   
+    String pagepath = currentPage.getPath();
 	String heading = IntelUtil.getConfigValue(currentPage,"processorspecs", "heading","Processor Specs"); 
     String comparePath = IntelUtil.getConfigValue(currentPage,"processorspecs", "comparePath","");
+    String compareProcessorSpecLabel = IntelUtil.getConfigValue(currentPage,"processorspecs", "compspecslabel","Compare Processor Specifications");
+    String fullProcessorSpecLabel = IntelUtil.getConfigValue(currentPage,"processorspecs", "seefullspecslabel","See Full Processor Specifications");
     
     if(comparePath.length()>0) {
     	comparePath = comparePath + ".html";
@@ -17,20 +19,6 @@
     pageContext.setAttribute("specs",specs);
     pageContext.setAttribute("heading",heading);
     pageContext.setAttribute("comparePath",comparePath);
-    
-    String pagepath = currentPage.getPath();
-    String compareProcessorSpecLabel = "" ;
-    String fullProcessorSpecLabel = "" ;
-    
- 	compareProcessorSpecLabel = ConfigUtil.getConfigValues(resourceResolver,pagepath,compareProcessorSpecLabel);
- 	fullProcessorSpecLabel = ConfigUtil.getConfigValues(resourceResolver,pagepath,fullProcessorSpecLabel);
- 	
- 	if(compareProcessorSpecLabel == null || compareProcessorSpecLabel.equalsIgnoreCase("")){
- 		compareProcessorSpecLabel = "Compare Processor Specifications" ;
- 	}
- 	if(fullProcessorSpecLabel == null || fullProcessorSpecLabel.equalsIgnoreCase("")){
- 		fullProcessorSpecLabel = "See Full Processor Specifications" ;
- 	}
  	
 %>
  <div class="component" data-component="<c:out value="${pageScope.componentName}"/>" data-component-id="<c:out value="${pageScope.componentId}"/>">
