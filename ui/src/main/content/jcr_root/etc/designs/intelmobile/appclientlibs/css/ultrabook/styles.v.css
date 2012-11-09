@@ -298,9 +298,9 @@ p {
   display: block;
 }
 .ultrabook .slide .item .inside .body h3 {
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 130%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 120%;
   color: #0061A5;
   margin-bottom: 10px;
 }
