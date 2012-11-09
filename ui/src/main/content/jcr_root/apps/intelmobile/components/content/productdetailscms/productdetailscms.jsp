@@ -2,10 +2,10 @@
 ProductDetail cms component
 
 
---%><%@page import="com.day.cq.wcm.api.WCMMode,com.intel.mobile.util.ConfigUtil,java.util.Map, com.intel.mobile.util.IntelUtil"%>
+--%><%@page import="com.day.cq.wcm.api.WCMMode,com.intel.mobile.util.ConfigUtil,java.util.Map,java.util.List,com.intel.mobile.util.IntelUtil"%>
 <%@include file="/libs/foundation/global.jsp"%>
 <%@taglib prefix="cq" uri="http://www.day.com/taglibs/cq/1.0" %>
-<%@page import="com.intel.mobile.util.IntelUtil"%>
+<%@page import="com.intel.mobile.util.IntelUtil,com.intel.mobile.util.ProductcmsUtil"%>
 <%
   String rootPath = resourceResolver.map(IntelUtil.getRootPath(currentPage));
 %><%@page session="false"%>
@@ -20,6 +20,8 @@ String propertyvalues[] = null;
 String pagepath = currentPage.getPath();
 String pageTitle = currentPage.getTitle();
 String pageURL = request.getRequestURL().toString();
+List productImageList = ProductcmsUtil.getProductImage(currentPage);
+log.info("list of images :"+productImageList);
 Map labels = ConfigUtil.getConfigDetailsValues(resourceResolver,pagepath);
 String displayLabels = ConfigUtil.getFeatureLabels(resourceResolver,pagepath,"cms");
 propertynames = (String[]) properties.get("propertylabel", new String[0]);
@@ -32,6 +34,7 @@ pageContext.setAttribute("propertynames",propertynames);
 pageContext.setAttribute("propertyvalues",propertyvalues);
 pageContext.setAttribute("displayLabels",displayLabels);
 pageContext.setAttribute("locale",IntelUtil.getLocale(currentPage));
+pageContext.setAttribute("prodImages",productImageList);
 
 pageContext.setAttribute("boardfamily",currentNode!=null && currentNode.hasProperty("734")?currentNode.getProperty("734").getString():"");
 pageContext.setAttribute("boardformfactor",currentNode!=null && currentNode.hasProperty("735")?currentNode.getProperty("735").getString():"");
@@ -57,42 +60,58 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
                          </ul>
                      </div>
                   </li>
-                 </ul>	
+                 </ul>  
 </c:if>
  
-	<div id="product-details">  
+    <div id="product-details">  
            <h1><c:out value="${properties.name}" escapeXml="false"/></h1>
-		   <div id="prod_2" class="hero">
-		   <div class="hero-img">
+           <div id="prod_2" class="hero">
+           <div data-count="1" class="carousel">
+                <ul class="carousel-content">
+                   <c:forEach var="prodImage" items="${prodImages}" > 
+                   <li>
+                       <img src="<c:out value="${prodImage}"/>" alt="${properties.name}"/>
+                       <div class="pagination-container"><div class="pagination"></div></div>
+                        <div class="" style="height:20px">
+                        </div>
+                   </li>
+                </c:forEach>
+             </ul>
+           </div>
+           </div>
+           <!--
+           <div class="hero-img">
            <img src="${properties.picture}" alt="${properties.name}">
-		   </div>
-		   <div class="content">
-		            <c:if test="${not empty properties.bestPrice && (properties.bestPrice ne 'null')}">
-            		<div class="price">
-            		   <c:choose>
-		                 <c:when test="${locale eq 'ru_RU'}">
-						  <fmt:message key="productdetails.label.price"/> <c:out value="${properties.bestPrice}" /><fmt:message key="generic.label.currency_symbol"/>
-						 </c:when>
-						 <c:otherwise> 
-						      <fmt:message key="productdetails.label.price"/> <fmt:message key="generic.label.currency_symbol"/><c:out value="${properties.bestPrice}" />
-						 </c:otherwise>
-						</c:choose> 
-					</div>
-					</c:if>
-            			<c:if test="${not empty properties.productdescription && (properties.productdescription ne 'null')}">
-  							<c:out value="${properties.productdescription}" escapeXml="false"/>
-						</c:if>	
-						<!-- <cq:include path="featurelist" resourceType="intelmobile/components/content/featurelist"/> -->
-	<c:if test="${not empty properties.contenttitle && (properties.contenttitle ne 'null')}">
+           </div>
+           -->
+           <div id="prod_2" class="hero">
+           <div class="content">
+                    <c:if test="${not empty properties.bestPrice && (properties.bestPrice ne 'null')}">
+                    <div class="price">
+                       <c:choose>
+                         <c:when test="${locale eq 'ru_RU'}">
+                          <fmt:message key="productdetails.label.price"/> <c:out value="${properties.bestPrice}" /><fmt:message key="generic.label.currency_symbol"/>
+                         </c:when>
+                         <c:otherwise> 
+                              <fmt:message key="productdetails.label.price"/> <fmt:message key="generic.label.currency_symbol"/><c:out value="${properties.bestPrice}" />
+                         </c:otherwise>
+                        </c:choose> 
+                    </div>
+                    </c:if>
+                        <c:if test="${not empty properties.productdescription && (properties.productdescription ne 'null')}">
+                            <c:out value="${properties.productdescription}" escapeXml="false"/>
+                        </c:if> 
+                        <!-- <cq:include path="featurelist" resourceType="intelmobile/components/content/featurelist"/> -->
+    <c:if test="${not empty properties.contenttitle && (properties.contenttitle ne 'null')}">
           <div class="features productdetailsfeatures">
               <h4 class="grad"><cq:text property="contenttitle" escapeXml="false"/></h4>
-	<ul class="features">
+    <ul class="features">
    <c:if test="${not empty properties.carriervalue && (properties.carriervalue ne 'null') }">
     <li><c:if test="${fn:contains(displayLabels,'carrier')}">
-			<b> <fmt:message key="productdetailsCMS.label.feature_carrier"/>:</b>
-	   </c:if>
-	   <cq:text property="carriervalue" escapeXml="false"/>
-	 </li>  	
+            <b> <fmt:message key="productdetailsCMS.label.feature_carrier"/>:</b>
+       </c:if>
+       <cq:text property="carriervalue" escapeXml="false"/>
+     </li>      
   </c:if>
    <c:if test="${not empty properties.countryvalue && (properties.countryvalue ne 'null')}">
     <li><c:if test="${fn:contains(displayLabels,'country')}">
@@ -166,7 +185,7 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
     </li>
    </c:if>
 
-	<!-- Features List for Ultrabooks -->
+    <!-- Features List for Ultrabooks -->
    <c:if test="${properties.processor ne null && not empty properties.processor}">
     <li><b> <fmt:message key="productdetails.label.feature_processor"/>:</b>
     <cq:text property="processor" escapeXml="false"/> 
@@ -213,9 +232,9 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
     <cq:text property="weight" escapeXml="false"/> 
     </li>
    </c:if>
-   	<!-- Features List for Ultrabooks -->
+    <!-- Features List for Ultrabooks -->
 
-	<!-- Features List for Motherboards -->
+    <!-- Features List for Motherboards -->
    <c:if test="${boardfamily ne null && not empty boardfamily}">
     <li>
     <b> <fmt:message key="productdetails.label.feature_boardfamily"/>:</b>
@@ -246,9 +265,9 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
 
    <c:if test="${integratedgraphics ne null && not empty integratedgraphics}">
     <c:if test= "${fn:toUpperCase(integratedgraphics) eq 'YES' or  fn:toUpperCase(integratedgraphics) eq 'TRUE'}">
-    	<li><b> <fmt:message key="productdetails.label.feature_integratedgraphics"/>:</b>
-    	<c:out value="${integratedgraphics}" />
-    	</li>
+        <li><b> <fmt:message key="productdetails.label.feature_integratedgraphics"/>:</b>
+        <c:out value="${integratedgraphics}" />
+        </li>
     </c:if>
    </c:if>
 
@@ -264,9 +283,9 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
     <c:out value="${socket}" escapeXml="false"/>
     </li>
    </c:if>
-	<!-- Features List for Motherboards -->
-	<!-- Features List for Solid State Devices -->
-	 <c:if test="${capacity ne null && not empty capacity}">
+    <!-- Features List for Motherboards -->
+    <!-- Features List for Solid State Devices -->
+     <c:if test="${capacity ne null && not empty capacity}">
     <li>
     <b> <fmt:message key="productdetails.label.feature_capacity"/>:</b>
     <c:out value="${capacity}" escapeXml="false"/> 
@@ -299,31 +318,31 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
     <cq:text property="ranreadwrite" escapeXml="false"/> 
     </li>
    </c:if>
-	<!-- Features List for Solid State Devices -->
+    <!-- Features List for Solid State Devices -->
    
    <c:if test="${(fn:length(propertynames) gt 0)}">
-				<c:forEach items="${propertynames}" var="name" varStatus="status">
+                <c:forEach items="${propertynames}" var="name" varStatus="status">
                      <li><b> ${name}:</b> ${propertyvalues[status.index]} 
                      </li>
-				</c:forEach>
-		    </c:if>
-	  
-	 </ul>
-	 </div>
-	 </c:if> 
-						
-			<div class="top-border-grad">	
-				    	
-				<cq:include path="description" resourceType="intelmobile/components/content/externallink"/>
-            </div>				
-				<cq:include script="/apps/intelmobile/components/content/socialmedia/socialmedia.jsp"/>		
-            	<c:if test="${properties.addtocompare eq 'show'}">		
-			    	<a class="button primary add-compare grad" href="javascript:void(0)"><fmt:message key="productdetails.label.addtocompare"/></a>
-			    </c:if>							    		
+                </c:forEach>
+            </c:if>
+      
+     </ul>
+     </div>
+     </c:if> 
+                        
+            <div class="top-border-grad">   
+                        
+                <cq:include path="description" resourceType="intelmobile/components/content/externallink"/>
+            </div>              
+                <cq:include script="/apps/intelmobile/components/content/socialmedia/socialmedia.jsp"/>     
+                <c:if test="${properties.addtocompare eq 'show'}">      
+                    <a class="button primary add-compare grad" href="javascript:void(0)"><fmt:message key="productdetails.label.addtocompare"/></a>
+                </c:if>                                     
          </div>
-		 </div>
+         </div>
             <div class="sections">
-            	           
+                           
             <div class="section">
             <ul class="accordion">
             <cq:include path="parsyscomp" resourceType="foundation/components/parsys"/>
@@ -345,9 +364,9 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
       screenshot: ""
   }
   var addthis_config = {
- 	      ui_offset_top: 40,
- 	      ui_offset_left: 60
- 	} 
+          ui_offset_top: 40,
+          ui_offset_left: 60
+    } 
 
   addthis.button("#btn", addthis_config, addthis_share_config);
   */
@@ -386,30 +405,30 @@ var alert_limit_reached = "<fmt:message key='productcompare.alert.limitreached'/
 
 
 function getCookie(cookieName) {
-	var allCookies = document.cookie.split('; ');
-	for (var i=0;i<allCookies.length;i++) {				
-		var cookiePair = allCookies[i];
-		var c_name = cookiePair.substring(0,cookiePair.search("="));
-		var c_value = cookiePair.substring(cookiePair.search("=")+1); 
-		if(c_name==cookieName) {
-			return decodeURIComponent(c_value);
-		}
-	}	
-	return "";
+    var allCookies = document.cookie.split('; ');
+    for (var i=0;i<allCookies.length;i++) {             
+        var cookiePair = allCookies[i];
+        var c_name = cookiePair.substring(0,cookiePair.search("="));
+        var c_value = cookiePair.substring(cookiePair.search("=")+1); 
+        if(c_name==cookieName) {
+            return decodeURIComponent(c_value);
+        }
+    }   
+    return "";
 }
 
 function setCookie(cookieName, cookieValue) {
-	if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)){
-		document.cookie = cookieName 
-		+ "=" + cookieValue + ";expires=24*60*60*1000; path=/";
-	} else	{
-		document.cookie = cookieName 
-		+ "=" + cookieValue + ";expires=; path=/";
-	}
+    if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)){
+        document.cookie = cookieName 
+        + "=" + cookieValue + ";expires=24*60*60*1000; path=/";
+    } else  {
+        document.cookie = cookieName 
+        + "=" + cookieValue + ";expires=; path=/";
+    }
 }
 function removeCookie(cookieName) {
-	document.cookie = cookieName 
-	+ "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+    document.cookie = cookieName 
+    + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
 }
 
 
@@ -417,14 +436,14 @@ function addProductToCookie(productPath,
         productTitle,
         productImage,
         productPrice,
-		productId) {     
+        productId) {     
     
     var cki_category = getCookie(COOKIE_NAME_CATEGORY);
-	if(cki_category != "" && cki_category != productCategory) {
-		removeAllProducts();
-		cki_category = "";
-	}
-	
+    if(cki_category != "" && cki_category != productCategory) {
+        removeAllProducts();
+        cki_category = "";
+    }
+    
     var cki_productPaths = getCookie(COOKIE_NAME_PRODUCT_PATHS);
     var cki_productDetail = "";
     
@@ -438,9 +457,9 @@ function addProductToCookie(productPath,
     if(arr_productPaths == null || arr_length <6) {
         if(cki_category == "" || cki_category == productCategory) {
             if(cki_category == "") {
-				setCookie(COOKIE_NAME_CATEGORY,productCategory);
-				setCookie(COOKIE_NAME_CATEGORY_TITLE,encodeURIComponent(productCategoryTitle));
-				setCookie(COOKIE_NAME_CATEGORY_PATH,productCategoryPath);
+                setCookie(COOKIE_NAME_CATEGORY,productCategory);
+                setCookie(COOKIE_NAME_CATEGORY_TITLE,encodeURIComponent(productCategoryTitle));
+                setCookie(COOKIE_NAME_CATEGORY_PATH,productCategoryPath);
             }
             if(cki_productPaths.search(productPath) == -1) {
                 if(cki_productPaths == "") {
@@ -448,16 +467,16 @@ function addProductToCookie(productPath,
                 } else {
                     cki_productPaths = cki_productPaths + "|" + productPath;    
                 }
-				
+                
                 productTitle = encodeURIComponent(productTitle);
                 productImage = encodeURIComponent(productImage);
                 productPrice = encodeURIComponent(productPrice);
                 productId = encodeURIComponent(productId);
-				
+                
                 cki_productDetail = productTitle + "~" + productImage + "~" + productPrice + "~" + productId;
                 
-				setCookie(COOKIE_NAME_PRODUCT_PATHS, cki_productPaths);
-				setCookie(COOKIE_PREFIX_PRODUCT_DETAILS + productPath, cki_productDetail);				
+                setCookie(COOKIE_NAME_PRODUCT_PATHS, cki_productPaths);
+                setCookie(COOKIE_PREFIX_PRODUCT_DETAILS + productPath, cki_productDetail);              
             } else {
                 alert(alert_product_exists);
                 return false;
@@ -475,31 +494,31 @@ function addProductToCookie(productPath,
 }
 
 function removeProductFromCookie(productPath) {
-	var cki_productPaths = getCookie(COOKIE_NAME_PRODUCT_PATHS);
-	if(cki_productPaths != "") {
-		var productPaths = cki_productPaths.split("|");
-		cki_productPaths = "";
-		for(i=0;i<productPaths.length;i++) {
-			var path = productPaths[i];
-			if(productPaths[i] != productPath) {
-				if(cki_productPaths == "") {
-					cki_productPaths = productPaths[i];
-				} else {
-					cki_productPaths = cki_productPaths + "|" + productPaths[i];
-				}					
-			}				
-		}
-		setCookie(COOKIE_NAME_PRODUCT_PATHS, cki_productPaths);
-		removeCookie(COOKIE_PREFIX_PRODUCT_DETAILS+productPath); 
-		
-		if(cki_productPaths == "") {
-			removeCookie(COOKIE_NAME_PRODUCT_PATHS);
-			removeCookie(COOKIE_NAME_CATEGORY);
-			removeCookie(COOKIE_NAME_CATEGORY_TITLE);
-			removeCookie(COOKIE_NAME_CATEGORY_PATH);			
-		}			
-	}	
-	repaintCompareBox();
+    var cki_productPaths = getCookie(COOKIE_NAME_PRODUCT_PATHS);
+    if(cki_productPaths != "") {
+        var productPaths = cki_productPaths.split("|");
+        cki_productPaths = "";
+        for(i=0;i<productPaths.length;i++) {
+            var path = productPaths[i];
+            if(productPaths[i] != productPath) {
+                if(cki_productPaths == "") {
+                    cki_productPaths = productPaths[i];
+                } else {
+                    cki_productPaths = cki_productPaths + "|" + productPaths[i];
+                }                   
+            }               
+        }
+        setCookie(COOKIE_NAME_PRODUCT_PATHS, cki_productPaths);
+        removeCookie(COOKIE_PREFIX_PRODUCT_DETAILS+productPath); 
+        
+        if(cki_productPaths == "") {
+            removeCookie(COOKIE_NAME_PRODUCT_PATHS);
+            removeCookie(COOKIE_NAME_CATEGORY);
+            removeCookie(COOKIE_NAME_CATEGORY_TITLE);
+            removeCookie(COOKIE_NAME_CATEGORY_PATH);            
+        }           
+    }   
+    repaintCompareBox();
 }
 
 function removeAllProducts() {
@@ -511,16 +530,16 @@ function removeAllProducts() {
     }   
     for(i=0;i<arr_length;i++) {
         var cki_pd = COOKIE_PREFIX_PRODUCT_DETAILS + arr_productPaths[i];
-		var cki_pd_value = getCookie(cki_pd);
-		var pdetails = cki_pd_value.split("~");
-		var productId = pdetails[3];
-		$("#li_" + productId).toggleClass('compare-item');
-		removeCookie(cki_pd);
+        var cki_pd_value = getCookie(cki_pd);
+        var pdetails = cki_pd_value.split("~");
+        var productId = pdetails[3];
+        $("#li_" + productId).toggleClass('compare-item');
+        removeCookie(cki_pd);
     }
-	removeCookie(COOKIE_NAME_PRODUCT_PATHS);
-	removeCookie(COOKIE_NAME_CATEGORY);
-	removeCookie(COOKIE_NAME_CATEGORY_TITLE);
-	removeCookie(COOKIE_NAME_CATEGORY_PATH);				
+    removeCookie(COOKIE_NAME_PRODUCT_PATHS);
+    removeCookie(COOKIE_NAME_CATEGORY);
+    removeCookie(COOKIE_NAME_CATEGORY_TITLE);
+    removeCookie(COOKIE_NAME_CATEGORY_PATH);                
     repaintCompareBox();
 }
 
@@ -542,43 +561,63 @@ function repaintCompareBox() {
             compareBoxHtml = compareBoxHtml + "<li>";
             compareBoxHtml = compareBoxHtml + "<img src='"+ pdetails[1] +"' alt='"+ pdetails[0] +"' />";
             compareBoxHtml = compareBoxHtml + "<div>";
-			compareBoxHtml = compareBoxHtml + "<h3>" + pdetails[0] + "</h3> " + (pdetails[2]!=""?fromLabel+" "+label_currency+"<span class='price'>" + pdetails[2] + "</span>":"");
-			compareBoxHtml = compareBoxHtml + "<span class='category'>"+categoryLabel+ " "+ cki_productCategoryTitle + "</span>";
+            compareBoxHtml = compareBoxHtml + "<h3>" + pdetails[0] + "</h3> " + (pdetails[2]!=""?fromLabel+" "+label_currency+"<span class='price'>" + pdetails[2] + "</span>":"");
+            compareBoxHtml = compareBoxHtml + "<span class='category'>"+categoryLabel+ " "+ cki_productCategoryTitle + "</span>";
             compareBoxHtml = compareBoxHtml + "</div>";
-			compareBoxHtml = compareBoxHtml + "<span style='display:none'>"+pdetails[3]+"</span>";
+            compareBoxHtml = compareBoxHtml + "<span style='display:none'>"+pdetails[3]+"</span>";
             compareBoxHtml = compareBoxHtml + "<span style='display:none'>"+arr_productPaths[i]+"</span>";
-			compareBoxHtml = compareBoxHtml + "<a href='javascript:void(0);' class='cta-tile-remove' title='"+removeLabel+"'></a>";            
+            compareBoxHtml = compareBoxHtml + "<a href='javascript:void(0);' class='cta-tile-remove' title='"+removeLabel+"'></a>";            
         }   
 
-		compareBoxHtml = compareBoxHtml + "<li class='compare-btn'><a class='button primary' href='" + productComparePagePath + "'>"+compareButtonLabel +"</a></li>"		
-		$("#comparebox").show();
-		$("#compareitemlist").empty();
-		$("#compareitemlist").append(compareBoxHtml);
-		$("#compare-widget-count").text(arr_length);	
-	 	$(".cta-tile-remove").bind("click",function () {
-			var $self = $(this);
-			var pathToRemove = $self.prev().text();
-			removeProductFromCookie(pathToRemove);
-		});	
-		$(".reset").bind("click",function () {
-			removeAllProducts();
-		});			 			
-	} else {
-		$("#comparebox").hide();		
-	}
+        compareBoxHtml = compareBoxHtml + "<li class='compare-btn'><a class='button primary' href='" + productComparePagePath + "'>"+compareButtonLabel +"</a></li>"        
+        $("#comparebox").show();
+        $("#compareitemlist").empty();
+        $("#compareitemlist").append(compareBoxHtml);
+        $("#compare-widget-count").text(arr_length);    
+        $(".cta-tile-remove").bind("click",function () {
+            var $self = $(this);
+            var pathToRemove = $self.prev().text();
+            removeProductFromCookie(pathToRemove);
+        }); 
+        $(".reset").bind("click",function () {
+            removeAllProducts();
+        });                     
+    } else {
+        $("#comparebox").hide();        
+    }
 }
 
 repaintCompareBox();
 
 
 $(document).ready(function(){
-	$(".add-compare").bind("click",function () {
-		var $self = $(this);
-		var result = addProductToCookie(currentProductPath,
-				currentProductTitle,
-				currentProductImage,
-				currentProductPrice,
-				currentProductId);
-	});
+    $(".add-compare").bind("click",function () {
+        var $self = $(this);
+        var result = addProductToCookie(currentProductPath,
+                currentProductTitle,
+                currentProductImage,
+                currentProductPrice,
+                currentProductId);
+    });
  });
 </script>     
+
+<%
+        if (WCMMode.fromRequest(request) == WCMMode.EDIT || WCMMode.fromRequest(request) == WCMMode.PREVIEW) {
+%>
+        <script>
+            //alert("called");
+            
+            $(document).ready(function(){
+                setTimeout('heroCaroAlign()',100);
+                
+            }); 
+            function heroCaroAlign()
+            {
+                //alert($(".hero .carousel .carousel-content li").html());
+                $(".hero .carousel .carousel-content li").attr("style","width:304px");
+            }
+        </script>
+<%
+}
+%>
