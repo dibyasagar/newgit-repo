@@ -21,5 +21,15 @@
 	<td>Processor Comparison Page</td> <td><cq:text property="comparePath" /></td>
 </tr>	
 </c:if>
+<c:if test="${not empty properties.seefullspecslabel}">
+<tr>
+	<td>See Full Processor Specification Label</td> <td><cq:text property="seefullspecslabel" /></td>
+</tr>	
+</c:if>
+<c:if test="${not empty properties.compspecslabel}">
+<tr>
+	<td>Compare Processor Specification Label</td> <td><cq:text property="compspecslabel" /></td>
+</tr>	
+</c:if>
 </table>
 </div>
