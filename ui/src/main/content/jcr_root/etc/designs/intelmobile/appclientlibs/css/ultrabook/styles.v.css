@@ -298,11 +298,18 @@ p {
   display: block;
 }
 .ultrabook .slide .item .inside .body h3 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 120%;
+  line-height: 130%;
   color: #0061A5;
   margin-bottom: 10px;
+}
+.ultrabook .slide .item .inside .body h3.ru_style {
+  
+  font-weight: 300 !important;
+  
+  
+  
 }
 .ultrabook .slide .item .inside .body p {
   font-size: 15px;
