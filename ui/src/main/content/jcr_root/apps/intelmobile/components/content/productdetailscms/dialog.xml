@@ -83,7 +83,52 @@
                 fileReferenceParameter="./picture"
                 id="imagefield"
                 name="./contentImage"
-                title="Image"
+                title="Image1"
+                xtype="smartimage"/>
+            <productimage2
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName2"
+                fileReferenceParameter="./picture2"
+                name="./contentImage2"
+                title="Image2"
+                xtype="smartimage"/>
+            <productimage3
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName3"
+                fileReferenceParameter="./picture3"
+                name="./contentImage3"
+                title="Image3"
+                xtype="smartimage"/>
+            <productimage4
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName4"
+                fileReferenceParameter="./picture4"
+                name="./contentImage4"
+                title="Image4"
+                xtype="smartimage"/>
+            <productimage5
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName5"
+                fileReferenceParameter="./picture5"
+                name="./contentImage5"
+                title="Image5"
+                xtype="smartimage"/>
+            <productimage6
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName6"
+                fileReferenceParameter="./picture6"
+                name="./contentImage6"
+                title="Image6"
                 xtype="smartimage"/>
             <features
                 jcr:primaryType="cq:Panel"
