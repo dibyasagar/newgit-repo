@@ -31,5 +31,10 @@
 	<td>Compare Processor Specification Label</td> <td><cq:text property="compspecslabel" /></td>
 </tr>	
 </c:if>
+<c:if test="${not empty properties.arklinkprefix}">
+<tr>
+	<td>ARK Link Prefix</td> <td><cq:text property="arklinkprefix" /></td>
+</tr>	
+</c:if>
 </table>
 </div>
