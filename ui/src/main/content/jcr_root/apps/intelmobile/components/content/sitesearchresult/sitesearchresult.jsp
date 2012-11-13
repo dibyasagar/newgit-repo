@@ -278,13 +278,13 @@ function populateResults(event) {
                    htmlText += '<li>'
                    if(searchscope == "intelmobile") {
                         htmlText += '<div class="thumb">'
-                        htmlText += '<a data-wap=\'{"linktype":"bestmatch"}\' href="'+v_url+'">'                 
+                        htmlText += '<a data-wap=\'{"linktype":"bestmatch"}\' href="'+v_url+'#wapkw='+searchtext+'">'                 
                         htmlText += '<img src="'+ v_img +'" alt="'+v_title+'">'
                         htmlText += '</a>'
                         htmlText += '</div>'
                     }
                    htmlText += '<div>'
-                   htmlText += '<h3><a data-wap=\'{"linktype":"bestmatch"}\' href="'+v_url+'">'+v_title+'</a></h3>'
+                   htmlText += '<h3><a data-wap=\'{"linktype":"bestmatch"}\' href="'+v_url+'#wapkw='+searchtext+'">'+v_title+'</a></h3>'
                    htmlText += v_teaser;
                    if(searchscope == "intelmobile") {
                         if(v_category == "Product") {
@@ -314,13 +314,13 @@ function populateResults(event) {
                    htmlText += '<li>'
                    if(searchscope == "intelmobile") {
                         htmlText += '<div class="thumb">'
-                        htmlText += '<a data-wap=\'{"linktype":"matching-results"}\' href="'+v_url+'">'                 
+                        htmlText += '<a data-wap=\'{"linktype":"matching-results"}\' href="'+v_url+'#wapkw='+searchtext+'">'                 
                         htmlText += '<img src="'+ v_img +'" alt="'+v_title+'">'
                         htmlText += '</a>'
                         htmlText += '</div>'                        
                    }
                    htmlText += '<div>'
-                   htmlText += '<h3><a data-wap=\'{"linktype":"matching-results"}\' href="'+v_url+'">'+v_title+'</a></h3>'
+                   htmlText += '<h3><a data-wap=\'{"linktype":"matching-results"}\' href="'+v_url+'#wapkw='+searchtext+'">'+v_title+'</a></h3>'
                    htmlText += v_teaser;
                    if(searchscope == "intelmobile") {
                         if(v_category == "Product") {
