@@ -99,13 +99,18 @@ public class ProductUtil {
 					if(LOGGER.isDebugEnabled()) {
 						LOGGER.debug("Deep Link :"+linkURL);
 					}
-					String lang = IntelUtil.getLocaleLanguage(page);
-					if(lang != null && lang.equalsIgnoreCase("ru")){
-						linkURL = linkURL.replace("/products/", "/m/ru/products/");
-						if(LOGGER.isDebugEnabled()) {
-							LOGGER.debug("ARK product link for Russia :"+linkURL);
-						}
+					
+					/* Manipulation of ARK link Start */
+					String arkLinkPrefix = IntelUtil.getConfigValue(page,"processorspecs", "arklinkprefix","/m");
+					if(LOGGER.isDebugEnabled()){
+					LOGGER.debug("arkLinkPrefix :"+arkLinkPrefix);
 					}
+					linkURL = linkURL.replace("/products/", arkLinkPrefix+"/products/");
+					if(LOGGER.isDebugEnabled()) {
+						LOGGER.debug("ARK product link :"+linkURL);
+					}
+					/* Manipulation of ARK link End */
+	
 					specs.put("linkURL", linkURL);	
 				} else {
 					LOGGER.error("Error while retreiving Product Id - Product Id not available");
