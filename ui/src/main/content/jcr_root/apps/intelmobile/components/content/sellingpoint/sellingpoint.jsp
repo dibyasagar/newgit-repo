@@ -20,7 +20,7 @@ pageContext.setAttribute("subheading",properties.get("sub-heading"));
 pageContext.setAttribute("sectionheading",properties.get("section-heading"));
 pageContext.setAttribute("sectiondescription",properties.get("section-description"));
 pageContext.setAttribute("learnmore",properties.get("learn-more"));
-pageContext.setAttribute("locale",IntelUtil.getLocale(currentPage));
+//pageContext.setAttribute("locale",IntelUtil.getLocale(currentPage));
 
 String internalLink = "";
 String validLink = "";
@@ -73,7 +73,7 @@ pageContext.setAttribute("validLink",validLink);
 
                     <div class="body">
 
-                        <c:choose>
+                        <!--<c:choose>
                               <c:when test="${locale eq 'ru_RU'}">
                                    <h3 class="ru_style">
                                         <c:out value="${properties.heading}" escapeXml="false"/>
@@ -83,15 +83,15 @@ pageContext.setAttribute("validLink",validLink);
                                    </div>
                               </c:when>
                               <c:otherwise>
-                                <h3>
+                               
+                             </c:otherwise>
+                        </c:choose>  --> 
+                                 <h3>
                                     <c:out value="${properties.heading}" escapeXml="false"/>
                                 </h3>
                                 <p>
                         <c:out value="${subheading}" escapeXml="false"/>
-                        </p>
-                             </c:otherwise>
-                        </c:choose>   
-                        
+                        </p>                        
 
                         <div class="more">
 
@@ -141,3 +141,4 @@ pageContext.setAttribute("validLink",validLink);
                     <img src="<c:out value="${properties.heroImageFileReferenceLandscape}"/>"  alt="${properties.alttext}" title="${properties.alttext}" class="space space-2"/>
                 </div>
             </section>
+
