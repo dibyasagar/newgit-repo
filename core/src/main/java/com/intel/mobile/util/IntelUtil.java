@@ -360,6 +360,7 @@ public class IntelUtil {
 		if(log.isDebugEnabled()) {
 			log.debug("Inside getRootPath Method");
 		}
+		//log.info("current page path : "+currentPage.getPath());
 		while(currentPage != null){
 			if(currentPage.getProperties().get("cq:template", "").
 					equals(IntelMobileConstants.LOCALE_CONFIG_TEMPLATE)){
@@ -549,11 +550,13 @@ public class IntelUtil {
 		String value = defaultValue;
 		Node configNode = null;  
 		try {	
-			String configPath = getRootPath(currentPage) + "/jcr:content/"+nodeName;
+			String localePath = getRootPath(currentPage) + "/jcr:content";
 			Session session = currentPage.getContentResource().getResourceResolver().adaptTo(Session.class);
-			log.info("path:",session.getNode(configPath));
-			if(session.getNode(configPath)!= null){
-			configNode = session.getNode(configPath);
+			Node localeNode = session.getNode(localePath);
+			//log.info("path:"+localePath);
+		
+			if(localeNode.hasNode(nodeName)){
+				configNode = localeNode.getNode(nodeName);
 			}
 			if(configNode != null) {
 				if(configNode.hasProperty(property)) {
@@ -570,11 +573,15 @@ public class IntelUtil {
 	}
 	public static String[] getConfigValues(Page currentPage,String nodeName, String property) {
 		String[] stringValues = null;
-
+		Node configNode = null;
 		try {
-			String configPath = getRootPath(currentPage) + "/jcr:content/"+nodeName;
+			String localePath = getRootPath(currentPage) + "/jcr:content";
 			Session session = currentPage.getContentResource().getResourceResolver().adaptTo(Session.class);
-			Node configNode = session.getNode(configPath);
+			Node localeNode = session.getNode(localePath);
+			
+			if(localeNode.hasNode(nodeName)){
+				configNode = localeNode.getNode(nodeName);
+			}
 			if(configNode != null) {
 				if(configNode.hasProperty(property)) {
 					if(configNode.getProperty(property).isMultiple()) {
