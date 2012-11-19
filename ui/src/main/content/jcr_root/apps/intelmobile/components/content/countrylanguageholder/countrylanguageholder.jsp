@@ -146,7 +146,7 @@
                                                     languageURL =countryhomepageurls[j].toString();
                                                 }
                                                %> 
-                                                  <li class="default"> <a href="<%=languageURL%>" data-loc=<%=CountryName%> onclick="setLocaleCookies('<%=countrydisplaynames[j].toString()%>','<%=properties.get("regionname")%>','<%=language_Node%>')"><%=countrydisplaynames[j].toString()%></a></li>
+                                                  <li class="default1"> <a href="<%=languageURL%>" data-loc=<%=CountryName%> onclick="setLocaleCookies('<%=countrydisplaynames[j].toString()%>','<%=properties.get("regionname")%>','<%=language_Node%>')"><%=countrydisplaynames[j].toString()%></a></li>
                                                 <%
                                             }
                                          }
