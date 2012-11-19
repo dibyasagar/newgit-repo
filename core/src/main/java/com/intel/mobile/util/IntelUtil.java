@@ -4,7 +4,10 @@
 package com.intel.mobile.util;
 
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.MessageFormat;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
@@ -15,19 +18,29 @@ import javax.jcr.NodeIterator;
 import javax.jcr.PathNotFoundException;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+import javax.mail.MessagingException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMultipart;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.HtmlEmail;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.commons.json.JSONArray;
 import org.apache.sling.commons.json.JSONObject;
+import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.FrameworkUtil;
+import org.osgi.framework.ServiceReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.day.cq.commons.jcr.JcrConstants;
+import com.day.cq.mailer.MailService;
+import com.day.cq.mailer.MailingException;
 import com.day.cq.wcm.api.Page;
 
 import com.intel.mobile.constants.IntelMobileConstants;
@@ -600,5 +613,113 @@ public class IntelUtil {
 			log.error("Exception in getconfig values:",e);
 		}
 		return stringValues;
+	}
+	
+	public static Status sendMail(String to, String from, String subject, String body, String copyMe,String emailPageUrl,String fromFirstName,String fromLastName) {
+		if( log.isDebugEnabled()){
+			log.debug("to :"+to);
+			log.debug("from :"+from);
+			log.debug("subject :"+subject);
+			log.debug("body :"+body);
+			log.debug("copyMe :"+copyMe);
+			log.debug("emailPageUrl :"+emailPageUrl);
+			log.debug("fromFirstName :"+fromFirstName);
+			log.debug("fromLastName :"+fromLastName);
+		}
+		Status status = Status.EMAILSENDSUCCESS;
+		HtmlEmail email = new HtmlEmail();
+
+		try {   
+			Bundle bndl = FrameworkUtil.getBundle(com.day.cq.mailer.MailService.class);
+			BundleContext bundleContext =bndl.getBundleContext();  
+			ServiceReference ref = bundleContext.getServiceReference(MailService.class.getName());
+			MailService mailService = (MailService) bundleContext.getService(ref);
+			if( log.isDebugEnabled()){
+				log.debug("mailService:::" + mailService);
+			}
+
+			//Set the body of the email
+			MimeBodyPart messageBodyPart =  new MimeBodyPart();
+			MimeMultipart multipart = new MimeMultipart();
+
+			String emailBody = "This email from m.intel.com has been sent by {0} {1} \n\n {2} \n\n For more information about the Intel, visit m.intel.com.  \n\n Please note, the sender's email address has not been verified. Responding to this email does not guarantee delivery.";
+			if( log.isDebugEnabled()){
+				log.debug("email.message as retrived from properties file :"+emailBody);
+			}
+			Object[] values = new String[] {fromFirstName, fromLastName,body};	        
+			emailBody = MessageFormat.format(emailBody, values);
+			if( log.isDebugEnabled()){
+				log.debug("Email Body :"+emailBody);
+			}
+
+			//Set the attachment of the email
+			/*Authenticator.setDefault(new UHCAuthenticator());
+			//URL uhc = new URL("http://10.209.37.172:4503/en/health-plans.html");
+			URL uhc = new URL(emailPageUrl);
+			messageBodyPart = new MimeBodyPart();
+			DataSource source = new URLDataSource(uhc);
+			messageBodyPart.setDataHandler(new DataHandler(source));
+			messageBodyPart.setFileName("SeeThisPage.html");
+			multipart.addBodyPart(messageBodyPart);*/
+
+
+			// If To Present
+			if (to!=null && to.length()>0 && !(to.equals(""))) {
+				if( log.isDebugEnabled()){
+					log.debug ("Inside To::"+to);
+				}
+				InternetAddress[] internetAddressTo = InternetAddress.parse(to, true);
+				email.setTo(Arrays.asList(internetAddressTo));
+			}	
+
+			// If CC is present
+			if(copyMe!=null && copyMe.length()>0 && copyMe.equals("Y")) {
+				if( log.isDebugEnabled()){
+					log.debug ("Inside CC:"+from);
+				}
+				InternetAddress[] internetAddresCc = InternetAddress.parse(from, true);
+				email.setCc(Arrays.asList(internetAddresCc));
+			}   
+
+			email.setFrom(from); 
+			email.setSubject(subject); 
+			email.addPart(multipart);
+			email.setTextMsg(emailBody);
+			mailService.send(email);
+
+		} catch(MessagingException e) {
+			if( log.isDebugEnabled()){
+				log.debug("Status :"+Status.MESSAGINGEXCEPTION.getStatusMessage());
+			}
+			status = Status.MESSAGINGEXCEPTION;
+
+			log.error("MessagingException :", e);
+
+		} catch (EmailException e) {
+			if( log.isDebugEnabled()){
+				log.debug("Status :"+Status.EMAILEXCEPTION.getStatusMessage());
+			}
+			status = Status.EMAILEXCEPTION;
+
+			log.error("EmailException :", e);
+
+		}catch (MailingException e) {
+			if( log.isDebugEnabled()){
+				log.debug("Status :"+Status.MAILINGEXCEPTION.getStatusMessage());
+			}
+			status = Status.MAILINGEXCEPTION;
+
+			log.error("MailingException :", e);
+
+		}catch (NullPointerException e) {
+			if( log.isDebugEnabled()){
+				log.debug("Status :"+Status.NULLPOINTEREXCEPTION.getStatusMessage());
+			}
+			status = Status.NULLPOINTEREXCEPTION;
+
+			log.error("NullPointerException :", e);
+
+		}
+		return status;
 	}
 }
