@@ -126,22 +126,22 @@ public class SearchDAOImpl implements ISearchDAO {
             String searchResult =  sb.toString();
                    searchResult = searchResult.substring(searchResult.indexOf("[")+1, searchResult.indexOf("]"));
                    searchResult = searchResult.replace("\"","");
-                   LOG.info("searchResult without quotes :"+searchResult);
+                   LOG.debug("searchResult without quotes :"+searchResult);
                   
                    StringTokenizer st1 = new StringTokenizer(searchResult,",");
                    while(st1.hasMoreTokens()){
        		        
                 	   resultList.add(st1.nextToken());
        		    }
-                   LOG.info("searchResult final :"+resultList);
+                   LOG.debug("searchResult final :"+resultList);
                    
         } 
         catch (MalformedURLException e) {
-            e.printStackTrace();
+        	LOG.error("MalformedURLException :",e);
         } catch (ProtocolException e) {
-            e.printStackTrace();
+        	LOG.error("ProtocolException :",e);
         } catch (IOException e) {
-            e.printStackTrace();
+        	LOG.error("IOException :",e);
         }
         finally
         {
@@ -150,7 +150,9 @@ public class SearchDAOImpl implements ISearchDAO {
             rd = null;
             connection = null;
         }
-        LOG.info("searchResult :"+sb.toString());
+        if(sb!=null){
+        	LOG.debug("searchResult :"+sb.toString());
+        }
         return resultList;
     }
 }
