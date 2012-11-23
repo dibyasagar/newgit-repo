@@ -96,7 +96,7 @@ public class IntelSitemap
                     out.print("</div>");
 
             }
-            out.printf("<div class=\"link\"><a href=\"%s.html\">%s</a></div>", new Object[] {
+            out.printf("<div class=\"link\"><a href=\"%s.touch.html\">%s</a></div>", new Object[] {
                 StringEscapeUtils.escapeHtml(aLink.getPath()), aLink.getTitle()
             });
             previousLevel = aLink.getLevel();
