@@ -944,7 +944,8 @@ intel.initShuffleboard = function () {
             var form = $('#emailForm'),
 					message = $('#emailConfirmMessage'),
 					emailField = $('#emailField'),
-					url = window.location.pathname + 'EmailService/EmailService/SendAnEmail',
+					//url = window.location.pathname + 'EmailService/EmailService/SendAnEmail',
+					url = '/bin/SpecsEmail',
 					specsLink = _globals.surveyResults.url;
 
             if (validateEmail()) {
