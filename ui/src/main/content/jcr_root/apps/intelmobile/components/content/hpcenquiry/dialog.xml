@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="HPC Enquiry"
+    width="100%"
+    xtype="dialog">
+    <items jcr:primaryType="cq:TabPanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <hpcdescription
+                jcr:primaryType="cq:Panel"
+                title="HPC Description">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="HPC Title"
+                        fieldLabel="HPC Title"
+                        name="./title"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <description
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="HPC Description."
+                        fieldLabel="Description"
+                        name="./hpcdescription"
+                        validateOnBlur="true"
+                        xtype="richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <styles
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <subsuperscript
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <image
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                    </description>
+                </items>
+            </hpcdescription>
+            <address
+                jcr:primaryType="cq:Panel"
+                title="Address">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <source
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}true"
+                        fieldDescription="Source email address"
+                        fieldLabel="Source address"
+                        name="./source"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <destination
+                        jcr:primaryType="nt:unstructured"
+                        fieldDescription="Destination email address"
+                        fieldLabel="Destination Address"
+                        name="./destination"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                </items>
+            </address>
+            <emailinfo
+                jcr:primaryType="cq:Panel"
+                title="Email info">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <wantemail
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Email Text"
+                        name="./confirmtext"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <emaillabel
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Email Address Label"
+                        name="./emaillabel"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <signup
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Sign up Text"
+                        name="./signup"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                </items>
+            </emailinfo>
+            <learnmore
+                jcr:primaryType="cq:Panel"
+                title="Learn More Copy">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <learnmore
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Learn More Text"
+                        name="./learnmore"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <learnlink
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Link"
+                        name="./learnlink"
+                        validateOnBlur="true"
+                        xtype="browsefield"/>
+                </items>
+            </learnmore>
+            <contactus
+                jcr:primaryType="cq:Panel"
+                title="Contact Us">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <contact
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Contact Text"
+                        name="./contacttext"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <contactlink
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Contact Link"
+                        name="./contactlink"
+                        validateOnBlur="true"
+                        xtype="browsefield"/>
+                </items>
+            </contactus>
+        </items>
+    </items>
+</jcr:root>
