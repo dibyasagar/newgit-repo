@@ -616,16 +616,16 @@ public class IntelUtil {
 	}
 	
 	public static Status sendMail(String to, String from, String subject, String body, String copyMe,String emailPageUrl,String fromFirstName,String fromLastName) {
-		if( log.isDebugEnabled()){
-			log.debug("to :"+to);
-			log.debug("from :"+from);
-			log.debug("subject :"+subject);
-			log.debug("body :"+body);
-			log.debug("copyMe :"+copyMe);
-			log.debug("emailPageUrl :"+emailPageUrl);
-			log.debug("fromFirstName :"+fromFirstName);
-			log.debug("fromLastName :"+fromLastName);
-		}
+		
+		log.info("to :"+to);
+		log.info("from :"+from);
+		log.info("subject :"+subject);
+		log.info("body :"+body);
+		log.info("copyMe :"+copyMe);
+		log.info("emailPageUrl :"+emailPageUrl);
+		log.info("fromFirstName :"+fromFirstName);
+		log.info("fromLastName :"+fromLastName);
+		
 		Status status = Status.EMAILSENDSUCCESS;
 		HtmlEmail email = new HtmlEmail();
 
@@ -634,40 +634,27 @@ public class IntelUtil {
 			BundleContext bundleContext =bndl.getBundleContext();  
 			ServiceReference ref = bundleContext.getServiceReference(MailService.class.getName());
 			MailService mailService = (MailService) bundleContext.getService(ref);
-			if( log.isDebugEnabled()){
-				log.debug("mailService:::" + mailService);
-			}
-
+			
+		    log.info("mailService:::" + mailService);
+			
 			//Set the body of the email
 			MimeBodyPart messageBodyPart =  new MimeBodyPart();
 			MimeMultipart multipart = new MimeMultipart();
 
 			String emailBody = "This email from m.intel.com has been sent by {0} {1} \n\n {2} \n\n For more information about the Intel, visit m.intel.com.  \n\n Please note, the sender's email address has not been verified. Responding to this email does not guarantee delivery.";
-			if( log.isDebugEnabled()){
-				log.debug("email.message as retrived from properties file :"+emailBody);
-			}
+		
+		    log.info("email.message as retrived from properties file :"+emailBody);
+			
 			Object[] values = new String[] {fromFirstName, fromLastName,body};	        
 			emailBody = MessageFormat.format(emailBody, values);
-			if( log.isDebugEnabled()){
-				log.debug("Email Body :"+emailBody);
-			}
-
-			//Set the attachment of the email
-			/*Authenticator.setDefault(new UHCAuthenticator());
-			//URL uhc = new URL("http://10.209.37.172:4503/en/health-plans.html");
-			URL uhc = new URL(emailPageUrl);
-			messageBodyPart = new MimeBodyPart();
-			DataSource source = new URLDataSource(uhc);
-			messageBodyPart.setDataHandler(new DataHandler(source));
-			messageBodyPart.setFileName("SeeThisPage.html");
-			multipart.addBodyPart(messageBodyPart);*/
-
-
+			
+			log.info("Email Body :"+emailBody);
+			
 			// If To Present
 			if (to!=null && to.length()>0 && !(to.equals(""))) {
-				if( log.isDebugEnabled()){
-					log.debug ("Inside To::"+to);
-				}
+				
+				log.info ("Inside To::"+to);
+				
 				InternetAddress[] internetAddressTo = InternetAddress.parse(to, true);
 				email.setTo(Arrays.asList(internetAddressTo));
 			}	
