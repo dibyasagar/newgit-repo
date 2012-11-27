@@ -119,6 +119,17 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
         </div>  
  <script>
 $("#submit").click(function() {
+function validate(){
+  var remember = document.getElementById('signme');
+  var msg="";
+  if (signme.checked){
+   msg="The user wants to sign-up for the newsletter ";
+  }else{
+    msg="The user doesnot want to sign-up for the newsletter";
+  }
+return msg;
+}
+var signconfirm=validate();
 var failure = function(err) {
       alert("Unable to send mail "+err);
         // TODO - clear the form
@@ -132,7 +143,7 @@ var useremail= $('#email').attr('value');
 $.ajax({
         type: "POST",
         url: "/bin/HPCEmail",
-        data: "fromemail="+ fromemailaddr+ "&toemail="+ toemailaddr+ "&body=" + emailbody+ "&signup=" + signupinfo + "&email=" + useremail,
+        data: "fromemail="+ fromemailaddr+ "&toemail="+ toemailaddr+ "&body=" + emailbody+ "&signup=" + signconfirm + "&email=" + useremail,
         success: function(){
             $('#popup').show();
              $('#popup').fadeOut(5000); 
@@ -144,4 +155,4 @@ $.ajax({
 return false;
 }); 
 </script>
-                                              
+                                                
