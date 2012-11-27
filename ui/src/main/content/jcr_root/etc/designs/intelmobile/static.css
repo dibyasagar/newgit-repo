@@ -1601,7 +1601,7 @@ ul.accordion li {
   height: 0;
   overflow: hidden;
 }
-#language-selector .bd ul li.default1 a {
+#language-selector .bd ul li.default a {
   color: #999;
   background-image: url(/etc/designs/intelmobile/img/icon_LANG-check-mark.png);
 }
@@ -3317,6 +3317,8 @@ html.csstransforms3d header:not(.ics404) .dropdown-menu.inited {
   /*padding: 1em 0 0 0;*/ 
   margin-top: 1em;
   /*overflow: hidden;*/
+  margin-left: -12px;
+  width: 100%;
   
 }
 #main #social-share span {
@@ -3528,9 +3530,9 @@ html.csstransforms3d header:not(.ics404) .dropdown-menu.inited {
 /* changed by shishir classname from expand to expand_btn */
 #disclaimers .expand_btn {
   background: transparent url("/etc/designs/intelmobile/img/icon_FOOTER-disclaimer.png") no-repeat;
-  /*background-size: 75%;*/
-  background-size: 24px;
-  padding-right: 2.5em;
+  background-size: 75%;
+ /* background-size: 24px;*/
+   padding-right: 2.5em;
 }
 #disclaimers .expand_btn.open {
   background-position: left -3.5em;
@@ -3546,7 +3548,7 @@ html.csstransforms3d header:not(.ics404) .dropdown-menu.inited {
   overflow: auto;
   display: none;
   /* added by shishir */
-  white-space: pre;           /* CSS 2.0 */
+    white-space: pre;           /* CSS 2.0 */
     white-space: pre-wrap;      /* CSS 2.1 */
     white-space: pre-line;      /* CSS 3.0 */
     white-space: -pre-wrap;     /* Opera 4-6 */
@@ -4385,13 +4387,13 @@ html.csstransforms3d header.ics404 #search-menu {
 
 .compareImg
 {
-	background: white url(/etc/designs/intelmobile/img/img_COMPARE-add-item.jpg) no-repeat;
-	width: 302px;
-	height: 288px;
+    background: white url(/etc/designs/intelmobile/img/img_COMPARE-add-item.jpg) no-repeat;
+    width: 302px;
+    height: 288px;
 }
 .Comparetxt
 {
-	display: inline-block;
+    display: inline-block;
     font-size: 150%;
     left: 0;
     padding-top: 15%;
@@ -4486,5 +4488,5 @@ html.csstransforms3d header.ics404 #search-menu {
 }
 #product-details .hero .carousel .carousel-content li  .pagination-container .navigation-container
 {
-	/*z-index: 0 !important;*/
+    /*z-index: 0 !important;*/
 }
