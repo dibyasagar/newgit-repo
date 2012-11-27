@@ -1601,7 +1601,7 @@ ul.accordion li {
   height: 0;
   overflow: hidden;
 }
-#language-selector .bd ul li.default a {
+#language-selector .bd ul li.default1 a {
   color: #999;
   background-image: url(/etc/designs/intelmobile/img/icon_LANG-check-mark.png);
 }
