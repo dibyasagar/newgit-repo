@@ -1,6 +1,7 @@
 package com.intel.mobile.servlets;
 
 import java.io.IOException;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 
 import javax.jcr.Node;
@@ -18,6 +19,7 @@ import com.intel.mobile.search.SearchController;
 import com.intel.mobile.search.SearchBeanList;
 import com.intel.mobile.search.SearchBean;
 import com.intel.mobile.search.SearchDAOImpl;
+import com.intel.mobile.services.IntelConfigurationService;
 import com.intel.mobile.util.IntelUtil;
 
 import org.apache.felix.scr.annotations.Component;
@@ -32,10 +34,13 @@ import org.apache.sling.commons.json.JSONArray;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
 import org.apache.sling.jcr.api.SlingRepository;
+import org.apache.sling.settings.SlingSettingsService;
 
 import org.apache.sling.commons.json.JSONArray;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.FrameworkUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -84,16 +89,23 @@ public class SpecsEmailServlet extends SlingAllMethodsServlet{
 		LOGGER.info("screenSize : "+screenSize);
 		LOGGER.info("portability : "+portability);
 		LOGGER.info("specsLink : "+specsLink);
-
-		StringBuffer emailBody = new StringBuffer();
-		emailBody.append("Processor : ").append(processor).append("\n");
-		emailBody.append("RAM : ").append(ram).append("\n");
-		emailBody.append("Hard Drive : ").append(hardDrive).append("\n");
-		emailBody.append("Screen Size : ").append(screenSize).append("\n");
-		emailBody.append("Portability : ").append(portability).append("\n");
-		emailBody.append("Spec Link : ").append(specsLink).append("\n");
-
-		IntelUtil.sendMail(emailAddress, "noreply@intel.com", "Suggested Processor Spec", emailBody.toString(), null, null, "", "");
+		
+		StringBuffer spec = new StringBuffer();
+		spec.append("Processor : ").append(processor).append("\n");
+		spec.append("RAM : ").append(ram).append("\n");
+		spec.append("Hard Drive : ").append(hardDrive).append("\n");
+		spec.append("Screen Size : ").append(screenSize).append("\n");
+		spec.append("Portability : ").append(portability).append("\n");
+		spec.append("Spec Link : ").append(specsLink).append("\n");
+		
+		BundleContext bundleContext = FrameworkUtil.getBundle(SlingSettingsService.class).getBundleContext();  
+		IntelConfigurationService intelConfigService = (IntelConfigurationService) bundleContext.getService(bundleContext.getServiceReference(IntelConfigurationService.class.getName()));
+		String emailBody =  intelConfigService.getSpecEmailBody();
+		Object[] values = new String[] {spec.toString()};	
+		emailBody = MessageFormat.format(emailBody, values);
+		
+		LOGGER.info("emailBody :"+emailBody);
+		IntelUtil.sendMail(emailAddress, "noreply@intel.com", "Suggested Processor Spec", spec.toString(), null, null, "", "");
 
 	}
 	protected void doGet(SlingHttpServletRequest request,SlingHttpServletResponse response) throws IOException {

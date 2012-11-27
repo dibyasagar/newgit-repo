@@ -640,15 +640,6 @@ public class IntelUtil {
 			//Set the body of the email
 			MimeBodyPart messageBodyPart =  new MimeBodyPart();
 			MimeMultipart multipart = new MimeMultipart();
-
-			String emailBody = "This email from m.intel.com has been sent by {0} {1} \n\n {2} \n\n For more information about the Intel, visit m.intel.com.  \n\n Please note, the sender's email address has not been verified. Responding to this email does not guarantee delivery.";
-		
-		    log.info("email.message as retrived from properties file :"+emailBody);
-			
-			Object[] values = new String[] {fromFirstName, fromLastName,body};	        
-			emailBody = MessageFormat.format(emailBody, values);
-			
-			log.info("Email Body :"+emailBody);
 			
 			// If To Present
 			if (to!=null && to.length()>0 && !(to.equals(""))) {
@@ -671,7 +662,7 @@ public class IntelUtil {
 			email.setFrom(from); 
 			email.setSubject(subject); 
 			email.addPart(multipart);
-			email.setTextMsg(emailBody);
+			email.setTextMsg(body);
 			mailService.send(email);
 
 		} catch(MessagingException e) {

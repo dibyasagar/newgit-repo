@@ -51,10 +51,7 @@ import com.intel.mobile.services.IntelConfigurationService;
 	
 	@Property(label = "Intel ARK API Security Key", value = "8B74915ED25D4FA0B734B75BE2030BB6", description = "The security key to access Intel ARK API")
 	public static final String ARK_API_KEY_PROPERTY = "arkapikey";
-			
-	/*@Property(label = "ARK Products Fetch Size", value = "200", description = "No of products to be retrived per call of Intel ARK API")
-	public static final String ARK_TOP_SIZE_PROPERTY= "arktopsize";*/
-		
+					
 	@Property(label = "Fast Search URL", value = "http://search.intel.com/webhandlers/SearchWebHandler.ashx" , description = "Fast Search URL")
 	public static final String FAST_SEARCH_URL_PROPERTY= "fastSearchUrl";
 	
@@ -63,6 +60,9 @@ import com.intel.mobile.services.IntelConfigurationService;
 	
 	@Property(label = "WAP Tracking Environment", value = "test" , description = "WAP Tracking Environment")
 	public static final String WAP_TRACKING_ENV= "wapTrackingEnv";
+	
+	@Property(label = "Spec Email Body", value = "Based on your requiremnet intel suggests the following specification for you : {0} \n\n For more information about the Intel, visit m.intel.com. \n\n Please do not reply this mail." , description = "Body of the specification mail that will be sent to the end user.")
+	public static final String SPEC_EMAIL_BODY= "specEmailBody";
 		
 	private String apiKey;
 	private String intelShopAPIUrl;
@@ -76,7 +76,7 @@ import com.intel.mobile.services.IntelConfigurationService;
 	private String wapTrackingEnv;
 	private String fastSearchUrl;
 	private String fastSearchAppId;
-	
+	private String specEmailBody;
 	
 	protected void activate(ComponentContext context){
 
@@ -88,14 +88,14 @@ import com.intel.mobile.services.IntelConfigurationService;
 			intelShopAPIUrl = (String) props.get(INTEL_SHOP_API_URL_PROPERTY);
 			pageSize = (String) props.get(PAGE_SIZE_PROPERTY);
 			arkApiUrl = (String) props.get(ARK_API_URL_PROPERTY);
-			arkApiKey = (String) props.get(ARK_API_KEY_PROPERTY);
-			/*topSize = (String) props.get(ARK_TOP_SIZE_PROPERTY);*/		
+			arkApiKey = (String) props.get(ARK_API_KEY_PROPERTY);		
 			isSyncImage = (Boolean) props.get(IS_SYNC_IMAGES_PROPERTY);	
 			syncJobDisabled = (Boolean) props.get(DISABLE_INTEL_SHOP_SYNC_JOB);
 			wapTrackingEnv = (String) props.get(WAP_TRACKING_ENV);	
 				
 			fastSearchUrl = (String) props.get(FAST_SEARCH_URL_PROPERTY);
 			fastSearchAppId = (String) props.get(FAST_SEARCH_APP_ID_PROPERTY);
+			specEmailBody = (String) props.get(SPEC_EMAIL_BODY);
 		} catch (Exception e){
 			log.error(e.getMessage(), e);
 		}
@@ -131,14 +131,6 @@ import com.intel.mobile.services.IntelConfigurationService;
 	public void setArkApiKey(String arkApiKey) {
 		this.arkApiKey = arkApiKey;
 	}
-
-	/*public String getTopSize() {
-		return topSize;
-	}
-
-	public void setTopSize(String topSize) {
-		this.topSize = topSize;
-	}*/
 
 	public String getIntelShopAPIUrl() {
 		return intelShopAPIUrl;
@@ -186,5 +178,13 @@ import com.intel.mobile.services.IntelConfigurationService;
 
 	public String getFastSearchAppId() {
 		return this.fastSearchAppId;
+	}
+
+	public String getSpecEmailBody() {
+		return specEmailBody;
+	}
+
+	public void setSpecEmailBody(String specEmailBody) {
+		this.specEmailBody = specEmailBody;
 	}
 }

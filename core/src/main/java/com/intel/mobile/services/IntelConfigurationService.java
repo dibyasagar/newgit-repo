@@ -32,5 +32,7 @@ public interface IntelConfigurationService {
 	public void setFastSearchAppId(String fastSearchAppId);
 	public String getFastSearchUrl();
 	public String getFastSearchAppId();
+	public String getSpecEmailBody();
+	public void setSpecEmailBody(String specEmailBody);
 
 }
