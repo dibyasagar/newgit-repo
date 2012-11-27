@@ -241,3 +241,8 @@ footer nav a:visited
     font-weight: 500;
     line-height: 130%;
    }
+
+#category-menu ul li a
+{
+    color: #fff !important;
+}
