@@ -61,7 +61,10 @@ import com.intel.mobile.services.IntelConfigurationService;
 	@Property(label = "WAP Tracking Environment", value = "test" , description = "WAP Tracking Environment")
 	public static final String WAP_TRACKING_ENV= "wapTrackingEnv";
 	
-	@Property(label = "Spec Email Body", value = "Based on your requiremnet intel suggests the following specification for you : {0} \n\n For more information about the Intel, visit m.intel.com. \n\n Please do not reply this mail." , description = "Body of the specification mail that will be sent to the end user.")
+	@Property(label = "Spec Email Subject", value = "Intel | Suggested Processor Spec" , description = "Subject of the specification mail that will be sent to the end user.")
+	public static final String SPEC_EMAIL_SUBJECT= "specEmailSubject";
+	
+	@Property(label = "Spec Email Body", value = "Based on your requiremnet intel suggests the following specification for you : \n{0} \n\nFor more information about the Intel, visit m.intel.com.\nPlease do not reply this mail." , description = "Body of the specification mail that will be sent to the end user.")
 	public static final String SPEC_EMAIL_BODY= "specEmailBody";
 		
 	private String apiKey;
@@ -77,6 +80,7 @@ import com.intel.mobile.services.IntelConfigurationService;
 	private String fastSearchUrl;
 	private String fastSearchAppId;
 	private String specEmailBody;
+	private String specEmailSubject;
 	
 	protected void activate(ComponentContext context){
 
@@ -96,6 +100,7 @@ import com.intel.mobile.services.IntelConfigurationService;
 			fastSearchUrl = (String) props.get(FAST_SEARCH_URL_PROPERTY);
 			fastSearchAppId = (String) props.get(FAST_SEARCH_APP_ID_PROPERTY);
 			specEmailBody = (String) props.get(SPEC_EMAIL_BODY);
+			specEmailSubject = (String) props.get(SPEC_EMAIL_SUBJECT);
 		} catch (Exception e){
 			log.error(e.getMessage(), e);
 		}
@@ -186,5 +191,13 @@ import com.intel.mobile.services.IntelConfigurationService;
 
 	public void setSpecEmailBody(String specEmailBody) {
 		this.specEmailBody = specEmailBody;
+	}
+
+	public String getSpecEmailSubject() {
+		return specEmailSubject;
+	}
+
+	public void setSpecEmailSubject(String specEmailSubject) {
+		this.specEmailSubject = specEmailSubject;
 	}
 }

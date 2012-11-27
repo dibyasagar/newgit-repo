@@ -105,7 +105,7 @@ public class SpecsEmailServlet extends SlingAllMethodsServlet{
 		emailBody = MessageFormat.format(emailBody, values);
 		
 		LOGGER.info("emailBody :"+emailBody);
-		IntelUtil.sendMail(emailAddress, "noreply@intel.com", "Suggested Processor Spec", spec.toString(), null, null, "", "");
+		IntelUtil.sendMail(emailAddress, "noreply@intel.com", intelConfigService.getSpecEmailSubject(), emailBody, null, null, "", "");
 
 	}
 	protected void doGet(SlingHttpServletRequest request,SlingHttpServletResponse response) throws IOException {

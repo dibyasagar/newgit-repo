@@ -18,9 +18,7 @@ public interface IntelConfigurationService {
 	public String getArkApiUrl();
 	public void setArkApiUrl(String arkProcessorApiUrl);
 	public String getArkApiKey();
-	public void setArkApiKey(String arkApiKey);
-	/*public String getTopSize();
-	public void setTopSize(String topSize);*/	
+	public void setArkApiKey(String arkApiKey);	
 	public boolean isSyncJobDisabled();
 	public void setSyncJobDisabled(boolean disabled);
 	public boolean isSyncImage();
@@ -34,5 +32,7 @@ public interface IntelConfigurationService {
 	public String getFastSearchAppId();
 	public String getSpecEmailBody();
 	public void setSpecEmailBody(String specEmailBody);
+	public String getSpecEmailSubject();
+	public void setSpecEmailSubject(String specEmailSubject);
 
 }
