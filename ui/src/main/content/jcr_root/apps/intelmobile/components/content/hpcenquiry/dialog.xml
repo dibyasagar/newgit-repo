@@ -55,7 +55,7 @@
                 <items jcr:primaryType="cq:WidgetCollection">
                     <source
                         jcr:primaryType="nt:unstructured"
-                        allowBlank="{Boolean}true"
+                        allowBlank="{Boolean}false"
                         fieldDescription="Source email address"
                         fieldLabel="Source address"
                         name="./source"
@@ -63,6 +63,7 @@
                         xtype="textfield"/>
                     <destination
                         jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}true"
                         fieldDescription="Destination email address"
                         fieldLabel="Destination Address"
                         name="./destination"
