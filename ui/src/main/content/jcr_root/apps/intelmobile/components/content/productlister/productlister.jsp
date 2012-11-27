@@ -30,12 +30,14 @@
                  </ul>  
                        
                     <ul id="prodList" class="items clearfix" style="display:none">
-                        <c:forEach var="result" items="${results.results}">
+                      <c:forEach var="result" items="${results.results}">
                             <li id="li_${result.productId}" class="newclass">
                                 <a href="${result.productUrl}" class="copy">
+                                  <c:if test="${results.totalCount ne '1'}">
                                     <div class="tile-compare-text">
                                         <span><fmt:message key='products.label.compareaddeditem'/></span>
                                     </div>
+                                  </c:if>  
                                     <img id="li_picture_${result.productId}" src="${result.pictureUrl}" alt="${result.productName}">
                                     <div class="tile-info">
                                         <span id="li_name_${result.productId}"><c:out value="${result.productName}" escapeXml="false"/></span>
@@ -73,7 +75,9 @@
                                 <label id="label_picture_${result.productId}" style="display:none"><c:out value="${result.pictureUrl}" /></label>
                                 <span style="display:none"><c:out value="${result.productId}" /></span>
                                 <span style="display:none"><c:out value="${result.productPath}" /></span>
+                                <c:if test="${results.totalCount ne '1'}">
                                 <a href="javascript:void(0)" class="add-compare cta-tile-add" title="compare"> </a>
+                                </c:if>
                             </li>                                                   
                         </c:forEach>
                         <c:if test="${cmsTileText ne '' and results.totalCount>0}">
@@ -89,12 +93,14 @@
                     </ul>
                     
                     <ul id="prodGrid" class="items tiles clearfix" style="display:none">
-                        <c:forEach var="result" items="${results.results}">
+                       <c:forEach var="result" items="${results.results}">
                             <li id="li_${result.productId}" class="newclass">
                                 <a href="${result.productUrl}" class="copy">
+                                  <c:if test="${results.totalCount ne '1'}">
                                     <div class="tile-compare-text">
                                         <span><fmt:message key='products.label.compareaddeditem'/></span>
                                     </div>
+                                  </c:if>  
                                     <img id="li_picture_${result.productId}" src="${result.pictureUrl}" alt="${result.productName}">
                                     <div class="tile-info">
                                         <span id="li_name_${result.productId}"><c:out value="${result.productName}" escapeXml="false"/></span>
@@ -132,7 +138,9 @@
                                 <label id="label_picture_${result.productId}" style="display:none"><c:out value="${result.pictureUrl}" /></label>
                                 <span style="display:none"><c:out value="${result.productId}" /></span>
                                 <span style="display:none"><c:out value="${result.productPath}" /></span>
+                                <c:if test="${results.totalCount ne '1'}">
                                 <a href="javascript:void(0)" class="add-compare cta-tile-add" title="compare"> </a>
+                                </c:if>
                             </li>                                                   
                         </c:forEach>     
                         <c:if test="${cmsTileText ne '' and results.totalCount>0}">
