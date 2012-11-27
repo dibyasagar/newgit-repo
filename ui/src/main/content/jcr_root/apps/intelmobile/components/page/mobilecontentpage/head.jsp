@@ -51,6 +51,7 @@
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">    
+    	<meta name="url" content="<%= xssAPI.getValidHref(canonicalURL) %>" />
     <link rel="canonical" href="<%= xssAPI.getValidHref(canonicalURL) %>" />
     <cq:include script="/libs/wcm/core/components/init/init.jsp"/>
     <%
