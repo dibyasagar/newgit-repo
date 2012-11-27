@@ -120,7 +120,7 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
  <script>
 $("#submit").click(function() {
 var failure = function(err) {
-      alert("Unable to retrive data "+err);
+      alert("Unable to send mail "+err);
         // TODO - clear the form
     };
 // we want to store the values from the form input box, then send via ajax below
