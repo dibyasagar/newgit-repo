@@ -231,7 +231,10 @@ footer nav a:visited
   {
       margin-top: -40px !important;
   }
-  
+  .learn_ru
+{
+    width: 100px;
+}
 }
 
 .ultrabook .slide .item .inside .head h3
