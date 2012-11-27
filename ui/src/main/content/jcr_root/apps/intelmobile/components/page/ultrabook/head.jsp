@@ -71,6 +71,8 @@
         <meta http-equiv="cleartype" content="on">
 
         <!-- SHEET -->  
+    	<meta name="url" content="<%= xssAPI.getValidHref(canonicalURL) %>" />
+	
     <link rel="canonical" href="<%= xssAPI.getValidHref(canonicalURL) %>" />
     <cq:include script="/libs/wcm/core/components/init/init.jsp"/>
     <%
