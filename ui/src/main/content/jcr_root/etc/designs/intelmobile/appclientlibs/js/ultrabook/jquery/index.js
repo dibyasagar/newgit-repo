@@ -686,5 +686,32 @@ $(document).ready(function(){
 		$(".ultrabook .shop a span").addClass("WrapNew");
 		$(".ultrabook .slide-z .shop a span").addClass("WrapLast");
    }
-    
+//var currentLocale = "${locale}";
+//alert(currentLocale);
+ 
 });
+
+$(document).ready(function()
+   {
+       var headTxt=$(".slide-2 div.head h1");
+       
+       for(i=0;i<headTxt.length;i++)
+       {
+       
+           var newTxt=headTxt[i].innerHTML;
+       
+           newTxt=$.trim(newTxt);
+       
+           if(newTxt.length>15&&newTxt.indexOf(' ')<0)
+           {
+		
+              $(".slide-2 div.head")[i].className +=" ru_newheadstyle";
+           }
+		   else if(newTxt.length>10&&newTxt.length<15&&newTxt.indexOf(' ')<0)
+		   {
+				$(".slide-2 div.head")[i].className ="head ru_newheadstylesmall";
+				//$(".slide-2 div.head")[i].style.marginTop="-45px";
+		   }
+       }
+   });
+    
