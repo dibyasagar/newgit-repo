@@ -40,7 +40,7 @@ public class ContactUsMailServlet extends SlingAllMethodsServlet{
 		LOGGER.info("fromAddress : "+fromAddress);
 		LOGGER.info("toAddress : "+toAddress);
 		
-		Status status=IntelUtil.sendMail(toAddress,fromAddress, "Test Mail", "", null, null, "", "");
+		Status status=IntelUtil.sendMail(toAddress,fromAddress, "Test Mail", "mail sent successfully", null, null, "", "");
 		LOGGER.info("You have successfully made Ajax Call:" + toAddress);
 		LOGGER.info("status : "+status);
 		
