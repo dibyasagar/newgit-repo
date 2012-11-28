@@ -52,12 +52,24 @@
                                 <div class="icon">
                         <img src="<c:out value="${properties.imagePath}"/>" class="icon" />
                     </div>
-                    
-                        <div class="head">
+                    <c:choose>
+                        <c:when test="${locale eq 'en_US'}">
+                           <div class="head hed_ru_style">
                                 <h1>
                                     <c:out value="${properties.title}" escapeXml="false" />
                                 </h1>
-                        </div>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                           <div class="head">
+                                <h1>
+                                    <c:out value="${properties.title}" escapeXml="false" />
+                                </h1>
+						    </div>
+
+                        </c:otherwise>
+                    </c:choose>
+                        
                                
             
                 </div>
