@@ -63,13 +63,13 @@
                 {
                     
                     var $iMenu=  $("#category-menu").height();
-                    $mScroll=$iMenu+30;
+                    $mScroll=$iMenu+100;
                    
                 }
                 else if($("#search-item").attr("class")=="active")
                 {
                     var $isearchMenu=  $("#search-menu").height();
-                    $mScroll=$isearchMenu+30;
+                    $mScroll=$isearchMenu+100;
                    
                 }
                 
@@ -98,7 +98,7 @@
                       
                       $iScroll = ( $iScroll <= 40 ) ? 40 : 0;
                       
-                      $oSticky.css( { "top":$iScroll +30 } ) ; 
+                      $oSticky.css( { "top":$iScroll +100 } ) ; 
                   }
               }
               else
@@ -106,12 +106,12 @@
               if($mScroll!="")
               {
               $mScroll = ( $mScroll <= 40 ) ? 40 : $mScroll ;
-              $oSticky.css( { "top":$mScroll +30 } ) ; 
+              $oSticky.css( { "top":$mScroll +100 } ) ; 
               }
               else
               {
                   $iScroll = ( $iScroll <= 40 ) ? 40 : 0 ;
-                  $oSticky.css( { "top":$iScroll +30 } ) ; 
+                  $oSticky.css( { "top":$iScroll +100 } ) ; 
               }
               }
                
@@ -122,13 +122,13 @@
                 {
                     
                     var $iMenu=  $("#category-menu").height();
-                    $mScroll=$iMenu+30;
+                    $mScroll=$iMenu+100;
                    
                 }
                 else if($("#search-item").attr("class")=="active")
                 {
                     var $isearchMenu=  $("#search-menu").height();
-                    $mScroll=$isearchMenu+30;
+                    $mScroll=$isearchMenu+100;
                    
                 }
            
@@ -157,7 +157,7 @@
                       
                       $iScroll = ( $iScroll <= 40 ) ? 40 : 0;
                       
-                      $oSticky.css( { "top":$iScroll +30 } ) ; 
+                      $oSticky.css( { "top":$iScroll +100 } ) ; 
                   }
            }
            },1000);
