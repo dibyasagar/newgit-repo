@@ -9,13 +9,14 @@
 %><%@page session="false" %><%@page import="com.day.cq.wcm.api.WCMMode"%>
 
 <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/email.css" media="all">     
-<div id="main" role="main">
-                          <%
+                         <%
 if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
     out.println("Double Click to Edit Hpc Enquiry Component");
 }
 %>
- </div>       
+<div id="main" role="main">
+ 
+      
             <div id="email-contact">
 
                     <div class="hero">
@@ -123,7 +124,7 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
                   
                 </div>
             </div>
-          
+   </div>         
  <script>
 $("#submit").click(function() {
 function verifyEmail(){
@@ -178,5 +179,5 @@ else
 $('#mailerr').show();
 return false;
 }); 
-</script>
-                                                
+</script> 
+                                                  
