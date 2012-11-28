@@ -53,7 +53,7 @@
                         <img src="<c:out value="${properties.imagePath}"/>" class="icon" />
                     </div>
                     <c:choose>
-                        <c:when test="${locale eq 'en_US'}">
+                        <c:when test="${locale eq 'ru_RU'}">
                            <div class="head hed_ru_style">
                                 <h1>
                                     <c:out value="${properties.title}" escapeXml="false" />
