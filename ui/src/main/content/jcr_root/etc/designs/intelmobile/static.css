@@ -805,7 +805,7 @@ ul.accordion .content {
   /*text-indent: -1.25em; commented by shishir for Jira Issue - IMUAT-300*/
 }
 #product-details .features li:before {
-  content: "â€¢";
+  content: "•";
   padding-right: 0.15em; /* changed by shishir form 0.85 to 0.15 */
   color: #00aeef;
 }
@@ -4490,3 +4490,75 @@ html.csstransforms3d header.ics404 #search-menu {
 {
     /*z-index: 0 !important;*/
 }
+/* For Email Template Start*/
+#email-form .text-input {
+    background-color: #FFFFFF;
+    background-image: -moz-linear-gradient(center top , #C4C4C4 0%, #FEFFFF 30%, #FFFFFF 100%, #FFFFFF 100%, #DDDDDD 100%);
+    border: 1px solid #DDDDDD;
+    border-radius: 5px 5px 5px 5px;
+    overflow: hidden;
+    padding: 0.5em;
+    position: relative;
+}
+#email-form input.text {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    color: #666666;
+    font-size: 150%;
+    margin: 0;
+    padding: 0;
+    width: 75%;
+}
+
+#email-form .toolbar .selectbox #sel-question {
+    background-position: 98% center;
+    background-size: 6% auto;
+}
+#email-form .toolbar .selectbox #sel-question{
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("/etc/designs/intelmobile/img/select_arrow_down.png");
+    background-origin: padding-box;
+    background-position: 95% center;
+    background-repeat: no-repeat;
+    background-size: 10% auto;
+}
+
+#email-form .toolbar .selectbox {
+    
+    width: 100%;
+    margin: 0px !important;
+}
+
+#email-form .toolbar
+{
+    padding: 0px !important;
+}
+#email-component .sections .items
+{
+    background:#fff;
+}
+#email-component .sections .items .item h3.headTitle
+{
+    color:#086DB6;font-size:130%;border-left:none;font-weight:400;
+}
+#email-component .sections .items .item h3.descTitle
+{
+    font-size:130%;border-left:none;font-weight:600;
+}
+#email-form .grad
+{
+    padding-left:0px;
+}
+#email-component .sections .items .item h3.form-label
+{
+    color:#666666;font-size:130%;border-left:none;font-weight:400;
+}
+#email-component .sections .items .item .chbox-label
+{
+    margin-top:-4px;
+}
+
+
+/* For Email Template End*/
