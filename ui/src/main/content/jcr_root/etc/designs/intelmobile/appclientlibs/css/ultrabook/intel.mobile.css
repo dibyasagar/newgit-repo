@@ -193,6 +193,27 @@ footer nav a:visited
  
 }
 */
+@media only screen and (max-width: 390px) {
+
+.hed_ru_style
+{
+	padding-top: 0px !important;
+    padding-left:56px !important;
+    margin-top: -60px;
+	
+}
+.ru_newheadstyle
+{
+	/* added by shishir */
+   word-wrap:break-word;
+   width:80%;
+	/* added by shishir End */
+}
+.ru_newheadstylesmall
+{
+	margin-top: 0px !important;
+}
+}
 @media only screen and (min-width: 400px) {
   /* Styles */
   .ultrabook div.camp_vertical
