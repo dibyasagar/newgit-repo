@@ -7,16 +7,20 @@
 --%><%
 %><%@include file="/libs/foundation/global.jsp"%><%
 %><%@page session="false" %><%@page import="com.day.cq.wcm.api.WCMMode"%>
-<%
+
+<link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/email.css" media="all">     
+<div id="main" role="main">
+                          <%
 if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
     out.println("Double Click to Edit Hpc Enquiry Component");
 }
 %>
-<link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/email.css" media="all">     
-<div id="main" role="main">
+ </div>       
             <div id="email-contact">
-               
+
                     <div class="hero">
+
+  
 <form class="contact_form" action="" method="post" name="emailForm" id="emailForm" >                     
 <div class="content">
        <h3><c:if test="${properties.title ne '' && not empty properties.title }">
@@ -43,6 +47,9 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
                                             
                                 </div>
                             </div>
+<div  style="display:none" id="mailerr">
+            <h3  display=false backgroundcolor=""> Enter a valid email id</h3>
+  </div>
 <input type="hidden" id="fromemailaddr" name="fromemail" value="<%=properties.get("source",String.class)%>" />                                     
 <input type="hidden" id="toemailaddr" name="toemail" value="<%=properties.get("destination",String.class)%>" />                                        
 <input type="hidden" id="emailbody" name="body" value="<%=properties.get("hpcdescription",String.class)%>" />                                            
@@ -88,9 +95,9 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
                                         
                                     </div>  
  <div  style="display:none" id="popup">
-            <h3  display=false backgroundcolor="#8B8989"> email was successfully sent</h3>
-            </div 
-  </form>                                  
+            <h3  display=false backgroundcolor="#8B8989"> Email was successfully sent</h3>
+  </div 
+ </form>                                  
                                     <div class="email-url">
                                         <div class="grad">
                                             <ul class="item">
@@ -113,12 +120,24 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
                                     
                             </div>
                         </div> 
-                    </div>
-                
+                  
+                </div>
             </div>
-        </div>  
+          
  <script>
 $("#submit").click(function() {
+function verifyEmail(){
+$('#mailerr').hide();
+var status ="";     
+var emailRegEx = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+     if (document.emailForm.email.value.search(emailRegEx) == -1) {
+         status="wrong";
+       
+     } 
+else
+status="right";
+ return status;
+ }
 function validate(){
   var remember = document.getElementById('signme');
   var msg="";
@@ -140,6 +159,8 @@ var toemailaddr= $('#toemailaddr').attr('value');
 var emailbody= $('#emailbody').attr('value'); 
 var signupinfo= $('#signupinfo').attr('value'); 
 var useremail= $('#email').attr('value');
+var mailvalidate=verifyEmail();
+if(mailvalidate=="right"){
 $.ajax({
         type: "POST",
         url: "/bin/HPCEmail",
@@ -152,6 +173,9 @@ $.ajax({
             failure(err);
         } 
     }); // End .ajax fucntion 
+}
+else
+$('#mailerr').show();
 return false;
 }); 
 </script>
