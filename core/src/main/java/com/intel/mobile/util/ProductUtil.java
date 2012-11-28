@@ -526,8 +526,9 @@ public class ProductUtil {
 			LOGGER.info("searchUrlString :"+searchUrlString.toString());
 			URL searchUrl = new URL(searchUrlString.toString());
 			InputStream resultsStream = searchUrl.openStream();
-				
-			String jsonTxt = IOUtils.toString(resultsStream);
+			
+			String jsonTxt = IOUtils.toString(resultsStream,"UTF-8");
+			//LOGGER.info("---jsonTxt ---"+jsonTxt);
 			JSONObject json = new JSONObject(jsonTxt); 
 			String totalResults = json.getString("TotalCount");
 			List<Map<String,String>> resultsList =
@@ -542,6 +543,7 @@ public class ProductUtil {
 						JSONArray fieldList = 
 							resultset.getJSONObject(i).getJSONArray("FieldList");
 						String itemValue = fieldList.getJSONObject(0).getString("FieldValue");
+						//LOGGER.info("---itemvalue---"+itemValue);
 						URL url = new URL(fieldList.getJSONObject(1).getString("FieldValue"));
 						String itemUrl = url.getPath();
 						
@@ -568,7 +570,7 @@ public class ProductUtil {
 						item.put("productId", productPath.substring(productPath.lastIndexOf("/")+1));
 						
 						item.put("productUrl", itemUrl);
-		
+						//LOGGER.info("---item---"+item);
 						resultsList.add(item);
 					}				
 			}
