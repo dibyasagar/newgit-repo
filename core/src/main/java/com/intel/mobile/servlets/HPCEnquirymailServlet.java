@@ -1,44 +1,17 @@
 package com.intel.mobile.servlets;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
-import javax.jcr.Node;
-import javax.jcr.NodeIterator;
-import javax.jcr.RepositoryException;
-import javax.jcr.Session;
-import javax.jcr.query.InvalidQueryException;
-import javax.jcr.query.Query;
-import javax.jcr.query.QueryManager;
-import javax.jcr.query.QueryResult;
-
-import com.day.cq.wcm.api.Page;
-import com.intel.mobile.search.ISearchDAO;
-import com.intel.mobile.search.SearchController;
-import com.intel.mobile.search.SearchBeanList;
-import com.intel.mobile.search.SearchBean;
-import com.intel.mobile.search.SearchDAOImpl;
 import com.intel.mobile.util.IntelUtil;
-import com.intel.mobile.util.Status;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Properties;
 import org.apache.felix.scr.annotations.Property;
-import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
-import org.apache.sling.commons.json.JSONArray;
-import org.apache.sling.commons.json.JSONException;
-import org.apache.sling.commons.json.JSONObject;
-import org.apache.sling.jcr.api.SlingRepository;
-
-import org.apache.sling.commons.json.JSONArray;
-import org.apache.sling.commons.json.JSONException;
-import org.apache.sling.commons.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.io.PrintWriter;
+
 /**
  * @author ggoswa
  *
