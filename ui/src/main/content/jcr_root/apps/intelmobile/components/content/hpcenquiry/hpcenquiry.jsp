@@ -51,7 +51,7 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
                                 </div>
                             </div>
 <div  style="display:none" id="mailerr">
-            <h4  display=false backgroundcolor="red"> Enter a valid email id</h4>
+            <h4  display=false backgroundcolor="#FF0000"> Enter a valid email id</h4> 
   </div>
 <input type="hidden" id="fromemailaddr" name="fromemail" value="<%=properties.get("source",String.class)%>" />                                     
 <input type="hidden" id="toemailaddr" name="toemail" value="<%=properties.get("destination",String.class)%>" />                                        

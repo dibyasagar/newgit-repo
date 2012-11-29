@@ -57,6 +57,16 @@
                     </description>
                 </items>
             </hpcdescription>
+            <hpcimage
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName"
+                fileReferenceParameter="./picture"
+                id="imagefield"
+                name="./contentImage"
+                title="HPC Image"
+                xtype="smartimage"/>
             <address
                 jcr:primaryType="cq:Panel"
                 title="Address">
@@ -143,16 +153,6 @@
                         xtype="browsefield"/>
                 </items>
             </contactus>
-            <hpcimage
-                jcr:primaryType="cq:Widget"
-                allowUpload="{Boolean}false"
-                ddGroups="[media]"
-                fileNameParameter="./imageFileName"
-                fileReferenceParameter="./picture"
-                id="imagefield"
-                name="./contentImage"
-                title="HPC Image"
-                xtype="smartimage"/>
         </items>
     </items>
 </jcr:root>
