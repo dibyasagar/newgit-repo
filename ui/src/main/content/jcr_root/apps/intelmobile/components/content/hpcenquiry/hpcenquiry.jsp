@@ -1,6 +1,6 @@
 <%--
 
-  HPC Enquiry Component.
+  HPC Enquiry Component. 
 
   
 
@@ -9,18 +9,20 @@
 %><%@page session="false" %><%@page import="com.day.cq.wcm.api.WCMMode"%>
 
 <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/email.css" media="all">     
-                         <%
+<div id="main" role="main">
+<%
 if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
     out.println("Double Click to Edit Hpc Enquiry Component");
 }
-%>
-<div id="main" role="main">
- 
-      
-            <div id="email-contact">
-
+%>                         
+   
+<div id="email-contact" class="article-detail"> 
+<h1><c:if test="${properties.headertitle ne '' && not empty properties.headertitle }">
+                    <c:out value="${properties.headertitle}" escapeXml="false"/>
+              
+                </c:if></h1>
                     <div class="hero">
-
+<img src="${properties.picture}" alt="${properties.title}"> 
   
 <form class="contact_form" action="" method="post" name="emailForm" id="emailForm" >                     
 <div class="content">
@@ -49,7 +51,7 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
                                 </div>
                             </div>
 <div  style="display:none" id="mailerr">
-            <h3  display=false backgroundcolor=""> Enter a valid email id</h3>
+            <h4  display=false backgroundcolor="red"> Enter a valid email id</h4>
   </div>
 <input type="hidden" id="fromemailaddr" name="fromemail" value="<%=properties.get("source",String.class)%>" />                                     
 <input type="hidden" id="toemailaddr" name="toemail" value="<%=properties.get("destination",String.class)%>" />                                        
@@ -180,4 +182,4 @@ $('#mailerr').show();
 return false;
 }); 
 </script> 
-                                                  
+                                                 

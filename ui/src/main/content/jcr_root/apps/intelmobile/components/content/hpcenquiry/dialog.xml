@@ -10,6 +10,14 @@
                 jcr:primaryType="cq:Panel"
                 title="HPC Description">
                 <items jcr:primaryType="cq:WidgetCollection">
+                    <headertitle
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Header Title"
+                        fieldLabel="Head Title"
+                        name="./headertitle"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
                     <title
                         jcr:primaryType="nt:unstructured"
                         allowBlank="{Boolean}false"
@@ -134,6 +142,16 @@
                         xtype="browsefield"/>
                 </items>
             </contactus>
+            <hpcimage
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName"
+                fileReferenceParameter="./picture"
+                id="imagefield"
+                name="./contentImage"
+                title="HPC Image"
+                xtype="smartimage"/>
         </items>
     </items>
 </jcr:root>
