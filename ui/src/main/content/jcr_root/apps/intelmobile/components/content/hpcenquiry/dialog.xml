@@ -68,6 +68,7 @@
                         fieldLabel="Source address"
                         name="./source"
                         regex="/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i"
+                        regexText="Please enter a valid email address"
                         validateOnBlur="true"
                         xtype="textfield"/>
                     <destination
