@@ -90,6 +90,8 @@
   /*
     Proceed if Any region is present.
   */
+  //log.info("Topnode list :"+topNodeList);
+  //log.info("Rest of nodes :"+restOfNodesList);
    if(topNodeList != null || restOfNodesList!= null){
        String CountryNameParts[];
        String CountryName = "";
@@ -127,7 +129,7 @@
                                     }
 
                                      %>
-                                    <li class="header"><%=properties.get("regionname")%> : </li>
+                                    <li class="header"><%=properties.get("regionname")%>: </li>
                                       <%
                                        // logic to display the selected country as first under top region.
                                         for (int j = 0; j < countrydisplaynames.length; j++){ 
@@ -136,8 +138,7 @@
                                             CountryName = CountryName.replaceAll("\\s","").toLowerCase();
                                             homePage = pageManager.getPage(countryhomepageurls[j].toString());
                                             localeLanguage = locales[j].toString();
-                                            log.info("locale language "+localeLanguage);
-                                            log.info("locale Node "+language_Node);
+                                           
                                             if(localeLanguage.trim().equals(language_Node)){
                                                 if(countryhomepageurls[j].toString().startsWith("/content")){
                                                     languageURL = countryhomepageurls[j].toString() + ".html";
@@ -157,6 +158,7 @@
                                               CountryName = CountryName.replaceAll("\\s","").toLowerCase();
                                               homePage = pageManager.getPage(countryhomepageurls[j].toString());
                                               localeLanguage = locales[j].toString();
+                                              
                                               if(!(localeLanguage.trim().equals(language_Node))){
                                                   if(countryhomepageurls[j].toString().startsWith("/content")){
                                                       languageURL = countryhomepageurls[j].toString() + ".html";
@@ -195,7 +197,7 @@
                                       }
     
                                        %>
-                                      <li class="header"><%=properties.get("regionname")%> : </li>
+                                      <li class="header"><%=properties.get("regionname")%>: </li>
                                         <%
                                           for (int j = 0; j < countrydisplaynames.length; j++){ 
                                               CountryNameParts = countrydisplaynames[j].split("\\(");
@@ -207,7 +209,7 @@
                                               else{
                                                   languageURL =countryhomepageurls[j].toString();
                                               }
-                                             %> 
+                                          %> 
                                                 <li> <a href="<%=languageURL%>" data-loc="<%=CountryName%>" onclick="setLocaleCookies('<%=countrydisplaynames[j].toString()%>',<%=properties.get("regionname")%>),'<%=language_Node%>'"><%=countrydisplaynames[j].toString()%></a></li>
                                               <%
                                           }
