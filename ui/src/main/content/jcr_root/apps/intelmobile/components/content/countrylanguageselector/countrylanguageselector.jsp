@@ -37,7 +37,7 @@ T   This will render the content in Edit mode only. This for the proper alignmen
 	              <div class="component" data-component="<c:out value="${pageScope.componentName}"/>" data-component-id="<c:out value="${pageScope.componentId}"/>">
 	             <ul>   
 	                <ul>
-	                  <li class="header"><%=properties.get("regionname")%> : </li>
+	                  <li class="header"><%=properties.get("regionname")%>: </li>
 	                    <%
 	                        for (int j = 0; j < countrydisplaynames.length; j++)
 	                         {
