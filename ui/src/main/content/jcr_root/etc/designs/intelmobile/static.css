@@ -2178,6 +2178,56 @@ and (max-width : 320px) {
     width: 97.5%;
   }
 }
+
+/* Smartphones (Landscape 530 px) ___________________________________*/
+@media only screen 
+and (min-device-width : 960px) 
+and (max-device-width : 961px) {
+  .tiles li,
+  .tiles .span4 {
+    width: 31.5%;
+    
+  }
+    .tiles .span2
+    {
+        width:64.5%;
+    }
+  
+}
+
+/* Smartphones (Landscape 530 px) ___________________________________*/
+@media only screen 
+and (max-width : 540px)
+ {
+  .tiles li,
+  .tiles .span4 {
+    width: 48%;
+  }
+    .tiles .span2
+    {
+        width:98%;
+    }
+  
+}
+
+
+/* Smartphones For Samsung S2(Landscape 530 px) ___________________________________*/
+@media only screen 
+and (min-width : 530px)
+and (max-width : 580px) {
+  .tiles li,
+  .tiles .span4 {
+    width: 31.4%;
+  }
+
+  .tiles .span2 {
+    width:64.5%;
+    
+  }
+}
+
+
+
 /* Smartphones (Landscape 640 px) ___________________________________*/
 @media only screen 
 and (min-device-width : 640px) 
@@ -4490,75 +4540,3 @@ html.csstransforms3d header.ics404 #search-menu {
 {
     /*z-index: 0 !important;*/
 }
-/* For Email Template Start*/
-#email-form .text-input {
-    background-color: #FFFFFF;
-    background-image: -moz-linear-gradient(center top , #C4C4C4 0%, #FEFFFF 30%, #FFFFFF 100%, #FFFFFF 100%, #DDDDDD 100%);
-    border: 1px solid #DDDDDD;
-    border-radius: 5px 5px 5px 5px;
-    overflow: hidden;
-    padding: 0.5em;
-    position: relative;
-}
-#email-form input.text {
-    background: none repeat scroll 0 0 transparent;
-    border: 0 none;
-    color: #666666;
-    font-size: 150%;
-    margin: 0;
-    padding: 0;
-    width: 75%;
-}
-
-#email-form .toolbar .selectbox #sel-question {
-    background-position: 98% center;
-    background-size: 6% auto;
-}
-#email-form .toolbar .selectbox #sel-question{
-    background-attachment: scroll;
-    background-clip: border-box;
-    background-color: transparent;
-    background-image: url("/etc/designs/intelmobile/img/select_arrow_down.png");
-    background-origin: padding-box;
-    background-position: 95% center;
-    background-repeat: no-repeat;
-    background-size: 10% auto;
-}
-
-#email-form .toolbar .selectbox {
-    
-    width: 100%;
-    margin: 0px !important;
-}
-
-#email-form .toolbar
-{
-    padding: 0px !important;
-}
-#email-component .sections .items
-{
-    background:#fff;
-}
-#email-component .sections .items .item h3.headTitle
-{
-    color:#086DB6;font-size:130%;border-left:none;font-weight:400;
-}
-#email-component .sections .items .item h3.descTitle
-{
-    font-size:130%;border-left:none;font-weight:600;
-}
-#email-form .grad
-{
-    padding-left:0px;
-}
-#email-component .sections .items .item h3.form-label
-{
-    color:#666666;font-size:130%;border-left:none;font-weight:400;
-}
-#email-component .sections .items .item .chbox-label
-{
-    margin-top:-4px;
-}
-
-
-/* For Email Template End*/
