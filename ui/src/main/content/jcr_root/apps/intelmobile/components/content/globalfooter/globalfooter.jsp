@@ -154,12 +154,46 @@ document.cookie = "intelmobile_last_visited_page="+val +";expires="+expiration_d
 <!-- end scripts-->
 <script type="text/javascript" src="/etc/designs/intelmobile/appclientlibs/js/plugins.js"></script>
 <script type="text/javascript" src="/etc/designs/intelmobile/appclientlibs/js/example-controller.js"></script>
-
+<script>
+	alert(navigator.userAgent.toLowerCase());
+	
+	if(navigator.userAgent.toLowerCase().indexOf("android 2.3") > -1)
+	{
+		alert("called"+screen.width);
+		$(".span2").addClass("s2_landscape");
+	}
+	
+	 if(navigator.userAgent.toLowerCase().indexOf("android 4.0") > -1)
+    {
+       
+        $(".span2").addClass("razr_portrait");
+    }
+</script>
 
 <%
         if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
 %>
 <script type="text/javascript" src="/etc/designs/intelmobile/appclientlibs/js/alignfix.js"></script>
+<%
+}
+%>
+
+<%
+        if (WCMMode.fromRequest(request) == WCMMode.EDIT||WCMMode.fromRequest(request) == WCMMode.PREVIEW) {
+%>
+<script>
+	$(document).ready(function(){
+    
+    setTimeout('resizeUB()',100);
+    
+});
+
+function resizeUB()
+{
+	$(".space-2.vertical").attr("style","display: block !important");
+	$(".space-2.imgland").attr("style","display: none !important");
+}
+</script>
 <%
 }
 %>
