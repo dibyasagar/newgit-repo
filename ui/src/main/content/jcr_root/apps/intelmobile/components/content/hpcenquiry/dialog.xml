@@ -109,14 +109,36 @@
                         name="./emaillabel"
                         validateOnBlur="true"
                         xtype="textfield"/>
+                </items>
+            </emailinfo>
+            <signupinfo
+                jcr:primaryType="cq:Panel"
+                title="Signup info">
+                <items jcr:primaryType="cq:WidgetCollection">
                     <signup
                         jcr:primaryType="nt:unstructured"
                         fieldLabel="Sign up Text"
                         name="./signup"
                         validateOnBlur="true"
                         xtype="textfield"/>
+                    <signupchecked
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Text to be displayed when the signup box is checked."
+                        fieldLabel="Checked Text"
+                        name="./signupchecked"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <signupunchecked
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Text to be displayed when the signup box is unchecked."
+                        fieldLabel="Unchecked Text"
+                        name="./signupunchecked"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
                 </items>
-            </emailinfo>
+            </signupinfo>
             <learnmore
                 jcr:primaryType="cq:Panel"
                 title="Learn More Copy">

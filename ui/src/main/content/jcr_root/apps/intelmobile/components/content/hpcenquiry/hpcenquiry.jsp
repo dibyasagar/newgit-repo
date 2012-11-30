@@ -57,6 +57,8 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
 <input type="hidden" id="toemailaddr" name="toemail" value="<%=properties.get("destination",String.class)%>" />                                        
 <input type="hidden" id="emailbody" name="body" value="<%=properties.get("hpcdescription",String.class)%>" />                                            
 <input type="hidden" id="signupinfo" name="signup" value="<%=properties.get("signup",String.class)%>" />   
+<input type="hidden" id="signupchecked" name="signupchecked" value="<%=properties.get("signupchecked",String.class)%>" />                            
+<input type="hidden" id="signupunchecked" name="signupunchecked" value="<%=properties.get("signupunchecked",String.class)%>" />                            
                             <div class="items">
                                 <div class="item">
                                     <table class="contact-table">
@@ -145,9 +147,9 @@ function validate(){
   var remember = document.getElementById('signme');
   var msg="";
   if (signme.checked){
-   msg="The user wants to sign-up for the newsletter ";
+   msg= $('#signupchecked').attr('value');
   }else{
-    msg="The user doesnot want to sign-up for the newsletter";
+    msg= $('#signupunchecked').attr('value'); 
   }
 return msg;
 }
