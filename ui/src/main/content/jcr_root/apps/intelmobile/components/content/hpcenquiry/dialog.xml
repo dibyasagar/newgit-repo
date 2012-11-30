@@ -125,7 +125,7 @@
                     <signupchecked
                         jcr:primaryType="nt:unstructured"
                         allowBlank="{Boolean}false"
-                        fieldDescription="Text to be displayed when the signup box is checked."
+                        fieldDescription="Text to be mailed when the user checks the signup box."
                         fieldLabel="Checked Text"
                         name="./signupchecked"
                         validateOnBlur="true"
@@ -133,7 +133,7 @@
                     <signupunchecked
                         jcr:primaryType="nt:unstructured"
                         allowBlank="{Boolean}false"
-                        fieldDescription="Text to be displayed when the signup box is unchecked."
+                        fieldDescription="Text to be mailed  when the user unchecks the signup box."
                         fieldLabel="Unchecked Text"
                         name="./signupunchecked"
                         validateOnBlur="true"
