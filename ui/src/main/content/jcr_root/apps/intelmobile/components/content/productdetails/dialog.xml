@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Product Details"
+    width="100%"
+    xtype="dialog">
+    <items jcr:primaryType="cq:TabPanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Product Details">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <tagline
+                        jcr:primaryType="nt:unstructured"
+                        fieldDescription="Tagline of the Product."
+                        fieldLabel="Tagline"
+                        maxLength="{Long}69"
+                        maxLengthText="The maximum length for this field is 69"
+                        name="./tagline"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <description
+                        jcr:primaryType="nt:unstructured"
+                        fieldDescription="Product Description."
+                        fieldLabel="Description"
+                        name="./description"
+                        validateOnBlur="true"
+                        xtype="richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <styles
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <subsuperscript
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <image
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                    </description>
+                    <addtocompare
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="hide"
+                        fieldDescription="Show/Hide Add To Compare button for this Product."
+                        fieldLabel="Add To Compare Button"
+                        name="./addtocompare"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <show
+                                jcr:primaryType="nt:unstructured"
+                                text="Show"
+                                value="show"/>
+                            <hide
+                                jcr:primaryType="nt:unstructured"
+                                text="Hide"
+                                value="hide"/>
+                        </options>
+                    </addtocompare>
+                    <sameornewwindow
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        defaultValue="no"
+                        fieldLabel="Show Retailers in new window"
+                        name="./newwindow"
+                        type="select"
+                        value="no"
+                        width="20"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <no
+                                jcr:primaryType="nt:unstructured"
+                                text="No"
+                                value="no"/>
+                            <yes
+                                jcr:primaryType="nt:unstructured"
+                                text="Yes"
+                                value="yes"/>
+                        </options>
+                    </sameornewwindow>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

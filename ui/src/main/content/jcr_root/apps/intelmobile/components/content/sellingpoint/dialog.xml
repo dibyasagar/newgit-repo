@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Selling Point Component"
+    width="100%"
+    xtype="dialog">
+    <items jcr:primaryType="cq:TabPanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Text">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <title
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Title"
+                        name="./title"
+                        xtype="textfield"/>
+                    <videoid
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="Video ID (You Tube)"
+                        name="./videoid"
+                        xtype="textfield"/>
+                    <heading
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Heading"
+                        name="./heading"
+                        xtype="textfield"/>
+                    <sub-heading
+                        jcr:primaryType="cq:Widget"
+                        boxMaxHeight="200"
+                        boxMaxWidth="500"
+                        fieldLabel="Sub Heading"
+                        name="./sub-heading"
+                        validateOnBlur="true"
+                        xtype="richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <image
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <styles
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <subsuperscript
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                    </sub-heading>
+                    <section-heading
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Section Heading"
+                        name="./section-heading"
+                        xtype="textfield"/>
+                    <learn-more
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Learn More Text"
+                        name="./learn-more"
+                        xtype="textfield"/>
+                    <close
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Close Text"
+                        name="./close"
+                        xtype="textfield"/>
+                    <section-description
+                        jcr:primaryType="cq:Widget"
+                        boxMaxHeight="200"
+                        boxMaxWidth="500"
+                        fieldLabel="Section Description"
+                        name="./section-description"
+                        validateOnBlur="true"
+                        xtype="richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <image
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <styles
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <subsuperscript
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                    </section-description>
+                    <imagealttext
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}true"
+                        fieldDescription="Alt Text for Image"
+                        fieldLabel="Image Alt Text"
+                        name="./alttext"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                </items>
+            </tab1>
+            <heroimagepotrait
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName"
+                fileReferenceParameter="./heroImageFileReferencePotrait"
+                name="./heroImagePotrait"
+                title="Hero Image Potrait"
+                xtype="smartimage"/>
+            <heroimagelandscape
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName"
+                fileReferenceParameter="./heroImageFileReferenceLandscape"
+                name="./heroImageLandscape"
+                title="Hero Image Landscape"
+                xtype="smartimage"/>
+            <tab4
+                jcr:primaryType="cq:Panel"
+                title="Shop Button">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <sameornewwindow
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="no"
+                        fieldLabel="Open in new window"
+                        name="./newwindow"
+                        type="select"
+                        value="no"
+                        width="20"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <no
+                                jcr:primaryType="nt:unstructured"
+                                text="No"
+                                value="no"/>
+                            <yes
+                                jcr:primaryType="nt:unstructured"
+                                text="Yes"
+                                value="yes"/>
+                        </options>
+                    </sameornewwindow>
+                    <linkcopy
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Link Copy"
+                        name="./text"
+                        xtype="textfield"/>
+                    <linkUrl
+                        jcr:primaryType="cq:Widget"
+                        editable="{Boolean}true"
+                        fieldLabel="Link Url"
+                        name="./linkUrl"
+                        predicate="hierarchy"
+                        xtype="pathfield"/>
+                </items>
+            </tab4>
+            <tab2
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName"
+                fileReferenceParameter="./imagePath"
+                name="./contentImage"
+                title="Image"
+                xtype="smartimage"/>
+            <tab3
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName"
+                fileReferenceParameter="./thumbnailReference"
+                name="./contentImage"
+                title="Sticky menu Image"
+                xtype="smartimage"/>
+        </items>
+    </items>
+</jcr:root>

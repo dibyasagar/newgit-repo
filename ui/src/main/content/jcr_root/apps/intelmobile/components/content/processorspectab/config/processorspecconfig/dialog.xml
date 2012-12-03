@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Processorspecs Tab"
+    width="100%"
+    xtype="dialog">
+    <items
+        jcr:primaryType="nt:unstructured"
+        title="Dialog"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <labels
+                jcr:primaryType="cq:Widget"
+                title="Config"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        fieldDescription="Heading text of the tab."
+                        fieldLabel="Heading Text"
+                        name="./heading"
+                        xtype="textfield"/>
+                    <comparePath
+                        jcr:primaryType="nt:unstructured"
+                        editable="false"
+                        fieldDescription="Path of the Processor Comparison page."
+                        fieldLabel="Processor Comparison Page"
+                        name="./comparePath"
+                        xtype="pathfield"/>
+                    <seefullspecLabel
+                        jcr:primaryType="nt:unstructured"
+                        fieldDescription="Label for See Full Processor Specification"
+                        fieldLabel="See Full Processor Specs Label"
+                        name="./seefullspecslabel"
+                        xtype="textfield"/>
+                    <comparespecLabel
+                        jcr:primaryType="nt:unstructured"
+                        fieldDescription="Label for Compare Processor Specification"
+                        fieldLabel="Compare Processor Specs Label"
+                        name="./compspecslabel"
+                        xtype="textfield"/>
+                    <arklinkprefix
+                        jcr:primaryType="nt:unstructured"
+                        fieldDescription="Please mention the prefix that will follow the http://ark.intel.com. Example :&#xd;&#xa;1. For ru site please mention this field as &quot;/m/ru&quot;.&#xd;&#xa;2. For US english site please mention this field as &quot;/m&quot;&#xd;&#xa;"
+                        fieldLabel="ARK Link Prefix"
+                        name="./arklinkprefix"
+                        xtype="textfield"/>
+                </items>
+            </labels>
+        </items>
+    </items>
+</jcr:root>

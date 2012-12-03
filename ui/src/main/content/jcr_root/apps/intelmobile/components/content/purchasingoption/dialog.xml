@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Purchasing Option"
+    width="100%"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Retailer Details">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <retailerinfo
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./retailerinfo"
+                        fieldDescription="Click the '+' to add a new Link."
+                        fieldLabel="Retailer Details"
+                        name="./retailerinfo"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <companyname
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                fieldLabel="Company Name"
+                                name="./companyname"
+                                xtype="textfield"/>
+                            <companyurl
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                editable="{Boolean}true"
+                                fieldLabel="Company URL"
+                                name="./companyurl"
+                                predicate="hierarchy"
+                                xtype="pathfield"/>
+                            <sameornewwindow
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                defaultValue="no"
+                                fieldLabel="Open in new window"
+                                name="./newwindow"
+                                type="select"
+                                value="no"
+                                width="20"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <no
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="no"/>
+                                    <yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="yes"/>
+                                </options>
+                            </sameornewwindow>
+                            <productPrice
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}true"
+                                fieldLabel="Product Price"
+                                name="./productprice"
+                                xtype="textfield"/>
+                            <logoimage
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                editable="{Boolean}true"
+                                fieldLabel="Logo Image"
+                                name="./logoimage"
+                                predicate="hierarchy"
+                                xtype="pathfield"/>
+                        </fieldConfig>
+                    </retailerinfo>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

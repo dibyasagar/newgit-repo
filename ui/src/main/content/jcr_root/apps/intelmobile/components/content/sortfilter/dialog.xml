@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Edit Component"
+    width="100%"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <config
+                jcr:primaryType="cq:Panel"
+                title="Configuration">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <showhide
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="showboth"
+                        fieldDescription="Show/Hide FIlter and Sort options for this page."
+                        fieldLabel="Filter/Sort Option"
+                        name="./showhide"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <showboth
+                                jcr:primaryType="nt:unstructured"
+                                text="Show Filter and Sort"
+                                value="showboth"/>
+                            <showfilter
+                                jcr:primaryType="nt:unstructured"
+                                text="Show Filter only"
+                                value="showfilter"/>
+                            <showsort
+                                jcr:primaryType="nt:unstructured"
+                                text="Show Sort only"
+                                value="showsort"/>
+                            <shownone
+                                jcr:primaryType="nt:unstructured"
+                                text="Hide Filter and Sort"
+                                value="shownone"/>
+                        </options>
+                    </showhide>
+                </items>
+            </config>
+        </items>
+    </items>
+</jcr:root>

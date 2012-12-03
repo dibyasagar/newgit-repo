@@ -1,0 +1,124 @@
+/* start reset */
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+ol, ul {
+	list-style: none;
+}
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+/* end reset */
+
+body {
+	background: #FFF;
+	color: #555;
+	font-size: 81.25%;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 1;
+}
+a {
+	color: #06C;
+	text-decoration: none;
+}
+
+h2 {
+	font-size: 16px;
+}
+
+p {
+	margin: 0 0 0.5em;
+	line-height: 1.4;
+}
+
+img {
+	border: 0;
+	border-style: 0;
+}
+
+#header, #main, #footer {
+	padding: 0 1em;
+}
+
+#header {
+	margin-top: 0.5em;
+}
+
+#main img {
+	margin: 0.5em 0;
+	width: 100%;
+}
+
+#footer {
+	background: #E7EAEF;
+	color: #999;
+	font-size: 85%;
+	margin-top: 1em;
+	padding: 0.75em 1em;
+}
+
+#footer div {
+	background: transparent url('/etc/designs/intelmobile/img/ico-home.gif') 0 1px no-repeat;
+	padding-left: 1em;
+}
+
+#footer span {
+	padding: 0 0.2em;
+}
+
+.menu {
+	margin-bottom: 1em;
+}
+
+.menu p {
+	font-size: 130%;
+	border-top: solid 1px #E5E5E5;
+	padding: 0.5em 0;
+	margin: 0;
+}
+
+.menu p:first-child {
+	border: none;
+}
+
+.section {
+	border-top: solid 1px #E5E5E5;
+	padding: 0.75em 0;
+}
+
+.intro {
+	font-size: 120%;
+	margin-top: 0.5em;
+	padding: 0.5em 0 0;
+}
+
+.intro p {
+	line-height: 1.2;
+}
+
+/* Custom Multifield related*/
+#CQ .x-form-text.x-form-field.x-trigger-noedit{width:470px !important;}
+#CQ .x-combo-list-item{width:470px !important;}
+#CQ .x-combo-list-inner{width:470px !important;}
+#CQ .x-layer.x-combo-list{width:470px !important;}
+#CQ .x-form-text.x-form-field{width:470px !important;}

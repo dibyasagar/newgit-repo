@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Generic Content Tab"
+    width="100%"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Title">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <contentstyle
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="pdetail"
+                        fieldLabel="Style"
+                        name="./contentstyle"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <pdetail
+                                jcr:primaryType="nt:unstructured"
+                                text="Standard"
+                                value="pshowcase"/>
+                            <pshowcase
+                                jcr:primaryType="nt:unstructured"
+                                text="Gradient"
+                                value="pdetail"/>
+                            <articlelanding
+                                jcr:primaryType="nt:unstructured"
+                                text="Article Landing/Details"
+                                value="articlelanding"/>
+                            <articledetailterms
+                                jcr:primaryType="nt:unstructured"
+                                text="Article Detail Terms"
+                                value="articledetailterms"/>
+                            <features
+                                jcr:primaryType="nt:unstructured"
+                                text="Features"
+                                value="features"/>
+                        </options>
+                        <listeners
+                            jcr:primaryType="nt:unstructured"
+                            loadcontent="function(box){ if (this.getValue()==&quot;articlelanding&quot;){&#x9;box.findParentByType('tabpanel').findByType('selection')[2].disable();} else { box.findParentByType('tabpanel').findByType('selection')[2].enable();}return true;}"
+                            selectionchanged="function(box){ if (this.getValue()==&quot;articlelanding&quot;){&#x9;box.findParentByType('tabpanel').findByType('selection')[2].disable();} else { box.findParentByType('tabpanel').findByType('selection')[2].enable();}return true;}"/>
+                    </contentstyle>
+                    <contenttitle
+                        jcr:primaryType="nt:unstructured"
+                        fieldDescription="Title of the Content Item"
+                        fieldLabel="Content Title"
+                        name="./contenttitle"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <content
+                        jcr:primaryType="nt:unstructured"
+                        fieldDescription="Text of the Content Item"
+                        fieldLabel="Content Text"
+                        grow="true"
+                        name="./contenttext"
+                        validateOnBlur="true"
+                        xtype="richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <styles
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <subsuperscript
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <image
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                    </content>
+                    <linklabel
+                        jcr:primaryType="nt:unstructured"
+                        fieldDescription="Link Label of the Content Item"
+                        fieldLabel="Link Label"
+                        name="./linklabel"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <linkpath
+                        jcr:primaryType="cq:Widget"
+                        editable="{Boolean}true"
+                        fieldDescription="For External URL start the URL with 'http://'"
+                        fieldLabel="Link Path"
+                        name="./linkpath"
+                        predicate="hierarchy"
+                        xtype="pathfield"/>
+                    <sameornewwindow
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="no"
+                        fieldLabel="Open in new window"
+                        name="./newwindow"
+                        type="select"
+                        value="no"
+                        width="20"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <no
+                                jcr:primaryType="nt:unstructured"
+                                text="No"
+                                value="no"/>
+                            <yes
+                                jcr:primaryType="nt:unstructured"
+                                text="Yes"
+                                value="yes"/>
+                        </options>
+                    </sameornewwindow>
+                    <imageposition
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="top"
+                        fieldDescription="Applicable only for Standard Style"
+                        fieldLabel="Image Position"
+                        name="./imageposition"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <top
+                                jcr:primaryType="nt:unstructured"
+                                text="Top"
+                                value="top"/>
+                            <bottom
+                                jcr:primaryType="nt:unstructured"
+                                text="Bottom"
+                                value="bottom"/>
+                            <left
+                                jcr:primaryType="nt:unstructured"
+                                text="Left"
+                                value="left"/>
+                            <right
+                                jcr:primaryType="nt:unstructured"
+                                text="Right"
+                                value="right"/>
+                        </options>
+                    </imageposition>
+                    <imagealttext
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}true"
+                        fieldDescription="Alt Text for Image"
+                        fieldLabel="Image Alt Text"
+                        name="./alttext"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                </items>
+            </tab1>
+            <tab2
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName"
+                fileReferenceParameter="./imageFileReference"
+                id="imagefield"
+                name="./contentImage"
+                title="Image"
+                xtype="smartimage"/>
+        </items>
+    </items>
+</jcr:root>

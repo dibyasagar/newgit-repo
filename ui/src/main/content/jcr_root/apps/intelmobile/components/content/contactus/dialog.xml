@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Contact Us "
+    width="100%"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Title Details">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <contactusheading
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Contact Us Heading"
+                        name="./contactusheading"
+                        xtype="textfield"/>
+                    <namelabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Name Label"
+                        name="./namelabel"
+                        xtype="textfield"/>
+                    <questionlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Question label"
+                        name="./questionlabel"
+                        xtype="textfield"/>
+                    <question1
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Question 1"
+                        name="./question1"
+                        xtype="textfield"/>
+                    <question2
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Question 2"
+                        name="./question2"
+                        xtype="textfield"/>
+                    <question3
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Question 3"
+                        name="./question3"
+                        xtype="textfield"/>
+                    <question4
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Question 4"
+                        name="./question4"
+                        xtype="textfield"/>
+                    <question5
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Question 5"
+                        name="./question5"
+                        xtype="textfield"/>
+                    <question6
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Question 6"
+                        name="./question6"
+                        xtype="textfield"/>
+                    <question7
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Question 7"
+                        name="./question7"
+                        xtype="textfield"/>
+                    <question8
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Question 8"
+                        name="./question8"
+                        xtype="textfield"/>
+                    <question9
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Question 9"
+                        name="./question9"
+                        xtype="textfield"/>
+                    <question10
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Question 10"
+                        name="./question10"
+                        xtype="textfield"/>
+                    <question11
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Question 11"
+                        name="./question11"
+                        xtype="textfield"/>
+                    <question12
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Question 12"
+                        name="./question12"
+                        xtype="textfield"/>
+                    <emaillabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Email label"
+                        name="./emaillabel"
+                        xtype="textfield"/>
+                    <signmetext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Sign me Text"
+                        name="./signmetext"
+                        xtype="textfield"/>
+                    <destinationmailaddr
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Destination Email Address"
+                        name="./destinationmailaddr"
+                        xtype="textfield"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

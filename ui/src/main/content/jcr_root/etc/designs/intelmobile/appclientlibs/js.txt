@@ -1,0 +1,13 @@
+#base=js
+addthis_widget.js
+basic-jquery-slider.js
+carousel.js
+common.js
+example-controller.js
+intel.mobile.js
+modernizr.js
+plugins.js
+jquery-1.6.2.min.js
+jquery_common.js
+jquery.mobile.widgets.js
+jquery.flexslider.js

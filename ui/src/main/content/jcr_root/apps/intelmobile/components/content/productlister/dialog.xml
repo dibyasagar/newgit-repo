@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Product Lister"
+    width="100%"
+    xtype="dialog">
+    <items jcr:primaryType="cq:TabPanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <general
+                jcr:primaryType="cq:Panel"
+                border="false"
+                height=""
+                title="General"
+                width="">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <prodlisttitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        defaultValue="Introducing"
+                        fieldLabel="Product Listing Page Title"
+                        name="./prodlisttitle"
+                        xtype="textfield"/>
+                    <linkdispcopy
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="CMS Link Display Copy"
+                        name="./linkdispcopy"
+                        xtype="textfield"/>
+                    <truncatechar
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Truncate linkdisplay copy after no.of characters"
+                        name="./truncatechar"
+                        regex="/^[0-9]{0,2}$/"
+                        regexText="Enter Numbers Only"
+                        xtype="textfield"/>
+                    <linkdispurl
+                        jcr:primaryType="cq:Widget"
+                        defaultValue=""
+                        editable="{Boolean}true"
+                        fieldLabel="CMS Link URL"
+                        name="./linkdispurl"
+                        predicate="hierarchy"
+                        xtype="pathfield"/>
+                </items>
+            </general>
+            <tab2
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName"
+                fileReferenceParameter="./imgFileReference"
+                id="imagefield"
+                name="./contentImage"
+                title="Spotlight Image"
+                xtype="smartimage"/>
+        </items>
+    </items>
+</jcr:root>

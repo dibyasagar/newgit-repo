@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Article Landing Hero"
+    width="100%"
+    xtype="dialog">
+    <items jcr:primaryType="cq:TabPanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <pagelist_x0020_tab
+                jcr:primaryType="cq:Panel"
+                title="Article Landing Hero">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <hero
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./articlelandinghero"
+                        fieldDescription="Click '+' to add a new hero"
+                        fieldLabel="Article Landing Hero"
+                        maxItems="6"
+                        name="./articlelandinghero"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <title
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                fieldLabel="Heading"
+                                name="./title"
+                                xtype="textfield"/>
+                            <heroimage
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                editable="{Boolean}false"
+                                fieldLabel="Hero Image"
+                                name="./heroimage"
+                                xtype="pathfield"/>
+                            <linkcopy
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                fieldLabel="Link Copy"
+                                name="./linkcopy"
+                                xtype="textfield"/>
+                            <linkurl
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                editable="{Boolean}true"
+                                fieldLabel="Link URL"
+                                name="./linkurl"
+                                predicate="hierarchy"
+                                xtype="pathfield"/>
+                        </fieldConfig>
+                    </hero>
+                </items>
+            </pagelist_x0020_tab>
+        </items>
+    </items>
+</jcr:root>

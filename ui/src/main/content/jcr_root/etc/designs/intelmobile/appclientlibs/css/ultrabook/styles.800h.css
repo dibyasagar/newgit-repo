@@ -1,0 +1,36 @@
+.ultrabook .slide-0 {
+  height: 789.203125px;
+  background-position: center -140px;
+  
+}
+.ultrabook .slide-0 .camp_headerimg img
+{
+	margin-top: -140px;
+}
+/*
+.ultrabook .slide-0 .camp_headerimg.s3_orig img
+{
+	margin-top: -140px !important;
+}
+*/
+.ultrabook .slide-2 {
+  /*margin-top: -140px;*/
+}
+.ultrabook .space-1 {
+  height: 479px;
+}
+.ultrabook .space-2 {
+  height: 476px;
+}
+.ultrabook .space-3 {
+  height: 479px;
+}
+.ultrabook .space-4 {
+  height: 480px;
+}
+.ultrabook .space-5 {
+  height: 481px;
+}
+.ultrabook .slide-z .item .inside .laptop {
+  height: 100px;
+}

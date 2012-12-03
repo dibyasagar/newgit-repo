@@ -1,0 +1,522 @@
+.ultraBook #primary span {
+	font-size:20px;
+}
+
+.ultraBook sup {
+	top: 0;
+	font-size:8px;
+	line-height:12px;
+}
+/*
+ultraBook
+*/
+.ultraBook #shopper-app.ultraBook.disclaimers {
+	padding: 25px 0 0;
+	font-family: verdana, sans-serif; 
+	font-size: 11px;
+}
+.ultraBook #shopper-app.ultraBook.disclaimers #primary {
+
+}
+
+.ultraBook {
+  width:100%;
+  height: 100%;
+  position: relative;  
+  z-index:0;
+  font-family: verdana, sans-serif;
+  overflow: hidden;
+  background: #fff; /* Old browsers */
+}
+
+.ultraBook .fb-like  {
+	height:50px;
+	margin:140% auto 0 auto;
+	width:90px;
+	z-index: 61;
+}
+
+.ultraBook.lg .fb-like  {
+	margin-top:128%;
+	width:37px;
+}
+
+.ultraBook.apple .fb-like  {
+	margin:120% auto 0 auto;	
+	width: 90px;
+}
+
+.ultraBook.lg .fb-like  {
+	margin-top:128% auto 0 auto;
+}
+
+.ultraBook #ubLogo  {
+	position:absolute;
+	height:60px;
+	width:150px;
+	right:0;
+	top:0;
+	background:url(/etc/designs/intelmobile/img/decision/meet-ultrabook-logo-highres.png) left top no-repeat transparent;
+	z-index:30;
+	opacity:0;
+	background-size:150px 60px;
+	-webkit-transition:opacity .3s ease-in-out;
+	-moz-transition:opacity .3s ease-in-out;
+	-o-transition:opacity .3s ease-in-out;
+	-ms-transition:opacity .3s ease-in-out;
+	transition:opacity .3s ease-in-out;
+}
+
+.ultraBook #blocker  {
+	width:100%;
+	height:100%;
+	display:none;
+	position:absolute;
+	z-index:30
+}
+
+.ultraBook #blocker.show  {
+	display:block
+}
+
+.ultraBook .touchArea,.ultraBook .touchAreaTop,.ultraBook .touchAreaBottom {
+	height:50%;
+	position:absolute;
+	width:100%;
+	z-index:60;
+}
+
+.ultraBook .touchArea  {
+	top:25%
+}
+
+.ultraBook .touchAreaTop  {
+	top:0;
+	height:25%;
+}
+
+.ultraBook .touchAreaBottom  {
+	bottom:0;
+	height:25%;
+}
+
+.ultraBook #primary {
+	height:100%;
+	width:100%;
+	overflow:hidden;
+	z-index:1;
+	-webkit-transition:opacity .3s ease-in-out;
+	-moz-transition:opacity .9s ease-in-out;
+	-o-transition:opacity .3s ease-in-out;
+	-ms-transition:opacity .3s ease-in-out;
+	transition:opacity .3s ease-in-out;
+}
+
+.ultraBook ul {
+	padding:0;
+	margin:0;
+	width:2858px;
+	height:100%;
+	display:block;
+	background:url(/etc/designs/intelmobile/img/decision/meet-ultrabook-full_std.png) left top no-repeat #fff;
+	background-size:2861px 100%;
+}
+
+.ultraBook.lg ul  {
+	width:2932px;
+	height:480px;
+	background:url(/etc/designs/intelmobile/img/decision/meet-ultrabook-full_highres.png) left top no-repeat #fff;
+	background-size:2932px 480px
+}
+.ultraBook.lg ul li:first-child  {
+	background:url(/etc/designs/intelmobile/img/decision/meet-ultrabook-slideone.png) no-repeat scroll 81px 62%;
+	background-size: 218px 70px;
+}
+
+
+.ultraBook li {
+	display:block;
+	float:left;
+	height:100%;
+	width:320px;
+	color:#fff
+}
+
+.ultraBook li:first-child {
+	text-align:center;
+	position:relative;
+	background-size:auto 100%
+}
+
+.ultraBook li:nth-child(2) {
+	width:2218px;
+	position:relative;
+	background-size:100% auto
+}
+
+.ultraBook.lg li:nth-child(2) {
+	width:2252px;
+	position:relative;
+	background-size:100% auto
+}
+
+.ultraBook #callout  {
+	background:url(/etc/designs/intelmobile/img/decision/meet-ultrabook-callout-std.png) left top no-repeat;
+	width:170px;
+	height:44px;
+	position:absolute;
+	opacity:0;
+	z-index:0;
+	color:#fff;
+	-webkit-transition:opacity .5s ease-in-out;
+	-moz-transition:opacity .5s ease-in-out;
+	-o-transition:opacity .5s ease-in-out;
+	-ms-transition:opacity .5s ease-in-out;
+	transition:opacity .5s ease-in-out;
+}
+
+.ultraBook #callout p  {
+	font-size:10px;
+	line-height:11px;
+	margin-left:22%;
+	margin-top: 0;
+	margin-bottom:0px;
+}
+
+.ultraBook .spot  {
+	height:104px;
+	width:104px;
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:90
+}
+
+.ultraBook .spot.one  {
+	left:4%;
+	top:54%
+}
+
+.ultraBook .spot.two  {
+	left:17%;
+	top:66%
+}
+
+.ultraBook .spot.three  {
+	left:25%;
+	top:52%
+}
+
+.ultraBook .spot.four  {
+	left:35%;
+	top:67%
+}
+
+.ultraBook .spot.five  {
+	left:47%;
+	top:35%
+}
+
+.ultraBook .spot.six  {
+	left:53%;
+	top:54%
+}
+
+.ultraBook .spot.seven  {
+	left:66%;
+	top:68%
+}
+
+.ultraBook .spot.eight  {
+	left:77%;
+	top:50%
+}
+
+.ultraBook .spot.nine  {
+	left:84%;
+	top:42%
+}
+
+.ultraBook.lg .spot.one  {
+	left:4%;
+	top:54%
+}
+
+.ultraBook.lg .spot.two  {
+	left:17%;
+	top:63%
+}
+
+.ultraBook.lg .spot.three  {
+	left:24%;
+	top:52%
+}
+
+.ultraBook.lg .spot.four  {
+	left:35%;
+	top:67%
+}
+
+.ultraBook.lg .spot.five  {
+	left:46%;
+	top:33%
+}
+
+.ultraBook.lg .spot.six  {
+	left:51%;
+	top:52%
+}
+
+.ultraBook.lg .spot.seven  {
+	left:65%;
+	top:68%
+}
+
+.ultraBook.lg .spot.eight  {
+	left:76%;
+	top:50%
+}
+
+.ultraBook.lg .spot.nine  {
+	left:83%;
+	top:42%
+}
+
+.ultraBook .hotSpot  {
+	background:url(/etc/designs/intelmobile/img/decision/meet-ultrabook-hotSpot.png) left top no-repeat;
+/*background: url(/img/decision/12.gif') left top no-repeat;    */
+	background-size:105px auto;
+}
+
+.ultraBook li:last-child {
+	color:#00427F;
+	font-size:56px;
+	height:100%;
+	position:relative;
+	text-align:left;
+	background-size:auto 100%;
+}
+
+.ultraBook li:last-child .externalLink {
+	background:url(/etc/designs/intelmobile/img/decision/meet-ultrabook-learnMore-highres.png) no-repeat scroll left top transparent;
+	color:#056FA5;
+	font-size:18px;
+	height:18px;
+	left:65px;
+	width:200px;
+	position:absolute;
+	text-indent:1000px;
+	top:55%;
+	padding:0;
+	z-index:70;
+	width:234px;
+	background-size:234px auto;
+}
+
+.ultraBook.lg li:last-child .externalLink {
+	left:32px;
+}
+/*
+support
+*/
+.ultraBook #support  {
+	width:100%;
+	height:120px;
+	position:absolute;
+	-moz-transform:translateY(120px);
+	-webkit-transform:translateY(120px);
+	-o-transform:translateY(120px);
+	-ms-transform:translateY(120px);
+	transform:translateY(120px);
+	left:0;
+	z-index:32;
+	color:#fff;
+	letter-spacing:-.5px;
+	background:url(/etc/designs/intelmobile/img/decision/meet-ultrabook-contentBG.png) center top no-repeat transparent;
+	background-size:100% 120px;
+	-webkit-transition:all 550ms cubic-bezier(0.645,0.045,0.355,1.000);
+	-moz-transition:all 550ms cubic-bezier(0.645,0.045,0.355,1.000);
+	-ms-transition:all 550ms cubic-bezier(0.645,0.045,0.355,1.000);
+	-o-transition:all 550ms cubic-bezier(0.645,0.045,0.355,1.000);
+	transition:all 550ms cubic-bezier(0.645,0.045,0.355,1.000);
+/* easeInOutCubic */
+}
+
+.ultraBook #support.show  {
+	-moz-transform:translateY(-120px);
+	-webkit-transform:translateY(-120px);
+	-o-transform:translateY(-140px);
+	-ms-transform:translateY(-140px);
+	transform:translateY(-140px);
+}
+
+/* these are pre-animated styles*/
+.ultraBook #support p  {
+	float:left;
+	margin:300px 0 18px;
+	opacity:0;
+	width:175px;
+	font-size:10px;
+	-webkit-transition:all 800ms cubic-bezier(0.420,0.000,0.000,1.050);
+	-moz-transition:all 800ms cubic-bezier(0.420,0.000,0.000,1.050);
+	-ms-transition:all 800ms cubic-bezier(0.420,0.000,0.000,1.050);
+	-o-transition:all 800ms cubic-bezier(0.420,0.000,0.000,1.050);
+	transition:all 800ms cubic-bezier(0.420,0.000,0.000,1.050);
+
+}
+
+.ultraBook #imageContainer  {
+	background:url(/etc/designs/intelmobile/img/decision/meet-ultrabook-supportLaptop.png) center top no-repeat transparent;
+	float:left;
+	width:123px;
+	height:100%;
+	margin-top:200px;
+	opacity:1;
+	background-size:123px 73px;
+	-webkit-transition:all 700ms cubic-bezier(0.42,0,0,1.5);
+	-moz-transition:all 700ms cubic-bezier(0.42,0,0,1.5);
+	-ms-transition:all 700ms cubic-bezier(0.42,0,0,1.5);
+	-o-transition:all 700ms cubic-bezier(0.42,0,0,1.5);
+	transition:all 700ms cubic-bezier(0.42,0,0,1.5);
+
+}
+
+.ultraBook #support.show p  {
+	opacity:1;
+	margin:30px 0 18px;
+	line-height:12px;
+	font-size:10px;
+}
+
+.ultraBook #close  {
+	width:19px;
+	height:19px;
+	position:absolute;
+	right:10px;
+	top:10px;
+	background:url(/etc/designs/intelmobile/img/decision/meet-ultrabook-close_std.png) center top no-repeat transparent;
+}
+
+.ultraBook #support.show #imageContainer  {
+	margin-top:30px;
+	opacity:1;
+}
+
+.ultraBook #support img  {
+	position:absolute;
+	top:10px;
+	right:10px;
+}
+
+.ultraBook #support a  {
+	opacity:0;
+	font-size:9px;
+	color:#FEE602;
+	position:absolute;
+	text-decoration:none;
+	top:69%;
+	left:123px;
+	background:url(/etc/designs/intelmobile/img/decision/meet-ultrabook-externalLink_yellow.png) right 7px no-repeat transparent;
+	padding-right:10px;
+	background-size:auto 6px;
+	-webkit-transition:opacity 900ms cubic-bezier(0.645,0.045,0.355,1.000);
+	-moz-transition:opacity 900ms cubic-bezier(0.645,0.045,0.355,1.000);
+	-ms-transition:opacity 900ms cubic-bezier(0.645,0.045,0.355,1.000);
+	-o-transition:opacity 900ms cubic-bezier(0.645,0.045,0.355,1.000);
+	transition:opacity 900ms cubic-bezier(0.645,0.045,0.355,1.000);
+}
+
+.ultraBook #support a.disclaimer {
+	top: 80%; opacity: .6; 
+	background:url(/etc/designs/intelmobile/img/decision/meet-ultrabook-link_std.png) right 7px no-repeat transparent;
+	color: #fff;}
+
+.ultraBook #support.show a  {
+	opacity:1;
+}
+
+.ultraBook #support.show a.disclaimer {opacity:0.6;}
+
+/*
+Shop Spot
+*/
+.ultraBook #shopSpot  {
+	background:#fff;
+	right:0;
+}
+
+.ultraBook.apple #ubLogo  {
+	background:url(/etc/designs/intelmobile/img/decision/meet-ultrabook-logo-highres.png) left top no-repeat transparent;
+	background-size:150px 60px;
+	width:150px;
+}
+
+/*.apple ul {
+		background:url(/img/decision/meet-ultrabook-full_h.png) left top no-repeat transparent;
+		background-size: 2535px 416px;
+}*/
+.ultraBook.apple ul  {
+		background:url(/etc/designs/intelmobile/img/decision/meet-ultrabook-full_half.png) left top no-repeat transparent;
+		background-size: auto 416px;
+		width:2535px;
+		height:416px;
+}
+
+.ultraBook.apple li:nth-child(2)  {
+	width:1895px;
+}
+.ultraBook.apple li:first-child  {
+	background:url(/etc/designs/intelmobile/img/decision/meet-ultrabook-slideone.png) no-repeat scroll center 62%;
+	background-size: auto 70px;
+}
+
+.ultraBook.apple li:last-child a.externalLink  {
+	background:url(/etc/designs/intelmobile/img/decision/meet-ultrabook-learnMore-highres.png) no-repeat scroll left top;
+	background-size:100% 16px;
+	left:36px;
+}
+
+.ultraBook.apple .spot.one  {
+	left:37px;
+	top:225px;
+}
+
+.ultraBook.apple .spot.two  {
+	left:294px;
+	top:262px;
+}
+
+.ultraBook.apple .spot.three  {
+	left:423px;
+	top:214px;
+}
+
+.ultraBook.apple .spot.four  {
+	left:661px;
+	top:271px;
+}
+
+.ultraBook.apple .spot.five  {
+	left:851px;
+	top:143px;
+}
+
+.ultraBook.apple .spot.six  {
+	left:947px;
+	top:213px;
+}
+
+.ultraBook.apple .spot.seven  {
+	left:1229px;
+	top:281px;
+}
+
+.ultraBook.apple .spot.eight  {
+	left:1421px;
+	top:199px;
+}
+
+.ultraBook.apple .spot.nine  {
+	left:1550px;
+	top:161px;
+}

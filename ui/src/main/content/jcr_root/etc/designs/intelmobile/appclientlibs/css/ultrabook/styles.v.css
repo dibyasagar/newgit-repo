@@ -1,0 +1,508 @@
+/* Global */
+@font-face {
+  font-weight: 300;
+  font-style: normal;
+  /*font-family: neo-sans-intel;*/
+  src: url("../fonts/neo-sans-intel-light.eot");
+  src: url("../fonts/neo-sans-intel-light.eot?#msies") format("embedded-opentype"), url("../fonts/neo-sans-intel-light.woff") format("woff"), url("../fonts/neo-sans-intel-light.ttf") format("truetype"), url("../fonts/neo-sans-intel-light.svg") format("svg");
+}
+@font-face {
+  font-weight: 300;
+  font-style: italic;
+  /*font-family: neo-sans-intel;*/
+  src: url("../fonts/neo-sans-intel-light-italic.eot");
+  src: url("../fonts/neo-sans-intel-light-italic.eot?#msies") format("embedded-opentype"), url("../fonts/neo-sans-intel-light-italic.woff") format("woff"), url("../fonts/neo-sans-intel-light-italic.ttf") format("truetype"), url("../fonts/neo-sans-intel-light-italic.svg") format("svg");
+}
+@font-face {
+  font-weight: 400;
+  font-style: normal;
+  /*font-family: neo-sans-intel;*/
+  src: url("../fonts/neo-sans-intel.eot");
+  src: url("../fonts/neo-sans-intel.eot?#msies") format("embedded-opentype"), url("../fonts/neo-sans-intel.woff") format("woff"), url("../fonts/neo-sans-intel.ttf") format("truetype"), url("../fonts/neo-sans-intel.svg") format("svg");
+}
+@font-face {
+  font-weight: 400;
+  font-style: italic;
+  font-family: neo-sans-intel;
+  src: url("../fonts/neo-sans-intel-italic.eot");
+  src: url("../fonts/neo-sans-intel-italic.eot?#msies") format("embedded-opentype"), url("../fonts/neo-sans-intel-italic.woff") format("woff"), url("../fonts/neo-sans-intel-italic.ttf") format("truetype"), url("../fonts/neo-sans-intel-italic.svg") format("svg");
+}
+@font-face {
+  font-weight: 500;
+  font-style: normal;
+  /*font-family: neo-sans-intel;*/
+  src: url("../fonts/neo-sans-intel-medium.eot");
+  src: url("../fonts/neo-sans-intel-medium.eot?#msies") format("embedded-opentype"), url("../fonts/neo-sans-intel-medium.woff") format("woff"), url("../fonts/neo-sans-intel-medium.ttf") format("truetype"), url("../fonts/neo-sans-intel-medium.svg") format("svg");
+}
+@font-face {
+  font-weight: 500;
+  font-style: italic;
+  /*font-family: neo-sans-intel;*/
+  src: url("../fonts/neo-sans-intel-medium-italic.eot");
+  src: url("../fonts/neo-sans-intel-medium-italic.eot?#msies") format("embedded-opentype"), url("../fonts/neo-sans-intel-medium-italic.woff") format("woff"), url("../fonts/neo-sans-intel-medium-italic.ttf") format("truetype"), url("../fonts/neo-sans-intel-medium-italic.svg") format("svg");
+}
+/* Main */
+body, html {
+  background-color: #ffffff;
+  /*font-family: neo-sans-intel !important;*/
+}
+body {
+  min-width: 320px;
+  position: relative;
+  width: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+.ultrabook {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  /* Menus */
+
+  /* Shop */
+
+  /* Slide */
+
+  /* 0 */
+
+  /* 1 */
+
+  /* 2 */
+
+  /* 3 */
+
+  /* 4 */
+
+  /* 5 */
+
+  /* Z */
+
+  /* Clear */
+
+  /* X */
+
+}
+.ultrabook a {
+  color: #0061A5 ;
+}
+.ultrabook.menus a{
+  color: #0061A5 !important;
+}
+.ultrabook a:hover {
+  /*color: #000;*/
+}
+.ultrabook .sticky {
+  background-color: #00ACEE;
+  background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/menus.sticky.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: fixed;
+  right: 0;
+  top: 70px;
+  z-index: 99998;
+  border-radius: 5px 0px 0px 5px;
+  -webkit-border-radius: 5px 0px 0px 5px;
+  -moz-border-radius: 5px 0px 0px 5px;
+  -ms-border-radius: 5px 0px 0px 5px;
+  -o-border-radius: 5px 0px 0px 5px;
+  cursor: pointer;
+  height: 37px;
+  width: 37px;
+}
+.ultrabook.menus {
+  background-color: #FFF;
+  overflow: hidden;
+  display: none;
+  width: auto;
+}
+.ultrabook.menus nav {
+  padding: 25px;
+  padding-bottom: 50px;
+}
+.ultrabook.menus nav .head {
+  margin-bottom: 10px;
+  float: left;
+}
+.ultrabook.menus nav .head h1 {
+  font-size: 23px;
+  font-weight: 300;
+  line-height: 130%;
+  color: #0061A5;
+}
+.ultrabook.menus nav .close {
+  background-color: #7FABD1;
+  background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/menus.close.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+  height: 27px;
+  width: 27px;
+  float: right;
+}
+.ultrabook.menus nav .item {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 130%;
+  background-color: #F2F6FA;
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: #F2F6FA 1px solid;
+  color: #0061A5;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.ultrabook.menus nav .item .inside {
+  text-decoration: none;
+  padding: 10px 15px;
+  padding-left: 50px;
+  display: block;
+}
+.ultrabook.menus nav .item:active
+/*.ultrabook.menus nav .item:hover*/
+ {
+  
+  background-color: #D8E6F1;
+  border: #85B3D4 1px solid;
+  
+}
+.ultrabook.menus nav .menus-1 {
+  background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/menus.1.icon.png");
+}
+.ultrabook.menus nav .menus-2 {
+  /*background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/menus.2.icon.png");*/
+}
+.ultrabook.menus nav .menus-3 {
+  background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/menus.3.icon.png");
+}
+.ultrabook.menus nav .menus-4 {
+ /* background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/menus.4.icon.png");*/
+}
+.ultrabook.menus nav .menus-5 {
+  background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/menus.5.icon.png");
+}
+.ultrabook .shop {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/slide.o.shop.png");
+  background-size: contain;
+  width: 196px;
+}
+.ultrabook .shop a {
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+.ultrabook .shop a span {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 130%;
+  color: #FFF;
+  padding-bottom: 14px;
+  padding-top: 8px;
+  display: inline-block;
+  width: 82%;
+}
+.ultrabook .slide {
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+}
+.ultrabook .slide .item .inside {
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.ultrabook .slide .item .inside .icon, .ultrabook .slide .item .inside .head {
+  float: left;
+}
+.ultrabook .slide .item .inside .icon {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  height: 53px;
+  width: 53px;
+}
+.ultrabook .slide .item .inside .head {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+.ultrabook .slide .item .inside .head h1 {
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 130%;
+  color: #0061A5;
+}
+.ultrabook .slide .item .inside .head h2 {
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 130%;
+  color: #0061A5;
+}
+.ultrabook .slide .item .inside .head h2.super {
+  font-size: 14px;
+  color: #0097e0;
+}
+.ultrabook .slide .item .inside .asset {
+  margin-bottom: 15px;
+}
+.ultrabook .slide .item .inside .asset .video {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: auto;
+}
+.ultrabook .slide .item .inside .asset .video .video-a .video-aa, .ultrabook .slide .item .inside .asset .video .video-a .video-ab {
+  background: #000;
+  border: #FFF 1px solid;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4px;
+  -ms-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4px;
+  -o-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4px;
+  overflow: hidden;
+  outline: 0;
+  min-height: 100px;
+  cursor: pointer;
+}
+.ultrabook .slide .item .inside .asset .video .video-a .video-aa {
+  display: none;
+}
+.ultrabook .slide .item .inside .asset .video .video-a video,
+.ultrabook .slide .item .inside .asset .video .video-a iframe,
+.ultrabook .slide .item .inside .asset .video .video-a object,
+.ultrabook .slide .item .inside .asset .video .video-a embed {
+  display: block;
+}
+.ultrabook .slide .item .inside .body h3 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 130%;
+  color: #0061A5;
+  margin-bottom: 10px;
+}
+.ultrabook .slide .item .inside .body h3.ru_style {
+  font-size: 19px;
+  font-weight: 300 !important;
+}
+.ultrabook .slide .item .inside .body p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #0097E0;
+  margin-bottom: 10px;
+}
+.ultrabook .slide .item .inside .body div.ru_style p{
+  font-weight: 300 !important;
+}
+
+.ultrabook .slide .item .inside .body .more {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: none;
+}
+.ultrabook .slide .item .inside .body .more h4 {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 130%;
+  color: #0061A5;
+}
+.ultrabook .slide .item .inside .body .more h4.ru_style {
+  font-weight: 200 !important;
+}
+.ultrabook .slide .item .inside .body .more hr {
+  background: #0061A5;
+  border: 0;
+}
+.ultrabook .slide .item .inside .body .learn {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 130%;
+  color: #0061A5;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/slide.o.more.png");
+  background-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-right: 20px;
+  display: inline-block;
+  cursor: pointer;
+
+  
+}
+.ultrabook .slide .item .inside .body .learn_ru_style {
+  font-size: 15px;
+  font-weight: 300 !important;
+  line-height: 130%;
+  color: #0061A5;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/slide.o.more.png");
+  background-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-right: 20px;
+  display: inline-block;
+  cursor: pointer;
+}
+.ultrabook .slide .item .inside .body .learn.close {
+  background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/slide.o.less.png");
+}
+.ultrabook .slide .item .inside .ultra {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/slide.0.ultrabook.png");
+  background-size: contain;
+  height: 69px;
+  width: 172px;
+}
+.ultrabook .slide .item .inside .spacer {
+  height: 10px;
+}
+.ultrabook .space {
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+}
+.ultrabook .slide-0 {
+  /*background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/slide.0.jpg");*/
+  height: 503px;
+}
+.ultrabook .slide-0 .item .inside .icon, .ultrabook .slide-0 .item .inside .head {
+  float: none;
+}
+.ultrabook .slide-0 .item .inside .head {
+  /*padding-top: 25px;*/
+  padding: 0px !important;
+  
+}
+.ultrabook .slide-0 .item .inside
+{
+    padding: 0px !important;
+}
+.ultrabook .slide-0 .item .inside .head 
+{
+    position:absolute !important;top:0 !important;left:0 !important;width:90% !important;
+    padding-top: 25px !important;
+    padding-left: 25px !important;
+}
+.ultrabook .slide-1 .item .inside .icon {
+  /*background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/slide.1.icon.png");*/
+}
+.ultrabook .space-1 {
+/*  background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/space.1.jpg");*/
+  height: 310px;
+}
+.ultrabook .slide-2 .item .inside .icon {
+  /*background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/slide.2.icon.png");*/
+}
+.ultrabook .space-2 {
+  /*background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/space.2.jpg");*/
+  height: 311px;
+}
+.ultrabook .slide-3 .item .inside .icon {
+  /*background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/slide.3.icon.png");*/
+}
+.ultrabook .space-3 {
+/*  background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/space.3.jpg");*/
+  height: 311px;
+}
+.ultrabook .slide-4 .item .inside .icon {
+/*  background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/slide.4.icon.png");*/
+}
+.ultrabook .space-4 {
+/*  background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/space.4.jpg");*/
+  height: 311px;
+}
+.ultrabook .slide-5 .item .inside .icon {
+  /*background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/slide.5.icon.png");*/
+}
+.ultrabook .space-5 {
+/*  background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/space.5.jpg");*/
+  height: 312px;
+}
+.ultrabook .slide-z .item .inside {
+  padding-bottom: 30px;
+}
+.ultrabook .slide-z .item .inside .icon, .ultrabook .slide-z .item .inside .head {
+  float: none;
+}
+.ultrabook .slide-z .item .inside .head {
+  padding-left: 0;
+}
+.ultrabook .slide-z .item .inside .head h2 {
+  text-align: center;
+}
+.ultrabook .slide-z .item .inside .shop, .ultrabook .slide-z .item .inside .ultra, .ultrabook .slide-z .item .inside .laptop {
+  margin: 0 auto;
+}
+.ultrabook .slide-z .item .inside .laptop {
+  background-repeat: no-repeat;
+  background-position: center center;
+/*  background-image: url("/etc/designs/intelmobile/img/ultrabook/640v/slide.z.laptop.png");*/
+  background-size: contain;
+  margin-bottom: 10px;
+  height: 100px;
+  width: auto;
+}
+.ultrabook .slide-z .item .inside .legal {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #6F6F6F;
+  text-align: center;
+}
+.ultrabook .clear {
+  zoom: 1.000;
+}
+.ultrabook .clear:after {
+  content: "\0020";
+  font-size: 0.000px;
+  visibility: hidden;
+  height: 0.000px;
+  display: block;
+  clear: both;
+}
+.ultrabook .landscape {
+  display: none !important;
+}
+.ultrabook .portrait {
+  display: block !important;
+}
+.engWord
+{
+    font-weight:400 !important;
+}
+
+.ru_headstyle
+{
+    padding-top: 0px !important;
+    padding-left:56px !important;
+    margin-top: -60px;
+ 
+}
+

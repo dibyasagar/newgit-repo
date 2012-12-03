@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Edit Contents"
+    width="100%"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Copy Texts">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Page Heading"
+                        name="./heading"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <subheading
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Sub Heading"
+                        name="./subHeading"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <recommendation
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Recommendation Text"
+                        grow="true"
+                        name="./recommendation"
+                        validateOnBlur="true"
+                        xtype="richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <styles
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <subsuperscript
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                    </recommendation>
+                    <linkcopy
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Link Copy"
+                        name="./linkCopy"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <linkpath
+                        jcr:primaryType="cq:Widget"
+                        editable="{Boolean}true"
+                        fieldLabel="Link Path"
+                        name="./linkPath"
+                        predicate="hierarchy"
+                        xtype="pathfield"/>
+                </items>
+            </tab1>
+            <heroimage
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./heroImageFileName"
+                fileReferenceParameter="./heroImageFileReference"
+                id="heroimagefield"
+                name="./heroImage"
+                title="Hero Image"
+                xtype="smartimage"/>
+            <processorimage
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./processorImageFileName"
+                fileReferenceParameter="./processorImageFileReference"
+                id="processorimagefield"
+                name="./processorImage"
+                title="Processor Image"
+                xtype="smartimage"/>
+        </items>
+    </items>
+</jcr:root>

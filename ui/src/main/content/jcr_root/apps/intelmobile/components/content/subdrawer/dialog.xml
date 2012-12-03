@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Subdrawer"
+    width="100%"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Sub Drawer">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        fieldDescription="Title of the tab."
+                        fieldLabel="Title"
+                        name="./title"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <footerdisplaytext
+                        jcr:primaryType="nt:unstructured"
+                        fieldDescription="Footer display text of the tab."
+                        fieldLabel="Footer Display Text"
+                        name="./footertext"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <viewlesscopy
+                        jcr:primaryType="nt:unstructured"
+                        fieldDescription="View Less display text of the tab."
+                        fieldLabel="Viewless Display Text"
+                        name="./viewlesstext"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <viewmoredispnum
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="2"
+                        fieldLabel="Show Viewmore After No. of Components"
+                        name="./viewmorenum"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <two
+                                jcr:primaryType="nt:unstructured"
+                                text="Two"
+                                value="2"/>
+                            <three
+                                jcr:primaryType="nt:unstructured"
+                                text="Three"
+                                value="3"/>
+                            <four
+                                jcr:primaryType="nt:unstructured"
+                                text="four"
+                                value="4"/>
+                        </options>
+                    </viewmoredispnum>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

@@ -1,0 +1,130 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.IntelM.cq5</groupId>
+  <artifactId>intel-ui</artifactId>
+  <version>1.1-SNAPSHOT</version>
+  <name>IntelM UI</name>
+  <description>This is IntelM UI module</description>
+
+ 
+  <properties>
+		<!-- Edit active version numbers below -->
+		<!-- ========================== -->
+		<core.version>${project.version}</core.version>
+		<!-- ========================== -->
+
+		<core.name>intel-core</core.name>
+		<project.groupId>com.IntelM.cq5</project.groupId>
+		<install.dir>
+			${project.build.directory}/classes/jcr_root/apps/intel/com.intel.cms.IntelMBundle/install
+		</install.dir>
+  </properties>
+
+  <build>
+		<resources>
+			<!-- filter meta information to get some properties into the files -->
+			<resource>
+				<directory>
+					${basedir}/src/main/content/META-INF
+				</directory>
+				<targetPath>META-INF</targetPath>
+				<filtering>true</filtering>
+			</resource>
+			<!-- exclude .vlt control files and tests -->
+			<resource>
+				<directory>
+					${basedir}/src/main/content/jcr_root
+				</directory>
+				<excludes>
+					<!--<exclude>apps/sop/com.sop.cms.SOPBundle/**</exclude> -->
+ 				    <exclude>apps/intel/com.intel.cms.IntelMBundle/src/**</exclude>
+					<exclude>apps/intel/com.intel.cms.IntelMBundle/lib/**</exclude>
+                    <exclude>apps/intel/com.intel.cms.IntelMBundle/com.intel.cms.IntelMBundle.bnd</exclude> 
+					<!-- <exclude>apps/sling/**</exclude> -->
+                    <exclude>apps/system/**</exclude>
+					<exclude>var/**</exclude> 
+					<exclude>**/.vlt</exclude>
+					<exclude>**/.vltignore</exclude>
+					<exclude>**/.DS_Store</exclude>										
+				</excludes>
+				<targetPath>jcr_root</targetPath>
+			</resource>
+		</resources>
+		<plugins>
+			<!-- copy the dependant bundles -->
+
+			 <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.0</version>
+				<executions>
+					<execution>
+						<id>copy-bundles</id>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>
+										${project.groupId}
+									</groupId>
+									<artifactId>intel-core</artifactId>
+									<outputDirectory>
+										${install.dir}
+									</outputDirectory>
+								</artifactItem>
+								</artifactItems>
+								
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+           
+<!-- 		    <plugin>
+               <groupId>net.alchim31.maven</groupId>
+               <artifactId>yuicompressor-maven-plugin</artifactId>
+               <version>1.1</version>
+               <executions>
+		        <execution>  
+			      <phase>compile</phase>
+			       <goals>
+				     <goal>jslint</goal>
+					 <goal>compress</goal>
+					 </goals>
+			   </execution>
+		      </executions>
+		      <configuration>
+               <nosuffix>true</nosuffix>
+               <excludes>
+		        <exclude>**/*.min.js</exclude>
+               </excludes>
+             </configuration>
+	       </plugin> -->
+
+		</plugins>
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-webdav</artifactId>
+				<version>1.0-beta-2</version>
+			</extension>
+		</extensions>
+	</build>
+
+
+	<!-- ====================================================================== -->
+	<!-- D E P E N D E N C I E S                                                -->
+	<!-- ====================================================================== -->
+
+	  <dependencies>
+
+		<dependency>
+            <groupId>com.IntelM.cq5</groupId>
+            <artifactId>intel-core</artifactId>
+            <version>${project.version}</version>
+        </dependency> 
+
+	</dependencies>
+
+</project>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Dialog"
+    width="100%"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        width="950"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <regioncountryselector
+                jcr:primaryType="cq:Panel"
+                title="Region Selection"
+                width="900">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <regionname
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        defaultValue="Select Region"
+                        fieldLabel="Region Name Display Copy"
+                        name="./regionname"
+                        xtype="textfield"/>
+                    <countries
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./countries"
+                        fieldDescription="Click the '+' to add a new Country and URL."
+                        fieldLabel="Country"
+                        name="./countries"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <countrydisplayname
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                fieldLabel="Country Display Name"
+                                name="./countrydisplayname"
+                                type="textfield"
+                                xtype="textfield"/>
+                            <countryhomepageurl
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                editable="{Boolean}true"
+                                fieldLabel="Country Home Page URL"
+                                name="./countryhomepageurl"
+                                predicate="hierarchy"
+                                xtype="textfield"/>
+                            <locale
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                fieldLabel="Locale"
+                                name="./locale"
+                                type="textfield"
+				xtype="textfield"/>                        
+			</fieldConfig>
+                    </countries>
+                </items>
+            </regioncountryselector>
+        </items>
+    </items>
+</jcr:root>

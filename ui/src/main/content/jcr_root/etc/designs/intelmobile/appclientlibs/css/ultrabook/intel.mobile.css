@@ -1,0 +1,272 @@
+
+/* added by Shishir */
+.ultrabook.menus a:hover,a:visited
+{
+    color: #0061A5 !important;
+}
+.ultrabook.content a:hover,a:visited
+{
+    color: #0061A5 !important;
+}
+.more a
+{
+   color: #0061A5 !important; 
+}
+.more p a
+{
+   color: #0061A5 !important; 
+}
+
+header #header-bar
+{
+    font-family: Arial,Helvetica,sans-serif;
+}
+header #category-menu
+{
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+header #search-menu
+{
+    font-family: Arial,Helvetica,sans-serif;
+}
+#disclaimers #disclaimer-content.open
+{
+    font-family: Arial,Helvetica,sans-serif;
+}
+#disclaimers
+{
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+#language
+{
+    font-family: Arial,Helvetica,sans-serif;
+}
+footer nav
+{
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+div.ultrabook.content
+{
+    background: #fff;
+}
+.ultrabook .slide .item .inside .head h2 p
+{
+    color: #0061A5;
+}
+.ultrabook .slide-z .item .inside .laptop
+{
+    text-align: center;
+}
+/* specific to galaxy s3 menu */
+
+html.csstransforms3d header.ics404 #category-menu.dropdown-menu {
+  /*bottom: 0;*/
+  left: 0;
+  position: absolute;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+html.csstransforms3d header.ics404 #category-menu.dropdown-menu.inited {
+  display: block;
+  -webkit-transition: -webkit-transform .2s ease-out;
+  transition: transform .2s ease-out;
+}
+
+html.csstransforms3d header.ics404 #search-menu {
+  position: relative;
+}
+/* specific to galaxy s3 menu */
+
+html.csstransforms3d header.ics404 #category-menu.dropdown-menu {
+  /*bottom: 0;*/
+  left: 0;
+  position: absolute;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+html.csstransforms3d header.ics404 #category-menu.dropdown-menu.inited {
+  display: block;
+  -webkit-transition: -webkit-transform .2s ease-out;
+  transition: transform .2s ease-out;
+}
+
+html.csstransforms3d header.ics404 #search-menu {
+  position: relative;
+}
+
+.camp_headerimg
+{
+    text-align: center;
+}
+.ultrabook .space-2
+{
+    text-align: center;
+}
+
+ #social-share {
+  text-align: center;
+  /*padding: 1em 0 0 0;*/ 
+  margin-top: 1em;
+  /*overflow: hidden;*/
+  
+}
+
+ #social-share span {
+  display: inline-block;
+  /*height: 22px;*/
+ /* top:-4px */ /* added by Shishir */
+ float: left;
+}
+ #social-share .st_sharethis_custom {
+  background: url(/etc/designs/intelmobile/img/btn-share.png) no-repeat;
+  width: 58px;
+  background-size: 100%;
+  position: relative;
+  top: 0px; /* changed by shishir */
+  height: 22px;
+}
+ #social-share .social-share-align
+{
+    margin: 0 auto;
+  /*width: 250px;*/ /* changed from 278px */
+  display: inline-block;
+  
+  
+}
+.ultrabook .slide
+{
+    clear: both;
+}
+
+.ultrabook.menus nav .menus-4 img
+{
+    float: left;
+    height: 40px;
+}
+.ultrabook.menus nav .menus-2 img
+{
+    float: left;
+    height: 40px;
+}
+.legal a:visited
+{
+    color: #0061A5 !important;
+}
+.legal p a:visited
+{
+    color: #0061A5 !important;
+}
+
+footer #language a
+{
+    color:#fff !important;
+}
+footer #language a:visited
+{
+    color:#fff !important;
+}
+footer nav a
+{
+    color:#fff !important;
+}
+footer nav a:visited
+{
+    color:#fff !important;
+}
+#disclaimers a,#disclaimers a:hover,#disclaimers a:visited
+{
+    color:#fff !important;
+}
+/*
+.ultrabook sup
+{
+    font-size: 50% !important;
+ 
+}
+*/
+@media only screen and (max-width: 390px) {
+
+.hed_ru_style
+{
+	padding-top: 0px !important;
+    padding-left:56px !important;
+    margin-top: -60px;
+	
+}
+.ru_newheadstyle
+{
+	/* added by shishir */
+   word-wrap:break-word;
+   width:80%;
+	/* added by shishir End */
+}
+.ru_newheadstylesmall
+{
+	margin-top: 0px !important;
+}
+}
+@media only screen and (min-width: 400px) {
+  /* Styles */
+  .ultrabook div.camp_vertical
+  {
+      display:none !important;
+  }
+  .ultrabook div.camp_landscape
+  {
+      display:block !important;
+  }
+  .ultrabook div.vertical
+  {
+      display:none !important;
+  }
+  .ultrabook div.imgland
+  {
+      display:block !important;
+  }
+  .ultrabook .slide .item .s2_orig
+  {
+      padding-right: 75px !important;
+  }
+  .ultrabook .slide .item .iphone_orig
+  {
+      padding-right: 15px !important;
+  }
+  .ultrabook .slide .item .ie_orig
+  {
+      padding-right: 15px !important;
+  }
+  .ultrabook .slide-0 .camp_headerimg.s2_space img
+  {
+      margin-top: -130px !important;
+  }
+  .ultrabook .slide-0 .camp_headerimg.bb_space img
+  {
+      margin-top: -40px !important;
+  }
+  .learn_ru
+{
+    width: 100px;
+}
+}
+
+.ultrabook .slide .item .inside .head h3
+{
+   color: #0097E0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 130%;
+   }
+
+#category-menu ul li a
+{
+    color: #fff !important;
+}

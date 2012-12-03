@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Edit Component"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Custom Features">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <customfeatures
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Click (+) to add a feature, (-) to remove a feature."
+                        fieldLabel="Features Copy"
+                        name="./customfeatures"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            allowBlank="{Boolean}false"
+                            xtype="textfield"/>
+                    </customfeatures>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

@@ -1,0 +1,4542 @@
+/* SASS vars */
+/* SASS defaults */
+/* @include border-radius */
+/* @include box-shadow */
+/* SASS mixins */
+/* @include grad-horz-3stop(#fff, $blue, #000) */
+/* @include grad-horz-2stop(#fff, $blue) */
+/* @include grad-vert-3stop(#fff, $blue) */
+/* @include grad-vert-3stop(#fff, $blue, #000) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* #homepage */
+#homepage {
+  background: #044678;
+  /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzA0NDY3OCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjclIiBzdG9wLWNvbG9yPSIjMDU3OWNlIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAyMmY1MCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  background: -moz-linear-gradient(top, #044678 0%, #0579ce 7%, #022f50 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #044678), color-stop(7%, #0579ce), color-stop(100%, #022f50));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #044678 0%, #0579ce 7%, #022f50 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #044678 0%, #0579ce 7%, #022f50 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #044678 0%, #0579ce 7%, #022f50 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #044678 0%, #0579ce 7%, #022f50 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#044678', endColorstr='#022f50',GradientType=0 );
+  /* IE6-8 */
+}
+#homepage .toolbar {
+  padding: 0.75em 0.40em 0 .3em;
+}
+#homepage .toolbar .selectbox {
+  margin: 0 1%;
+  width: 98%;
+}
+#homepage .toolbar .selectbox form {
+  background: url(/etc/designs/intelmobile/img/select_arrow_down.png) no-repeat 95%;
+  background-size: 10%;
+}
+@media only screen and (orientation : landscape) {
+  #homepage .toolbar .selectbox form {
+    background-size: 6%;
+    background-position: 98%;
+  }
+}
+#homepage .tiles .tile-info {
+  font-size: 140%;
+}
+
+/* eo #homepage */
+/* ul.accordion */
+ul.accordion > li {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: #fff;
+  margin-top: 5px;
+}
+ul.accordion h5 {
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  -ms-border-radius: 3px 3px 0 0;
+  -o-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+  background-color: #fffcfc;
+  /* Old browsers */
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFCFC', endColorstr='#FFF2F3F3');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fffcfc), color-stop(50%, #f2f3f3), color-stop(100%, #c9c9c9), color-stop(100%, #c9c9c9));
+  background-image: -webkit-linear-gradient(top, #fffcfc 0%, #f2f3f3 50%, #c9c9c9 100%, #c9c9c9 100%);
+  background-image: -moz-linear-gradient(top, #fffcfc 0%, #f2f3f3 50%, #c9c9c9 100%, #c9c9c9 100%);
+  background-image: -o-linear-gradient(top, #fffcfc 0%, #f2f3f3 50%, #c9c9c9 100%, #c9c9c9 100%);
+  background-image: -ms-linear-gradient(top, #fffcfc 0%, #f2f3f3 50%, #c9c9c9 100%, #c9c9c9 100%);
+  background-image: linear-gradient(top, #fffcfc 0%, #f2f3f3 50%, #c9c9c9 100%, #c9c9c9 100%);
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+  color: #086db6;
+  border: solid 1px #fff;
+  margin: 0 0 1px 0;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
+  font-size: 125%;
+  font-weight: normal;
+}
+ul.accordion h5.closed {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+ul.accordion h5 a {
+  color: #086db6;
+  display: block;
+  background: url("/etc/designs/intelmobile/img/ico_accordion-minus.png") no-repeat 98%;
+  padding: 0.65em 2.75em 0.65em 0.75em;
+  background-size: 10%;
+}
+ul.accordion h5.closed a {
+  background: url("/etc/designs/intelmobile/img/ico_accordion-plus.png") no-repeat 98%;
+  background-size: 10%;
+  
+}
+ul.accordion h5.closed ~ .content {
+  display: none;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+ul.accordion .content {
+  color: #666666;
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  -ms-border-radius: 0 0 3px 3px;
+  -o-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+  -webkit-box-shadow: 0px 2px 5px #666666;
+  -moz-box-shadow: 0px 2px 5px #666666;
+  box-shadow: 0px 2px 5px #666666;
+  position: relative;
+  margin-top: -1px;
+}
+
+/* eo ul.accordion */
+/* #search-menu */
+#search-menu {
+  /* eo form */
+}
+#search-menu form {
+  padding: 1em 0.75em;
+  overflow: hidden;
+ /* position: relative;*/ /* changed by shsihir to show the suggestion */
+}
+#search-menu form .text-input {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #fff;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c4c4c4), color-stop(30%, #feffff), color-stop(100%, #ffffff), color-stop(100%, #ffffff), color-stop(100%, #dddddd));
+  background-image: -webkit-linear-gradient(top, #c4c4c4 0%, #feffff 30%, #ffffff 100%, #ffffff 100%, #dddddd 100%);
+  background-image: -moz-linear-gradient(top, #c4c4c4 0%, #feffff 30%, #ffffff 100%, #ffffff 100%, #dddddd 100%);
+  background-image: -o-linear-gradient(top, #c4c4c4 0%, #feffff 30%, #ffffff 100%, #ffffff 100%, #dddddd 100%);
+  background-image: -ms-linear-gradient(top, #c4c4c4 0%, #feffff 30%, #ffffff 100%, #ffffff 100%, #dddddd 100%);
+  background-image: linear-gradient(top, #c4c4c4 0%, #feffff 30%, #ffffff 100%, #ffffff 100%, #dddddd 100%);
+  border-bottom: solid 1px #019bd7;
+  overflow: hidden;
+  padding: 0.5em;
+  position: relative;
+}
+#search-menu form input.text {
+  background: none;
+  -webkit-appearance: none;
+  width: 75%;
+  font-size: 150%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  color: #666666;
+}
+#search-menu form input[type=image] {
+  -webkit-border-radius: 0 5px 5px 0;
+  -moz-border-radius: 0 5px 5px 0;
+  -ms-border-radius: 0 5px 5px 0;
+  -o-border-radius: 0 5px 5px 0;
+  border-radius: 0 5px 5px 0;
+  background-color: #ffffff;
+  height: 100%;
+  border-left: solid 1px #e2e2e2;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#search-menu form #clear-search {
+  background: transparent url("/etc/designs/intelmobile/img/clear-search.png") 0 0 no-repeat;
+  height: 21px;
+  position: absolute;
+  right: 4.5em;
+  text-indent: -9999px;
+  top: 20%;
+  width: 20px;
+  display: none;
+}
+#search-menu .suggest {
+  position: absolute;
+  border-top: 1px solid #e2e2e2;
+  background: #f6faff;
+  margin: -1.3em 0.75em 1em 0.75em;
+  display: none;
+  z-index: 1000;
+  padding: 0;
+}
+
+/* #search-menu */
+#search-results {
+  /* eo div.bd */
+}
+#search-results div.bd {
+  /* Filter Menu */
+  /* eo div.results */
+}
+#search-results div.bd > * {
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+#search-results div.bd h2 {
+  background: #FFFFFF;
+    border-bottom: 1px solid #E2E2E2;
+    color: #666666;
+    font-size: 1.25em;
+    font-weight: normal;
+    margin: 0;
+    padding: 0.4em;
+    /*text-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);*/
+    text-shadow: none;
+  
+ 
+}
+#search-results div.bd h3 {
+  color: #086db6;
+  margin: 0;
+}
+#search-results div.bd ul {
+  color: #666666;
+}
+#search-results div.bd ul li {
+  padding: 0.5em 1em;
+  border-bottom: solid 1px #E2E2E2;
+}
+#search-results div.bd div.sort-filter > div {
+  padding: .75em .75em .5em .75em;
+  background-size: 100%;
+  overflow: hidden;
+}
+#search-results div.bd div.selectbox {
+  width: 100%;
+  height: 42px;
+  float: left;
+  margin: 0 0.5em 0.5em 0;
+}
+#search-results div.bd div.criteria-filter{
+  width: 100% !important/* changed by shishir from 70% to 100% */
+ 
+}
+#search-results div.bd div.criteria-filter {
+  float: right;
+  width: 48%;
+  margin: 0;
+}
+#search-results div.bd div.results.price {
+  color: #01B0F3;
+}
+#search-results div.bd div.results {
+  background: #fff;
+}
+#search-results div.bd div.results .category {
+  color: #7f7f7f; 
+  font-size: 80%; 
+  display: block; 
+}
+#search-results div.bd div.results ul li {
+  border-top: solid 1px white;
+  display: table;
+}
+#search-results div.bd div.results ul li > div {
+  display: table-cell;
+  vertical-align: top;
+}
+#search-results div.bd div.results ul li .thumb {
+  width: 20%;
+}
+#search-results div.bd div.results ul li .thumb > img {
+  max-width: 80%;
+}
+#search-results div.bd div.results ul.best-match {
+  -webkit-box-shadow: inset 0 1px 5px 1px #cccccc;
+  -moz-box-shadow: inset 0 1px 5px 1px #cccccc;
+  box-shadow: inset 0 1px 5px 1px #cccccc;
+  background: #f8f8f8;
+  border-width: 0px 0px 0px 6px;
+  -moz-border-image: url(/etc/designs/intelmobile/img/bg_SEARCH-bestmatch-leftborder.png) 0 0 0 8 stretch;
+  -webkit-border-image: url(/etc/designs/intelmobile/img/bg_SEARCH-bestmatch-leftborder.png) 0 0 0 8 stretch;
+  -o-border-image: url(/etc/designs/intelmobile/img/bg_SEARCH-bestmatch-leftborder.png) 0 0 0 8 stretch;
+  border-image: url(/etc/designs/intelmobile/img/bg_SEARCH-bestmatch-leftborder.png) 0 0 0 8 stretch;
+}
+#search-results div.bd div.results ul.best-match li {
+  border: none;
+}
+#search-results div.bd ul.accordion > li {
+  background: transparent;
+  border-bottom: 0;
+}
+#search-results div.bd ul.accordion .content {
+  background: white;
+}
+#search-results div.bd ul.accordion .content li:last-child {
+  border-bottom: 0;
+}
+/* new added */
+#search-results div.bd div.results ul li {
+  border-top: solid 1px white;
+  display: table;
+  width: 100%;
+}
+#search-results div.bd div.results ul li > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+#search-results div.bd div.results ul li > div + div {
+  vertical-align: top;
+  padding-right: 20px;
+}
+#search-results div.bd div.results ul li .thumb {
+  width: 30%;
+  display: table-cell;
+}
+#search-results div.bd div.results ul li .thumb > a > img {
+  width: 95%;
+  margin-right: 5%;
+}
+
+/* .search-results */
+/* compare widget */
+.compare {
+  color: #666666;
+  padding: 10px;
+  display: none;
+  /* ul li */
+}
+.compare h3 {
+  color: #086db6;
+  margin: 0;
+}
+.compare .category {
+  color: #ccc;
+  font-size: 80%;
+  display: block;
+}
+.compare .content {
+  padding: 0;
+}
+.compare .compare-btn {
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  -ms-border-radius: 0 0 3px 3px;
+  -o-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+}
+.compare ul li {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  padding: 0.5em 1em;
+  border-bottom: solid 1px #E2E2E2;
+  
+  background: white url(/etc/designs/intelmobile/img/bg_PDP-li-right-grad.jpg) no-repeat right top;
+  background-size: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.compare ul li > img {
+  max-width: 15%;
+  float: left;
+  clear: left;
+  margin-right: 1em;
+}
+.compare ul li > div {
+  float: left;
+  width: 80% /* added by shishir for left alignment */
+}
+.compare ul li :last-child {
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  -ms-border-radius: 0 0 3px 3px;
+  -o-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+}
+.compare ul li .cta-tile-remove {
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 100%;
+}
+
+/* eo .compare */
+/* compare page */
+#compare .bd {
+  position: relative;
+}
+#compare .container {
+  width: 2000px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  transition: all 1s;
+}
+#compare .sections {
+  width: 320px;
+  float: left;
+}
+#compare .sections .pagination {
+  margin-bottom: .5em;
+}
+#compare .tiles div {
+  font-size: 100%;
+}
+#compare .tiles {
+  margin-bottom: .5em;
+  overflow: visible;
+  float: left;
+  clear: both;
+}
+#compare .tiles li {
+  float: right;
+  margin: 0 0 0 1%;
+  width: 49%;
+}
+#compare .tiles li a {
+  display: block;
+}
+#compare .tiles li:first-child {
+  float: left;
+  margin: 0;
+}
+#compare .item-info {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: #fff;
+  float: left;
+  clear: both;
+  color: #666666;
+  margin-bottom: 5px;
+  width: 100%;
+}
+#compare .item-info h3 {
+  color: #086db6;
+}
+#compare .item-info > div {
+  float: left;
+  width: 50%;
+  padding: .7em;
+}
+#compare .item-info > div:first-child {
+  border-right: 1px #e2e2e2 solid;
+}
+#compare .empty {
+  background-color: #fafafa;
+}
+#compare table {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: #fff;
+  width: 100%;
+  color: #666666;
+  table-layout: fixed;
+}
+#compare table th {
+  text-align: left;
+  border-left: #086db6 3px solid;
+  padding-left: .8em;
+  background: white url(/etc/designs/intelmobile/img/bg_PSCB-linkgrad.png) no-repeat top center;
+  background-size: 95%;
+  font-weight: bold;
+}
+#compare table tr {
+  margin-bottom: 2px;
+  height: 3em;
+  vertical-align: middle;
+  width: 50%;
+}
+#compare table td {
+  padding: 1em;
+  border-top: 1px #e2e2e2 solid;
+}
+#compare table tr td:first-child {
+  border-right: 1px #e2e2e2 solid;
+}
+#compare table td img {
+  max-width: 40%;
+  padding-top: 1em;
+  display: block;
+}
+
+/* eo #compare */
+/* Product Showcase pages */
+#product-showcase {
+  /* eo div.nav */
+  /* eo .border-list */
+  /* eo .video */
+}
+#product-showcase div.nav {
+  border-top: 1px #fff solid;
+}
+#product-showcase div.nav a {
+  background: #d9d9d9;
+  /* Old browsers */
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFD9D9D9', endColorstr='#FFFFFFFF');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d9d9d9), color-stop(100%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #d9d9d9 0%, #ffffff 100%);
+  background-image: -moz-linear-gradient(top, #d9d9d9 0%, #ffffff 100%);
+  background-image: -o-linear-gradient(top, #d9d9d9 0%, #ffffff 100%);
+  background-image: -ms-linear-gradient(top, #d9d9d9 0%, #ffffff 100%);
+  background-image: linear-gradient(top, #d9d9d9 0%, #ffffff 100%);
+  display: block;
+  width: 50%;
+  float: left;
+  text-align: center;
+  padding: .6em 0;
+}
+#product-showcase div.nav a:first-child {
+  border-right: 1px #c1c1c1 solid;
+}
+#product-showcase div.nav a.active {
+  background: white;
+  /* Old browsers */
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #eeeeee 100%);
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #eeeeee 100%);
+  background-image: -o-linear-gradient(top, #ffffff 0%, #eeeeee 100%);
+  background-image: -ms-linear-gradient(top, #ffffff 0%, #eeeeee 100%);
+  background-image: linear-gradient(top, #ffffff 0%, #eeeeee 100%);
+  color: #666666;
+  cursor: text;
+}
+#product-showcase .border-list .items .item:first-child {
+  padding-top: 0;
+}
+#product-showcase .border-list .items .item > h3 {
+  /* added by shishir for product showcase */
+  display:block;
+  margin-top: 1em; /* changed for UAT Bug 26-09*/
+}
+#product-showcase .border-list > .items > .item > img {
+  margin-bottom: 1em;
+  max-width: 108%;
+  margin-left: -10px;
+}
+#product-showcase .border-list .items.specs .item:first-child {
+  padding-top: 1em;
+}
+#product-showcase .border-list .table-list img.table-cell {
+  max-width: 100%;
+  margin-left: 0;
+}
+#product-showcase .specs li {
+  background: url(/etc/designs/intelmobile/img/img_PSCB-performance-graph.jpg) no-repeat left;
+  background-size: 11%;
+  padding: 10px 0 10px 15%;
+}
+#product-showcase .videoplayer {
+  background: -moz-linear-gradient(left, #f2f2f2 0%, #dcdcdc 50%, #f2f2f2 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #f2f2f2), color-stop(50%, #dcdcdc), color-stop(100%, #f2f2f2));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #f2f2f2 0%, #dcdcdc 50%, #f2f2f2 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #f2f2f2 0%, #dcdcdc 50%, #f2f2f2 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #f2f2f2 0%, #dcdcdc 50%, #f2f2f2 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #f2f2f2 0%, #dcdcdc 50%, #f2f2f2 100%);
+  /* W3C */
+}
+#product-showcase .videoplayer li {
+  background: #f5f5f5;
+  margin-bottom: 1px;
+  padding: 1em 0;
+  border-bottom: 1px #fff solid;
+}
+#product-showcase .videoplayer li:first-child {
+  padding-top: 0;
+}
+#product-showcase .videoplayer li h3 {
+  margin-bottom: .25em;
+  color: #555;
+  font-weight: bold;
+  padding: 10px 10px 0 10px;
+}
+#product-showcase .videoplayer li p {
+  padding-left: 10px;
+}
+#product-showcase a.arrow {
+  display: block;
+}
+
+#product-showcase.family .border-list > .items > .item > img:first-child {
+  margin-top: -1em;
+}
+
+/* eo #product-showcase.family */
+/* Product Details  __________________________________________*/
+#product-details {
+  /* .features */
+  /* eo #purchase-options */
+  /* eo .specs */
+  /* eo #product-images */
+  /* .accordion .promo */
+}
+#product-details .hero {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+#product-details .hero .hero-img {
+  /* new code for PDP */
+  background: white;
+  text-align: center;
+  margin-bottom: -15px;
+}
+#product-details .hero .hero-img img {
+  padding-top: 10px;
+}
+#product-details .hero div.content {
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  border: 1px solid #e2e2e2;
+  background: #fff;
+  margin-top: -35px !important;
+}
+#product-details .hero .cta-tile-add {
+  background: #00aeef;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  border-width: 2px;
+  border-style: solid;
+  color: #fff;
+  display: block;
+  padding: 0.5em;
+  text-align: center;
+  background: -moz-linear-gradient(left, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #086db6), color-stop(50%, #00aeef), color-stop(100%, #086db6));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* W3C */
+  border-color: #086db6;
+  -webkit-box-shadow: 0px 1px 5px #999999;
+  -moz-box-shadow: 0px 1px 5px #999999;
+  box-shadow: 0px 1px 5px #999999;
+  position: relative;
+  width: auto;
+  height: auto;
+  bottom: auto;
+  right: auto;
+}
+#product-details .hero .cta-tile-remove {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  border-width: 2px;
+  border-style: solid;
+  color: #fff;
+  display: block;
+  padding: 0.5em;
+  text-align: center;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: #fcfcfc;
+  border-color: #EDEDED;
+  color: #d2cfd0;
+  font-weight: bold;
+  position: relative;
+  width: auto;
+  height: auto;
+  bottom: auto;
+  right: auto;
+}
+#product-details .sections {
+  z-index: 100;
+  position: relative;
+}
+#product-details .section {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  color: #666666;
+  clear: both;
+  list-style: none outside none;
+}
+#product-details .price {
+  font-style: italic;
+}
+#product-details .grad {
+  margin-top: 1em;
+}
+#product-details h3 {
+  color: #086db6;
+  font-size: 130%;
+  font-weight: normal;
+  margin: 0.25em 0;
+}
+#product-details .carousel h3 {
+  color: #fff;
+}
+#product-details h4 {
+  color: #555;
+  font-size: 120%;
+  font-weight: normal;
+}
+#product-details p {
+  margin: 0 .75em;
+}
+#product-details .features {
+  list-style: none;
+  margin: 0 0 1em 1.25em;
+}
+#product-details .features li {
+  list-style: none;
+  /*text-indent: -1.25em; commented by shishir for Jira Issue - IMUAT-300*/
+}
+#product-details .features li:before {
+  content: "•";
+  padding-right: 0.15em; /* changed by shishir form 0.85 to 0.15 */
+  color: #00aeef;
+}
+#product-details .purchase-options {
+  padding: 0 0 1em;
+}
+#product-details .purchase-options .items li {
+  background: white url("/etc/designs/intelmobile/img/arrow_right_options.gif") no-repeat right 50%;
+  margin-bottom: 1px;
+  padding: 1px 0;
+  background-size: 6%;
+}
+#product-details .purchase-options .price {
+  font-style: normal;
+  padding: 0 1em;
+}
+#product-details .purchase-options .view-more-control {
+  margin-top: 5em;
+}
+#product-details .specs.content {
+  padding: 0;
+}
+#product-details .specs li {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  padding: 0.5em 1em;
+  border-bottom: solid 1px #e2e2e2;
+  border-top: solid 1px #fff;
+  background: white url(/etc/designs/intelmobile/img/bg_PDP-li-right-grad.jpg) no-repeat right top;
+  background-size: 100%;
+}
+#product-details .specs li:last-child {
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  -ms-border-radius: 0 0 3px 3px;
+  -o-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+}
+#product-details .specs li:first-child {
+  border-top: 0;
+}
+#product-details .specs strong {
+  color: #555;
+  display: block;
+  margin-bottom: 0.5em;
+}
+#product-details .specs a {
+  display: block;
+  margin-bottom: 0.5em;
+}
+#product-details #product-images {
+  background: #f5f5f5;
+  padding: 0;
+}
+#product-details #product-images img {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+#product-details #product-images li {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  margin: 0 0 0.25em 0;
+}
+
+/*Added by Shaunak Trivedi*/
+#product-details #product-images parbase{
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  margin: 0 0 0.25em 0;
+}
+
+
+#product-details #product-images li:last-child {
+  padding: 1em;
+}
+#product-details .promo.content {
+  padding: 0;
+  background: #00314C !important;
+}
+#product-details .accordion .promo {
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  -ms-border-radius: 0 0 3px 3px;
+  -o-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  border-bottom: none;
+  color: #fff;
+}
+#product-details .accordion .promo .inner {
+  background: #023356;
+  /* Old browsers */
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF023356', endColorstr='#FF086DB6');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #023356), color-stop(100%, #086db6));
+  background-image: -webkit-linear-gradient(top, #023356 0%, #086db6 100%);
+  background-image: -moz-linear-gradient(top, #023356 0%, #086db6 100%);
+  background-image: -o-linear-gradient(top, #023356 0%, #086db6 100%);
+  background-image: -ms-linear-gradient(top, #023356 0%, #086db6 100%);
+  background-image: linear-gradient(top, #023356 0%, #086db6 100%);
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  -ms-border-radius: 0 0 3px 3px;
+  -o-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+}
+#product-details .accordion .promo h6 {
+  font-size: 110%;
+  margin: 0.25em .75em;
+  font-weight: bold;
+}
+#product-details .accordion .promo p {
+  color: #fff;
+}
+#product-details .accordion .promo .button {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  border-width: 2px;
+  border-style: solid;
+  color: #fff;
+  display: block;
+  padding: 0.5em;
+  text-align: center;
+  background: #00aeef;
+  /* Old browsers */
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF00AEEF', endColorstr='#FF086DB6');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00aeef), color-stop(100%, #086db6));
+  background-image: -webkit-linear-gradient(top, #00aeef 0%, #086db6 100%);
+  background-image: -moz-linear-gradient(top, #00aeef 0%, #086db6 100%);
+  background-image: -o-linear-gradient(top, #00aeef 0%, #086db6 100%);
+  background-image: -ms-linear-gradient(top, #00aeef 0%, #086db6 100%);
+  background-image: linear-gradient(top, #00aeef 0%, #086db6 100%);
+  border: 0;
+  display: inline-block;
+  margin: 1em .75em;
+}
+
+/* eo #product-details */
+/* div.products ul.items.tiles */
+.products .items.tiles {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: transparent;
+  /* eo li */
+}
+.products .items.tiles li {
+  overflow: visible;
+}
+.products .items.tiles li + li {
+  border-top: none;
+}
+.products .items.tiles li div {
+  width: 85%;
+  font-size: 13px;
+}
+.products .items.tiles li .tile-info {
+  font-size: 110%;
+}
+.products .items.tiles li .tile-info span {
+  line-height: 1.1em;
+}
+.products .items.tiles li .tile-info span + span {
+  font-size: 100%;
+}
+.products .items.tiles li img {
+  margin: auto;
+}
+
+/* eo div.products ul.items.tiles */
+/* .videoplayer */
+.videoplayer {
+  background: transparent;
+  position: relative;
+  display: block;
+  width: auto;
+  margin-top: -2px !important; /* added By SHishir */
+}
+.videoplayer .video-inner {
+  position: relative;
+  padding-bottom: 40%;
+  height: 0;
+  display: 0;
+}
+.videoplayer h3 {
+  color: #555;
+  font-weight: bold;
+  padding: 10px 10px 0 0;
+}
+.videoplayer > p {
+  margin: 0;
+  padding: 10px 10px 0 0;
+}
+.videoplayer > p span, .videoplayer li p span {
+  color: #999;
+  font-weight: bold;
+}
+.videoplayer > .carousel {
+  margin-top: 0;
+  padding-top: 0;
+}
+/*
+.videoplayer .carousel li iframe {
+    visibility:hidden;
+}
+.videoplayer .carousel .active iframe {
+    visibility:visible;
+}
+*/
+/* added By Shishir */
+.videoplayer .carousel {
+  margin-top: 0;
+  padding-top: 0;
+}
+.videoplayer .carousel .grad {
+  float: left;
+  width: 100%;
+}
+.videoplayer .carousel .carousel-content li img {
+  border-radius: 0;
+  width: 100%;
+}
+.videoplayer .carousel .carousel-content li div.video-desc {
+  padding: 1em;
+}
+
+.videoplayer li div.video-desc {
+  padding-left: 1em; /* added by shsihir for IMUAT-298*/
+}
+/* added by shishir */
+.videoplayer .carousel .carousel-content li div.video-container {
+  padding: 0px !important;
+  width:100%;
+  height:100%;
+  overflow: visible;
+  /* added by shishir */
+  
+  margin-top:-5px;
+  /* added by shishir end*/
+}
+.videoplayer .carousel .carousel-content li div.video-a {
+  padding: 0px !important;
+}
+
+/* added by shishir End*/
+.videoplayer p {
+  margin: 0;
+  /*padding: 10px 10px 0 0;*/ /* commented By Shishir */
+}
+.videoplayer p span, .videoplayer li p span {
+  color: #999;
+  font-weight: bold;
+}
+/* Added by shishir End */
+.videoplayer > .carousel > .grad {
+  float: left;
+  width: 100%;
+}
+.videoplayer > .carousel .carousel-content li div.video-container iframe {
+  width: 100%;
+  height: auto;
+}
+.videoplayer .video-a a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+/* eo .videoplayer */
+/*@media only screen and (min-width : 321px) {  .video {        .video-container {          width: 100%;            height: 160%;           iframe {                width: 100%;                height: auto;           }       }   }}*/
+/* .carousel */
+.carousel {
+  background: url(/etc/designs/intelmobile/img/bg_PSCB-carousel.png) no-repeat left top;
+  padding: 10px 0;
+  overflow: hidden;
+  background-size: 100%;
+  margin-top: 20px;
+  position: relative;
+  /* eo .carousel-content */
+}
+.carousel > h3 {
+  color: #fff;
+  font-weight: normal;
+  padding: 0 .75em .75em;
+  font-size: 120%;
+  margin: 0;
+}
+.carousel > .navigation {
+  overflow: hidden;
+  width: 100%;
+}
+.carousel .carousel-content {
+  width: 8000px;
+  /*overflow: hidden;*/
+  float: left;
+  position: relative;
+  margin-bottom: .75em;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  transition: all 1s;
+  /* eo .li */
+}
+.carousel .carousel-content li {
+  width: 49%;
+  position: relative;
+  float: left;
+  margin-right: 10px;
+}
+.carousel .carousel-content li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.carousel .carousel-content li .navigation a {
+  display: inline-block;
+  width: auto;
+  height: auto;
+}
+.carousel .carousel-content li img {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+}
+.carousel .carousel-content li div.tile-info {
+  width: 85%;
+  font-size: 13px;
+  position: absolute;
+  top: 10px;
+}
+.carousel .carousel-content li div.tile-info span {
+  background: #01b0f3 url("/etc/designs/intelmobile/img/bgr-tile-label.png") 0 0 repeat-y;
+  clear: both;
+  color: white;
+  display: block;
+  float: left;
+  font-size: 100%;
+  line-height: 1.0em;
+  padding: 0.3em 0.2em 0.3em 0.5em;
+}
+
+/* eo .carousel */
+.carousel[data-count="1"] .carousel-content li {
+  margin-right: 0;
+}
+/* added by olivia on 26-09 */
+
+.carousel[data-count="2"] .carousel-content li {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+}
+
+.carousel[data-count="2"] .carousel-content li img {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+position: absolute; 
+  bottom: 5%;
+}
+/*
+.newclass.products .items.tiles li {
+  -webkit-border-radius: 3px;
+  -moz-border-radius:3px;
+  border-radius: 3px;
+  background: #fff;
+}
+.newclass.products .items.tiles li img {
+  padding-top: 30%;
+}
+*/
+.products .items.tiles li.newclass { 
+  -webkit-border-radius: 3px; 
+  -moz-border-radius:3px; 
+  border-radius: 3px; 
+  background: #fff; 
+} 
+.products .items.tiles li.newclass img { 
+  padding-top: 30%;
+  }
+
+/* added by olivia on 26-09 End */
+/* .pagination */
+.pagination {
+  background: transparent;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.pagination span {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #e8eaee;
+  /* Old browsers */
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFE8EAEE', endColorstr='#FFABBFCD');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e8eaee), color-stop(50%, #abbfcd), color-stop(100%, #a5c3d8), color-stop(100%, #a5c3d8));
+  background-image: -webkit-linear-gradient(top, #e8eaee 0%, #abbfcd 50%, #a5c3d8 100%, #a5c3d8 100%);
+  background-image: -moz-linear-gradient(top, #e8eaee 0%, #abbfcd 50%, #a5c3d8 100%, #a5c3d8 100%);
+  background-image: -o-linear-gradient(top, #e8eaee 0%, #abbfcd 50%, #a5c3d8 100%, #a5c3d8 100%);
+  background-image: -ms-linear-gradient(top, #e8eaee 0%, #abbfcd 50%, #a5c3d8 100%, #a5c3d8 100%);
+  background-image: linear-gradient(top, #e8eaee 0%, #abbfcd 50%, #a5c3d8 100%, #a5c3d8 100%);
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  margin: 0 3px;
+}
+.pagination span.active {
+  background-color: #28bae2;
+  /* Old browsers */
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF28BAE2', endColorstr='#FF2D98C3');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #28bae2), color-stop(50%, #2d98c3), color-stop(100%, #28bae2), color-stop(100%, #28bae2));
+  background-image: -webkit-linear-gradient(top, #28bae2 0%, #2d98c3 50%, #28bae2 100%, #28bae2 100%);
+  background-image: -moz-linear-gradient(top, #28bae2 0%, #2d98c3 50%, #28bae2 100%, #28bae2 100%);
+  background-image: -o-linear-gradient(top, #28bae2 0%, #2d98c3 50%, #28bae2 100%, #28bae2 100%);
+  background-image: -ms-linear-gradient(top, #28bae2 0%, #2d98c3 50%, #28bae2 100%, #28bae2 100%);
+  background-image: linear-gradient(top, #28bae2 0%, #2d98c3 50%, #28bae2 100%, #28bae2 100%);
+}
+/*Updated by Shaunak for all accordian background*/
+ul.accordion li { 
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: #fff;
+  margin-top: 5px;
+}
+/* eo .pagination */
+/* .navigation-container */
+.navigation-container {
+  text-align: center;
+  position: relative;
+  z-index: 200;
+  /* 28-09 */
+  overflow: hidden;
+  width: 100%;
+   /* 28-09 */
+}
+.navigation-container .navigation {
+  padding: 0 .5em;
+}
+.navigation-container .navigation a {
+  display: inline-block;
+  text-shadow: 0px 2px 5px black;
+  height: 30px;
+  width: 30px;
+  background: url(/etc/designs/intelmobile/img/spr_CAROUSEL-arrows.png) no-repeat 0 0;
+  background-size: 100%;
+}
+.navigation-container .navigation .click-right {
+  background-position: right -155px;
+}
+.navigation-container .navigation .click-left {
+  background-position: 0 -103px;
+}
+.navigation-container .navigation .click-right.end {
+  background-position: right -54px;
+}
+.navigation-container .navigation .click-left.end {
+  background-position: 0 0;
+}
+.navigation-container .navigation .pagination {
+  width: auto;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: .5em;
+}
+
+/* eo .navigation-container */
+/* #decision-tools */
+#decision-tools {
+  /* eo .questions */
+  /* eo .question:last-child */
+}
+#decision-tools .questions {
+  /* .bd ul */
+}
+#decision-tools .questions .hd {
+  position: relative;
+}
+#decision-tools .questions .hd span {
+  clear: both;
+  display: block;
+  float: left;
+  font-size: 145%;
+  padding: 0.3em 0.2em 0.3em 0.5em;
+  position: absolute;
+  margin-top: 30px;
+}
+#decision-tools .questions > .question:first-child > .hd > img {
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  -ms-border-radius: 3px 3px 0 0;
+  -o-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+}
+#decision-tools .questions > .question .hd img {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  width: 100%;
+}
+#decision-tools .questions .bd {
+  background: #FFF;
+  overflow: hidden;
+  padding: 15px 0 5px;
+}
+#decision-tools .questions .bd ul {
+  background: transparent;
+  background: -moz-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, white), color-stop(50%, #e2e2e2), color-stop(100%, white));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #ffffff 0%, #e2e2e2 50%, #ffffff 100%);
+  /* W3C */
+  overflow: hidden;
+  margin-top: 10px;
+}
+#decision-tools .questions .bd ul li {
+  background: #fff;
+  margin: 0 0 1px 0;
+  overflow: hidden;
+}
+#decision-tools .questions .bd ul li:first-child {
+  margin-top: -10px;
+}
+#decision-tools .questions .bd ul li:last-child {
+  margin: 0;
+}
+#decision-tools .questions .bd ul li a {
+  color: #8F8F8F;
+  display: block;
+  line-height: 1.2;
+  padding: 1em 1em 1em 0;
+  -webkit-transition: color 1s;
+  -moz-transition: color 1s;
+  transition: color 1s;
+}
+#decision-tools .questions .bd ul li a.active {
+  color: #00aeef;
+  -webkit-transition: color 1s;
+  -moz-transition: color 1s;
+  transition: color 1s;
+}
+#decision-tools .questions .ft {
+  background: white url(/etc/designs/intelmobile/img/bg_DT-questions-footer.jpg) no-repeat 50% 0;
+  background-size: 100%;
+  padding-bottom: 1.5em;
+}
+#decision-tools .question:last-child .ft {
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  -ms-border-radius: 0 0 3px 3px;
+  -o-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+}
+#decision-tools .question:last-child .ft .cta {
+  position: relative;
+  text-align: center;
+}
+#decision-tools .question:last-child div.ft > div.cta > a {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: #FDFDFD;
+  border: #EDEDED 2px solid;
+  color: #D0D0D0;
+  display: inline-block;
+  font-size: 120%;
+  font-weight: bold;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  padding: 0 1em;
+  text-shadow: 0px -1px #999999;
+}
+#decision-tools .question:last-child div.ft > div.cta > a.active {
+  background: #00aeef;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background: -moz-linear-gradient(left, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #086db6), color-stop(50%, #00aeef), color-stop(100%, #086db6));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* W3C */
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  border: 3px #017CC2 solid;
+  color: #fff;
+}
+#decision-tools .slider {
+  position: relative;
+  float: left;
+  margin: 0 2em;
+}
+#decision-tools .slider .dragger {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  height: 4em;
+  width: 4em;
+  margin-left: -0.4em;
+  background: transparent url(/etc/designs/intelmobile/img/img_DT-slider-thumbslide-OFF.png) no-repeat 0 0;
+  background-size: 55%;
+}
+#decision-tools .slider .track {
+  width: 1.4em;
+  height: 11.25em;
+  background: url(/etc/designs/intelmobile/img/bg_DT-slider-track-OFF.png) no-repeat 0 1px;
+  background-size: 100%;
+}
+#decision-tools .active .slider .dragger {
+  background: transparent url(/etc/designs/intelmobile/img/img_DT-slider-thumbslide-ON.png) no-repeat 0 0;
+  background-size: 55%;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  transition: all 1s;
+}
+#decision-tools .active .slider .track {
+  background: url(/etc/designs/intelmobile/img/bg_DT-slider-track-ON.png) no-repeat 0 1px;
+  background-size: 100%;
+}
+
+/* Added By Shaunak Start*/
+#decision-tools .table-list
+{
+    display: table;
+}
+
+#decision-tools .table-list .table-cell + .table-cell {
+    padding-left: 1.3em; 
+    width: 80%;
+}
+
+/* Added By Shaunak End*/
+
+/* eo #decision-tools */
+@media only screen and (max-width: 320px) {
+  #main .questions .bd ul li a {
+    font-size: 100%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  #main .questions .bd ul li a {
+    font-size: 100%;
+  }
+}
+@media screen and (orientation: landscape) {
+  #main .questions .bd ul li a {
+    font-size: 180%;
+  }
+
+  #main .slider .track {
+    width: 2em;
+    height: 16.5em;
+  }
+
+  #main .slider .dragger {
+    width: 5em;
+    height: 5em;
+  }
+}
+@media screen and (orientation:portrait) {
+  #main .questions .bd ul li a {
+    font-size: 120%;
+  }
+  
+}
+/* #language-selector */
+#language-selector {
+  /* eo .bd */
+}
+#language-selector .bd {
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  background: #fff;
+}
+#language-selector .bd ul {
+  background: -moz-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, white), color-stop(50%, #e2e2e2), color-stop(100%, white));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #ffffff 0%, #e2e2e2 50%, #ffffff 100%);
+  /* W3C */
+}
+#language-selector .bd ul li {
+  color: #fff;
+  padding: 1em;
+  margin-bottom: 1px;
+  background: #fff;
+}
+#language-selector .bd ul li a {
+  display: block;
+  color: #086db6;
+  padding-left: .5em;
+  background: url(/etc/designs/intelmobile/img/arrow_right_options.png) no-repeat right;
+  background-size: 6%;
+}
+#language-selector .bd ul li.header {
+  background: -moz-linear-gradient(left, #00adee 0%, #086db6 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #00adee), color-stop(100%, #086db6));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #00adee 0%, #086db6 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #00adee 0%, #086db6 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #00adee 0%, #086db6 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #00adee 0%, #086db6 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color1', endColorstr='$color2',GradientType=1 );
+  /* IE6-8 */
+}
+#language-selector .bd ul li.more-lang {
+  padding: 0;
+  height: 0;
+  overflow: hidden;
+}
+#language-selector .bd ul li.default1 a {
+  color: #999;
+  background-image: url(/etc/designs/intelmobile/img/icon_LANG-check-mark.png);
+}
+
+/* eo #language-selector */
+/* #article-landing */
+#article-landing {
+  /* eo .hero .carousel */
+}
+#article-landing a {
+  color: #1172b8;
+}
+#article-landing .hero .carousel {
+  background-image: none;
+  margin-top: 0;
+  padding: 0;
+  position: relative;
+}
+#article-landing .hero .carousel h3 {
+  color: #666666;
+  font-weight: bold;
+}
+#article-landing .hero .carousel .carousel-content h3 {
+  font-weight: normal;
+}
+#article-landing .hero .carousel .carousel-content li {
+  margin: 0;
+}
+#article-landing .hero .carousel .carousel-content li img {
+  border-radius: 0;
+}
+#article-landing .hero .carousel .carousel-content .content {
+  margin-top: 0;
+}
+#article-landing .hero .carousel .pagination-container {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  margin-top: -30px;
+}
+#article-landing .hero .carousel .pagination {
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  -ms-border-radius: 3px 3px 0 0;
+  -o-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+  background: #d1d1d1;
+  /* Old browsers */
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFD1D1D1', endColorstr='#FFFFFFFF');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d1d1d1), color-stop(100%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #d1d1d1 0%, #ffffff 100%);
+  background-image: -moz-linear-gradient(top, #d1d1d1 0%, #ffffff 100%);
+  background-image: -o-linear-gradient(top, #d1d1d1 0%, #ffffff 100%);
+  background-image: -ms-linear-gradient(top, #d1d1d1 0%, #ffffff 100%);
+  background-image: linear-gradient(top, #d1d1d1 0%, #ffffff 100%);
+  display: inline-block;
+  width: auto;
+}
+#article-landing .hero .carousel .pagination span {
+  background: #b6b6b6;
+}
+#article-landing .hero .carousel .pagination span.active {
+  background: #00aeef;
+}
+#article-landing .hero .carousel .navigation {
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  -ms-border-radius: 3px 3px 0 0;
+  -o-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+  background: #d1d1d1;
+  /* Old browsers */
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFD1D1D1', endColorstr='#FFFFFFFF');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d1d1d1), color-stop(100%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #d1d1d1 0%, #ffffff 100%);
+  background-image: -moz-linear-gradient(top, #d1d1d1 0%, #ffffff 100%);
+  background-image: -o-linear-gradient(top, #d1d1d1 0%, #ffffff 100%);
+  background-image: -ms-linear-gradient(top, #d1d1d1 0%, #ffffff 100%);
+  background-image: linear-gradient(top, #d1d1d1 0%, #ffffff 100%);
+  display: inline-block;
+  padding-top: .5em;
+  margin-top: -1.5em;
+}
+#article-landing .hero .carousel .navigation a {
+  display: inline-block;
+  text-shadow: 0px 2px 5px black;
+  height: 30px;
+  width: 30px;
+  background: url(/etc/designs/intelmobile/img/spr_CAROUSEL-arrows.png) no-repeat 0 0;
+  background-size: 100%;
+}
+#article-landing .hero .carousel .navigation .click-right {
+  background-position: right -54px;
+}
+#article-landing .hero .carousel .navigation .click-right.end {
+  background-position: right -155px;
+}
+#article-landing .hero .carousel .navigation .click-left.end {
+  background-position: 0 -103px;
+}
+#article-landing .hero .carousel .navigation .pagination {
+  background: none;
+  background-image: none;
+}
+#article-landing .accordion .content > h3 {
+  color: #666666;
+  font-size: 110%;
+  font-weight: bold;
+  padding: 1em 1em 0 1em;
+}
+
+/* added by shishir */
+#article-landing .accordion .content h3 {
+  color: #666666;
+  font-size: 110%;
+  font-weight: bold;
+  /*padding: 1em 1em 0;*/
+}
+#article-landing .accordion .content .component h3
+{
+    padding: 1em 1em 0;
+}
+#article-landing .accordion .content .component div h3
+{
+padding: 0px;
+}
+#article-landing .bigimage  .items .item img
+{
+    padding:10px;
+    max-width: 100% !important;
+}
+.article-detail .accordion .videoplayer p {
+  margin-bottom: 0px !important;
+  margin-top: 0px; /* added by shsihir */
+}
+
+.terms-page .view-more .item ul li {
+    list-style-type: disc;
+    margin: 0 0 1em 25px;
+}
+
+/* added by shishir End*/
+#article-landing .accordion .content > p {
+  padding: 1em 1em 0 1em;
+}
+#article-landing .accordion .content h4 {
+  color: #086db6;
+  font-weight: normal;
+  font-size: 110%;
+}
+#article-landing .view-more-control {
+  display: block;
+  padding: .75em;
+  border-top: 1px #e2e2e2 solid;
+}
+#article-landing .hero .view-more-control {
+  border: 0;
+}
+#article-landing .table-list {
+  border-top: 1px #e2e2e2 solid;
+}
+#article-landing .video .pagination {
+  float: left;
+  border-width: 1px 0px 0px;
+}
+#article-landing .video > p {
+  padding: 0 1em;
+}
+#article-landing .slideshare {
+  position: relative;
+  overflow: hidden;
+}
+#article-landing ol, #article-landing ol li {
+  list-style: decimal outside;
+  margin: 0;
+  padding: 0;
+}
+#article-landing ol li {
+  margin: 0 0 1em 25px;
+}
+#article-landing ul.disc li {
+  list-style-type: disc;
+  margin: 0 0 1em 25px;
+}
+
+/* eo #article-landing */
+.article-detail .hero div.content {
+  /*
+  background: url(/etc/designs/intelmobile/img/bg_PSCB-hero-content.jpg), -moz-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+   background: url(/etc/designs/intelmobile/img/bg_PSCB-hero-content.jpg), -moz-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+   */
+  /* FF3.6+ */
+  /*
+  background: url(/etc/designs/intelmobile/img/bg_PSCB-hero-content.jpg), -webkit-gradient(linear, left top, right top, color-stop(0%, white), color-stop(50%, #e2e2e2), color-stop(100%, white));
+  */
+  /* Chrome,Safari4+ */
+  /*
+  background: url(/etc/designs/intelmobile/img/bg_PSCB-hero-content.jpg), -webkit-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  */
+  /* Chrome10+,Safari5.1+ */
+  /*
+  background: url(/etc/designs/intelmobile/img/bg_PSCB-hero-content.jpg), -o-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  */
+  /* Opera 11.10+ */
+  /*
+  background: url(/etc/designs/intelmobile/img/bg_PSCB-hero-content.jpg), -ms-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  */
+  /* IE10+ */
+  /*
+  background: url(/etc/designs/intelmobile/img/bg_PSCB-hero-content.jpg), linear-gradient(to right, #ffffff 0%, #e2e2e2 50%, #ffffff 100%);
+  */
+  
+  /* added Shishir */
+  background: white url(/etc/designs/intelmobile/img/bg_PSCB-hero-content.jpg) no-repeat top left;
+  background-size: 100%;
+  border: 1px #fff solid;
+  border-radius: 5px;
+  margin: -15px 10px 5px 10px;/* Updated by Shaunak Trivedi*/
+  z-index: 100;
+  position: relative;
+  padding: 1em;
+  color: #086db6;
+  background-color: white;
+  
+  /*end added */
+  /* W3C */
+}
+.article-detail .hero div.content a.grad {
+  margin-top: -1px;
+}
+.article-detail .border-list .items {
+  padding-left: 0;
+  position: relative;
+  z-index: 0;
+  padding-bottom: 0;
+}
+.article-detail .border-list.hero .items .item {
+  overflow: visible;
+}
+.article-detail .border-list.hero .items > .item:first-child {
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, white));
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+}
+.article-detail .border-list .items .item > h3 {
+  position: relative;
+  z-index: 10;
+  margin-left: -11px;
+}
+.article-detail .border-list .items .item a {
+  display: inline;
+}
+.article-detail h4 {
+  font-weight: bold;
+}
+.article-detail p {
+  margin-bottom: 0px; /* changed by shishir from 1em to 0px */
+}
+.article-detail .terms-page .item p
+{
+     margin-bottom: 1em; /* changed by shishir from 1em to 0px */
+}
+
+
+
+/* filter styles */
+div.filter {
+  display: none;
+}
+div.filter div.cta {
+  overflow: hidden;
+}
+div.filter div.cta a {
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  border: 1px #e8f3fa solid;
+  display: block;
+  color: #666666;
+  font-weight: bold;
+  text-align: center;
+  width: 40%; /* Added By Shishir to fit the button in a row*/
+  float: left;
+  margin: .60em .3em;
+}
+div.filter div.cta a.cancel {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  border-width: 2px;
+  border-style: solid;
+  color: #fff;
+  display: block;
+  padding: 0.5em;
+  text-align: center;
+  background: #e5e8ed;
+  background: -moz-linear-gradient(left, #e5e8ed 0%, white 50%, #e5e8ed 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #e5e8ed), color-stop(50%, white), color-stop(100%, #e5e8ed));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #e5e8ed 0%, white 50%, #e5e8ed 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #e5e8ed 0%, white 50%, #e5e8ed 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #e5e8ed 0%, white 50%, #e5e8ed 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #e5e8ed 0%, #ffffff 50%, #e5e8ed 100%);
+  /* W3C */
+  color: #666666;
+}
+div.filter div.cta a.continue {
+  background: #00aeef;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  border-width: 2px;
+  border-style: solid;
+  color: #fff;
+  display: block;
+  padding: 0.5em;
+  text-align: center;
+  background: -moz-linear-gradient(left, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #086db6), color-stop(50%, #00aeef), color-stop(100%, #086db6));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* W3C */
+  border-color: #086db6;
+  float: right;
+  color: #086db6;
+}
+div.filter div.cta a.continue.active {
+  color: white;
+}
+div.filter div.level2.cta {
+  display: none;
+}
+div.filter ul {
+  background: -moz-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, white), color-stop(50%, #e2e2e2), color-stop(100%, white));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #ffffff 0%, #e2e2e2 50%, #ffffff 100%);
+  /* W3C */
+  clear: both;
+}
+div.filter ul li {
+  background: #fff;
+  padding: .7em;
+  margin-bottom: 1px;
+  border: 0;
+}
+div.filter ul li a,
+div.filter div.search-results div.bd div.filter ul.level2 li {
+  color: #086db6;
+}
+div.filter ul.level1 li {
+  background: white url(/etc/designs/intelmobile/img/arrow_right_options.gif) no-repeat 98%;
+  background-size: auto 40%;
+}
+div.filter ul.level1 li:first-child {
+  background: #fff;
+}
+div.filter ul.level1 li:first-child .filter-applied-copy {
+  display: none;
+}
+div.filter ul.level1 li:first-child .reset {
+  display: none;
+}
+div.filter ul.level1 li .sub-filter-list {
+  display: block;
+  color: #999;
+  font-size: 85%;
+  margin-top: .5em;
+}
+div.filter ul.level1 li .sub-filters {
+  color: #999;
+  font-size: 90%;
+  margin-top: .25em;
+}
+
+div.filter ul.level1 li.selected a {
+  padding-right: 2em;
+  background: url(/etc/designs/intelmobile/img/icon_LANG-check-mark.png) no-repeat right;
+ background-size: 15%;
+}
+div.filter ul.level2 {
+  display: none;
+}
+div.filter ul.level2 li:first-child {
+  color: #666666;
+}
+div.filter ul.level2 li:first-child > span {
+  font-weight: bold;
+}
+div.filter ul.level2 li input {
+  margin: 0 .4em;
+}
+div.filter ul.level2 li label {
+  width: 90%;
+  display: inline-block;
+  color: #086db6;
+}
+
+/* eo div.filter */
+/* filter resutls list page */
+#filter-results ul.items {
+  margin: 5px 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+#filter-results ul.items li {
+  padding: .5em 0 0 1em;
+}
+#filter-results ul.items h3 {
+  font-size: 110%;
+}
+#filter-results ul.items p {
+  color: #666666;
+}
+#filter-results ul.items li img {
+  width: 15%;
+  margin: .25em .5em .25em 2em;
+}
+#filter-results a.cta-tile-add, #filter-results a.cta-tile-remove {
+  height: 40px;
+  width: 40px;
+  background-size: 100%;
+  bottom: 1px;
+}
+
+/* eo #filter-results */
+/* Image Tiles _______________________________________________*/
+.tiles {
+  padding: 0.75em 0.25em 0;
+}
+.tiles li {
+  float: left;
+  display: block;
+  margin: 1%;
+  position: relative;
+  width: 48%;
+}
+.tiles .span2 {
+  width: 98%;
+}
+.tiles img {
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  border-radius: 5px;
+  width: 500%;
+  /* to make sure images are upscaled on high resolution devices */
+}
+.tiles div {
+  position: absolute;
+  top: 0.55em;
+  left: 0;
+  z-index: 1;
+  font-size: 300%;
+}
+.tiles sup {
+  line-height: 0;
+  /*font-size: 104%;*/ /* changed by shishir 23-10-12*/
+ /* vertical-align: bottom;*/ /* changed by shishir 23-10-12*/
+}
+.tiles a {
+  text-decoration: none;
+}
+
+/* eo .tiles */
+.tile-info span {
+  background: #01b0f3 url("/etc/designs/intelmobile/img/bgr-tile-label.png") 0 0 repeat-y;
+  clear: both;
+  color: white;
+  display: block;
+  float: left;
+  line-height: 1;
+  padding: 0.2em 0.2em 0.2em 0.5em;
+}
+
+.tile-info span div {
+  border-left: 2px solid #4DA8D6;
+  display: inline;
+  font-size: 120%;
+  letter-spacing: .2em;
+  margin: 0 0 0 5px;
+  padding: 0 0 0 5px;
+  position: static;
+}
+
+/* Smartphones (Portrait and Landscape) ______________________*/
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+  .tiles div {
+    font-size: 145%;
+    top: 0.6em;
+  }
+  .tiles div span + span {
+    font-size: 89%;
+  }
+  
+}
+/* Smartphones (Landscape 480 px) ___________________________________*/
+@media only screen 
+and (min-width : 321px)
+and (max-width : 480px) {
+  .tiles li,
+  .tiles .span4 {
+    width: 31.75%;
+  }
+
+  .tiles .span2 {
+    width: 65%;
+  }
+}
+/* Smartphones (Internet Explorer Mobile 7 Landscape 480 px) 
+ * NOTE: On Nokia Lumia 900 landscape is reported as 480px in landscape even though the display is 800px _______________________*/
+ @media only screen 
+and (min-device-width : 480px) 
+and (max-device-width : 481px) { 
+  .ie7 .tiles li, .ie7 .tiles .span4 { 
+    margin: 0.75%; 
+  } 
+/* .ie7 .tiles .span2 { 
+    width: 64.75%; 
+  }*/ 
+  .tiles li { 
+    width: 31.25%; 
+  } 
+} 
+
+/* Smartphones (Portrait 320 px) ____________________________________*/
+@media only screen 
+and (max-width : 320px) {
+  .tiles li {
+    width: 48%;
+  }
+
+  .tiles .span2,
+  .tiles .span4 {
+    width: 97.5%;
+  }
+}
+
+/* Smartphones (Landscape 530 px) ___________________________________*/
+@media only screen 
+and (min-device-width : 960px) 
+and (max-device-width : 961px) {
+  .tiles li,
+  .tiles .span4 {
+    width: 31.5%;
+    
+  }
+    .tiles .span2
+    {
+        width:64.5%;
+    }
+  
+}
+
+/* Smartphones (Landscape 530 px) ___________________________________*/
+@media only screen 
+and (max-width : 540px)
+ {
+  .tiles li,
+  .tiles .span4 {
+    width: 48%;
+  }
+    .tiles .span2
+    {
+        width:98%;
+    }
+  
+}
+
+
+/* Smartphones For Samsung S2(Landscape 530 px) ___________________________________*/
+@media only screen 
+and (min-width : 530px)
+and (max-width : 580px) {
+  .tiles li,
+  .tiles .span4 {
+    width: 31.4%;
+  }
+
+  .tiles .span2 {
+    width:64.5%;
+    
+  }
+}
+
+
+
+/* Smartphones (Landscape 640 px) ___________________________________*/
+@media only screen 
+and (min-device-width : 640px) 
+and (max-device-width : 641px) {
+  .tiles li,
+  .tiles .span4 {
+    width: 31.85%;
+    margin: 0.95%;
+  }
+
+  .tiles .span2 {
+    width: 64.75%;
+  }
+}
+/* 720 px  Portrait _________________________________________*/
+@media only screen
+and (min-device-width : 720px)
+and (max-device-width : 721px) {
+  .tiles li,
+  .tiles .span4 {
+    width: 48.2%;
+  }
+
+  .tiles .span2 {
+    width: 98%;
+  }
+}
+/* 800 px  Landscape _________________________________________*/
+@media only screen
+and (min-device-width : 800px)
+and (max-device-width : 801px) {
+  .tiles li,
+  .tiles .span4 {
+    width: 31.85%;
+    margin: 0.8%;
+  }
+
+  .tiles .span2 {
+    width: 65%;
+  }
+}
+/* 1280 px  Landscape _________________________________________*/
+@media only screen
+and (min-device-width : 1280px)
+and (max-device-width : 1281px) {
+  .tiles li,
+  .tiles .span4 {
+    width: 31.85%;
+    margin: 0.8%;
+  }
+
+  .tiles .span2 {
+    width: 65%;
+  }
+}
+/* Smartphones (Landscape > 1280 px) ___________________________________*/
+@media only screen 
+and (min-width : 1281px)
+and (max-width : 1920px) {
+  .tiles li,
+  .tiles .span4 {
+    width: 32.25%;
+    margin: 0.58%;
+  }
+
+  .tiles .span2 {
+    width: 65.5%;
+  }
+}
+/* TODO: These tiles are styled specificly for product listing (grid view). We should be able to use standard tiles i.e. same tile styles u on homepage */
+@media only screen 
+and (min-width : 360px)
+and (max-width : 720px) {
+  #main div.products > div.bd .tiles li {
+    width: 48%;
+  }
+  #main div.products > div.bd .tiles .span2,
+  #main div.products > div.bd .tiles .span4 {
+    width: 98%;
+  }
+  #main div.products > div.bd .tiles img {
+    width: 200%;
+  }
+}
+/*
+ * HTML5 ? Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ *
+ * Detailed information about this CSS: h5bp.com/css
+ *
+ * ==|== normalize ==========================================================
+ */
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+audio:not([controls]) {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 3. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ */
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.231;
+}
+
+body, button, input, select, textarea {
+  font-family: sans-serif;
+  color: #222;
+}
+/* Shaunak Trivedi Below code is breaking emulator */
+/*
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*/
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+a {
+  color: #00e;
+}
+
+a:visited {
+  color: #551a8b;
+}
+
+a:hover {
+  color: #06e;
+}
+
+a:focus {
+  outline: 0;
+}
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover, a:active {
+  outline: 0;
+}
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+blockquote {
+  margin: 1em 40px;
+}
+
+dfn {
+  font-style: italic;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Redeclare monospace font family: h5bp.com/j */
+pre, code, kbd, samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+
+/* Improve readability of pre-formatted text in all browsers */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+q {
+  quotes: none;
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+small {
+  font-size: 85%;
+}
+
+/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+ul, ol {
+  margin: 1em 0;
+  padding: 0 0 0 40px;
+  color: #666666;
+}
+
+dd {
+  margin: 0 0 0 40px;
+}
+
+nav ul, nav ol {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/e
+ */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+/*
+ * Correct overflow not hidden in IE9
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+figure {
+  margin: 0;
+}
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+form {
+  margin: 0;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Indicate that 'label' will shift focus to the associated form element */
+label {
+  cursor: pointer;
+}
+
+/*
+ * 1. Correct color not inheriting in IE6/7/8/9
+ * 2. Correct alignment displayed oddly in IE6/7
+ */
+legend {
+  border: 0;
+  *margin-left: -7px;
+  padding: 0;
+}
+
+/*
+ * 1. Correct font-size not inheriting in all browsers
+ * 2. Remove margins in FF3/4 S5 Chrome
+ * 3. Define consistent vertical alignment display in all browsers
+ */
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+/*
+ * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ * 2. Correct inner spacing displayed oddly in IE6/7
+ */
+button, input {
+  line-height: normal;
+  *overflow: visible;
+}
+
+/*
+ * Reintroduce inner spacing in 'table' to avoid overlap and whitespace issues in IE6/7
+ */
+table button, table input {
+  *overflow: auto;
+}
+
+/*
+ * 1. Display hand cursor for clickable form elements
+ * 2. Allow styling of clickable form elements in iOS
+ */
+button, input[type="button"], input[type="reset"], input[type="submit"], [role="button"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+input[type="button"] {
+  border-radius: 3px;
+  border: none;
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Consistent box sizing and appearance
+ */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+ * Remove inner padding and border in FF3/4: h5bp.com/l
+ */
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/*
+ * 1. Remove default vertical scrollbar in IE6/7/8/9
+ * 2. Allow only vertical resizing
+ */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+/* Colors for form validity */
+input:invalid, textarea:invalid {
+  background-color: #f0dddd;
+}
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td {
+  vertical-align: top;
+}
+
+/* ==|== primary styles =====================================================
+   Author:
+   ========================================================================== */
+/*
+ * Media queries for responsive design github.com/h5bp/mobile-boilerplate/wiki/The-Style
+ */
+/* Styles for desktop and large screen ----------- */
+/*styles for 800px and up!*/
+@media only screen and (min-width: 800px) {
+  /* Styles */
+}
+/*/mediaquery*/
+/* iPhone 4, Opera Mobile 11 and other high pixel ratio devices ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* Styles */
+}
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
+   ========================================================================== */
+/* prevent callout */
+.nocallout {
+  -webkit-touch-callout: none;
+}
+
+/* A hack for HTML5 contenteditable attribute on mobile */
+textarea[contenteditable] {
+  -webkit-appearance: none;
+}
+
+/* A workaround for S60 3.x and 5.0 devices which do not animated gif images if they have been set as display: none */
+.gifhidden {
+  position: absolute;
+  left: -100%;
+}
+
+/* For image replacement */
+.ir {
+  display: block;
+  border: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+}
+
+.ir br {
+  display: none;
+}
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible {
+  visibility: hidden;
+}
+
+/* Contain floats: h5bp.com/q */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+/* ==|== print styles =======================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+
+  /* Black prints faster: h5bp.com/s */
+  a, a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: "";
+  }
+
+  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  /* h5bp.com/t */
+  tr, img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2, h3 {
+    page-break-after: avoid;
+  }
+}
+/*
+ * End of HTML5 ? Boilerplate, below is custom code for Intel 
+ *========================================================================== */
+/* General Layout ____________________________________________*/
+body {
+  background: #086db6;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* reset margin and padding */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  color: #086db6;
+  font-weight: normal;
+}
+
+a,
+a:hover,
+a:visited {
+  color: #fff;
+  text-decoration: none;
+  outline: 0;
+}
+
+/* set images to 100% width to allow them to scale for different screen resolutions */
+img {
+  max-width: 100%;
+}
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  color: #666666;
+}
+
+/* By setting the width to 120% and overflow to hidden we can prevent the 
+ * default arrow being displayed in the select box apply a custom style */
+select {
+  background: none;
+  border: none;
+  overflow: hidden;
+  width: 120%;
+}
+
+.selectbox {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: #c6c6c6;
+  /*@include grad-vert-3stop($white, #eee, #c6c6c6, "url('/etc/designs/intelmobile/img/select_arrow.png') no-repeat right center");*/
+  background-color: white;
+  /* Old browsers */
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(50%, #eeeeee), color-stop(100%, #c6c6c6), color-stop(100%, #c6c6c6));
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  background-image: -o-linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  background-image: -ms-linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  background-image: linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  border: solid 1px #dcdcdc;
+  border-bottom: 1px solid #bababa;
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+  vertical-align: middle;
+  overflow: hidden;
+  width: 48%;
+  height: 32px;
+  float: left;
+  margin: 0 2% 0 0;
+}
+
+.selectbox select {
+  width: 120%;
+  background: transparent;
+  border: none;
+  height: 32px;
+  line-height: 2em;
+  text-indent: 0.75em;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  overflow: hidden;
+  -moz-apperance: button;
+  -webkit-appearance: button;
+  appearance: button;
+}
+
+/* div.criteria-filter */
+div.criteria-filter {
+  background: #c6c6c6;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background-color: white;
+  /* Old browsers */
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(50%, #eeeeee), color-stop(100%, #c6c6c6), color-stop(100%, #c6c6c6));
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  background-image: -o-linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  background-image: -ms-linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  background-image: linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  float: left;
+  width: 30%;
+  margin-right: 1%;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+}
+div.criteria-filter input[type='button'] {
+  background: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  float: left;
+  font-size: 1.231em;
+  text-align: left;
+  padding-left: 10px;
+  height: 32px;
+}
+div.criteria-filter span {
+  background: url(/etc/designs/intelmobile/img/cta-criteria-filter-grad.png) no-repeat right;
+  color: #000;
+  float: right;
+  height: 30px;
+  width: 25px;
+  display: block;
+  font-size: 12px;
+  text-align: center;
+  padding: 9px 0 0 0;
+  margin-right: 10px;
+  vertical-align: middle;
+  background-size: 100%;
+}
+
+/* eo div.criteria-filter */
+/* Header ____________________________________________*/
+header {
+  position: relative;
+}
+header #header-bar {
+  background: #02559b url('/etc/designs/intelmobile/img/bgr_header_top.png') repeat-x 0 0;
+  /* Old browsers */
+  background: url('/etc/designs/intelmobile/img/bgr_header_top.png') repeat-x 0 0, -moz-linear-gradient(top, #02559b, #0c7cce);
+  /* FF3.6+ */
+  background: url('/etc/designs/intelmobile/img/bgr_header_top.png') repeat-x 0 0, -webkit-gradient(linear, left top, left bottom, color-stop(0%, #02559b), color-stop(100%, #0c7cce));
+  /* Chrome,Safari4+ */
+  background: url('/etc/designs/intelmobile/img/bgr_header_top.png') repeat-x 0 0, -webkit-linear-gradient(top, #02559b 0%, #0c7cce 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: url('/etc/designs/intelmobile/img/bgr_header_top.png') repeat-x 0 0, -o-linear-gradient(top, #02559b, #0c7cce 100%);
+  /* Opera 11.10+ */
+  background: url('/etc/designs/intelmobile/img/bgr_header_top.png') repeat-x 0 0, -ms-linear-gradient(top, #02559b 0%, #0c7cce 100%);
+  /* IE10+ */
+  background: url('/etc/designs/intelmobile/img/bgr_header_top.png') repeat-x 0 0, linear-gradient(to bottom, #02559b 0%, #0c7cce 100%);
+  /* W3C */
+  /*@include box-shadow;*/
+  border-bottom: solid 1px #3291ed;
+  padding: 0.75em 0.75em 0.25em;
+  text-align: right;
+  position: relative;
+  z-index: 1000;
+}
+header div#logo {
+  width: 54px;
+  margin: 0;
+  float: left;
+}
+header ul {
+  list-style: none;
+  margin: 0 0 0.35em;
+}
+header li {
+  display: inline;
+  font-size: 130%;
+  font-weight: bold;
+  margin: 0;
+  padding: 0 0.5em 0 0;
+  text-transform: uppercase;
+  position: relative;
+}
+header li .nub {
+  width: 17px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  bottom: -22px;
+  z-index: 1000;
+  background: url("/etc/designs/intelmobile/img/main-menu-nub.png") no-repeat;
+  background-size: 100%;
+  opacity: 0;
+}
+header li img {
+  margin-top: -5px;
+}
+header li.active .nub {
+  -webkit-transition: opacity 0.4s ease-out;
+  -moz-transition: opacity 0.4s ease-out;
+  -o-transition: opacity 0.4s ease-out;
+  transition: opacity 0.4s ease-out;
+  opacity: 1;
+}
+header li#search-item .dropdown-trigger {
+  background: url(/etc/designs/intelmobile/img/icon-search.png) no-repeat bottom right;
+  height: 25px;
+  width: 34px;
+  display: inline-block;
+  background-size: 47%;
+}
+header #search-item .nub {
+  left: 18px;
+}
+header #menu-item .nub {
+  background-position: 100% 0;
+  left: 35px;
+}
+header li:last-child {
+  border-left: solid 1px #1c7bcb;
+}
+header li:last-child a {
+  border-left: solid 1px #043e6c;
+  padding-left: 1em;
+  font-weight: normal;
+}
+header #search {
+  text-indent: -9999px;
+}
+header .dropdown-menu {
+  -webkit-box-shadow: inset 0 0 7px #0165ad;
+  -moz-box-shadow: inset 0 0 7px #0165ad;
+  box-shadow: inset 0 0 7px #0165ad;
+  background: #00adef;
+  border-top: solid 1px #0065ad;
+  border-bottom: solid 1px #3391eb;
+  border-left: 0;
+  border-right: 0;
+  z-index: 999;
+  display: none;
+}
+header #category-menu form {
+  border-bottom: solid 1px #0065ad;
+}
+header #category-menu ul {
+  padding: 0 0.75em;
+  overflow: hidden;
+}
+header #category-menu li {
+  display: block;
+  color: #ffffff;
+  border-bottom: solid 1px #1b7ccb;
+  border-top: solid 1px #48d1ff;
+  overflow: hidden;
+  padding: 0.5em;
+  text-transform: none;
+  position: relative;
+}
+header #category-menu li:first-child {
+  border-top: 0;
+}
+header #category-menu li:last-child {
+  border-bottom: 0;
+  border-left: none;
+}
+header #category-menu select {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 150%;
+  font-weight: normal;
+  overflow: hidden;
+  padding: 0;
+  text-indent: 0;
+  width: 120%;
+  -webkit-appearance: none;
+  opacity: 0;
+}
+header #category-menu a, header #category-menu .select-title {
+  font-size: 150%;
+  padding: 0;
+  font-weight: normal;
+}
+header #category-menu .select-title {
+  position: absolute;
+}
+header #category-menu ul li:last-child a, header #category-menu ul li:last-child .select-title {
+  border-left: none;
+}
+
+/* eo header */
+/*
+ NOTE: 
+ Android OS 4.0.4 has a bug that breaks the drop-down menus when animated with transform3d. 
+ We check the OS version using JavaScript and add the class '.ics404' to target the specific OS.
+ */
+html.csstransforms3d header:not(.ics404) .dropdown-menu {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+}
+html.csstransforms3d header:not(.ics404) .dropdown-menu.inited {
+  display: block;
+  -webkit-transition: -webkit-transform .2s ease-out;
+  transition: transform .2s ease-out;
+}
+
+/* eo .csstransform3d header
+
+
+/* Main Content ____________________________________________*/
+#main {
+  background-color: #0e97fa;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0E97FA', endColorstr='#FF022F50');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0e97fa), color-stop(38%, #0464a8), color-stop(100%, #022f50));
+  background-image: -webkit-linear-gradient(top, #0e97fa 0%, #0464a8 38%, #022f50 100%);
+  background-image: -moz-linear-gradient(top, #0e97fa 0%, #0464a8 38%, #022f50 100%);
+  background-image: -o-linear-gradient(top, #0e97fa 0%, #0464a8 38%, #022f50 100%);
+  background-image: -ms-linear-gradient(top, #0e97fa 0%, #0464a8 38%, #022f50 100%);
+  background-image: linear-gradient(top, #0e97fa 0%, #0464a8 38%, #022f50 100%);
+  padding-bottom: 1em;
+  clear: both;
+  /* eo div.bd */
+  /* Secondary Button */
+  /* filter styles */
+  /* eo div.filter */
+}
+#main h1 {
+  background: #086db6 url("/etc/designs/intelmobile/img/bgr_page_title.gif") repeat;
+  color: #ffffff;
+  font-size: 1.25em;
+  font-weight: normal;
+  margin: 0;
+  padding: 0.5em;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+}
+#main a {
+  color: #086db6;
+}
+#main div.bd {
+  overflow: hidden;
+  /* div.view-pref */
+  /* eo div.view-pref */
+}
+#main div.bd div.selectbox select {
+  -webkit-appearance: button;
+  appearance: button;
+  height: 32px;
+  font-size: 1.231em;
+  background: none;
+  text-indent: 0;
+  padding-left: 10px;
+}
+#main div.bd div.selectbox form {
+  background: url(/etc/designs/intelmobile/img/select_arrow_down.png) no-repeat 95%;
+  background-size: 20%;
+}
+#main div.bd div.view-pref {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: #c6c6c6;
+  background-color: white;
+  /* Old browsers */
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(50%, #eeeeee), color-stop(100%, #c6c6c6), color-stop(100%, #c6c6c6));
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  background-image: -o-linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  background-image: -ms-linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  background-image: linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  float: right;
+  width: 25%; /* changed by shishir */
+}
+#main div.bd div.view-pref input[type='button'] {
+  width: 100%;
+  /*height: 32px;*/
+  height: 42px; /* changed by shishir */
+  background-position: 35%;
+}
+#main div.bd div.view-pref input[type='button'].list {
+  background: url(/etc/designs/intelmobile/img/spr-view-pref-list.png) no-repeat center;
+  background-size: 100%;
+}
+#main div.bd div.view-pref input[type='button'].grid {
+  background: url(/etc/designs/intelmobile/img/spr-view-pref-grid.png) no-repeat center;
+  background-size: 100%;
+}
+#main div.bd div.criteria-filter {
+  background: #c6c6c6;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background-color: white;
+  /* Old browsers */
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(50%, #eeeeee), color-stop(100%, #c6c6c6), color-stop(100%, #c6c6c6));
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  background-image: -o-linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  background-image: linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  float: left;
+  width: 36%; /* added by shishir */
+  margin-right: 1%;
+  height:42px; /* added by shishir */
+}
+#main div.bd div.criteria-filter input[type='button'] {
+  background: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  float: left;
+  font-size: 16px;
+  text-align: left;
+  padding-left: 10px;
+  height: 42px;
+}
+#main div.bd div.criteria-filter span {
+  background: url(/etc/designs/intelmobile/img/cta-criteria-filter-grad.png) no-repeat right;
+  color: #000;
+  float: right;
+  height: 32px; /* changed by shsihir */
+  width: 34px; /* added by shsihir */
+  display: block;
+  font-size: 16px;
+  text-align: center;
+  padding: 12px 0 0 0; /* added by shsihir */
+  margin-right: 1px;
+  vertical-align: middle;
+}
+#main .bd > div.ft {
+  text-align: center;
+  padding: 0 5px 25px;
+}
+#main div.ft span {
+  display: block;
+  line-height: 2em;
+  text-shadow: 0 -1px 0px black;
+}
+#main div.ft a {
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  background: #00aeef;
+  background: -webkit-linear-gradient(left, #035d9e 0%, #00aeef 30%, #00aeef 70%, #035d9e);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #035d9e), color-stop(30%, #00aeef), color-stop(70%, #00aeef), color-stop(100%, #035d9e));
+  background: linear-gradient(to right, #035d9e 0%, #00aeef 30%, #00aeef 70%, #035d9e);
+  border-radius: 5px;
+  border: 3px #017cc2 solid;
+  display: block;
+  color: #fff;
+  font-weight: bold;
+  line-height: 2.4em;
+  text-align: center;
+}
+#main .button a {
+  color: #fff;
+}
+#main .button.primary {
+  background: #00aeef;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  border-width: 2px;
+  border-style: solid;
+  color: #fff;
+  display: block;
+  padding: 0.5em;
+  text-align: center;
+  background: -moz-linear-gradient(left, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #086db6), color-stop(50%, #00aeef), color-stop(100%, #086db6));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* W3C */
+  border-color: #086db6;
+  margin-top:1em; /* added by shishir */
+  margin-bottom: 1em;
+}
+#main .button.secondary {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  border-width: 2px;
+  border-style: solid;
+  color: #fff;
+  display: block;
+  padding: 0.5em;
+  text-align: center;
+  margin-bottom: 1em;
+  background: -moz-linear-gradient(left, #696868 0%, #9a9a9a 50%, #696868 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #696868), color-stop(50%, #9a9a9a), color-stop(100%, #696868));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #696868 0%, #9a9a9a 50%, #696868 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #696868 0%, #9a9a9a 50%, #696868 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #696868 0%, #9a9a9a 50%, #696868 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #696868 0%, #9a9a9a 50%, #696868 100%);
+  /* W3C */
+  border-color: #696868;
+  background:#9a9a9a;
+}
+#main #social-share {
+  text-align: center;
+  /*padding: 1em 0 0 0;*/ 
+  margin-top: 1em;
+  /*overflow: hidden;*/
+  margin-left: -12px;
+  width: 100%;
+  
+}
+#main #social-share span {
+  display: inline-block;
+  /*height: 22px;*/
+ /* top:-4px */ /* added by Shishir */
+ float: left;
+}
+#main #social-share .st_sharethis_custom {
+  background: url(/etc/designs/intelmobile/img/btn-share.png) no-repeat;
+  width: 58px;
+  background-size: 100%;
+  position: relative;
+  top: 0px; /* changed by shishir */
+  height: 22px;
+}
+#main #social-share .social-share-align
+{
+    margin: 0 auto;
+  /*width: 278px;*/
+  display: inline-block;
+}
+#main div.filter {
+  display: none;
+}
+#main div.filter div.cta {
+  overflow: hidden;
+}
+#main div.filter div.cta a {
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  border: 1px #e8f3fa solid;
+  display: block;
+  color: #666666;
+  font-weight: bold;
+  text-align: center;
+  width: 40%; /* updated by shishir */
+  float: left;
+  margin: .60em .3em;
+}
+#main div.filter div.cta a.cancel {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  border-width: 2px;
+  border-style: solid;
+  color: #fff;
+  display: block;
+  padding: 0.5em;
+  text-align: center;
+  background: #e5e8ed;
+  background: -moz-linear-gradient(left, #e5e8ed 0%, white 50%, #e5e8ed 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #e5e8ed), color-stop(50%, white), color-stop(100%, #e5e8ed));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #e5e8ed 0%, white 50%, #e5e8ed 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #e5e8ed 0%, white 50%, #e5e8ed 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #e5e8ed 0%, white 50%, #e5e8ed 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #e5e8ed 0%, #ffffff 50%, #e5e8ed 100%);
+  /* W3C */
+  color: #666666;
+}
+#main div.filter div.cta a.continue {
+  background: #00aeef;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  border-width: 2px;
+  border-style: solid;
+  color: #fff;
+  display: block;
+  padding: 0.5em;
+  text-align: center;
+  background: -moz-linear-gradient(left, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #086db6), color-stop(50%, #00aeef), color-stop(100%, #086db6));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #086db6 0%, #00aeef 50%, #086db6 100%);
+  /* W3C */
+  border-color: #086db6;
+  float: right;
+  color: #086db6;
+}
+#main div.filter div.cta a.continue.active {
+  color: white;
+}
+#main div.filter div.level2.cta {
+  display: none;
+}
+#main div.filter ul {
+  background: -moz-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, white), color-stop(50%, #e2e2e2), color-stop(100%, white));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #ffffff 0%, #e2e2e2 50%, #ffffff 100%);
+  /* W3C */
+  clear: both;
+}
+#main div.filter ul li {
+  background: #fff;
+  padding: .7em;
+  margin-bottom: 1px;
+  border: 0;
+}
+#main div.filter ul li a, #main div.filter div.search-results div.bd div.filter ul.level2 li {
+  color: #086db6;
+}
+#main div.filter ul.level1 li {
+  background: white url(/etc/designs/intelmobile/img/arrow_right_options.gif) no-repeat 98%;
+  background-size: auto 40%;
+}
+#main div.filter ul.level1 li:first-child {
+  background: #fff;
+}
+#main div.filter ul.level1 li:first-child .filter-applied-copy {
+  display: none;
+}
+#main div.filter ul.level1 li:first-child .reset {
+  display: none;
+}
+#main div.filter ul.level1 li .sub-filter-list {
+  display: block;
+  color: #999;
+  font-size: 85%;
+  margin-top: .5em;
+}
+#main div.filter ul.level1 li.selected a {
+  padding-right: 2em;
+  background: url(/etc/designs/intelmobile/img/icon_LANG-check-mark.png) no-repeat right;
+  background-size: 15%;
+}
+#main div.filter ul.level2 {
+  display: none;
+}
+#main div.filter ul.level2 li:first-child {
+  color: #666666;
+}
+#main div.filter ul.level2 li:first-child > span {
+  font-weight: bold;
+}
+#main div.filter ul.level2 li input {
+  margin: 0 .4em;
+}
+#main div.filter ul.level2 li label {
+  width: 90%;
+  display: inline-block;
+  color: #086db6;
+}
+
+/* eo #main */
+.csstransforms3d #main {
+  -webkit-transition: -webkit-transform .2s ease-out;
+  transition: transform .2s ease-out;
+}
+
+/* Updated by Shaunak Trivedi*/
+#jumpto {
+    padding: 1em 0.75em 1em;
+}
+
+#disclaimers {
+  background: -moz-linear-gradient(left, #023c65 0%, #01558f 50%, #023c65 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #023c65), color-stop(50%, #01558f), color-stop(100%, #023c65));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #023c65 0%, #01558f 50%, #023c65 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #023c65 0%, #01558f 50%, #023c65 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #023c65 0%, #01558f 50%, #023c65 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #023c65 0%, #01558f 50%, #023c65 100%);
+  /* W3C */
+  border-top: solid 1px rgba(0, 0, 0, 0.2);
+  background-color: #023C65;
+  
+}
+#disclaimers a {
+  display: inline-block;
+  padding: 0.75em 2.5em 0.75em 1.5em;
+  color: #fff;
+}
+/* changed by shishir classname from expand to expand_btn */
+#disclaimers .expand_btn {
+  background: transparent url("/etc/designs/intelmobile/img/icon_FOOTER-disclaimer.png") no-repeat;
+  background-size: 75%;
+ /* background-size: 24px;*/
+   padding-right: 2.5em;
+}
+#disclaimers .expand_btn.open {
+  background-position: left -3.5em;
+  /* original changed by shishir
+  background-position: right -3.7em;
+  */
+  
+}
+/* changed by shishir classname from expand to expand_btn End*/
+#disclaimers #disclaimer-content {
+  width: 100%;
+  position: relative;
+  overflow: auto;
+  display: none;
+  /* added by shishir */
+    white-space: pre;           /* CSS 2.0 */
+    white-space: pre-wrap;      /* CSS 2.1 */
+    white-space: pre-line;      /* CSS 3.0 */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap;  /* HP Printers */
+    word-wrap: break-word;      /* IE 5+ */
+/* added by shishir End */
+}
+#disclaimers #disclaimer-content.open {
+  border-top: 1px solid #014677;
+  display: block;
+ /* height: 300px;*/ /* commented by shsihir */
+}
+#disclaimers #disclaimer-content p {
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #fff;
+  /* added by shishir */
+  white-space: pre;           /* CSS 2.0 */
+    white-space: pre-wrap;      /* CSS 2.1 */
+    white-space: pre-line;      /* CSS 3.0 */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap;  /* HP Printers */
+    word-wrap: break-word;      /* IE 5+ */
+/* added by shishir End */
+}
+/* added by shishir End */
+#disclaimers #disclaimer-content p a {
+  display: inline-block;
+  padding: 0px !important;
+  color: #fff;
+  /* added by shishir */
+  white-space: pre;           /* CSS 2.0 */
+    white-space: pre-wrap;      /* CSS 2.1 */
+    white-space: pre-line;      /* CSS 3.0 */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap;  /* HP Printers */
+    word-wrap: break-word;      /* IE 5+ */
+    text-decoration: underline;
+    /* added by shishir End */
+}
+
+/* eo #disclaimer */
+.hero div.content {
+  background: white url(/etc/designs/intelmobile/img/bg_PSCB-hero-content.jpg) no-repeat top left;
+  background-size: 100%;
+  border: 1px #fff solid;
+  border-radius: 5px;
+  margin: -15px 10px 5px 10px;/* Updated by Shaunak Trivedi*/
+  z-index: 100;
+  position: relative;
+  padding: 1em;
+  color: #086db6;
+}
+/* added by shishir */
+#article-landing .hero div.content {
+/*margin-top:0px !important;*/
+/*padding:0px !important;
+padding-left:1em !important;*/
+}
+/* added by shishir End*/
+.hero div.content h3 {
+  padding: 0;
+  color: #086db6;
+  font-size: 130%;
+  font-weight: normal;
+  margin: 0.25em 0;
+}
+.hero div.content p {
+  color: #666666;
+  padding: 0;
+  margin-top: 0;
+}
+.hero div.content a {
+  color: #086db6;
+}
+.hero div.content a.grad {
+  margin-top: 1em;
+}
+
+/* eo .hero div.content */
+.sections {
+  margin: 0 10px;
+}
+
+.grad {
+  padding: 1em 10px;
+  display: block;
+  margin: 0;
+  background: white url(/etc/designs/intelmobile/img/bg_PDP-top-border-grad.jpg) no-repeat top center;
+  background-size: 100%;
+  border-radius: 0 0 3px 3px;
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+}
+
+.block-grad {
+  float: left;
+  padding: 0.2em 0.2em 0.2em 0.5em;
+  background: #01b0f3 url("/etc/designs/intelmobile/img/bgr-tile-label.png") 0 0 repeat-y;
+  color: #fff;
+  line-height: 0.9;
+}
+
+.view-more-control {
+  color: #1172b8;
+}
+
+.view-more-control:after {
+  display: inline-block;
+  content: '+';
+  text-align: center;
+  border: 1px solid #1172b8;
+  width: 1em;
+  height: 1em;
+  margin-left: 10px;
+  -webkit-border-radius: .75em;
+  -moz-border-radius: .75em;
+  border-radius: .75em;
+  /*display: inline-block;
+  content: ' ';
+  width: 1.3em;
+  height: 1.3em;
+  margin-left: .5em;
+  background: url(/img/spr_AD-plusminus.png) no-repeat 0 3px;
+  background-size: 100%;*/
+}
+
+.view-more-control.open:after {
+  content: '-';
+}
+
+.view-more {
+  display: none;
+}
+
+/* padding updated By Shishir */
+.arrow {
+  background: url("/etc/designs/intelmobile/img/arrow_right_options.gif") no-repeat scroll right center transparent;
+  padding-right: 0.5em;
+}
+
+.price {
+  color: #00aeef;
+}
+
+/* Add to Compare ____________________________________________*/
+#compare-widget-count {
+  color: #666;
+  background: white url(/etc/designs/intelmobile/img/img_COMPARE-count-bg.png) no-repeat;
+  background-size: 100%;
+  height: 1.5em;
+  width: 1.5em;
+  display: inline-block;
+  border-radius: .75em;
+  text-align: center;
+  font-size: 80%;
+  padding-top: .1em;
+}
+
+a.cta-tile-add {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 500;
+  height: 65px;
+  width: 65px;
+  background: url("/etc/designs/intelmobile/img/cta-tile-add.png");
+  background-size: 100%;
+}
+
+a.cta-tile-remove {
+  background: url("/etc/designs/intelmobile/img/cta-tile-minus.png");
+  background-size: 100%;
+  
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 500;
+  height: 65px;
+  width: 65px;
+  
+}
+
+.products .items a.cta-tile-add img {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.products .items li div.tile-compare-text {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  text-align: center;
+}
+.products .items li div.tile-compare-text span {
+  color: #666666;
+  background: transparent;
+  font-size: 120%;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  top: 38%;
+  width: 100%;
+  font-size: 120%;
+}
+.products .items .compare-item .tile-info {
+  -webkit-animation: fade-tile-info 3s;
+}
+.products .items .compare-item .cta-tile-add {
+  -webkit-animation: plus-minus 3s;
+  background: url("/etc/designs/intelmobile/img/cta-tile-minus.png");
+}
+.products .items .compare-item div.tile-compare-text {
+  -webkit-animation: overlay 3s;
+}
+
+/* eo .products .items */
+@-webkit-keyframes overlay {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fade-tile-info {
+  0%, 1% {
+    opacity: 1;
+  }
+
+  1%, 99% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes plus-minus {
+  0%, 99% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.items {
+  background: -moz-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, white), color-stop(50%, #e2e2e2), color-stop(100%, white));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, white 0%, #e2e2e2 50%, white 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #ffffff 0%, #e2e2e2 50%, #ffffff 100%);
+  /* W3C */
+}
+.items .item {
+  background: white;
+  margin: 0 0 1px 0;
+  padding: 1em 10px 1em 10px;
+  overflow: hidden;
+}
+
+/* eo .items */
+.border-list {
+  /* eo .items */
+}
+.border-list .table .table-cell + .table-cell {
+  width: 85%;
+  padding-left: .8em;
+}
+.border-list .items .item > h3 {
+  font-size: 110%;
+  border-left: 2px solid #1172B8;
+  margin: 0 0 0.25em -10px;
+  padding: 0 0 0 8px !important; /* added !important by SHishir */
+  color: #666666;
+  font-weight: bold;
+  display: block; /* changed from inline to block by SHishir */
+}
+.border-list .items .item a {
+  display: block;
+  margin-top: .5em;
+}
+.border-list .items .table-cell, .border-list .items .table-list img.table-cell {
+  max-width: 100%;
+  margin-left: 0;
+}
+
+/* added by shishir for terms */
+.article-detail .border-list .view-more 
+{
+    margin-left: -1px;
+}
+.article-detail .border-list .items .view-more .item > h3
+{
+    margin-left: -10px;
+}
+/* added by shishir for terms End*/
+/* eo .border-list */
+.table-list {
+  display: table;
+  padding: 0 10px;
+  /* eo .table-cell */
+}
+.table-list .table-cell {
+  display: table-cell;
+  vertical-align: top !important;
+  padding: .5em 10px .5em 0;
+}
+.table-list .table-cell + .table-cell {
+  width: 80%;
+  padding-left: 1.3em; /* changed by shishir */
+  vertical-align: middle;
+}
+.table-list .table-cell h3 {
+  border: 0;
+  margin-top: 0;
+  color: #666666;
+  font-weight: bold;
+}
+
+/* eo table-list */
+.table-list.top .table-cell {
+  vertical-align: top;
+}
+
+/* suggest */
+.suggest {
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  -ms-border-radius: 0 0 3px 3px;
+  -o-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+  overflow: hidden;
+  padding: .5em 0;
+}
+
+.suggest > span {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  display: block;
+  float: left;
+  background: #0772bf;
+  padding: .25em .45em;
+  margin: .5em;
+  color: white;
+}
+
+/* uses */
+.uses {
+  /* eo .table-cell */
+}
+.uses .table-list {
+  background: #e7eaef;
+  /* Old browsers */
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFE7EAEF', endColorstr='#FFFFFFFF');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e7eaef), color-stop(100%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #e7eaef 0%, #ffffff 100%);
+  background-image: -moz-linear-gradient(top, #e7eaef 0%, #ffffff 100%);
+  background-image: -o-linear-gradient(top, #e7eaef 0%, #ffffff 100%);
+  background-image: -ms-linear-gradient(top, #e7eaef 0%, #ffffff 100%);
+  background-image: linear-gradient(top, #e7eaef 0%, #ffffff 100%);
+  color: #666666;
+  overflow: auto;
+  border-top: 1px #b9bbbf solid;
+}
+.uses .table-cell {
+  border-right: 1px #dfdfdf solid;
+}
+.uses .table-cell + .table-cell {
+  /*border-left: 1px white solid;*/
+  border-right: 0;
+}
+.uses span {
+  display: block;
+}
+
+/* eo .uses */
+/* Footer ____________________________________________*/
+footer {
+  background: #006dba;
+  background-image: url("/etc/designs/intelmobile/img/bgr_header_top.png");
+  background-position: left bottom;
+  background-repeat: repeat-x;
+  position: relative;
+  /* eo #language */
+}
+footer #language {
+  background: #01589f;
+  border-top: solid 1px #00aeef;
+  padding: 1em 1.5em;
+}
+footer #language a {
+  background: transparent url("/etc/designs/intelmobile/img/arrow-language.gif") right 0.3em no-repeat;
+  padding-right: 0.8em;
+}
+footer nav {
+  border-top: solid 1px #2182e1;
+  padding: 1em 1.5em;
+}
+footer ul {
+  margin-bottom: 1em;
+}
+footer li {
+  padding: 0.25em 0;
+}
+
+/* eo footer */
+/* Product List (List | View)  
+ *  - Constant _________________________________________________*/
+.products {
+  /* eo > div.bd */
+  /* -ListView__________________________________________________*/
+  /* eo ul.items */
+}
+.products > div.bd {
+  border-top: solid 1px #3391EC;
+  /* padding: 0.25em; */
+  overflow: hidden;
+}
+.products > div.bd > div {
+  padding: 0.75em 0.45em 1em;
+}
+.products > div.bd div.selectbox {
+  width: 36%; /* added by shishir */
+  height: 40px; /* added by shishir */
+  float: left;
+  margin: 0 1% 0 0;
+}
+.products div.bd div.view-pref {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: #c6c6c6;
+  background-color: white;
+  /* Old browsers */
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(50%, #eeeeee), color-stop(100%, #c6c6c6), color-stop(100%, #c6c6c6));
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  background-image: -o-linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  background-image: linear-gradient(top, #ffffff 0%, #eeeeee 50%, #c6c6c6 100%, #c6c6c6 100%);
+  float: right;
+  width: 20%;
+}
+.products div.bd div.view-pref input[type='button'] {
+  width: 100%;
+  height: 42px;
+  background-size: 65%; /* commented bys shishir */
+  
+  /*
+  background: url("/etc/designs/intelmobile/img/spr-view-pref.png") no-repeat scroll 6px -28px transparent;
+  */
+  /* changed by shishir */
+  
+  background: url("/etc/designs/intelmobile/img/spr-view-pref-list.png") no-repeat scroll 4px 0px transparent;
+ /* background: url("/etc/designs/intelmobile/img/spr-view-pref-grid.png") no-repeat scroll 4px 0px transparent;*/
+  /* changed by shishir End*/
+}
+/*
+.products div.bd div.view-pref input[type='button'].list {
+  background: url(/etc/designs/intelmobile/img/spr-view-pref.png) no-repeat 6px 10px;
+}
+.products div.bd div.view-pref input[type='button'].grid {
+  background: url(/etc/designs/intelmobile/img/spr-view-pref.png) no-repeat 6px -23px;
+}
+.products div.bd div.view-pref input.grid[type="button"] {
+    background: url("/etc/designs/intelmobile/img/spr-view-pref.png") no-repeat scroll 6px -33px transparent;
+}
+*/
+.products ul.items {
+  -webkit-box-shadow: 0 0 7px black;
+  -moz-box-shadow: 0 0 7px black;
+  box-shadow: 0 0 7px black;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background: #FBFBFC;
+  list-style: none;
+  margin: 0 5px 5px;
+  padding: 0;
+  clear: both;
+  /* eo li */
+}
+.products ul.items li {
+  overflow: hidden;
+  position: relative;
+}
+.products ul.items li + li {
+  border-top: 1px solid #e2e2e2;
+}
+.products ul.items li .tile-info {
+  font-size: 140%;
+  position: absolute;
+  top: 10px;
+}
+.products ul.items li .copy {
+  overflow: hidden;
+}
+.products ul.items li a {
+  display: block;
+}
+.products ul.items li .custom {
+  color: #086db6;
+  padding: 1em 0.5em;
+  position: static;
+}
+.products ul.items li img {
+  float: right;
+  margin: 10px;
+}
+
+/* eo .products */
+/* For smaller screens we display sort and filter drop-down menus on separate rows */
+/*
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 321px)*/
+@media only screen
+and (min-device-width : 320px)
+
+ {
+  .products > div.bd div.selectbox {
+    width: 100%;
+    margin-bottom: 0.5em;
+  }
+
+  #main div.bd div.selectbox form {
+    background-size: 10%;
+    background-position: 98%;
+  }
+
+  #main #search-results div.bd div.selectbox form {
+    background-size: 20%;
+    background-position: 98%;
+  }
+
+  #main div.bd div.criteria-filter {
+    width: 70%;
+  }
+
+  /* on 320px screens, display purchase options on two rows. Logo on first and price and name on second. */
+  #product-details .purchase-options .items li {
+    background-position: right 85%;
+    padding-bottom: 0.5em;
+  }
+  #product-details .purchase-options .items li img {
+    display: block;
+  }
+  #product-details .purchase-options .items li .price {
+    padding-left: 0;
+  }
+}
+/* iphone media query landscape */
+@media only screen and (orientation : landscape) and (min-width: 420px) {
+  #main div.bd div.view-pref input[type='button'].list {
+    background-size: 90%;
+  }
+
+  #main div.bd div.view-pref input[type='button'].grid {
+    background-size: 90%;
+  }
+
+  ul.accordion li h5 a, ul.accordion li h5.closed a {
+    background-size: 6%;
+  }
+}
+/* larger android media query for landscape */
+@media only screen and (orientation : landscape) and (min-width: 621px) {
+  #main div.bd div.view-pref input[type='button'].list {
+    /*background-size: 60%;*/
+  }
+
+  #main div.bd div.view-pref input[type='button'].grid {
+    /*background-size: 60%;*/
+  }
+
+  ul.accordion li h5 a, ul.accordion li h5.closed a {
+    background-size: 5%;
+  }
+
+  /*#main div.bd div.selectbox form {
+    background-size: 8%;
+  }
+
+  .products div.bd div.view-pref {
+    width: 10%;
+  }
+  #main div.bd div.criteria-filter {
+    width: 38%;
+  }*/
+}
+/* Added By Shishir for Home page*/ 
+.span2 img
+{
+    /*height: 95% !important;*/
+}
+
+/* End Added By Shishir for Home page*/ 
+
+/* Added By Shishir for Product Showcase*/ 
+#product-showcase div.section ul.accordion .items .drawerpshowcase .parbase:first-child .item img
+{
+    margin-left: -10px;
+   /* margin-top: -13px;*/
+    max-width: 108%;
+}
+
+#product-showcase div.section ul.accordion .items .drawerpshowcase .parbase .item img
+{
+    margin-left: -10px;
+    margin-top: 1em;
+    max-width: 108%;
+}
+#product-showcase div.section ul.accordion .items .drawerpshowcase .parbase .table-list
+{
+    margin-left:10px;
+}
+#product-showcase div.content div.cmslinkone .table-list .table-cell
+{
+    width: 25%;
+}
+#product-showcase div.content div.cmslinkone .table-list .table-cell+ .table-cell
+{
+    width: 80% !important;
+}
+
+#product-details .accordion .features
+{
+    margin: 0px;
+}
+#product-details .accordion .features li:before
+{
+    content:"";
+}
+
+#product-details .accordion .features li
+{
+    text-indent: 0em;
+}
+#product-details .border-list.content
+{
+    padding:0em !important;
+}
+#article-landing .items .item img
+{
+    margin-top: -13px;
+    margin-left: -10px;
+    margin-bottom: 10px;
+    max-width:100%; /* Added By Shishir */
+}
+
+.videoplayer.content > h3
+{
+    padding: 1em 1em 0 !important;
+}
+
+.purchase-options .items li img
+{
+    width: 75px !important;
+}
+/* Added By Shishir for Product Showcase End*/ 
+/* Add by Shaunak Trivedi */
+.drawerTab{
+    width: 100% !important;
+    margin-left:0px !important;
+}
+#product-details .accordion, #product-details .accordion li
+{
+    list-style: none outside none;
+    text-indent: 0em !important;
+}
+#product-details .accordion, #product-details .accordion li:before
+{
+    content:"" !important;
+    padding:0px !important;
+}
+#product-details .accordion, #product-details .accordion p
+ {
+    margin: 0px !important;
+ }
+ #product-details .accordion, #product-details .accordion ul
+ {
+    padding: 0px !important;
+ }
+ #product-details .parbase.features.section
+ {
+    /* style for first -child drawer Start*/
+    
+    width: 100% !important;
+    margin-left:0px !important;
+ }
+ #product-details .accordion .promo .inner p
+ {
+    margin-left:10px !important;
+ }
+ 
+
+ /* Shaunak Trivedi */
+@media only screen
+and (max-width : 2000px){
+#suggestions {
+    position:absolute;  
+    z-index: 9999;
+    width:98%;
+}
+}
+@media only screen
+and (max-width : 480px){
+#suggestions {
+    position:absolute;  
+    z-index: 9999;
+    width:95%;
+}
+}
+#suggestions div{
+    padding: 1px 5px;
+    position: relative;
+    width: 100%;
+    margin: 9px 0px 9px 0px;
+}
+#suggestions label{
+    float:left;
+    background:#0A76C7;
+    cursor:pointer;
+    border-radius: 2px;
+    padding: 4px;   
+    margin-right:10px;
+    margin-left: 5px;
+    margin-bottom:2px;
+}
+/* added by shsihir for RTE */
+
+li.gen_features ul li
+{
+    background-color: transparent !important;
+    background-image: url("") !important;
+    border-bottom: medium none !important;
+    list-style: disc outside none !important;
+    margin-left: 2em;
+    padding: 0 !important;
+}
+.article-detail .accordion .videoplayer .video-desc p
+{
+    margin-top: 5px;
+}
+
+/* added by shsihir for RTE End*/
+/* added by Dibya */
+.suggest.table-list a
+{
+    color: #fff !important;
+}
+div.intel_search a
+{
+    color: #fff !important;
+}
+/* end of Dibya */
+/* Custom Multifield related*/
+/*#CQ .x-form-text.x-form-field.x-trigger-noedit{width:2200% !important;}*/
+#CQ .x-combo-list-item{width:470px !important;}
+#CQ .x-combo-list-inner{width:470px !important;}
+#CQ .x-layer.x-combo-list{width:470px !important;}
+#CQ .x-form-text.x-form-field{width:391px !important;}
+
+/* specific to galaxy s3 menu */
+
+html.csstransforms3d header.ics404 #category-menu.dropdown-menu {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+html.csstransforms3d header.ics404 #category-menu.dropdown-menu.inited {
+  display: block;
+  -webkit-transition: -webkit-transform .2s ease-out;
+  transition: transform .2s ease-out;
+}
+
+html.csstransforms3d header.ics404 #search-menu {
+  position: relative;
+}
+.design_auth
+{
+    width: 300px !important;
+}
+
+@media only screen and (max-width: 380px) {
+#category-menu .select-title.menu_set
+  {
+    line-height: 23px;
+    top: 0px;
+ }
+}
+
+.compareImg
+{
+    background: white url(/etc/designs/intelmobile/img/img_COMPARE-add-item.jpg) no-repeat;
+    width: 302px;
+    height: 288px;
+}
+.Comparetxt
+{
+    display: inline-block;
+    font-size: 150%;
+    left: 0;
+    padding-top: 15%;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+/* Product Detail CMS Carousel */
+
+#product-details .hero .carousel {
+  background-image: none;
+  margin-top: 0;
+  padding: 0;
+  position: relative;
+}
+#product-details .hero .carousel .carousel-content li {
+  margin: 0;
+}
+#product-details .hero .carousel .carousel-content li img {
+  border-radius: 0;
+}
+#product-details .hero .carousel .pagination-container {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  /*margin-top: -50px;*/
+}
+#product-details .hero .carousel .navigation {
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  -ms-border-radius: 3px 3px 0 0;
+  -o-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+  background: #d1d1d1;
+  /* Old browsers */
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFD1D1D1', endColorstr='#FFFFFFFF');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d1d1d1), color-stop(100%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #d1d1d1 0%, #ffffff 100%);
+  background-image: -moz-linear-gradient(top, #d1d1d1 0%, #ffffff 100%);
+  background-image: -o-linear-gradient(top, #d1d1d1 0%, #ffffff 100%);
+  background-image: -ms-linear-gradient(top, #d1d1d1 0%, #ffffff 100%);
+  background-image: linear-gradient(top, #d1d1d1 0%, #ffffff 100%);
+  display: inline-block;
+  padding-top: .5em;
+  /*margin-top: -1.5em;*/
+}
+#product-details .hero .carousel .navigation a {
+  display: inline-block;
+  text-shadow: 0px 2px 5px black;
+  height: 40px;
+  width: 30px;
+  background: url(/etc/designs/intelmobile/img/spr_CAROUSEL-arrows.png) no-repeat 0 0;
+  background-size: 100%;
+}
+
+
+
+#product-details .hero .carousel .navigation .pagination {
+  background: none;
+  background-image: none;
+}
+
+
+#product-details .hero .carousel .pagination span.active {
+  background: #00aeef;
+}
+#product-details .hero .carousel .pagination span {
+  background: #b6b6b6;
+  position: relative !important;
+  z-index: 999 !important;
+}
+#product-details .hero .carousel .navigation .click-right.end {
+  background-position: right -155px;
+}
+#product-details .hero .carousel .navigation .click-right {
+  background-position: right -54px;
+}
+
+
+#product-details .hero .carousel .carousel-content li {
+  /* new code for PDP */
+  background: white;
+  text-align: center;
+  /*margin-bottom: -15px;*/
+}
+
+#product-details .hero .carousel .carousel-content li img {
+  
+  box-shadow: none !important;
+}
+#product-details .hero .carousel .carousel-content li  .pagination-container .navigation-container
+{
+    /*z-index: 0 !important;*/
+}

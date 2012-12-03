@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Showcase Feature Spotlight"
+    width="100%"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Config">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <displayCopy
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Display Copy"
+                        maxLength="{Long}66"
+                        maxLengthText="The maximum length for this field is 66"
+                        name="./displayCopy"
+                        xtype="textfield"/>
+                </items>
+            </tab1>
+            <tab2
+                jcr:primaryType="cq:Widget"
+                sling:resourceType="foundation/components/image"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName"
+                fileReferenceParameter="./imageFileReference"
+                id="imagefield"
+                name="./spotlightImage"
+                title="Spotlight Image"
+                validateOnSubmitOnly="{Boolean}true"
+                xtype="smartimage"/>
+        </items>
+    </items>
+</jcr:root>

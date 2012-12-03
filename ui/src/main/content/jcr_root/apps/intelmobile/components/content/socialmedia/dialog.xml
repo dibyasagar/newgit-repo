@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Socialmedia Diaplay"
+    width="100%"
+    xtype="dialog">
+    <items jcr:primaryType="cq:TabPanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Display Option">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <showfacebook
+                        jcr:primaryType="nt:unstructured"
+                        checked="{Boolean}true"
+                        deafultValue="false"
+                        fieldLabel="Show Facebook"
+                        name="./showfacebook"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <showtweeter
+                        jcr:primaryType="nt:unstructured"
+                        checked="{Boolean}true"
+                        fieldLabel="Show Tweeter"
+                        name="./showtweeter"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <showshare
+                        jcr:primaryType="nt:unstructured"
+                        checked="{Boolean}true"
+                        fieldLabel="Show Share"
+                        name="./showshare"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
