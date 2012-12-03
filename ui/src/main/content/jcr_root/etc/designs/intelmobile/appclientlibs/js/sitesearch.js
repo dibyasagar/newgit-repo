@@ -62,6 +62,7 @@ function getKeys(locale) {
                 var selected_item = $(self).text();                 
                 $("#search-term").val(selected_item);
                 $("#suggestions").hide();
+				submitSearchForm();
            });                 
         }
     });
