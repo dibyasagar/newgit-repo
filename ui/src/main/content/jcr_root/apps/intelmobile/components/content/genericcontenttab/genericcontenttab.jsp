@@ -34,7 +34,9 @@ pageContext.setAttribute("validLink",validLink);
 				<cq:text property="contenttitle" default="" escapeXml="false"/>
 			</h3>
 			<p class="gen_features">
-				<cq:text property="contenttext" default="" escapeXml="false"/>
+			   <div class="rte_text">
+				 <cq:text property="contenttext" default="" escapeXml="false"/>
+		       </div>		
 				<c:if test="${validLink ne '' && properties.linklabel ne ''}">
 				 <c:set var="window" value="" />
 				  <c:if test="${properties.newwindow eq 'yes'}">
@@ -90,7 +92,9 @@ pageContext.setAttribute("validLink",validLink);
 			</h6>
 			
 			<p class="gen_features">
-				<cq:text property="contenttext" default="" escapeXml="false"/>
+			   <div class="rte_text">
+				  <cq:text property="contenttext" default="" escapeXml="false"/>
+				</div>  
 			</p>
 			<c:if test="${validLink ne '' && properties.linklabel ne ''}">
 			  <c:set var="window" value="" />
@@ -107,12 +111,16 @@ pageContext.setAttribute("validLink",validLink);
 
 <c:if test="${contentstyle eq 'articlelanding'}">
 	<div class="table-list">
-	<c:if test="${properties.imageFileReference != null and properties.imageFileReference != ''}">
-		<img class="table-cell" src="${properties.imageFileReference}" alt="${properties.alttext}">
+	   <c:if test="${properties.imageFileReference != null and properties.imageFileReference != ''}">
+		   <img class="table-cell" src="${properties.imageFileReference}" alt="${properties.alttext}">
 		</c:if>
 		<div class="table-cell">
 			<h4><cq:text property="contenttitle" default="" escapeXml="false"/></h4>
-			<p class="gen_features"><cq:text property="contenttext" default="" escapeXml="false"/></p>
+			<p class="gen_features">
+			      <div class="rte_text">
+			         <cq:text property="contenttext" default="" escapeXml="false"/>
+			      </div>
+			  </p>
 			<c:if test="${validLink ne '' && properties.linklabel ne ''}">
 			   <c:set var="window" value="" />
 				  <c:if test="${properties.newwindow eq 'yes'}">
@@ -129,13 +137,17 @@ pageContext.setAttribute("validLink",validLink);
 <c:if test="${contentstyle eq 'articledetailterms'}">
 	<div class="item gen_features">
 		<h3><cq:text property="contenttitle" default="" escapeXml="false"/></h3>
+		<div class="rte_text">
 		<cq:text property="contenttext" default="" escapeXml="false"/>
+		</div>
 	</div>
 </c:if>
 <c:if test="${contentstyle eq 'features'}">
 	<li class="gen_features"> 
 	   <strong><cq:text property="contenttitle" default="" escapeXml="false"/></strong>
+	   <div class="rte_text">
 	   <cq:text property="contenttext" default="" escapeXml="false"/>
+	   </div>
 	 </li>
 </c:if>
 </div>
