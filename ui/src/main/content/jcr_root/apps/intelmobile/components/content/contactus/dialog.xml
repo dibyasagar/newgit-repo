@@ -27,66 +27,6 @@
                         fieldLabel="Question label"
                         name="./questionlabel"
                         xtype="textfield"/>
-                    <question1
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Question 1"
-                        name="./question1"
-                        xtype="textfield"/>
-                    <question2
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Question 2"
-                        name="./question2"
-                        xtype="textfield"/>
-                    <question3
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Question 3"
-                        name="./question3"
-                        xtype="textfield"/>
-                    <question4
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Question 4"
-                        name="./question4"
-                        xtype="textfield"/>
-                    <question5
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Question 5"
-                        name="./question5"
-                        xtype="textfield"/>
-                    <question6
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Question 6"
-                        name="./question6"
-                        xtype="textfield"/>
-                    <question7
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Question 7"
-                        name="./question7"
-                        xtype="textfield"/>
-                    <question8
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Question 8"
-                        name="./question8"
-                        xtype="textfield"/>
-                    <question9
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Question 9"
-                        name="./question9"
-                        xtype="textfield"/>
-                    <question10
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Question 10"
-                        name="./question10"
-                        xtype="textfield"/>
-                    <question11
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Question 11"
-                        name="./question11"
-                        xtype="textfield"/>
-                    <question12
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Question 12"
-                        name="./question12"
-                        xtype="textfield"/>
                     <emaillabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Email label"
@@ -104,6 +44,29 @@
                         xtype="textfield"/>
                 </items>
             </tab1>
+            <pagelisttab
+                jcr:primaryType="cq:Panel"
+                title="Questions">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <hero
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./questions"
+                        fieldDescription="Click '+' to add a new question"
+                        fieldLabel="question"
+                        maxItems="20"
+                        name="./questions"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <title
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                fieldLabel="Question"
+                                name="./question"
+                                xtype="textfield"/>
+                        </fieldConfig>
+                    </hero>
+                </items>
+            </pagelisttab>
         </items>
     </items>
 </jcr:root>
