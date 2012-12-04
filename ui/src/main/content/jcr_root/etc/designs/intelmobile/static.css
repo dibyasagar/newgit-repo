@@ -2156,14 +2156,19 @@ and (max-width : 480px) {
 and (min-device-width : 480px) 
 and (max-device-width : 481px) { 
   .ie7 .tiles li, .ie7 .tiles .span4 { 
-    margin: 0.75%; 
+    margin: 0.75%;
+    
   } 
-/* .ie7 .tiles .span2 { 
-    width: 64.75%; 
-  }*/ 
-  .tiles li { 
-    width: 31.25%; 
+  .tiles .span2
+ 
+  { 
+    width: 63.25%; 
+  }
+  .tiles li, .tiles .span4 { 
+    width: 31%; 
   } 
+  
+  
 } 
 
 /* Smartphones (Portrait 320 px) ____________________________________*/
@@ -3359,10 +3364,10 @@ html.csstransforms3d header:not(.ics404) .dropdown-menu.inited {
   background:#9a9a9a;
 }
 #main #social-share {
-  text-align: center;
-  /*padding: 1em 0 0 0;*/ 
-  margin-top: 1em;
-  /*overflow: hidden;*/
+  margin-left: -12px;
+    margin-top: 1em;
+    text-align: center;
+    width: 100%;
   
 }
 #main #social-share span {
