@@ -69,7 +69,7 @@
                 <% } 
                  
                 String tweetOrg="";    
-                           
+                 
                 if(showTweeter.equalsIgnoreCase("yes")){%>
                     <span class='st_twitter_hcount' 
                           displayText='Tweet' 
@@ -81,7 +81,11 @@
                           else{
                               tweetOrg = pageDesc;
                           }
-                          
+                         //log.info("tweetOrg before"+tweetOrg);
+                         if(tweetOrg!=null){
+                          tweetOrg = IntelUtil.tweetName(tweetOrg);
+                         }
+                          //log.info("tweetOrg"+tweetOrg);
                           if(tweetOrg!=null && tweetOrg.length()>105 ){
                               tweetOrg=tweetOrg.substring(0,105)+"..";
                           }
