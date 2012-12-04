@@ -4603,3 +4603,10 @@ html.csstransforms3d header.ics404 #search-menu {
 	margin-top:-4px;
 }
 /* For Email Template End*/
+
+/* fro rte text UL LI - IM-38 */
+
+.rte_text ul, .rte_text li {
+    list-style: disc inside none;
+    text-indent: 15px;
+}
