@@ -701,4 +701,14 @@ public class IntelUtil {
 		}
 		return status;
 	}
+	public static String tweetName(String orgName){
+	    //log.info("----inside tweetname---");
+		if(orgName != null) {
+			String pName = orgName.replace("\u00AE","");
+			       pName = pName.replace("\u2122","");
+			
+			return pName;
+		}
+		return null;
+	}
 }
