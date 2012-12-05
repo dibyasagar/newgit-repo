@@ -20,7 +20,11 @@ pageContext.setAttribute("editmode",WCMMode.fromRequest(request) == WCMMode.EDIT
            
                           </div>
 	            <h3><c:out value="${properties.contenttitle}" escapeXml="false"/></h3>
-	            <p><c:out value="${properties.contenttext}" escapeXml="false"/></p>
+	            <p>
+	              <div class="rte_text">
+	                 <c:out value="${properties.contenttext}" escapeXml="false"/>
+	              </div>
+	            </p>
 	            <cq:include script="/apps/intelmobile/components/content/socialmedia/socialmedia.jsp"/>	
 	    </div>
 	</li>
