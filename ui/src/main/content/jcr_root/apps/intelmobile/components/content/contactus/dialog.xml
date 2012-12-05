@@ -37,6 +37,11 @@
                         fieldLabel="Sign me Text"
                         name="./signmetext"
                         xtype="textfield"/>
+                    <dontsignmetext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Sign me Text"
+                        name="./dontsignmetext"
+                        xtype="textfield"/>
                     <destinationmailaddr
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Destination Email Address"
