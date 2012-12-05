@@ -36,7 +36,11 @@
                     <h3><c:out value="${properties.sectiontitle}" escapeXml="false"/></h3>
                 </c:if> 
                 <c:if test="${properties.description ne '' && not empty properties.description }">
-                    <p><c:out value="${properties.description}" escapeXml="false"/></p>
+                    <p>
+                       <div class="rte_text">
+                             <c:out value="${properties.description}" escapeXml="false"/>
+                       </div>
+                    </p>
                 </c:if> 
                 <c:if test="${properties.linkurl ne '' && not empty properties.linkurl}">
                       <c:set var="window" value="" />
