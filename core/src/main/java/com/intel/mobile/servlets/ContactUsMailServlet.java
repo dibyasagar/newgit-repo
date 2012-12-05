@@ -35,12 +35,15 @@ public class ContactUsMailServlet extends SlingAllMethodsServlet{
 		LOGGER.info("Entered the doPost method of contact us mail.");
 		String fromAddress = request.getParameter("fromAddress");
 		String toAddress = request.getParameter("toAddress");
+		String signupInfo = request.getParameter("signup");
 		
 			
 		LOGGER.info("fromAddress : "+fromAddress);
 		LOGGER.info("toAddress : "+toAddress);
+		LOGGER.info("signupInfo :"+signupInfo);
 		
-		Status status=IntelUtil.sendMail(toAddress,fromAddress, "Test Mail", "mail sent successfully", null, null, "", "");
+		
+		Status status=IntelUtil.sendMail(toAddress,fromAddress, "Test Mail",signupInfo, null, null, "", "");
 		LOGGER.info("You have successfully made Ajax Call:" + toAddress);
 		LOGGER.info("status : "+status);
 		
