@@ -84,7 +84,7 @@
 					
 					<p>
 						<c:if test="${properties.description ne 'null'}">
-							<c:out value="${properties.description}" escapeXml="false"/>
+							<div class="rte_text"><c:out value="${properties.description}" escapeXml="false"/></div>
 						</c:if>
 					</p>
 									
