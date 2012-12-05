@@ -13,7 +13,7 @@ pageContext.setAttribute("componentName",component.getName());
                     <div class="table-list">	
                         <img class="table-cell" src = "${properties.processorImageFileReference}" />
                         <div class="table-cell">
-                        	<p><c:out value="${properties.recommendation}" escapeXml="false"/></p>
+                        	<p><div class="rte_text"><c:out value="${properties.recommendation}" escapeXml="false"/></div></p>
                         </div>
                     </div>                  
                     <a href="${properties.linkPath}.html" class="grad"><c:out value="${properties.linkCopy}" escapeXml="false"/></a> 
