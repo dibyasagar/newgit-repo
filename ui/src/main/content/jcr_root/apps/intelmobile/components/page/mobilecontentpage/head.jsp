@@ -46,8 +46,11 @@
     final String canonicalURL  = externalizer.absoluteLink(slingRequest, "http", currentPage.getPath()) + ".html";
 %><head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"<%=xs%>>
+    <% if (WCMUtils.getKeywords(currentPage) != null) { %>
     <meta http-equiv="keywords" content="<%= StringEscapeUtils.escapeHtml4(WCMUtils.getKeywords(currentPage)) %>"<%=xs%>>
-    <!--<meta name="viewport" content="width=device-width"<%=xs%>>-->
+   <% } %>
+   <%-- <meta name="viewport" content="width=device-width"<%=xs%>> --%>
+     <meta name="viewport" content="width=device-width"<%=xs%>> 
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">    
@@ -71,14 +74,14 @@
     %>
     <%-- <cq:include script="stats.jsp"/> --%>
     
-    <!-- Additional Script Inclusion Start -->
-            <!-- Carousel CSS -->
-     <cq:include script="headlibs.jsp"/>       
-    <!-- <link rel="stylesheet" href="/etc/designs/intelmobile/CSS/demo.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/etc/designs/intelmobile/CSS/flexslider.css" type="text/css" media="screen" /> -->
-            
-     <!--<link rel="stylesheet" href="/etc/designs/intelmobile/CSS/intel.mobile.css">-->     
-     <!-- <script type="text/javascript" src="/etc/designs/intelmobile/appclientlibs/js/addthis_widget.js?username=xa-4caa2411636c3560"></script>  -->      
+    <%-- Additional Script Inclusion Start --%>
+    <%-- Carousel CSS --%>
+     <cq:include script="headlibs.jsp"/> 
+     <%-- <link rel="stylesheet" href="/etc/designs/intelmobile/CSS/demo.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/etc/designs/intelmobile/CSS/flexslider.css" type="text/css" media="screen" /> --%>      
+     <%-- <link rel="stylesheet" href="/etc/designs/intelmobile/CSS/intel.mobile.css"> --%>
+     <%-- <script type="text/javascript" src="/etc/designs/intelmobile/appclientlibs/js/addthis_widget.js?username=xa-4caa2411636c3560"></script> --%>   
+     
       <script src="/etc/designs/intelmobile/appclientlibs/js/libs/modernizr-2.0.6.min.js"></script>
      <script src="/etc/designs/intelmobile/appclientlibs/js/libs/jquery/jquery-1.7.2.min.js"></script>
 	
