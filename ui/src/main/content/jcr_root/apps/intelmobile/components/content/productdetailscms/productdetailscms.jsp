@@ -79,11 +79,10 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
              </ul>
            </div>
            </div>
-           <!--
-           <div class="hero-img">
+          <%--  <div class="hero-img">
            <img src="${properties.picture}" alt="${properties.name}">
-           </div>
-           -->
+           </div> 
+           --%>
            <div id="prod_2" class="hero">
            <div class="content">
                     <c:if test="${not empty properties.bestPrice && (properties.bestPrice ne 'null')}">
@@ -101,7 +100,7 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
                         <c:if test="${not empty properties.productdescription && (properties.productdescription ne 'null')}">
                             <div class="rte_text"><c:out value="${properties.productdescription}" escapeXml="false"/></div>
                         </c:if> 
-                        <!-- <cq:include path="featurelist" resourceType="intelmobile/components/content/featurelist"/> -->
+                      <%-- <cq:include path="featurelist" resourceType="intelmobile/components/content/featurelist"/> --%>
     <c:if test="${not empty properties.contenttitle && (properties.contenttitle ne 'null')}">
           <div class="features productdetailsfeatures">
               <h4 class="grad"><cq:text property="contenttitle" escapeXml="false"/></h4>
@@ -184,8 +183,7 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
     <cq:text property="weightvalue" escapeXml="false"/> 
     </li>
    </c:if>
-
-    <!-- Features List for Ultrabooks -->
+    <%--Features List for Ultrabooks --%>
    <c:if test="${properties.processor ne null && not empty properties.processor}">
     <li><b> <fmt:message key="productdetails.label.feature_processor"/>:</b>
     <cq:text property="processor" escapeXml="false"/> 
@@ -232,9 +230,8 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
     <cq:text property="weight" escapeXml="false"/> 
     </li>
    </c:if>
-    <!-- Features List for Ultrabooks -->
-
-    <!-- Features List for Motherboards -->
+   <%-- Features List for Ultrabooks --%>
+   <%-- Features List for Motherboards --%> 
    <c:if test="${boardfamily ne null && not empty boardfamily}">
     <li>
     <b> <fmt:message key="productdetails.label.feature_boardfamily"/>:</b>
@@ -283,8 +280,8 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
     <c:out value="${socket}" escapeXml="false"/>
     </li>
    </c:if>
-    <!-- Features List for Motherboards -->
-    <!-- Features List for Solid State Devices -->
+   <%--  Features List for Motherboards  --%>
+   <%-- Features List for Solid State Devices --%>
      <c:if test="${capacity ne null && not empty capacity}">
     <li>
     <b> <fmt:message key="productdetails.label.feature_capacity"/>:</b>
@@ -318,7 +315,7 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
     <cq:text property="ranreadwrite" escapeXml="false"/> 
     </li>
    </c:if>
-    <!-- Features List for Solid State Devices -->
+   <%-- Features List for Solid State Devices --%>
    
    <c:if test="${(fn:length(propertynames) gt 0)}">
                 <c:forEach items="${propertynames}" var="name" varStatus="status">
