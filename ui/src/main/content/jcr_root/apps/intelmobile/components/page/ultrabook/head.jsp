@@ -48,7 +48,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"<%=xs%>>
     <meta http-equiv="keywords" content="<%= StringEscapeUtils.escapeHtml4(WCMUtils.getKeywords(currentPage)) %>"<%=xs%>>
         <meta name="HandheldFriendly" content="True">
-        <!-- PHONE -->
+        <%--PHONE --%>
 
         <meta name="mobileoptimized" content="320">
         <meta name="handheldfriendly" content="true">
@@ -59,18 +59,15 @@
                     maximum-scale=1.0,
                     initial-scale=1.0,
                     user-scalable=no">
-
-        <!-- APPLE -->
+         <%-- APPLE --%>
 
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <meta name="format-detection" content="telephone=yes">
-
-        <!-- MSIES -->
+        <%-- MSIES --%>
 
         <meta http-equiv="cleartype" content="on">
-
-        <!-- SHEET -->  
+         <%-- SHEET --%>
     	<meta name="url" content="<%= xssAPI.getValidHref(canonicalURL) %>" />
 	
     <link rel="canonical" href="<%= xssAPI.getValidHref(canonicalURL) %>" />
@@ -90,8 +87,7 @@
             deviceGroup.drawHead(pageContext);
         }
     %>
-    
-    <!-- Additional Script Inclusion Start -->
+    <%-- Additional Script Inclusion Start --%>
     
     <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/intel.mobile.css" media="all">
     <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/density.css" media="all">
@@ -118,8 +114,8 @@
     <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/styles.640h.css" media="all and (min-width:481px) and (max-width:640px) and (orientation:landscape)">
     <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/styles.800h.css" media="all and (min-width:641px) and (orientation:landscape)">
       
-    <!--<link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/intel.mobile.css" type="text/css" media="screen"> -->
-    <!-- <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/reset.css" type="text/css" media="screen"> hh -->
+    <%-- <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/intel.mobile.css" type="text/css" media="screen"> --%>
+    <%-- <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/reset.css" type="text/css" media="screen"> --%>
     
     <script src="/etc/designs/intelmobile/appclientlibs/js/ultrabook/vendor/jquery-1.7.2.min.js"></script>
     <script src="/etc/designs/intelmobile/appclientlibs/js/ultrabook/vendor/modernizr-2.5.3.min.js"></script>
@@ -128,11 +124,9 @@
     
     
    
+   <%-- <script src="/etc/designs/intelmobile/appclientlibs/js/ultrabook/vendor/jquery.mobile-1.1.1.min.js"></script> --%>
    
-   <!-- <script src="/etc/designs/intelmobile/appclientlibs/js/ultrabook/vendor/jquery.mobile-1.1.1.min.js"></script>-->
-   
-    
-    <!-- Additional Script Inclusion End -->
+    <%-- Additional Script Inclusion End --%>
     <% currentDesign.writeCssIncludes(pageContext); %>
     <title><%= currentPage.getTitle() == null ? StringEscapeUtils.escapeHtml4(currentPage.getName()) : StringEscapeUtils.escapeHtml4(currentPage.getTitle()) %></title>
     <cq:include script="/apps/intelmobile/components/page/mobilecontentpage/headmeta.jsp"/>
