@@ -111,7 +111,8 @@
 	<%
 		}
 	%>
-	<!-- Search Menu -->
+	<%-- Search Menu --%>
+
 	<div id="search-menu" class="dropdown-menu">
 		<cq:include path="searchcomponent"
 			resourceType="intelmobile/components/content/searchcomponent" />
