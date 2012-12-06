@@ -99,7 +99,7 @@ pageContext.setAttribute("interface",currentNode!=null && currentNode.hasPropert
                     </div>
                     </c:if>
                         <c:if test="${not empty properties.productdescription && (properties.productdescription ne 'null')}">
-                            <c:out value="${properties.productdescription}" escapeXml="false"/>
+                            <div class="rte_text"><c:out value="${properties.productdescription}" escapeXml="false"/></div>
                         </c:if> 
                         <!-- <cq:include path="featurelist" resourceType="intelmobile/components/content/featurelist"/> -->
     <c:if test="${not empty properties.contenttitle && (properties.contenttitle ne 'null')}">
