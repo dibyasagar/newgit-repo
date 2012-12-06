@@ -44,7 +44,7 @@ if(campaignHeaderNode.hasProperty("sectiontitle")&& campaignFooterNode.hasProper
 
 
 %>
-<!-- Menus -->
+<%-- Menus --%>
 
 		<div class="ultrabook menus wapwrapper" data-component-id="1" data-component="ubholiday-usp-nav-mobile">
 
@@ -101,13 +101,12 @@ if(campaignHeaderNode.hasProperty("sectiontitle")&& campaignFooterNode.hasProper
 
 
 <div class="ultrabook content" id="ultrabook_content">
-			
-			<!-- Nav -->
+			<%-- Nav --%>
 			<div style="top: 70px; " role="banner" class="sticky ui-header ui-bar-a" data-role="header"></div>
 
  	
- 			<!-- Parsys Component Start -->
+ 			<%-- Parsys Component Start --%>
 			<cq:include path="contentPar" resourceType="foundation/components/parsys"/>
-			<!-- Parys Component End-->
+			<%-- Parys Component End --%>
 <cq:include path="disclaimer" resourceType="intelmobile/components/content/disclaimer"/>
 </div>
