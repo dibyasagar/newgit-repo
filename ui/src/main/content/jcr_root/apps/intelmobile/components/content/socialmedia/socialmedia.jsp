@@ -53,9 +53,8 @@
    if(showFacebook.equalsIgnoreCase("yes") || showTweeter.equalsIgnoreCase("yes") ||
             showShare.equalsIgnoreCase("yes")){
        %>  
-       
-      <!-- Commenting out to fix the defect #1741392. As it's not a proper component and is included as a script into other components.     -->    
-        <!-- <div class="component" data-component="<c:out value="${pageScope.componentName}"/>" data-component-id="<c:out value="${pageScope.componentId}"/>"> -->     
+       <%--Commenting out to fix the defect #1741392. As it's not a proper component and is included as a script into other components. --%>
+        <%-- <div class="component" data-component="<c:out value="${pageScope.componentName}"/>" data-component-id="<c:out value="${pageScope.componentId}"/>"> --%>   
        <div id="social-share" class="grad">
                 <div class="social-share-align">
                 <% if(showShare.equalsIgnoreCase("yes")){   %>
@@ -99,7 +98,7 @@
             <div style="clear:both"></div>    
                 
        </div>
-      <!--  </div> -->
+
    <%
      }
      if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
