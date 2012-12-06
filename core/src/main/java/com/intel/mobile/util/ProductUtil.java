@@ -313,6 +313,7 @@ public class ProductUtil {
 				LOGGER.debug(">>>>Page Locale - " + locale);
 			}
 			Tag tag = tagManager.resolve(tagPath);
+			if(tag != null){
 			Iterator<Tag> tagList = tag.listChildren();
 			while(tagList.hasNext()) {
 				Tag attribute = (Tag) tagList.next();
@@ -332,9 +333,9 @@ public class ProductUtil {
 				} catch(Exception e) {
 					LOGGER.error("getFeatures() - Exception occured while processing tag for - " + attribute.getName());
 				}
-			}
+			}}
 		} catch(Exception e) {
-			LOGGER.error("getFeatures() - Exception occured - " + e);
+			LOGGER.error("getFeatures() - Exception occured - " ,e);
 		}
 		return features;
 	}
