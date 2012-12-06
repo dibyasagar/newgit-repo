@@ -27,7 +27,7 @@ pageContext.setAttribute("parsysCount",IntelUtil.getParsysNumber(resource));
 		</h5>
 		<div class="border-list content">
 		     <c:if test="${properties.header ne '' && not empty properties.header }">
-             <c:out value="${properties.header}" escapeXml="false"/>
+             <div class="rte_text"><c:out value="${properties.header}" escapeXml="false"/></div>
 	         </c:if>
 			<div class="items">
 				<cq:include path="drawerpshowcase" resourceType="foundation/components/parsys" />
@@ -60,7 +60,7 @@ pageContext.setAttribute("parsysCount",IntelUtil.getParsysNumber(resource));
 					</c:if>				
 					<cq:include path="drawerpshowcaseviewmore" resourceType="foundation/components/parsys" />
 				</div>
-				<a class="view-more-control grad" href="#"><cq:text property="footertext" escapeXml="false"/></a>
+				<a class="view-more-control grad" data-opencopy="<cq:text property="viewlesstext" escapeXml="false"/>" data-closedcopy="<cq:text property="footertext" escapeXml="false"/>" href="javascript:void(0)"><cq:text property="footertext" escapeXml="false"/></a>
 				</c:if>
 			</div>		
 		</div>
