@@ -81,13 +81,13 @@
 					<c:if test="${not empty properties.tagline}">
 						<h3><c:out value="${properties.tagline}" escapeXml="false"/></h3>
 					</c:if>
-					
+					<div class="rte_text">
 					<p>
-						<c:if test="${properties.description ne 'null'}">
-							<div class="rte_text"><c:out value="${properties.description}" escapeXml="false"/></div>
-						</c:if>
+					   <c:if test="${properties.description ne 'null'}">
+							<c:out value="${properties.description}" escapeXml="false"/>
+						  </c:if>
 					</p>
-									
+					</div>				
 
 				<cq:include path="features" resourceType="intelmobile/components/content/productdetails/productdetailsfeatures" />           
                <div class="grad">
