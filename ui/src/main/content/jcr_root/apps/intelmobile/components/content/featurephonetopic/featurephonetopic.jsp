@@ -9,6 +9,6 @@ pageContext.setAttribute("componentName",component.getName() );
 <img src="${properties.heroImageReference}" alt="${properties.heading}">
 <h2><cq:text property="heading" default="" escapeXml="false"/></h2>
 <div class="section">
-<cq:text property="bodycopy" default="" escapeXml="false"/>
+<div class="rte_text"><cq:text property="bodycopy" default="" escapeXml="false"/></div>
 </div>
 </div>
