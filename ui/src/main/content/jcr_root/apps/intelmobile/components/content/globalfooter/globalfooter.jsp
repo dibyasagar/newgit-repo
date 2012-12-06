@@ -10,7 +10,7 @@
 %><%@include file="/libs/foundation/global.jsp"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@page import="com.intel.mobile.util.IntelUtil,com.day.cq.wcm.api.WCMMode"%>
-<!-- footer -->
+<%-- footer --%>
 <%
     Object footerlinkTitle[] = null;
     Object footerlinkUrl[] = null;
@@ -64,7 +64,7 @@
     value="<%= IntelUtil.getConfigValue(currentPage,"footer","fullsiteinnewwindow", "yes") %>" /> 
 
 <c:set var="footerlinkTitle" value="<%=footerlinkTitle %>" />
-<!--  updated html code below -->
+<%-- updated html code below --%>
 
 <footer>
 <div class="component" data-component="<c:out value="${pageScope.componentName}"/>" data-component-id="<c:out value="${pageScope.componentId}"/>">
@@ -122,8 +122,7 @@ document.cookie = "intelmobile_last_visited_page="+val +";expires="+expiration_d
 
  <script src="/etc/designs/intelmobile/appclientlibs/js/intel.mobile.js"></script> 
  <script src="http://platform.twitter.com/widgets.js"></script> 
-
-<!-- intel specific scripts -->
+<%-- intel specific scripts --%>
 <script type="text/javascript" src="/etc/designs/intelmobile/appclientlibs/js/decision/app_wrapper.js"></script>
 <script type="text/javascript" src="/etc/designs/intelmobile/appclientlibs/js/decision/core_metaphors.js"></script>
 <script type="text/javascript" src="/etc/designs/intelmobile/appclientlibs/js/decision/spec_shuffle.js"></script>
@@ -132,8 +131,7 @@ document.cookie = "intelmobile_last_visited_page="+val +";expires="+expiration_d
 <script type="text/javascript" src="/etc/designs/intelmobile/appclientlibs/js/helper.js"></script>
 <script type="text/javascript" src="/etc/designs/intelmobile/appclientlibs/js/articlelanding.js"></script>
 <script type="text/javascript" src="/etc/designs/intelmobile/appclientlibs/js/sitesearch.js"></script>
-    
-    <!-- WAP Integration Start -->
+    <%-- WAP Integration Start --%>
     <script type="text/javascript">
         // Custom WAP -------------------------------------------------------------------------------
         s={}; //init s object
@@ -143,15 +141,15 @@ document.cookie = "intelmobile_last_visited_page="+val +";expires="+expiration_d
         // END ---------------------------------------------------------------------------------------
     </script>
     <script type="text/javascript" src="http://www.intel.com/content/dam/www/global/wap/wap-mobile.js "></script>
-    <!-- WAP Integration End -->
+    <%-- WAP Integration End --%>
     
-     <!-- Additional Script Inclusion End-->
+     <%-- Additional Script Inclusion End --%>
 
-  <!-- Add this -->
+<%-- Add this --%>
 <script type="text/javascript">var switchTo5x=true;</script>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher: "ur-661b55e5-341-5a95-e973-c4ac96945400",shorten:false}); </script>
-<!-- end scripts-->
+<%-- end scripts --%>
 <script type="text/javascript" src="/etc/designs/intelmobile/appclientlibs/js/plugins.js"></script>
 <script type="text/javascript" src="/etc/designs/intelmobile/appclientlibs/js/example-controller.js"></script>
 
