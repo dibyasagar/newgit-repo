@@ -28,7 +28,7 @@ public class ProductListingFilter {
 
 	public void getFilters(HttpServletRequest request, Page currentPage , String filterTags){
 		
-		LOG.info("Filter Tags Passed from filter page" + filterTags);
+		//LOG.info("Filter Tags Passed from filter page" + filterTags);
 		
 		List<ProductFilterVO> productFilterVOList = new ArrayList<ProductFilterVO>();
 		
@@ -51,14 +51,14 @@ public class ProductListingFilter {
 			}
 			
 			Tag productCategoryTag = tagManager.resolve(productCategoryTagPath);
-			LOG.info("productCategoryTagPath :"+productCategoryTagPath);
-			LOG.info("productCategoryTag.getName() :"+productCategoryTag.getName());
+			//LOG.info("productCategoryTagPath :"+productCategoryTagPath);
+			//LOG.info("productCategoryTag.getName() :"+productCategoryTag.getName());
 	
 			Iterator<Tag> filterIterator = productCategoryTag.listChildren();
 			while(filterIterator.hasNext()){
 				ProductFilterVO productFilterVO = new ProductFilterVO();
 				Tag filter = filterIterator.next();
-				LOG.info("filter.getName() :"+filter.getName());
+				//LOG.info("filter.getName() :"+filter.getName());
 				productFilterVO.setFilterName(filter.getName());
 				Iterator<Tag> subFilterIterator = filter.listChildren();
 				List<ProductSubFilterVO> subFilters = new ArrayList<ProductSubFilterVO>();
@@ -68,21 +68,22 @@ public class ProductListingFilter {
 					productSubFilterVO.setSubFilterName(subFilter.getTitle());
 					productSubFilterVO.setSubFilterValue(subFilter.getName());
 					subFilters.add(productSubFilterVO);
-					LOG.info("subFilter.getName() :"+subFilter.getName());
-					LOG.info("subFilter.getTitle() :"+subFilter.getTitle());
+					//LOG.info("subFilter.getName() :"+subFilter.getName());
+					//LOG.info("subFilter.getTitle() :"+subFilter.getTitle());
 				}
 				productFilterVO.setSubFilters(subFilters);
 				
-				LOG.info("productFilterVO :: " + productFilterVO);
+				//LOG.info("productFilterVO :: " + productFilterVO);
 				productFilterVOList.add(productFilterVO);
 			}
 	
-			LOG.info("productFilterVOList : " + productFilterVOList);
+			//LOG.info("productFilterVOList : " + productFilterVOList);
 			request.setAttribute("productFilterVOList", productFilterVOList);
 			}
 		catch (Exception e){
-			
-			LOG.info("Exception : " + e);
+		
+			LOG.error("Exception in ProductListingFilter:"+e.getMessage());
+			LOG.debug("Exception in ProductListingFilter:",e);
 			
 		}
 
