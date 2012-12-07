@@ -9,9 +9,8 @@ Content Row.
 %><%@page session="false"%>
 
    
-       
-            <!-- Product Details Start -->
+            <%-- Product Details Start --%>
             <cq:include path="details" resourceType="intelmobile/components/content/productdetails"/>
-            <!-- Product Details End -->
+            <%-- Product Details End --%>
            
        
