@@ -80,7 +80,8 @@ public class IntelReplicationEventListener implements EventHandler {
                  resolver.close();
              }
     	} catch(Exception e) {
-    		 LOG.error("Exception in ReplicationEventListener : " ,e);
+    		 LOG.error("Exception in ReplicationEventListener :" +e.getMessage());
+    		 LOG.debug("Exception in ReplicationEventListener :",e);
     	}finally{
     		session.logout();
     	}
