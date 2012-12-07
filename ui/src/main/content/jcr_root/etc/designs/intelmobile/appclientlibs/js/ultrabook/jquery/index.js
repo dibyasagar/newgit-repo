@@ -702,7 +702,16 @@ $(document).ready(function()
        
            newTxt=$.trim(newTxt);
        
-           if(newTxt.length>15&&newTxt.indexOf(' ')<0)
+           if(newTxt.length>15&&newTxt.indexOf(' ')>0)
+           {
+		
+              $(".slide-2 div.head")[i].className +=" hed_ru_style";
+			  
+			  //var html = newTxt;
+			  //html = html.substring(0, 15) + "- " + html.substring(15);
+			  //headTxt[i].innerHTML=html;
+           }
+		   else if(newTxt.length>15&&newTxt.indexOf(' ')<0)
            {
 		
               //$(".slide-2 div.head")[i].className +=" ru_newheadstyle";
