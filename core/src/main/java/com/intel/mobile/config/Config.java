@@ -61,6 +61,7 @@ public class Config {
 			value = intelBundle.getString(key);
 		} catch (MissingResourceException e) {
 			LOG.error("Missing Resource Exception:"+e.getMessage());
+			LOG.debug("Exception",e);
 		}
 		return value;
 	}
