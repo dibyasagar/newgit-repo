@@ -16,6 +16,7 @@
     String tempItems="";
     String dispName="";
     String showTemp="";
+    String jumptolab = "";
     int index = 0;
 
     templateitems = (String[]) properties.get("templatetype", new String[0]);
@@ -24,6 +25,9 @@
     internalLink = (String[]) properties.get("internalUrl", new String[0]);
     copyText = (String[]) properties.get("copytext", new String[0]);
     if (internalLink != null){ validLink = IntelUtil.getIntenalUrl(internalLink,resourceResolver);}
+    if (properties.get("jumptolab") != null) {
+    	jumptolab = properties.get("jumptolab").toString();
+	}
     
     pageContext.setAttribute("editmode",WCMMode.fromRequest(request) == WCMMode.EDIT);
     pageContext.setAttribute("componentId",IntelUtil.getComponentId(resource));
@@ -35,7 +39,7 @@
 	pageContext.setAttribute("displaynames",displaynames);
 	pageContext.setAttribute("templateitems",templateitems);
 	pageContext.setAttribute("validLink",validLink);
-	pageContext.setAttribute("jumptolab",properties.get("jumptolab").toString());
+	pageContext.setAttribute("jumptolab",jumptolab);
 
 %> 
           <c:if test="${(fn:length(templateitems) gt 0)}">
