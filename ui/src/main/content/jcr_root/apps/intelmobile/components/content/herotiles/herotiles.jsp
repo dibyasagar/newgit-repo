@@ -13,6 +13,7 @@ Hero Tiles component.
 	if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
 		out.println("Double Click to Edit HeroTiles Component");
 	}
+ String defaultimage = "";
 	String layout = "";
 	String truncatevalue = "";
 	int truncVal = 0;
@@ -28,6 +29,9 @@ Hero Tiles component.
 	}
 	if (properties.get("layouttype") != null) {
 		layout = properties.get("layouttype").toString();
+	}
+	if (properties.get("defaultimage") != null) {
+		defaultimage = properties.get("defaultimage").toString();
 	}
 	internalLink = (String[]) properties.get("internalUrl",
 			new String[0]);
@@ -46,7 +50,7 @@ Hero Tiles component.
 <c:set var="layout2class" value="span2" />
 <c:set var="layout3class" value="span4" />
 <c:set var="defaultimage"
-	value="<%=properties.get("defaultimage").toString()%>" />
+	value="<%= defaultimage%>" />
 <c:set var="layouttype" value="<%=layout %>" />
 <c:set var="internalLink" value="<%=internalLink %>" />
 <c:set var="imageLink" value="<%=imageLink %>" />
