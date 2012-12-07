@@ -95,6 +95,7 @@ public class ProductUtil {
 					String jsonTxt = IOUtils.toString(arkProductStream);
 					JSONObject json = new JSONObject(jsonTxt); 
 					JSONArray dArray = json.getJSONArray("d");
+					if(dArray.length()>0){
 					linkURL = dArray.getJSONObject(0).getString("Link");
 					if(LOGGER.isDebugEnabled()) {
 						LOGGER.debug("Deep Link :"+linkURL);
@@ -112,7 +113,9 @@ public class ProductUtil {
 					/* Manipulation of ARK link End */
 	
 					specs.put("linkURL", linkURL);	
-				} else {
+				} 
+			}
+					else {
 					LOGGER.error("Error while retreiving Product Id - Product Id not available");
 				}
 			} catch(Exception e) {
