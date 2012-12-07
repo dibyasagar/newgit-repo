@@ -52,10 +52,16 @@ div.ultrabook.content
 {
     background: #fff;
 }
+.ultrabook .slide .item .inside .head h2 p, .ultrabook .slide .item .inside .head h2 ul li
+{
+	 color: #0061A5;
+}
+/*
 .ultrabook .slide .item .inside .head h2 p
 {
     color: #0061A5;
 }
+*/
 .ultrabook .slide-z .item .inside .laptop
 {
     text-align: center;
