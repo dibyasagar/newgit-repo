@@ -506,6 +506,7 @@ public class IntelUtil {
 		StringBuffer discalimerURL = new StringBuffer();
 		discalimerURL.append(IntelMobileConstants.INTEL_DISCLAIMER_ROOT);
 		discalimerURL.append("/").append(country).append("-").append(language).append("/");
+		if(disclaimerNumber!=""){
 		discalimerURL.append("disclaimer-").append(disclaimerNumber);
 		discalimerURL.append("/_jcr_content/disclaimerpar/disclaimerentry.json");
 		if(log.isDebugEnabled()) {
@@ -527,6 +528,7 @@ public class IntelUtil {
 				exceptionMsg = exceptionMsg.substring(0, 50);
 			}
 			log.error("Exception :"+exceptionMsg);
+		}
 		}
 		return disclaimerText;
 	}
