@@ -20,7 +20,7 @@ pageContext.setAttribute("parsysCount",IntelUtil.getParsysNumber(resource));
 </c:if>
  <div class="component" data-component="<c:out value="${pageScope.componentName}"/>" data-component-id="<c:out value="${pageScope.componentId}"/>">
 <c:if test="${contentstyle eq 'genericcontentpshowcase'}">
-<!-- Generic Content Component Product Showcase -->
+<%-- Generic Content Component Product Showcase --%>
 	<li>
 		<h5 class = "<c:out value="${pageScope.properties.drawerState}" default="closed" escapeXml="false" />">
 			<a href="#"><cq:text property="title" default="Drawer" /></a>
@@ -41,11 +41,11 @@ pageContext.setAttribute("parsysCount",IntelUtil.getParsysNumber(resource));
 		    </c:if>		
 		</div>
 	</li>
-<!-- Generic Content Component Product Showcase -->
+	<%-- Generic Content Component Product Showcase --%>
 </c:if>
 
 <c:if test="${contentstyle eq 'genericcontentpshowcaseshowmore'}">
-<!-- Generic Content Component Product Showcase Showmore -->
+<%-- Generic Content Component Product Showcase Showmore --%>
 	<li>
 		<h5 class = "<c:out value="${pageScope.properties.drawerState}" default="closed" escapeXml="false" />">
 			<a href="#"><cq:text property="title" default="Drawer" escapeXml="false"/></a>
@@ -65,23 +65,23 @@ pageContext.setAttribute("parsysCount",IntelUtil.getParsysNumber(resource));
 			</div>		
 		</div>
 	</li>
-<!-- Generic Content Component Product Showcase -->
+	<%-- Generic Content Component Product Showcase  --%>
 </c:if>
 
 <c:if test="${contentstyle eq 'genericcontentpdetail'}">
-<!-- Generic Content Component Product Detail -->
+<%-- Generic Content Component Product Detail --%>
 	<li>
 		<h5 class = "<c:out value="${pageScope.properties.drawerState}" default="closed" escapeXml="false" />">
 			<a href="#"><cq:text property="title" default="Drawer" /></a>
 		</h5>
 		<cq:include path="drawer" resourceType="foundation/components/parsys" />
 	</li>
-<!-- Generic Content Component Product Detail -->
+	<%-- Generic Content Component Product Detail --%>
 </c:if>
 
 
 <c:if test="${contentstyle eq 'imageandvideo'}">
-<!--  Image & Video -->
+<%-- Image & Video --%>
 <li>
 	<h5 class = "<c:out value="${pageScope.properties.drawerState}" default="closed" escapeXml="false" />">
 		<a href="#"><cq:text property="title" default="Images &amp; Videos" /></a>
@@ -92,11 +92,11 @@ pageContext.setAttribute("parsysCount",IntelUtil.getParsysNumber(resource));
 		</ul>
 	</div>
 </li>
-<!--  Image & Video -->
+<%-- Image & Video --%>
 </c:if>		    			
 
 <c:if test="${contentstyle eq 'showcasefeaturespotlight'}">
-<!--  Showcase Feature Spotlight -->
+<%-- Showcase Feature Spotlight --%>
 <li>
 	<h5 class = "<c:out value="${pageScope.properties.drawerState}" default="closed" escapeXml="false" />">
 		<a href="#"><cq:text property="title" default="Drawer" escapeXml="false"/></a>
@@ -105,11 +105,11 @@ pageContext.setAttribute("parsysCount",IntelUtil.getParsysNumber(resource));
 		<cq:include path="drawershowcasefeature" resourceType="foundation/components/parsys" />
 	</div>
 </li>
-<!--  Showcase Feature Spotlight -->
+<%-- Showcase Feature Spotlight --%>
 </c:if>
 
 <c:if test="${contentstyle eq 'cmslink1'}">
-<!--  CMS Link 1  -->
+<%-- CMS Link 1 --%>
 <li>
 	<h5 class = "<c:out value="${pageScope.properties.drawerState}" default="closed" escapeXml="false" />">
 		<a href="#"><cq:text property="title" default="Drawer" escapeXml="false"/></a>
@@ -120,12 +120,12 @@ pageContext.setAttribute("parsysCount",IntelUtil.getParsysNumber(resource));
 		
 	</div>
 </li>
-<!--  CMS Link 1  -->
+<%-- CMS Link 1  --%>
 </c:if>
 
 
 <c:if test="${contentstyle eq 'articlelanding'}">
-<!-- Article Landing  Content-->
+<%-- Article Landing  Content --%>
 	<li>
 		<h5 class = "<c:out value="${pageScope.properties.drawerState}" default="closed" escapeXml="false" />">
 			<a href="#"><cq:text property="title" default="Drawer" escapeXml="false"/>
@@ -150,29 +150,29 @@ pageContext.setAttribute("parsysCount",IntelUtil.getParsysNumber(resource));
 						resourceType="foundation/components/parsys" />
 				</div>
 		</li>
-<!--  Article Landing Content-->
+<%-- Article Landing Content --%>
 </c:if>
 
 
 <c:if test="${contentstyle eq 'articlelandingvideo'}">
-<!-- Article Landing  Video-->
+<%-- Article Landing  Video --%>
 	<li>
 		<h5 class = "<c:out value="${pageScope.properties.drawerState}" default="closed" escapeXml="false" />">
 			<a href="#"><cq:text property="title" default="Drawer" escapeXml="false"/>
 			</a>
 		</h5>
 				<div class="videoplayer content">
-				 <!-- Article Landing Video Componet Include Start -->
+				<%-- Article Landing Video Componet Include Start --%>
 				 <cq:include path="articleLandingVideo" resourceType="intelmobile/components/content/articlelandingvideo"/>
-				 <!-- Article Landing Video Componet Include End -->
+				 <%-- Article Landing Video Componet Include End --%>
 				</div>
 		</li>
-<!--  Article Landing Video-->
+		<%-- Article Landing Video --%>
 </c:if>
 
 
 <c:if test="${contentstyle eq 'articledetailcontent'}">
-<!--  Article Detail Content-->
+<%-- Article Detail Content --%>
 	<li>
 		<div class="border-list content">
 			<div class="items">
@@ -183,10 +183,10 @@ pageContext.setAttribute("parsysCount",IntelUtil.getParsysNumber(resource));
 				<cq:include path="articledetailContent" resourceType="foundation/components/parsys"/>
 			</div>
 		</div></li>
-<!--  Article Detail Content-->
+		<%-- Article Detail Content --%>
 </c:if>
 <c:if test="${contentstyle eq 'genericcontentfeatures'}">
-<!-- Generic Content Component Features -->
+<%-- Generic Content Component Features --%>
 	<li>
 		<h5 class = "<c:out value="${pageScope.properties.drawerState}" default="closed" escapeXml="false" />">
 			<a href="#"><cq:text property="title" default="Drawer" /></a>
@@ -195,6 +195,6 @@ pageContext.setAttribute("parsysCount",IntelUtil.getParsysNumber(resource));
 		<cq:include path="drawer" resourceType="foundation/components/parsys" />
 		</ul>
 	</li>
-<!-- Generic Content Component Features -->
+	<%-- Generic Content Component Features --%>
 </c:if>
 </div>
