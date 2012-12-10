@@ -46,18 +46,56 @@
 				<div class="shop-spot-content-container">
 					<!-- NOTE: this href value needs to be the final of the spec shuffleboard page in prod -->
 					<a href="<c:out value="${suffleboardUrl}" />" data=""
-						class="shop-spot-product"> <img
-						src="/etc/designs/intelmobile/img/decision/shuffleboard_large.png" />
+						class="shop-spot-product">
+						
+						<img
+						src="/etc/designs/intelmobile/img/decision/shuffleboard_small.png" />
+						<div class="img-box">
+							<div class="img-txt">Spec Shuffleboard</div>
+							
+						</div>
+						<div class="img-desc">
+								Find The PC Specs That Fit You.
+							</div>
+						
+						<!--
+						<div style="width:110px;height:20px;border:1px solid red;background:#ccc;margin-left:-14px;padding:4px;text-align:center;">
+							Shuffle Board
+						</div>
+						-->
+						
 					</a>
 					<!-- NOTE: this href value needs to be the final of the core metaphors page in prod -->
 					<a href="<c:out value="${metaphoresUrl}" />" data=""
-						class="shop-spot-product"> <img
-						src="/etc/designs/intelmobile/img/decision/core_metaphors_large.png" />
+						class="shop-spot-product"> 
+						
+						<img
+						src="/etc/designs/intelmobile/img/decision/core_metaphors_small.png" />
+						<div class="img-box">
+							<div class="img-txt">Core Metaphors</div>
+
+						</div>
+							<div class="img-desc">
+								Learn About Intel Core Processors.
+							</div>
+						
+						
 					</a>
 					<!-- NOTE: this href value needs to be the final of the meet ultrabook page in prod -->
 					<a href="<c:out value="${ultrabookUrl}" />" data=""
-						class="shop-spot-product"> <img
-						src="/etc/designs/intelmobile/img/decision/ultrabook_large.png" />
+						class="shop-spot-product"> 
+						
+						<img
+						src="/etc/designs/intelmobile/img/decision/ultrabook_small.png" />
+						<div class="img-box">
+							
+							<div class="img-txt">Meet Ultrabook™</div>
+							
+						</div>
+						<div class="img-desc">
+								Explore The Possibilities.
+						</div>
+						
 					</a>
 				</div>
 			</div>
@@ -67,3 +105,29 @@
 	</div>
 	<!-- end spec  app -->
 </div>
+
+<script>
+	
+	$(document).ready(function(){
+    
+	$(".img-txt").each(function(index) {
+		//alert(index + ': ' + $(this).height());
+		
+		var ch=$(this).height();
+		var ph = $(this).parent().height();
+		
+	
+		var mh = (ph - ch) / 2;
+		$(this).css('padding-top', mh);
+		
+	});
+    /*
+	var ph=$(".img-box").height();
+	
+	alert("ph: "+ph);
+	var ch=$(".img-txt").height();
+	alert("ch: "+ch);
+	*/
+    
+});
+</script>
