@@ -176,6 +176,7 @@ function resizeUB()
 {
 	$(".space-2.vertical").attr("style","display: block !important");
 	$(".space-2.imgland").attr("style","display: none !important");
+	$(".ultrabook .space.space-2").attr("style","height:350px");
 }
 </script>
 <%
