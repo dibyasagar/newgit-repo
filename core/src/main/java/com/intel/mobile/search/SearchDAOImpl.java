@@ -116,7 +116,13 @@ public class SearchDAOImpl implements ISearchDAO {
             connection.connect();
                       
             //read the result from the server
-            rd  = new BufferedReader(new InputStreamReader(connection.getInputStream(),"UTF-8"));
+            LOG.info("connection.getResponseCode() :"+connection.getResponseCode());
+            if (connection.getResponseCode() == 200){
+            	rd  = new BufferedReader(new InputStreamReader(connection.getInputStream(),"UTF-8"));
+            } else {
+            	rd  = new BufferedReader(new InputStreamReader(connection.getErrorStream(),"UTF-8"));
+            }
+            //rd  = new BufferedReader(new InputStreamReader(connection.getInputStream(),"UTF-8"));
             sb = new StringBuilder();
           
             while ((line = rd.readLine()) != null)
@@ -124,6 +130,8 @@ public class SearchDAOImpl implements ISearchDAO {
                 sb.append(line + '\n');
             }
             String searchResult =  sb.toString();
+            LOG.info("searchResult :"+searchResult);
+            if(searchResult!=null && searchResult.contains("[") && searchResult.contains("]")){       
                    searchResult = searchResult.substring(searchResult.indexOf("[")+1, searchResult.indexOf("]"));
                    searchResult = searchResult.replace("\"","");
                    LOG.debug("searchResult without quotes :"+searchResult);
@@ -133,7 +141,8 @@ public class SearchDAOImpl implements ISearchDAO {
        		        
                 	   resultList.add(st1.nextToken());
        		    }
-                   LOG.debug("searchResult final :"+resultList);
+            }
+                   LOG.info("searchResult final :"+resultList);
                    
         } 
         catch (MalformedURLException e) {
