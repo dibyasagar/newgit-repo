@@ -36,14 +36,20 @@ public class ContactUsMailServlet extends SlingAllMethodsServlet{
 		String fromAddress = request.getParameter("fromAddress");
 		String toAddress = request.getParameter("toAddress");
 		String signupInfo = request.getParameter("signup");
-		
-			
+		String firstName=request.getParameter("firstName");
+		String datetime=request.getParameter("datetime");
+		//String body= datetime + firstName + fromAddress + signupInfo;
+		StringBuffer body = new StringBuffer();
+		body.append("Date/Time: ").append(datetime).append("\n");
+		body.append("Name: ").append(firstName).append("\n");
+		body.append("Email: ").append(fromAddress).append("\n");
+		body.append("Subscription: ").append(signupInfo).append("\n");
+		String subject=request.getParameter("subject");	
 		LOGGER.info("fromAddress : "+fromAddress);
 		LOGGER.info("toAddress : "+toAddress);
 		LOGGER.info("signupInfo :"+signupInfo);
-		
-		
-		Status status=IntelUtil.sendMail(toAddress,fromAddress, "Test Mail",signupInfo, null, null, "", "");
+		LOGGER.info("body :"+body.toString());
+		Status status=IntelUtil.sendMail(toAddress,fromAddress,subject,body.toString(), null, null, "", "");
 		LOGGER.info("You have successfully made Ajax Call:" + toAddress);
 		LOGGER.info("status : "+status);
 		
