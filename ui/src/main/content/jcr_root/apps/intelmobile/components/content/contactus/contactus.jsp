@@ -242,7 +242,7 @@
       var fromAddress= $('#email').attr('value');
        var toAddress= $('#toAddress').attr('value');
        var firstName=$('#fName').attr('value');
-      alert(firstName);
+      //alert(firstName);
        var currenturl=window.location.href;
        currenturl=currenturl.substring(7);
        var e = document.getElementById("question-submenu");
