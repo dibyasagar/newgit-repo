@@ -50,26 +50,43 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
                                             
                                 </div>
                             </div>
-<div  style="display:none" id="mailerr">
-            <h4  display=false backgroundcolor="#FF0000"> Enter a valid email id</h4> 
-  </div>
+<div id="wrongemail" style="display:none">
+                                       <h3  display=false backgroundcolor="##FF0000"><c:if test="${properties.wrongemail ne '' && not empty properties.wrongemail }">
+                    <c:out value="${properties.wrongemail }" escapeXml="false"/>
+              
+                </c:if></h3>
+</div>
+<div  style="display:none" id="errpopup">
+            <h3  display=false backgroundcolor="#8B8989"><c:if test="${properties.systemerror ne '' && not empty properties.systemerror }">
+                    <c:out value="${properties.systemerror}" escapeXml="false"/>
+              
+                </c:if></h3>
+            </div>            
+ <div id="blankemail" style="display:none">
+                                       <h3  display=false backgroundcolor="##FF0000"><c:if test="${properties.blankemail ne '' && not empty properties.blankemail }">
+                    <c:out value="${properties.blankemail }" escapeXml="false"/>
+              
+                </c:if></h3>
+</div>
+ 
 <input type="hidden" id="fromemailaddr" name="fromemail" value="<%=properties.get("source",String.class)%>" />                                     
 <input type="hidden" id="toemailaddr" name="toemail" value="<%=properties.get("destination",String.class)%>" />                                        
-<input type="hidden" id="emailbody" name="body" value="<%=properties.get("hpcdescription",String.class)%>" />                                            
-<input type="hidden" id="signupinfo" name="signup" value="<%=properties.get("signup",String.class)%>" />   
-<input type="hidden" id="signupchecked" name="signupchecked" value="<%=properties.get("signupchecked",String.class)%>" />                            
-<input type="hidden" id="signupunchecked" name="signupunchecked" value="<%=properties.get("signupunchecked",String.class)%>" />                            
+<input type="hidden" id="emailbody" name="body" value="<%=properties.get("mailbody",String.class)%>" />                                            
+                           
                             <div class="items">
                                 <div class="item">
                                     <table class="contact-table">
                                         <tbody><tr>
                                             <td>
                                                 <div class="text-input">
-                                                    <input id="email" name="email" type="text" class="text" placeholder="Email Address">
+                                                    <input id="email" name="email" type="text" class="text" placeholder=" <c:out value="${properties.emaildefault}"/>">
                                                 </div>
                                             </td>
                                             <td>
-                                                     <li class="compare-btn email-btn"><a href="#" id="submit" class="button primary" title="Submit">Submit</a></li>
+                                                     <li class="compare-btn email-btn"><a href="#" id="submit" class="button primary"><c:if test="${properties.submit ne '' && not empty properties.submit }">
+                    <c:out value="${properties.submit }" escapeXml="false"/>
+              
+                </c:if></a></li>
 
                                           
                                             </td>
@@ -79,51 +96,17 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
                                             
                                 </div>
                                 
-                                <div class="item">
-                                        <table>
-                                        <tbody><tr>
-                                        <td width="8%">
-                                            <!--<div class="text-input">-->
-                                            <input id="signme" name="signme" type="checkbox" class="text">
-                                            <!--</div>-->
-                                        </td>
-                                        
-                                        <td valign="top">
-                                        <div class="chbox-label">   
-                                        <h3 class="form-label">
-  <c:if test="${properties.signup ne '' && not empty properties.signup }">
-                    <c:out value="${properties.signup}"/>
-                </c:if></h3>
-                                        </div>
-                                        </td>
-                                        </tr></tbody></table>
-                                        
-                                    </div>  
  <div  style="display:none" id="popup">
-            <h3  display=false backgroundcolor="#8B8989"> Email was successfully sent</h3>
+            <h3  display=false backgroundcolor="#8B8989"><c:if test="${properties.successcopy ne '' && not empty properties.successcopy }">
+                    <c:out value="${properties.successcopy }" escapeXml="false"/>
+              
+                </c:if></h3>
   </div 
+  
+ 
  </form>                                  
-                                    <div class="email-url">
-                                        <div class="grad">
-                                            <ul class="item">
-                                                <li>
-                                                <a href="<c:out value="${properties.learnlink}"/>">
-  <c:if test="${properties.learnmore ne '' && not empty properties.learnmore }">
-                    <c:out value="${properties.learnmore}"/>
-                </c:if></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                             
-                                        <div class="grad contact-grad">
-                                        <li class="compare-btn"><a href="<c:out value="${properties.contactlink}"/>" class="button primary" title="Submit">Contact Us</a></li>
-                                        </div>
+                                 
                                     </div>
-                                    <div class="item">
-                                        
-                                    </div>
-                                    
-                            </div>
                         </div> 
                   
                 </div>
@@ -131,29 +114,27 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
    </div>         
  <script>
 $("#submit").click(function() {
-function verifyEmail(){
-$('#mailerr').hide();
-var status ="";     
-var emailRegEx = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-     if (document.emailForm.email.value.search(emailRegEx) == -1) {
-         status="wrong";
-       
-     } 
-else
-status="right";
- return status;
- }
-function validate(){
-  var remember = document.getElementById('signme');
-  var msg="";
-  if (signme.checked){
-   msg= $('#signupchecked').attr('value');
-  }else{
-    msg= $('#signupunchecked').attr('value'); 
-  }
-return msg;
-}
-var signconfirm=validate();
+  $('#blankemail').hide();
+  $('#wrongemail').hide();
+    $('#mailerr').hide();
+function checkEmail() { 
+     //alert("hi");
+      var sEmail = $('#email').val();
+      var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+     if(sEmail=="" || sEmail== null){
+      $('#blankemail').show();
+         return false;
+    }
+     else{ 
+      if (!filter.test(sEmail) ) {
+          $('#wrongemail').show();
+         return false;
+    }
+      else
+          $('#wrongemail').hide();
+           return true;
+      }
+     }
 var failure = function(err) {
       alert("Unable to send mail "+err);
         // TODO - clear the form
@@ -164,17 +145,19 @@ var toemailaddr= $('#toemailaddr').attr('value');
 var emailbody= $('#emailbody').attr('value'); 
 var signupinfo= $('#signupinfo').attr('value'); 
 var useremail= $('#email').attr('value');
-var mailvalidate=verifyEmail();
-if(mailvalidate=="right"){
+var mailvalidate=checkEmail();
+if(mailvalidate){
 $.ajax({
         type: "POST",
         url: "/bin/HPCEmail",
-        data: "fromemail="+ fromemailaddr+ "&toemail="+ toemailaddr+ "&body=" + emailbody+ "&signup=" + signconfirm + "&email=" + useremail,
+        data: "fromemail="+ fromemailaddr+ "&toemail="+ useremail + "&body=" + emailbody + "&email=" + useremail,
         success: function(){
+            alert("success");
             $('#popup').show();
              $('#popup').fadeOut(5000); 
             },
     error: function(xhr, status, err) { 
+            $('#errpopup').show();
             failure(err);
         } 
     }); // End .ajax fucntion 
@@ -184,4 +167,4 @@ $('#mailerr').show();
 return false;
 }); 
 </script>  
-                                                  
+                                                   
