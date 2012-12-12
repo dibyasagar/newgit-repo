@@ -109,7 +109,7 @@
                         xtype="textfield"/>
                     <checkbox
                         jcr:primaryType="cq:Widget"
-                        allowBlank="{Boolean}false"
+                        allowBlank="{Boolean}true"
                         fieldDescription="Subscription Option Label"
                         fieldLabel="Checkbox  Label"
                         name="./checkbox"

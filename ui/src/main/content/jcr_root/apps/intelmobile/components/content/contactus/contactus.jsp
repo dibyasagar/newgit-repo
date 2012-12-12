@@ -5,8 +5,9 @@
 <%@page import="com.day.cq.wcm.api.WCMMode"%>
 <%@include file="/libs/foundation/global.jsp"%>
 <%@page session="false"%>
-<div id="main" role="main">
-        <%
+
+ <div id="main" role="main">
+            <%
  pageContext.setAttribute("wcmMode",WCMMode.fromRequest(request));
  if(WCMMode.fromRequest(request) == WCMMode.EDIT) {
     %>       
@@ -17,8 +18,8 @@
  String question[] = new String[questionCount];
  pageContext.setAttribute("questionArray",properties.get("question", question));
    
- %>     
-			<div id="email-component" class="article-detail">
+ %> 
+            <div id="email-component" class="article-detail">
                 <h1>Intel� High Performance Computing</h1>
                     
                 <div class="sections">
@@ -80,6 +81,7 @@
               
                 </c:if></h3>
                                                 </div>
+                                       <%if(questionCount>1){%>   
                                             <div class="selectbox">
                         
                                                 <div id="sel-question">
@@ -95,6 +97,25 @@
                                                 </select>
                                             </div>
                                         </div>
+                                   <%}
+                                  else{%> 
+                                  <style>
+                                     #question  {
+                                           color:grey;
+                                                  }
+
+                                             </style>
+                        <div id="question"> 
+                                                   
+                                                    <c:forEach var="element" items="${questionArray}" varStatus="row">
+                                                     <c:out value="${questionArray[row.index]}" />
+                                                    </c:forEach>
+                                               
+                                            </div>
+                                        
+                                   
+                                   <%}%>
+                                   
                                     </div>
                                 </div>
                                 <div class="item">
@@ -164,7 +185,7 @@
                                     </div>  
                </c:if>                     
                                     <div class="item">
-                                        <li class="compare-btn"><a href="#" class="button primary" id="submit" title="Submit"><c:if test="${properties.submit ne '' && not empty properties.submit }">
+                                        <li class="compare-btn"><a href="#" class="button primary" id="submit"><c:if test="${properties.submit ne '' && not empty properties.submit }">
                     <c:out value="${properties.submit}" escapeXml="false"/>
               
                 </c:if></a></li>
@@ -224,16 +245,18 @@
     }
       function validate(){
           var remember = document.getElementById('signme');
-          var msg="";
+          var msg=null;
+          if(remember!=null){
           if (signme.checked){
            msg= "Yes";
           }else{
             msg="No"; 
           }
+       }
         return msg;
         }
       var signconfirm=validate();
-             
+            
          var failure = function(err) {
              alert("Unable to send mail "+err);
             // TODO - clear the form
@@ -246,8 +269,11 @@
        var currenturl=window.location.href;
        currenturl=currenturl.substring(7);
        var e = document.getElementById("question-submenu");
+       if(e!=null)
        var strUser = e.options[e.selectedIndex].text;
-       var subject= strUser+currenturl;
+      else
+      strUser=$('#question').attr('value');
+       var subject= strUser + " " + currenturl;
        var datetime = new Date();
        //alert(datetime );
        var namevalidate=validateName();
@@ -256,7 +282,7 @@
      // alert(currenturl);
        if(namevalidate && mailvalidate && selectvalidate){ 
            
-          
+       if(signconfirm!=null){   
        $.ajax({
          type: "POST",
          url: "/bin/contactUs",
@@ -271,6 +297,24 @@
           failure(err);
         } 
       }); // End .ajax fucntion 
+    }
+   else{
+     $.ajax({
+         type: "POST",
+         url: "/bin/contactUs",
+         data: "datetime="+ datetime + "&subject="+ subject + "&firstName="+ firstName + "&fromAddress="+ fromAddress+ "&toAddress="+ toAddress,
+         success: function(){
+            $('#popup').show();
+             $('#popup').fadeOut(5000); 
+            },
+         error: function(xhr, status, err) { 
+          
+         $('#errpopup').show();
+          failure(err);
+        } 
+      }); // End .ajax fucntion 
+    }
+    
      } 
        
       return false;
