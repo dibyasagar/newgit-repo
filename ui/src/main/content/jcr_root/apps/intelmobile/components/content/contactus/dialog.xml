@@ -10,42 +10,19 @@
         <items jcr:primaryType="cq:WidgetCollection">
             <tab1
                 jcr:primaryType="cq:Panel"
-                title="Title Details">
+                title="Heading">
                 <items jcr:primaryType="cq:WidgetCollection">
                     <contactusheading
                         jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
                         fieldLabel="Contact Us Heading"
                         name="./contactusheading"
                         xtype="textfield"/>
-                    <namelabel
+                    <contactussubheading
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="Name Label"
-                        name="./namelabel"
-                        xtype="textfield"/>
-                    <questionlabel
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Question label"
-                        name="./questionlabel"
-                        xtype="textfield"/>
-                    <emaillabel
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Email label"
-                        name="./emaillabel"
-                        xtype="textfield"/>
-                    <signmetext
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Sign me Text"
-                        name="./signmetext"
-                        xtype="textfield"/>
-                    <dontsignmetext
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Sign me Text"
-                        name="./dontsignmetext"
-                        xtype="textfield"/>
-                    <destinationmailaddr
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Destination Email Address"
-                        name="./destinationmailaddr"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Contact Us SubHeading"
+                        name="./subheading"
                         xtype="textfield"/>
                 </items>
             </tab1>
@@ -57,7 +34,7 @@
                         jcr:primaryType="cq:Widget"
                         customMultiFieldName="./questions"
                         fieldDescription="Click '+' to add a new question"
-                        fieldLabel="question"
+                        fieldLabel="Question"
                         maxItems="20"
                         name="./questions"
                         xtype="custommultifield">
@@ -72,6 +49,125 @@
                     </hero>
                 </items>
             </pagelisttab>
+            <tab2
+                jcr:primaryType="cq:Panel"
+                title="Name info">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <namelabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Name Field Label"
+                        fieldLabel="Name Label"
+                        name="./namelabel"
+                        xtype="textfield"/>
+                    <defaultname
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Default Name Copy"
+                        fieldLabel="Default Name"
+                        name="./defaultname"
+                        xtype="textfield"/>
+                </items>
+            </tab2>
+            <tab3
+                jcr:primaryType="cq:Panel"
+                title="DropDown info">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <dropdownlabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Topic Dropdown Label"
+                        fieldLabel="Dropdown  Label"
+                        name="./dropdownlabel"
+                        xtype="textfield"/>
+                    <defaulttext
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Default Dropdown Text"
+                        fieldLabel="Default Text"
+                        name="./dropdowndefault"
+                        xtype="textfield"/>
+                </items>
+            </tab3>
+            <tab4
+                jcr:primaryType="cq:Panel"
+                title="Email info">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <emaillabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Email Label"
+                        fieldLabel="Email Address  Label"
+                        name="./emaillabel"
+                        xtype="textfield"/>
+                    <defaultemail
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Default Email Copy"
+                        fieldLabel="Default Email Copy"
+                        name="./defaultemail"
+                        xtype="textfield"/>
+                    <checkbox
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Subscription Option Label"
+                        fieldLabel="Checkbox  Label"
+                        name="./checkbox"
+                        xtype="textfield"/>
+                    <submit
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Submit Button Copy"
+                        fieldLabel="Submit Button Copy"
+                        name="./submit"
+                        xtype="textfield"/>
+                    <destination
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Destination Email Address"
+                        fieldLabel="Destination Email Address"
+                        name="./destination"
+                        xtype="textfield"/>
+                </items>
+            </tab4>
+            <tab5
+                jcr:primaryType="cq:Panel"
+                title="Success and Errors ">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <success
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Success Copy"
+                        name="./successcopy"
+                        xtype="textfield"/>
+                    <blankname
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Blank name Error copy"
+                        name="./blankname"
+                        xtype="textfield"/>
+                    <blankemail
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Blank Email Error Copy"
+                        name="./blankemail"
+                        xtype="textfield"/>
+                    <wrongemail
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Wrong Email Error Copy"
+                        name="./wrongemail"
+                        xtype="textfield"/>
+                    <notopic
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="No Topic Error Copy"
+                        name="./notopic"
+                        xtype="textfield"/>
+                    <error
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="General Error Message"
+                        name="./systemerror"
+                        xtype="textfield"/>
+                </items>
+            </tab5>
         </items>
     </items>
 </jcr:root>

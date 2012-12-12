@@ -18,181 +18,257 @@
    
  %> 
  <div id="main" role="main">
-	    	<div id="email-component" class="article-detail">
-		    	<h1>Intel® High Performance Computing</h1>
-                	
-		    	<div class="sections">
+            <div id="email-component" class="article-detail">
+                <h1>Intelï¿½ High Performance Computing</h1>
+                    
+                <div class="sections">
                     
                             <div class="border-list content">
                                 <div class="items">
                                    
                                     <div class="item">
-                                        <h3 class="headTitle"><c:out value="${properties.contactusheading}" escapeXml="false"/></h3>
-										
+                                        <h3 class="headTitle"><c:if test="${properties.contactusheading ne '' && not empty properties.contactusheading }">
+                    <c:out value="${properties.contactusheading}" escapeXml="false"/>
+              
+                </c:if></h3>
+                                        
                                         
                                     </div>
-									
-									 <div class="item">
+                                    
+                                     <div class="item">
                                        
-										<h3 class="descTitle">Complete the fields below to get more detailed information about Intel HPC solutions.</h3>
+                                        <h3 class="descTitle"><c:if test="${properties.subheading ne '' && not empty properties.subheading }">
+                    <c:out value="${properties.subheading}" escapeXml="false"/>
+              
+                </c:if></h3>
                                         
                                     </div>
-									<form id="email-form" name="email-form" action="" method="POST">
-									<div class="item">
-										<div class="grad">
-											<h3 class="form-label"><c:out value="${properties.namelabel}" escapeXml="false"/></h3>
-										</div>
-									</div>
-									<div class="item">
-									 <div id="errname" style="display:none">
-									   <h3  display=false backgroundcolor="##FF0000">Please enter name.</h3>
-									 </div>  
-										<div class="text-input">
-											<input id="fName" name="fName" type="text" class="text">
-										</div>
-									</div>
-									
-									<div class="item">
-										
-										<h3 class="form-label"><c:out value="${properties.questionlabel}" escapeXml="false"/></h3>
-										
-									</div>
-									<div class="item">
-										<div class="toolbar">
-										<div id="erroption" style="display:none">
-									              <h3  display=false backgroundcolor="##FF0000">Please select an option.</h3>
-									            </div>
-											<div class="selectbox">
-		    			
-												<div id="sel-question">
-												
-												<select id="question-submenu">
-													<option value="">Select one</option>
-													<c:forEach var="element" items="${questionArray}" varStatus="row">
-													 <option value="#url_goes_here"><c:out value="${questionArray[row.index]}" /></option>
-													</c:forEach>
-												</select>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-										
-											<h3 class="form-label"><c:out value="${properties.emaillabel}" escapeXml="false"/></h3>
-										
-									</div>
-									
-									<div class="item">
-									 <div id="erremail" style="display:none">
-									   <h3  display=false backgroundcolor="##FF0000">Please enter valid email address.</h3>
-									 </div>
-										<div class="text-input">
-											<input id="email" name="email" type="email" class="text" placeholder="Email Address">
-											<input type="hidden" name="toAddress" id="toAddress" value="${properties.destinationmailaddr}">
-											<input type="hidden" id="signupchecked" name="signupchecked" value="${properties.signmetext}" />                            
+                                    <form id="email-form" name="email-form" action="" method="POST">
+                                    <div class="item">
+                                        <div class="grad">
+                                            <h3 class="form-label"><c:if test="${properties.namelabel ne '' && not empty properties.namelabel }">
+                    <c:out value="${properties.namelabel}" escapeXml="false"/>
+              
+                </c:if></h3>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                     <div id="errname" style="display:none">
+                                       <h3  display=false backgroundcolor="##FF0000"><c:if test="${properties.blankname ne '' && not empty properties.blankname }">
+                    <c:out value="${properties.blankname}" escapeXml="false"/>
+              
+                </c:if></h3>
+                                     </div>  
+                                        <div class="text-input">
+                                                  <input id="fName" name="fName" type="text" class="text" placeholder="<c:out value="${properties.defaultname}"/>"/>
+                                                </div>
+                                    </div>
+                                    
+                                    <div class="item">
+                                        
+                                        <h3 class="form-label"><c:if test="${properties.dropdownlabel ne '' && not empty properties.dropdownlabel }">
+                    <c:out value="${properties.dropdownlabel}" escapeXml="false"/>
+              
+                </c:if></h3>
+                                        
+                                    </div>
+                                    <div class="item">
+                                        <div class="toolbar">
+                                        <div id="erroption" style="display:none">
+                                                  <h3  display=false backgroundcolor="##FF0000"><c:if test="${properties.notopic ne '' && not empty properties.notopic }">
+                    <c:out value="${properties.notopic}" escapeXml="false"/>
+              
+                </c:if></h3>
+                                                </div>
+                                            <div class="selectbox">
+                        
+                                                <div id="sel-question">
+                                                
+                                                <select id="question-submenu">
+                                                    <option value=""><c:if test="${properties.dropdowndefault ne '' && not empty properties.dropdowndefault }">
+                    <c:out value="${properties.dropdowndefault}" escapeXml="false"/>
+              
+                </c:if></option>
+                                                    <c:forEach var="element" items="${questionArray}" varStatus="row">
+                                                     <option value="#url_goes_here"><c:out value="${questionArray[row.index]}" /></option>
+                                                    </c:forEach>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                        
+                                            <h3 class="form-label"><c:if test="${properties.emaillabel ne '' && not empty properties.emaillabel  }">
+                    <c:out value="${properties.emaillabel }" escapeXml="false"/>
+              
+                </c:if></h3>
+                                        
+                                    </div>
+                                    
+                                    <div class="item">
+                                     <div id="erremail" style="display:none">
+                                       <h3  display=false backgroundcolor="##FF0000"><c:if test="${properties.wrongemail ne '' && not empty properties.wrongemail }">
+                    <c:out value="${properties.wrongemail }" escapeXml="false"/>
+              
+                </c:if></h3>
+                                     </div>
+                            <div id="blankemail" style="display:none">
+                                       <h3  display=false backgroundcolor="##FF0000"><c:if test="${properties.blankemail ne '' && not empty properties.blankemail }">
+                    <c:out value="${properties.blankemail }" escapeXml="false"/>
+              
+                </c:if></h3>
+                                     </div>            
+                                       
+                                        <div class="text-input">
+                                            <input id="email" name="email" type="email" class="text" placeholder="<c:out value="${properties.defaultemail}"/>"/>
+                                             <input type="hidden" name="toAddress" id="toAddress" value="${properties.destination}">
+                                            <input type="hidden" id="signupchecked" name="signupchecked" value="${properties.signmetext}" />                            
                                             <input type="hidden" id="signupunchecked" name="signupunchecked" value="${properties.dontsignmetext}" />
-										</div>
-									</div>
-									<div class="item">
-										<table>
-										<tr>
-										<td width="8%">
-											<!--<div class="text-input">-->
-											<input id="signme" name="signme" type="checkbox" class="text">
-											<!--</div>-->
-										</td>
-										
-										<td valign="top">
-										<div class="chbox-label" id="chbox-label">	
-										<h3 class="form-label"><c:out value="${properties.signmetext}" escapeXml="false"/></h3>
-										</div>
-										</td>
-										</tr></table>
-										
-									</div>	
-									<div class="item">
-										<li class="compare-btn"><a href="#" class="button primary" id="submit" title="Submit">Submit</a></li>
-									</div>
-									</form>	
-									</div>
-									
+                                        </div>
+                                    </div>
+                               <div  style="display:none" id="popup">
+            <h3  display=false backgroundcolor="#8B8989"><c:if test="${properties.successcopy ne '' && not empty properties.successcopy }">
+                    <c:out value="${properties.successcopy}" escapeXml="false"/>
+              
+                </c:if></h3>
+            </div>     
+                           <div  style="display:none" id="errpopup">
+            <h3  display=false backgroundcolor="#8B8989"><c:if test="${properties.systemerror ne '' && not empty properties.systemerror }">
+                    <c:out value="${properties.systemerror}" escapeXml="false"/>
+              
+                </c:if></h3>
+            </div>             
+                                   
+                                    <c:if test="${properties.checkbox ne '' && not empty properties.checkbox }">
+                    
+                        <div class="item">
+                                        <table>
+                                        <tr>
+                                        <td width="8%">
+                                            <!--<div class="text-input">-->
+                                            <input id="signme" name="signme" type="checkbox" class="text">
+                                            <!--</div>-->
+                                        </td>
+                                        
+                                        <td valign="top">
+                                        <div class="chbox-label" id="chbox-label">  
+                                        <h3 class="form-label"><c:if test="${properties.checkbox ne '' && not empty properties.checkbox }">
+                    <c:out value="${properties.checkbox}" escapeXml="false"/>
+              
+                </c:if></h3>
+                                        </div>
+                                        </td>
+                                        </tr></table>
+                                        
+                                    </div>  
+               </c:if>                     
+                                    <div class="item">
+                                        <li class="compare-btn"><a href="#" class="button primary" id="submit" title="Submit"><c:if test="${properties.submit ne '' && not empty properties.submit }">
+                    <c:out value="${properties.submit}" escapeXml="false"/>
+              
+                </c:if></a></li>
+                                    </div>
+                                    </form> 
+                                    </div>
+                                    
                                     
                                 </div>
                             </div>
                 </div>
-		</div>        
-		
-		 <div  style="display:none" id="popup">
-            <h3  display=false backgroundcolor="#8B8989"> email was successfully sent</h3>
-            </div>
+        </div>        
+        
+         
         <script>
 
    $("#submit").click(function() {
-	  function checkEmail() { 
-		  var sEmail = $('#email').val();
-	  var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-	  if (!filter.test(sEmail) ) {
-		  $('#erremail').show();
-		 return false;
-	}
-	  else
-		  $('#erremail').hide();
-		   return true;
-	  }
-	  function validateName(){
-		  var name=$('#fName').val();
-		  if(name.length==0){
-			  $('#errname').show();
-			  return false;
-		  }
-		  $('#errname').hide();
-		  return true;
-	  }
-	  function checkOption(){
-		  var option=$('#question-submenu').val();
-		   if(option==""){
-			  $('#erroption').show();
-			   return false;
-		  }
-		   $('#erroption').hide();
-		  return true; 
-	}
-	  function validate(){
-		  var remember = document.getElementById('signme');
-		  var msg="";
-		  if (signme.checked){
-		   msg= $('#signupchecked').val();
-		  }else{
-		    msg= $('#signupunchecked').val(); 
-		  }
-		return msg;
-		}
-	  var signconfirm=validate();
-	         
+      $('#erroption').hide();
+      $('#errname').hide();
+      $('#erremail').hide();
+      $('#blankemail').hide();
+       $('#errpopup').hide();
+      function checkEmail() { 
+      var sEmail = $('#email').val();
+      var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+     if(sEmail=="" || sEmail== null){
+      $('#blankemail').show();
+         return false;
+    }
+     else{ 
+      if (!filter.test(sEmail) ) {
+          $('#erremail').show();
+         return false;
+    }
+      else
+          $('#erremail').hide();
+           return true;
+      }
+     }
+      function validateName(){
+          var name=$('#fName').val();
+          if(name.length==0){
+              $('#errname').show();
+              return false;
+          }
+          $('#errname').hide();
+          return true;
+      }
+      function checkOption(){
+          var option=$('#question-submenu').val();
+           if(option==""){
+              $('#erroption').show();
+               return false;
+          }
+           $('#erroption').hide();
+          return true; 
+    }
+      function validate(){
+          var remember = document.getElementById('signme');
+          var msg="";
+          if (signme.checked){
+           msg= "Yes";
+          }else{
+            msg="No"; 
+          }
+        return msg;
+        }
+      var signconfirm=validate();
+             
          var failure = function(err) {
              alert("Unable to send mail "+err);
             // TODO - clear the form
            };
          // we want to store the values from the form input box, then send via ajax below
-       var fromAddress= $('#email').attr('value');
+      var fromAddress= $('#email').attr('value');
        var toAddress= $('#toAddress').attr('value');
-       
-        var namevalidate=validateName();
+       var firstName=$('#fName').attr('value');
+      alert(firstName);
+       var currenturl=window.location.href;
+       currenturl=currenturl.substring(7);
+       var e = document.getElementById("question-submenu");
+       var strUser = e.options[e.selectedIndex].text;
+       var subject= strUser+currenturl;
+       var datetime = new Date();
+       //alert(datetime );
+       var namevalidate=validateName();
        var mailvalidate=checkEmail();
        var selectvalidate=checkOption(); 
+     // alert(currenturl);
        if(namevalidate && mailvalidate && selectvalidate){ 
-    	   
-    	  
+           
+          
        $.ajax({
          type: "POST",
          url: "/bin/contactUs",
-         data: "fromAddress="+ fromAddress+ "&toAddress="+ toAddress +"&signup=" + signconfirm,
+         data: "datetime="+ datetime + "&subject="+ subject + "&firstName="+ firstName + "&fromAddress="+ fromAddress+ "&toAddress="+ toAddress +"&signup=" + signconfirm,
          success: function(){
             $('#popup').show();
              $('#popup').fadeOut(5000); 
             },
          error: function(xhr, status, err) { 
-            failure(err);
+          
+         $('#errpopup').show();
+          failure(err);
         } 
       }); // End .ajax fucntion 
      } 
@@ -201,49 +277,48 @@
       
   });    
 /*   $(document).ready(function() {
-	  $(".email-form").validate({
-		  alert('entered validate');
-	    rules: {
-	    	fName: {
-	    		required: true,
-	    		minlength: 3// simple rule, converted to {required: true}
-	    	},
-	      email: {             // compound rule
-	      required: true,
-	      email: true
-	      },
-	    },
-	    messages: {
-	    	fName:{
-	    		required : alert('enter name');
-	    minlength : alert('enter name more than 3');
-	    	},
-	    	
-	    	email:  alert('enter email');
-	      },
-	     submitHandler: function(form) {
-	    	 $(form).ajaxSubmit({
-	             type: "POST",
-	             url: "/bin/contactUs",
-	             data: "fromAddress="+ fromAddress+ "&toAddress="+ toAddress,
-	             success: function(){
-	                $('#popup').show();
-	                 $('#popup').fadeOut(5000); 
-	                },
-	             error: function(xhr, status, err) { 
-	                failure(err);
-	            } 
-	          });
-	      }
-	  });
-	});  */ 
+      $(".email-form").validate({
+          alert('entered validate');
+        rules: {
+            fName: {
+                required: true,
+                minlength: 3// simple rule, converted to {required: true}
+            },
+          email: {             // compound rule
+          required: true,
+          email: true
+          },
+        },
+        messages: {
+            fName:{
+                required : alert('enter name');
+        minlength : alert('enter name more than 3');
+            },
+            
+            email:  alert('enter email');
+          },
+         submitHandler: function(form) {
+             $(form).ajaxSubmit({
+                 type: "POST",
+                 url: "/bin/contactUs",
+                 data: "fromAddress="+ fromAddress+ "&toAddress="+ toAddress,
+                 success: function(){
+                    $('#popup').show();
+                     $('#popup').fadeOut(5000); 
+                    },
+                 error: function(xhr, status, err) { 
+                    failure(err);
+                } 
+              });
+          }
+      });
+    });  */ 
 </script>
-		
-		<!--#include file="includes/footer.html"-->
-		<!--#include file="includes/script-includes.html"-->
-		<script type="text/javascript" src="js/plugins.js"></script>		
-		<script type="text/javascript" src="js/example-controller.js"></script> 
-		   
         
+        <!--#include file="includes/footer.html"-->
+        <!--#include file="includes/script-includes.html"-->
+        <script type="text/javascript" src="js/plugins.js"></script>        
+        <script type="text/javascript" src="js/example-controller.js"></script>  
+           
 
-	
+     
