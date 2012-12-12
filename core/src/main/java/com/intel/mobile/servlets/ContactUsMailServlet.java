@@ -43,8 +43,10 @@ public class ContactUsMailServlet extends SlingAllMethodsServlet{
 		body.append("Date/Time: ").append(datetime).append("\n");
 		body.append("Name: ").append(firstName).append("\n");
 		body.append("Email: ").append(fromAddress).append("\n");
+		if(signupInfo!=null)
 		body.append("Subscription: ").append(signupInfo).append("\n");
 		String subject=request.getParameter("subject");	
+		LOGGER.info("Subject : "+subject);
 		LOGGER.info("fromAddress : "+fromAddress);
 		LOGGER.info("toAddress : "+toAddress);
 		LOGGER.info("signupInfo :"+signupInfo);
