@@ -11,7 +11,6 @@ import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 /**
  * @author ggoswa
  *
@@ -45,19 +44,18 @@ public class HPCEnquirymailServlet extends SlingAllMethodsServlet{
 		String useremailAddress = request.getParameter("email");
 		String sourceemailAddress = request.getParameter("fromemail");
 		String destemailAddress = request.getParameter("toemail");
-		String signupInfo = request.getParameter("signup");
+		
 		String mailbody=request.getParameter("body");
 		LOGGER.info("emailAddress : "+useremailAddress);
 		LOGGER.info("source : "+sourceemailAddress);
 		LOGGER.info("destination : "+destemailAddress);
-		LOGGER.info("signup: "+signupInfo);
+		
 		LOGGER.info("mailbody: "+mailbody);
-		StringBuffer destinationemailBody = new StringBuffer();
-		StringBuffer useremailBody = new StringBuffer();
+	    StringBuffer useremailBody = new StringBuffer();
 		useremailBody.append(mailbody).append("\n");
-		destinationemailBody.append(signupInfo).append("\n");
-		IntelUtil.sendMail(useremailAddress, sourceemailAddress, "HPC Enquiry", mailbody.toString(), null, null, "", "");
-		IntelUtil.sendMail(destemailAddress, useremailAddress, "Sign Up?", signupInfo, null, null, "", "");
+		
+		IntelUtil.sendMail(sourceemailAddress, useremailAddress, "HPC Enquiry", mailbody.toString(), null, null, "", "");
+		
       
 	
 	}
