@@ -5,7 +5,8 @@
 <%@page import="com.day.cq.wcm.api.WCMMode"%>
 <%@include file="/libs/foundation/global.jsp"%>
 <%@page session="false"%>
-<%
+<div id="main" role="main">
+        <%
  pageContext.setAttribute("wcmMode",WCMMode.fromRequest(request));
  if(WCMMode.fromRequest(request) == WCMMode.EDIT) {
     %>       
@@ -16,9 +17,8 @@
  String question[] = new String[questionCount];
  pageContext.setAttribute("questionArray",properties.get("question", question));
    
- %> 
- <div id="main" role="main">
-            <div id="email-component" class="article-detail">
+ %>     
+			<div id="email-component" class="article-detail">
                 <h1>Intel� High Performance Computing</h1>
                     
                 <div class="sections">
