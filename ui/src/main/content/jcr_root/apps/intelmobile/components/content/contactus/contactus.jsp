@@ -247,7 +247,7 @@
           var remember = document.getElementById('signme');
           var msg=null;
           if(remember!=null){
-          if (signme.checked){
+          if($('#signme').attr('checked')){
            msg= "Yes";
           }else{
             msg="No"; 
