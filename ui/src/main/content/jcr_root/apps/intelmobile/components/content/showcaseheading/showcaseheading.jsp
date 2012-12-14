@@ -31,7 +31,10 @@ pageContext.setAttribute("openinnewwindow",properties.get("newwindow").toString(
                     <c:if test="${openinnewwindow eq 'no'}">
                       <c:set var="window" value="" />
                     </c:if> 
-		            <h1><cq:text property="title" default="" escapeXml="false"/></h1>    
+		            <c:if test="${openinnewwindow eq null}">
+                      <c:set var="window" value="" />
+                    </c:if>
+					<h1><cq:text property="title" default="" escapeXml="false"/></h1>    
                        <div class="hero">
                        <c:choose>
 							<c:when	test="${properties.heroimageReference ne '' && not empty properties.heroimageReference}">
