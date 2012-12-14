@@ -20,7 +20,7 @@
    
  %> 
             <div id="email-component" class="article-detail">
-                <h1>Intel� High Performance Computing</h1>
+                <h1>Intel High Performance Computing</h1>
                     
                 <div class="sections">
                     
@@ -146,6 +146,7 @@
                                              <input type="hidden" name="toAddress" id="toAddress" value="${properties.destination}">
                                             <input type="hidden" id="signupchecked" name="signupchecked" value="${properties.signmetext}" />                            
                                             <input type="hidden" id="signupunchecked" name="signupunchecked" value="${properties.dontsignmetext}" />
+                                             <input type="hidden" id="singlequestion" name="singlequestion" value="<c:out value="${questionArray[0]}" />"
                                         </div>
                                     </div>
                                <div  style="display:none" id="popup">
@@ -210,7 +211,7 @@
        $('#errpopup').hide();
       function checkEmail() { 
       var sEmail = $('#email').val();
-      var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
      if(sEmail=="" || sEmail== null){
       $('#blankemail').show();
          return false;
@@ -248,7 +249,7 @@
           var msg=null;
           if(remember!=null){
           if($('#signme').attr('checked')){
-           msg= "Yes";
+           msg= "Yes"; 
           }else{
             msg="No"; 
           }
@@ -272,8 +273,9 @@
        if(e!=null)
        var strUser = e.options[e.selectedIndex].text;
       else
-      strUser=$('#question').attr('value');
-       var subject= strUser + " " + currenturl;
+      strUser=$('#singlequestion').attr('value');
+       var subject= strUser + " " + currenturl; 
+       alert(subject);
        var datetime = new Date();
        //alert(datetime );
        var namevalidate=validateName();
