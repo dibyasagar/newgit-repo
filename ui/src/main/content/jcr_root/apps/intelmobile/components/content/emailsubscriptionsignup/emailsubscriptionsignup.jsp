@@ -1,6 +1,6 @@
 <%--
 
-  HPC Enquiry Component. 
+ Email Subscription Signup Component. 
 
   
 
@@ -8,34 +8,22 @@
 %><%@include file="/libs/foundation/global.jsp"%><%
 %><%@page session="false" %><%@page import="com.day.cq.wcm.api.WCMMode"%>
 
-<link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/email.css" media="all">     
-<div id="main" role="main">
-<%
+<link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/email.css" media="all">      
+<div id="main" role="main"> 
+                        
+   
+<div id="email-contact" class="article-detail"> 
+
+                    <div class="hero">
+ 
+  <form class="contact_form" action="" method="post" name="emailForm" id="emailForm" >                     
+<div class="content">
+          <%
 if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
     out.println("Double Click to Edit Hpc Enquiry Component");
 }
-%>                         
-   
-<div id="email-contact" class="article-detail"> 
-<h1><c:if test="${properties.headertitle ne '' && not empty properties.headertitle }">
-                    <c:out value="${properties.headertitle}" escapeXml="false"/>
-              
-                </c:if></h1>
-                    <div class="hero">
-<img src="${properties.picture}" alt="${properties.title}"> 
-  
-<form class="contact_form" action="" method="post" name="emailForm" id="emailForm" >                     
-<div class="content">
-       <h3><c:if test="${properties.title ne '' && not empty properties.title }">
-                    <c:out value="${properties.title}" escapeXml="false"/>
-              
-                </c:if> </h3>     
-                           <div class="emailfeatures">
-                           <c:if test="${properties.hpcdescription ne '' && not empty properties.hpcdescription }">
-                    <p><c:out value="${properties.hpcdescription}" escapeXml="false"/></p>
-              
-                </c:if>
-                    </div>        
+%>
+                               
                             <div class="grad"> 
                                 <h3 class="form-label"><c:if test="${properties.confirmtext ne '' && not empty properties.confirmtext}">
                     <c:out value="${properties.confirmtext}"/>
@@ -112,6 +100,7 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
                 </div>
             </div>
    </div>         
+
  <script>
 $("#submit").click(function() {
   $('#blankemail').hide();
@@ -120,7 +109,7 @@ $("#submit").click(function() {
 function checkEmail() { 
      //alert("hi");
       var sEmail = $('#email').val();
-      var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      var filter = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
      if(sEmail=="" || sEmail== null){
       $('#blankemail').show();
          return false;
@@ -149,19 +138,18 @@ var mailvalidate=checkEmail();
 if(mailvalidate){
 $.ajax({
         type: "POST",
-        url: "/bin/HPCEmail",
+        url: "/bin/EmailSub",
         data: "fromemail="+ fromemailaddr+ "&toemail="+ useremail + "&body=" + emailbody + "&email=" + useremail,
         success: function(){
-            alert("success");
-            $('#popup').show();
+           $('#popup').show();
              $('#popup').fadeOut(5000); 
             },
     error: function(xhr, status, err) { 
             $('#errpopup').show();
-            failure(err);
+            //failure(err);
         } 
     }); // End .ajax fucntion 
-}
+} 
 else
 $('#mailerr').show();
 return false;

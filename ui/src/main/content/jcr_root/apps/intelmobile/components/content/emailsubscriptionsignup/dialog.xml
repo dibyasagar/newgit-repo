@@ -6,96 +6,19 @@
     xtype="dialog">
     <items jcr:primaryType="cq:TabPanel">
         <items jcr:primaryType="cq:WidgetCollection">
-            <emailsignupdescription
-                jcr:primaryType="cq:Panel"
-                title="Description">
-                <items jcr:primaryType="cq:WidgetCollection">
-                    <headertitle
-                        jcr:primaryType="nt:unstructured"
-                        allowBlank="{Boolean}false"
-                        fieldDescription="Header Title"
-                        fieldLabel="Head Title"
-                        name="./headertitle"
-                        validateOnBlur="true"
-                        xtype="textfield"/>
-                    <title
-                        jcr:primaryType="nt:unstructured"
-                        allowBlank="{Boolean}false"
-                        fieldDescription="Heading"
-                        fieldLabel="Heading"
-                        name="./title"
-                        validateOnBlur="true"
-                        xtype="textfield"/>
-                    <description
-                        jcr:primaryType="nt:unstructured"
-                        allowBlank="{Boolean}false"
-                        fieldDescription="Subheading."
-                        fieldLabel="Subheading"
-                        name="./hpcdescription"
-                        validateOnBlur="true"
-                        xtype="richtext">
-                        <rtePlugins jcr:primaryType="nt:unstructured">
-                            <styles
-                                jcr:primaryType="nt:unstructured"
-                                features="*"/>
-                            <paraformat
-                                jcr:primaryType="nt:unstructured"
-                                features="*"/>
-                            <subsuperscript
-                                jcr:primaryType="nt:unstructured"
-                                features="*"/>
-                            <misctools
-                                jcr:primaryType="nt:unstructured"
-                                features="*"/>
-                            <lists
-                                jcr:primaryType="nt:unstructured"
-                                features="*"/>
-                            <image
-                                jcr:primaryType="nt:unstructured"
-                                features="*"/>
-                        </rtePlugins>
-                    </description>
-                </items>
-            </emailsignupdescription>
-            <emailsignupimage
-                jcr:primaryType="cq:Widget"
-                allowUpload="{Boolean}false"
-                ddGroups="[media]"
-                fileNameParameter="./imageFileName"
-                fileReferenceParameter="./picture"
-                id="imagefield"
-                name="./contentImage"
-                title="HPC Image"
-                xtype="smartimage"/>
-            <address
-                jcr:primaryType="cq:Panel"
-                title="Address">
-                <items jcr:primaryType="cq:WidgetCollection">
-                    <source
-                        jcr:primaryType="nt:unstructured"
-                        allowBlank="{Boolean}false"
-                        fieldDescription="Source email address"
-                        fieldLabel="Source address"
-                        name="./source"
-                        regex="/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i"
-                        regexText="Please enter a valid email address"
-                        validateOnBlur="true"
-                        xtype="textfield"/>
-                </items>
-            </address>
             <emailinfo
                 jcr:primaryType="cq:Panel"
                 title="Email info">
                 <items jcr:primaryType="cq:WidgetCollection">
                     <wantemail
                         jcr:primaryType="nt:unstructured"
-                        fieldLabel="Email Text"
+                        fieldLabel=" Heading"
                         name="./confirmtext"
                         validateOnBlur="true"
                         xtype="textfield"/>
                     <emaillabel
                         jcr:primaryType="nt:unstructured"
-                        fieldLabel="Email Address Label"
+                        fieldLabel="SubHeading"
                         name="./emaillabel"
                         validateOnBlur="true"
                         xtype="textfield"/>
@@ -143,6 +66,22 @@
                         xtype="textfield"/>
                 </items>
             </emailinfo>
+            <address
+                jcr:primaryType="cq:Panel"
+                title="Address">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <source
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Source email address"
+                        fieldLabel="Source address"
+                        name="./source"
+                        regex="/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i"
+                        regexText="Please enter a valid email address"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                </items>
+            </address>
             <tab5
                 jcr:primaryType="cq:Panel"
                 title="Success and Errors ">
