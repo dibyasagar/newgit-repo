@@ -15,40 +15,17 @@
                     <contactusheading
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
-                        fieldLabel="Contact Us Heading"
+                        fieldLabel="Heading"
                         name="./contactusheading"
                         xtype="textfield"/>
                     <contactussubheading
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
-                        fieldLabel="Contact Us SubHeading"
+                        fieldLabel="SubHeading"
                         name="./subheading"
                         xtype="textfield"/>
                 </items>
             </tab1>
-            <pagelisttab
-                jcr:primaryType="cq:Panel"
-                title="Questions">
-                <items jcr:primaryType="cq:WidgetCollection">
-                    <hero
-                        jcr:primaryType="cq:Widget"
-                        customMultiFieldName="./questions"
-                        fieldDescription="Click '+' to add a new question"
-                        fieldLabel="Question"
-                        maxItems="20"
-                        name="./questions"
-                        xtype="custommultifield">
-                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
-                            <title
-                                jcr:primaryType="cq:Widget"
-                                allowBlank="{Boolean}false"
-                                fieldLabel="Question"
-                                name="./question"
-                                xtype="textfield"/>
-                        </fieldConfig>
-                    </hero>
-                </items>
-            </pagelisttab>
             <tab2
                 jcr:primaryType="cq:Panel"
                 title="Name info">
@@ -89,6 +66,29 @@
                         xtype="textfield"/>
                 </items>
             </tab3>
+            <pagelisttab
+                jcr:primaryType="cq:Panel"
+                title="Questions">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <hero
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./questions"
+                        fieldDescription="Click '+' to add a new question"
+                        fieldLabel="Question"
+                        maxItems="20"
+                        name="./questions"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <title
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                fieldLabel="Question"
+                                name="./question"
+                                xtype="textfield"/>
+                        </fieldConfig>
+                    </hero>
+                </items>
+            </pagelisttab>
             <tab4
                 jcr:primaryType="cq:Panel"
                 title="Email info">
@@ -127,6 +127,8 @@
                         fieldDescription="Destination Email Address"
                         fieldLabel="Destination Email Address"
                         name="./destination"
+                        regex="/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i"
+                        regexText="Please enter a valid email address"
                         xtype="textfield"/>
                 </items>
             </tab4>

@@ -211,7 +211,7 @@
        $('#errpopup').hide();
       function checkEmail() { 
       var sEmail = $('#email').val();
-      var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
+      var filter = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i; 
      if(sEmail=="" || sEmail== null){
       $('#blankemail').show();
          return false;
@@ -275,7 +275,7 @@
       else
       strUser=$('#singlequestion').attr('value');
        var subject= strUser + " " + currenturl; 
-       alert(subject);
+       //alert(subject);
        var datetime = new Date();
        //alert(datetime );
        var namevalidate=validateName();
@@ -296,7 +296,7 @@
          error: function(xhr, status, err) { 
           
          $('#errpopup').show();
-          failure(err);
+          //failure(err);
         } 
       }); // End .ajax fucntion 
     }
@@ -312,7 +312,7 @@
          error: function(xhr, status, err) { 
           
          $('#errpopup').show();
-          failure(err);
+          //failure(err);
         } 
       }); // End .ajax fucntion 
     }
