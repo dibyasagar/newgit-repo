@@ -69,4 +69,49 @@ public class HeroImageUtil {
 		return articleImageList;
 	}
 
+	public static List getShowcaseImage(Page currentPage) {
+		 
+		String image = "";
+		String image1 = "";
+		String image2 = "";
+		String image3 = "";
+		String image4 = "";
+		String image5 = "";
+		
+		 List<String> showcaseImageList  = new ArrayList<String>();
+		 try {
+		 Node detailNode = currentPage.getContentResource().getChild("showcase").adaptTo(Node.class);
+		 
+		 if(detailNode.hasProperty("picture")&& detailNode.getProperty("picture") != null){
+			 image = detailNode.getProperty("picture").getString();
+			 showcaseImageList.add(image);
+		 }
+		 if(detailNode.hasProperty("picture1")&& detailNode.getProperty("picture1") != null){
+			 image1 = detailNode.getProperty("picture1").getString();
+			 showcaseImageList.add(image1);
+		 }
+		 if(detailNode.hasProperty("picture2")&& detailNode.getProperty("picture2") != null){
+			 image2 = detailNode.getProperty("picture2").getString();
+			 showcaseImageList.add(image2);
+		 }
+		 if(detailNode.hasProperty("picture3")&& detailNode.getProperty("picture3") != null){
+			 image3 = detailNode.getProperty("picture3").getString();
+			 showcaseImageList.add(image3);
+		 }
+		 if(detailNode.hasProperty("picture4")&& detailNode.getProperty("picture4") != null){
+			 image4 = detailNode.getProperty("picture4").getString();
+			 showcaseImageList.add(image4);
+		 }
+		 if(detailNode.hasProperty("picture5")&& detailNode.getProperty("picture5") != null){
+			 image5 = detailNode.getProperty("picture5").getString();
+			 showcaseImageList.add(image5);
+		 }
+		}
+		 catch(Exception e){
+			 LOG.error("Error getShowcaseImage method " + e.toString());
+		 }
+		 
+		
+		 return showcaseImageList;
+	}
 }
