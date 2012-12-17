@@ -20,7 +20,7 @@
 	 String pagepath = currentPage.getPath();
 	 Map labels = ConfigUtil.getConfigDetailsValues(resourceResolver,pagepath);
 	 List retailerValues = PurchaseUtil.getRetailerInfo(currentPage);
-	 List similarProd = SimillarProductUtil.getShopSimilarInfo(currentPage,session);
+	 List similarProd = SimillarProductUtil.getShopSimilarInfo(currentPage,resourceResolver);
     log.info("---------similarProd------"+similarProd.size()); 
     log.info("---------retailerValues------"+retailerValues.size());
 	String pageTitle = currentPage.getTitle();
