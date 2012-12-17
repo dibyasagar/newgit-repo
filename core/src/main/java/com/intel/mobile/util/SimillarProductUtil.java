@@ -31,13 +31,18 @@ public class SimillarProductUtil {
 	
 	private static final Logger LOG = LoggerFactory.getLogger(SimillarProductUtil.class);
 	
-	public static List getShopSimilarInfo(Page currentPage,Session session) {
+	public static List getShopSimilarInfo(Page currentPage,ResourceResolver resolver) {
 		
 		String name = "";
         String picture = "";
         String bestPrice = "";
 	    String url = "";
 	    String id = "";
+	    String categoryPath = "";
+	    String prodName = "";
+	   
+	    Page categoryPage = currentPage.getParent();
+	    //LOG.info("-----categoryPage ----"+categoryPage.getPath());
 	    List<SmillarProductsVO> similarResultList = new ArrayList<SmillarProductsVO>();
 	   
          try{
@@ -52,15 +57,13 @@ public class SimillarProductUtil {
         		
         		while(similarNode.hasNext()){
         			 Node tmpNode = similarNode.nextNode();
-        			 
-        			 if(tmpNode.hasProperty("id") && tmpNode.getProperty("id") != null) {
-     			    	id = tmpNode.getProperty("id").getString();
-     			    	url = getProductUrl(id,session,currentPage);
-     			     }
-        			  if(url != null && url != "")  { 
-        			    if(tmpNode.hasProperty("name") && tmpNode.getProperty("name")!= null) {
+        			if(tmpNode.hasProperty("name") && tmpNode.getProperty("name")!= null) {
         			    	name = tmpNode.getProperty("name").getString();
+        			    	prodName = IntelUtil.normalizeName(name);
+        			    	//url = categoryPage.getPath()+"/"+prodName;
+        			    	url = getProductUrl(categoryPage,prodName,resolver);
         			    }
+        			if(url != null && url != "")  { 
         			    if(tmpNode.hasProperty("picture") && tmpNode.getProperty("picture") != null) {
         			    	picture = tmpNode.getProperty("picture").getString();
         			    }
@@ -70,10 +73,13 @@ public class SimillarProductUtil {
         			   
         			    SmillarProductsVO productsInfo = new SmillarProductsVO(name, picture,bestPrice,url);
         			    similarResultList.add(productsInfo);
+        			}
+        			//LOG.info("---similarResultList-----"+similarResultList);
+        			
         			    if(LOG.isDebugEnabled()) {
         					LOG.debug("---similarResultList-----"+similarResultList);
         			    }
-        		   }
+        		   
         		}
         	}
          
@@ -84,64 +90,19 @@ public class SimillarProductUtil {
 	
          return similarResultList;
 }
-public  static String getProductUrl(String id,Session session,Page currentPage) {
+public  static String getProductUrl(Page categoryPage,String prodName,ResourceResolver resolver) {
 		
         String productUrl = "";
 		String queryStatement = "";
 		String pageStats = "";
-		String rootPath = IntelUtil.getRootPath(currentPage);
-		String productpath = rootPath+IntelMobileConstants.SIMILAR_PRODUCT_PATH;
-		try{
-    	queryStatement = "select * from nt:unstructured where jcr:path like '"+productpath+"' AND id ='"+id+"'"  ;
-    	if(LOG.isDebugEnabled()) {
-			LOG.debug("queryStatement------"+queryStatement);
-    	}
-		//jcrSession = RepoUtil.login(repository);
-		QueryManager queryManager = session.getWorkspace().getQueryManager();
-		//QueryManager queryManager = jcrSession.getWorkspace().getQueryManager();
-		String stmt = queryStatement;
-		Query query = queryManager.createQuery(stmt, Query.SQL);
-		QueryResult qr = query.execute();
-		if(qr != null){
-		NodeIterator itr = qr.getNodes();
-		if(itr.hasNext()){
-			
-			Node node = itr.nextNode();
-			String nodePath = node.getPath();
-			Node jcrNode = node.getParent();
-			if(LOG.isDebugEnabled()) {
-				LOG.debug("jcrNode------"+jcrNode.getPath());
-			}
-			if(LOG.isDebugEnabled()) {
-				LOG.debug("Nodepath-------"+nodePath);
-			}
-
-				if (jcrNode.hasProperty("cq:lastReplicationAction")){
-					pageStats = jcrNode.getProperty("cq:lastReplicationAction").getString();
-					if(LOG.isDebugEnabled()) {
-						LOG.debug("----status of page------"+pageStats);	
-					}
-				}	 
-         if(pageStats != null && !pageStats.equalsIgnoreCase("")){
-		  if(pageStats.equalsIgnoreCase("Activate")){
-			productUrl = nodePath.replace("/jcr:content/details","" ) ;
-			if(LOG.isDebugEnabled()) {
-				LOG.debug("productUrl-------"+productUrl);
-			}
-			}
-		}
-		}
-		}
-		}
-		catch (RepositoryException e) {
-			LOG.error("RepositoryException in getProductUrl :"+e.getMessage());
-			
-		}
-		
-		
+		String tempUrl = categoryPage.getPath()+"/"+prodName;
+		Page reqPage = resolver.resolve(tempUrl).adaptTo(Page.class);
+	   if(reqPage.getProperties().get("cq:lastReplicationAction", "").equals("Activate")){
+		   productUrl = tempUrl;
+	   }
 		return productUrl;
 		
-	}
+	} 
 
 public static List getCmsSimilarProducts(String reqPages[],ResourceResolver resolver ) {
 	
