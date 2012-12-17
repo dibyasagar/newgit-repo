@@ -100,7 +100,8 @@ public class SearchDAOImpl implements ISearchDAO {
          String line = null;
          URL serverAddress = null;
          ArrayList<String> resultList = new ArrayList<String>();
-    	String searchQuery = url + "?" + "m=" + m + "&languageCode=" + languageCode + "&searchRealm=" + searchRealm + "&includeBestMatch=" + includeBestMatch + "&searchPhrase=" + searchPhrase + "&limit=" + limit + "&callback=" + callback;
+         searchPhrase = searchPhrase.replace(" ","+");
+         String searchQuery = url + "?" + "m=" + m + "&languageCode=" + languageCode + "&searchRealm=" + searchRealm + "&includeBestMatch=" + includeBestMatch + "&searchPhrase=" + searchPhrase + "&limit=" + limit + "&callback=" + callback;
 
         try {
             serverAddress = new URL(searchQuery);
@@ -116,6 +117,7 @@ public class SearchDAOImpl implements ISearchDAO {
             connection.connect();
                       
             //read the result from the server
+            LOG.info("searchQuery:"+searchQuery);
             LOG.info("connection.getResponseCode() :"+connection.getResponseCode());
             if (connection.getResponseCode() == 200){
             	rd  = new BufferedReader(new InputStreamReader(connection.getInputStream(),"UTF-8"));
