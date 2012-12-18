@@ -156,7 +156,7 @@
                     </downloadsection>
                 </items>
             </tab1>
-            <tab2
+            <heroimage
                 jcr:primaryType="cq:Widget"
                 allowUpload="{Boolean}false"
                 ddGroups="[media]"
@@ -164,7 +164,52 @@
                 fileReferenceParameter="./imagePath"
                 id="imagefield"
                 name="./contentImage"
-                title="Image"
+                title="Image1"
+                xtype="smartimage"/>
+            <heroimage2
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName2"
+                fileReferenceParameter="./imagePath2"
+                name="./contentImage2"
+                title="Image2"
+                xtype="smartimage"/>
+            <heroimage3
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName3"
+                fileReferenceParameter="./imagePath3"
+                name="./contentImage3"
+                title="Image3"
+                xtype="smartimage"/>
+            <heroimage4
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName4"
+                fileReferenceParameter="./imagePath4"
+                name="./contentImage4"
+                title="Image4"
+                xtype="smartimage"/>
+            <heroimage5
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName5"
+                fileReferenceParameter="./imagePath5"
+                name="./contentImage5"
+                title="Image5"
+                xtype="smartimage"/>
+            <heroimage6
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName6"
+                fileReferenceParameter="./imagePath6"
+                name="./contentImage6"
+                title="Image6"
                 xtype="smartimage"/>
         </items>
     </items>
