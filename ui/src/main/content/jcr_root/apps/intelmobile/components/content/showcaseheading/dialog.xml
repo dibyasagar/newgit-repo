@@ -25,6 +25,8 @@
                         allowBlank="{Boolean}false"
                         fieldDescription="Content heading  of the tab."
                         fieldLabel="Heading of Content"
+                        maxLength="{Long}69"
+                        maxLengthText="The maximum length for this field is 69"
                         name="./headingcopy"
                         validateOnBlur="true"
                         xtype="textfield"/>
@@ -123,15 +125,59 @@
                     </displaysocial>
                 </items>
             </tab1>
-            <tab2
+            <productimage
                 jcr:primaryType="cq:Widget"
                 allowUpload="{Boolean}false"
                 ddGroups="[media]"
-                fileNameParameter="./heroimageFileName"
-                fileReferenceParameter="./heroimageReference"
-                id="imagefield"
+                fileNameParameter="./imageFileName"
+                fileReferenceParameter="./picture"
                 name="./contentImage"
-                title="Hero Image"
+                title="Image1"
+                xtype="smartimage"/>
+            <productimage1
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName1"
+                fileReferenceParameter="./picture1"
+                name="./contentImage1"
+                title="Image2"
+                xtype="smartimage"/>
+            <productimage2
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName2"
+                fileReferenceParameter="./picture2"
+                name="./contentImage2"
+                title="Image3"
+                xtype="smartimage"/>
+            <productimage3
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName3"
+                fileReferenceParameter="./picture3"
+                name="./contentImage3"
+                title="Image4"
+                xtype="smartimage"/>
+            <productimage4
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName4"
+                fileReferenceParameter="./picture4"
+                name="./contentImage4"
+                title="Image5"
+                xtype="smartimage"/>
+            <productimage5
+                jcr:primaryType="cq:Widget"
+                allowUpload="{Boolean}false"
+                ddGroups="[media]"
+                fileNameParameter="./imageFileName5"
+                fileReferenceParameter="./picture5"
+                name="./contentImage5"
+                title="Image6"
                 xtype="smartimage"/>
         </items>
     </items>
