@@ -1539,9 +1539,9 @@ intel && intel.mobile && intel.mobile.register('videoPlayer', {
             },
 
             events: {
-            'onReady': self.onPlayerReady
-            //'onReady': onPlayerReady,
-            //'onStateChange': onPlayerStateChange
+            //'onReady': self.onPlayerReady
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
             }
         });
     },
