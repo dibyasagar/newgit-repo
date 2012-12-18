@@ -150,14 +150,16 @@
                             <c:when test="${locale eq 'ru_RU'}">
                                  <span class="learn learn_ru"
                                     data-more="<c:out value="${learnmore}" escapeXml="false"/>"
-                                    data-less="<c:out value="${properties.close}" escapeXml="false"/>">
+                                    data-wap='{"linktype":"learn"}' 
+									data-less="<c:out value="${properties.close}" escapeXml="false"/>">
                                     <c:out value="${learnmore}" escapeXml="false" />
                                 </span>
                              </c:when>
                             <c:otherwise>
                                  <span class="learn"
                                     data-more="<c:out value="${learnmore}" escapeXml="false"/>"
-                                    data-less="<c:out value="${properties.close}" escapeXml="false"/>">
+                                    data-wap='{"linktype":"learn"}' 
+									data-less="<c:out value="${properties.close}" escapeXml="false"/>">
                                     <c:out value="${learnmore}" escapeXml="false" />
                                 </span>
                             </c:otherwise>
