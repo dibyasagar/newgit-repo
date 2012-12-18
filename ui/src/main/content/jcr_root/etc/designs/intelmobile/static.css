@@ -4610,3 +4610,91 @@ html.csstransforms3d header.ics404 #search-menu {
     list-style: disc inside none;
     text-indent: 15px;
 }
+/* Showcase Carousel */
+
+#product-showcase .hero .carousel {
+  background-image: none;
+  margin-top: 0;
+  padding: 0;
+  position: relative;
+}
+#product-showcase .hero .carousel .carousel-content li {
+  margin: 0;
+}
+#product-showcase .hero .carousel .carousel-content li img {
+  border-radius: 0;
+}
+#product-showcase .hero .carousel .pagination-container {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  /*margin-top: -50px;*/
+}
+#product-showcase .hero .carousel .navigation {
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  -ms-border-radius: 3px 3px 0 0;
+  -o-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+  background: #d1d1d1;
+  /* Old browsers */
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFD1D1D1', endColorstr='#FFFFFFFF');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d1d1d1), color-stop(100%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #d1d1d1 0%, #ffffff 100%);
+  background-image: -moz-linear-gradient(top, #d1d1d1 0%, #ffffff 100%);
+  background-image: -o-linear-gradient(top, #d1d1d1 0%, #ffffff 100%);
+  background-image: -ms-linear-gradient(top, #d1d1d1 0%, #ffffff 100%);
+  background-image: linear-gradient(top, #d1d1d1 0%, #ffffff 100%);
+  display: inline-block;
+  padding-top: .5em;
+  /*margin-top: -1.5em;*/
+}
+#product-showcase .hero .carousel .navigation a {
+  display: inline-block;
+  text-shadow: 0px 2px 5px black;
+  height: 40px;
+  width: 30px;
+  background: url(/etc/designs/intelmobile/img/spr_CAROUSEL-arrows.png) no-repeat 0 0;
+  background-size: 100%;
+}
+
+
+
+#product-showcase .hero .carousel .navigation .pagination {
+  background: none;
+  background-image: none;
+}
+
+
+#product-showcase .hero .carousel .pagination span.active {
+  background: #00aeef;
+}
+#product-showcase .hero .carousel .pagination span {
+  background: #b6b6b6;
+  position: relative !important;
+  z-index: 999 !important;
+}
+#product-showcase .hero .carousel .navigation .click-right.end {
+  background-position: right -155px;
+}
+#product-showcase .hero .carousel .navigation .click-right {
+  background-position: right -54px;
+}
+
+
+#product-showcase .hero .carousel .carousel-content li {
+  /* new code for PDP */
+  background: white;
+  text-align: center;
+  /*margin-bottom: -15px;*/
+}
+
+#product-showcase .hero .carousel .carousel-content li img {
+  
+  box-shadow: none !important;
+}
+#product-showcase .hero .carousel .carousel-content li  .pagination-container .navigation-container
+{
+    /*z-index: 0 !important;*/
+}
