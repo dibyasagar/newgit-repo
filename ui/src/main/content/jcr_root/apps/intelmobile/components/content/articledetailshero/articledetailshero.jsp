@@ -2,7 +2,7 @@
   Article Details Hero Component.
 --%>
 
-<%@page import="com.day.cq.wcm.api.WCMMode,com.intel.mobile.util.IntelUtil"%>
+<%@page import="com.day.cq.wcm.api.WCMMode,com.intel.mobile.util.IntelUtil,java.util.List,com.intel.mobile.util.HeroImageUtil"%>
 <%@include file="/libs/foundation/global.jsp"%>
 <%@page session="false"%>
 <%
@@ -14,7 +14,8 @@
     
     pageContext.setAttribute("componentId",IntelUtil.getComponentId(resource));
     pageContext.setAttribute("componentName",component.getName() );
-    
+    List articleImageList = HeroImageUtil.getArticleImage(currentPage); 
+    pageContext.setAttribute("articleImages",articleImageList);
  %> 
  
 <c:choose>
@@ -27,10 +28,21 @@
 </c:choose> 
  
     <div class="component" data-component="<c:out value="${pageScope.componentName}"/>" data-component-id="<c:out value="${pageScope.componentId}"/>">
-       <div class="hero">
-          <c:if test="${properties.imagePath ne '' && not empty properties.imagePath }">
-             <img src="<c:out value="${properties.imagePath}"/>" alt="<c:out value="${properties.alttext}" escapeXml="false"/>">
-          </c:if>                     
+         <div id="prod_2" class="hero">
+           <div data-count="1" class="carousel">
+                <ul class="carousel-content">
+                   <c:forEach var="articleImage" items="${articleImages}" > 
+                   <li>
+				       <img src="<c:out value="${articleImage}"/>" alt="<c:out value="${properties.alttext}" escapeXml="false"/>"/>
+                       <div class="pagination-container"><div class="pagination"></div></div>
+                        <div class="" style="height:20px">
+                        </div>
+                   </li>
+                </c:forEach>
+             </ul>
+           </div>
+           </div>
+           <div id="prod_2" class="hero">                   
             <div class="content" style="<c:out value="${style}" />">
                 <c:if test="${properties.sectiontitle ne '' && not empty properties.sectiontitle }">
                     <h3><c:out value="${properties.sectiontitle}" escapeXml="false"/></h3>
