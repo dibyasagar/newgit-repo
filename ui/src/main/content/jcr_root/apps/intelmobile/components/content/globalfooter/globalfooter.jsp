@@ -140,7 +140,8 @@ document.cookie = "intelmobile_last_visited_page="+val +";expires="+expiration_d
         s['pageType'] = "<%=IntelUtil.getTemplateName(currentPage) %>";
         // END ---------------------------------------------------------------------------------------
     </script>
-    <script type="text/javascript" src="http://www.intel.com/content/dam/www/global/wap/wap-mobile.js "></script>
+    <script type="text/javascript" src="/etc/designs/intelmobile/appclientlibs/js/example-controller.js"></script>
+	
     <%-- WAP Integration End --%>
     
      <%-- Additional Script Inclusion End --%>
@@ -151,7 +152,7 @@ document.cookie = "intelmobile_last_visited_page="+val +";expires="+expiration_d
 <script type="text/javascript">stLight.options({publisher: "ur-661b55e5-341-5a95-e973-c4ac96945400",shorten:false}); </script>
 <%-- end scripts --%>
 <script type="text/javascript" src="/etc/designs/intelmobile/appclientlibs/js/plugins.js"></script>
-<script type="text/javascript" src="/etc/designs/intelmobile/appclientlibs/js/example-controller.js"></script>
+<script type="text/javascript" src="http://www.intel.com/content/dam/www/global/wap/wap-mobile.js "></script>
 
 
 <%
