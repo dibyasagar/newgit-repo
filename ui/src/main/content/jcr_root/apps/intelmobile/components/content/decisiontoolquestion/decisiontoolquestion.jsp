@@ -176,7 +176,7 @@ pageContext.setAttribute("componentName",component.getName());
                                 </div>
                                 <div class="ft">
                                     <div class="cta grad">
-                                        <a href="javascript:doRecommend()"><cq:text property="submitButtonCopy" default="Get Recommendation" escapeXml="false"/></a>
+                                        <a data-wap='{"linktype":"recommend"}' href="javascript:doRecommend()"><cq:text property="submitButtonCopy" default="Get Recommendation" escapeXml="false"/></a>
                                     </div>
                                 </div>
                              </div>
