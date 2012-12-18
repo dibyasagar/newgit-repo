@@ -54,7 +54,7 @@ public class EmailSubscriptionServlet extends SlingAllMethodsServlet{
 	    StringBuffer useremailBody = new StringBuffer();
 		useremailBody.append(mailbody).append("\n");
 		
-		IntelUtil.sendMail(sourceemailAddress, useremailAddress, "HPC Enquiry", mailbody.toString(), null, null, "", "");
+		IntelUtil.sendMail(useremailAddress,sourceemailAddress, "Email Subscription", mailbody.toString(), null, null, "", "");
 		
       
 	
