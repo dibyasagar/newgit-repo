@@ -53,19 +53,21 @@
                 </c:if></h3>
                                         </div>
                                     </div>
-                                    <div class="item">
-                                     <div id="errname" style="display:none">
-                                       <h3  display=false backgroundcolor="##FF0000"><c:if test="${properties.blankname ne '' && not empty properties.blankname }">
-                    <c:out value="${properties.blankname}" escapeXml="false"/>
-              
-                </c:if></h3>
-                                     </div>  
+                                    <div class="item txtbox">
+                                     
                                         <div class="text-input">
                                                   <input id="fName" name="fName" type="text" class="text" placeholder="<c:out value="${properties.defaultname}"/>"/>
                                                 </div>
+                                                
+                                        <div id="errname" style="display:none">
+                                       <h3  style="color:#FF0000"><c:if test="${properties.blankname ne '' && not empty properties.blankname }">
+                                            <c:out value="${properties.blankname}" escapeXml="false"/>
+                                      
+                                        </c:if></h3>
+                                     </div>  
                                     </div>
                                     
-                                    <div class="item">
+                                    <div class="item frmlbl">
                                         
                                         <h3 class="form-label"><c:if test="${properties.dropdownlabel ne '' && not empty properties.dropdownlabel }">
                     <c:out value="${properties.dropdownlabel}" escapeXml="false"/>
@@ -73,13 +75,13 @@
                 </c:if></h3>
                                         
                                     </div>
-                                    <div class="item">
+                                    <div class="item frmlbl">
                                         <div class="toolbar">
                                         <div id="erroption" style="display:none">
                                                   <h3  display=false backgroundcolor="##FF0000"><c:if test="${properties.notopic ne '' && not empty properties.notopic }">
-                    <c:out value="${properties.notopic}" escapeXml="false"/>
+                                                    <c:out value="${properties.notopic}" escapeXml="false"/>
               
-                </c:if></h3>
+                                                    </c:if></h3>
                                                 </div>
                                        <%if(questionCount>1){%>   
                                             <div class="selectbox">
@@ -118,7 +120,7 @@
                                    
                                     </div>
                                 </div>
-                                <div class="item">
+                                <div class="item frmlbl">
                                         
                                             <h3 class="form-label"><c:if test="${properties.emaillabel ne '' && not empty properties.emaillabel  }">
                     <c:out value="${properties.emaillabel }" escapeXml="false"/>
@@ -127,19 +129,8 @@
                                         
                                     </div>
                                     
-                                    <div class="item">
-                                     <div id="erremail" style="display:none">
-                                       <h3  display=false backgroundcolor="##FF0000"><c:if test="${properties.wrongemail ne '' && not empty properties.wrongemail }">
-                    <c:out value="${properties.wrongemail }" escapeXml="false"/>
-              
-                </c:if></h3>
-                                     </div>
-                            <div id="blankemail" style="display:none">
-                                       <h3  display=false backgroundcolor="##FF0000"><c:if test="${properties.blankemail ne '' && not empty properties.blankemail }">
-                    <c:out value="${properties.blankemail }" escapeXml="false"/>
-              
-                </c:if></h3>
-                                     </div>            
+                                    <div class="item frmlbl">
+                                        
                                        
                                         <div class="text-input">
                                             <input id="email" name="email" type="email" class="text" placeholder="<c:out value="${properties.defaultemail}"/>"/>
@@ -148,7 +139,24 @@
                                             <input type="hidden" id="signupunchecked" name="signupunchecked" value="${properties.dontsignmetext}" />
                                              <input type="hidden" id="singlequestion" name="singlequestion" value="<c:out value="${questionArray[0]}" />"
                                         </div>
+                                       
+                                        
                                     </div>
+                                    
+                                     <div id="erremail" style="display:none">
+                                       <h3  style="color:#FF0000"><c:if test="${properties.wrongemail ne '' && not empty properties.wrongemail }">
+                    <c:out value="${properties.wrongemail }" escapeXml="false"/>
+              
+                </c:if></h3>
+                                     </div>
+                            <div id="blankemail" style="display:none">
+                                       <h3  style="color:#FF0000"><c:if test="${properties.blankemail ne '' && not empty properties.blankemail }">
+                    <c:out value="${properties.blankemail }" escapeXml="false"/>
+              
+                </c:if></h3>
+                                     </div>         
+                                     
+                                     
                                <div  style="display:none" id="popup">
             <h3  display=false backgroundcolor="#8B8989"><c:if test="${properties.successcopy ne '' && not empty properties.successcopy }">
                     <c:out value="${properties.successcopy}" escapeXml="false"/>
