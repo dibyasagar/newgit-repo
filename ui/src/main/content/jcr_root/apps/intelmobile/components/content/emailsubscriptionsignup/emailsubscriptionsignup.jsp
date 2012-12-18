@@ -39,19 +39,19 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
                                 </div>
                             </div>
 <div id="wrongemail" style="display:none">
-                                       <h3  display=false backgroundcolor="##FF0000"><c:if test="${properties.wrongemail ne '' && not empty properties.wrongemail }">
+                                       <h3  style="color:#FF0000"><c:if test="${properties.wrongemail ne '' && not empty properties.wrongemail }">
                     <c:out value="${properties.wrongemail }" escapeXml="false"/>
               
                 </c:if></h3>
 </div>
 <div  style="display:none" id="errpopup">
-            <h3  display=false backgroundcolor="#8B8989"><c:if test="${properties.systemerror ne '' && not empty properties.systemerror }">
+            <h3  style="color:#FF0000"><c:if test="${properties.systemerror ne '' && not empty properties.systemerror }">
                     <c:out value="${properties.systemerror}" escapeXml="false"/>
               
                 </c:if></h3>
             </div>            
  <div id="blankemail" style="display:none">
-                                       <h3  display=false backgroundcolor="##FF0000"><c:if test="${properties.blankemail ne '' && not empty properties.blankemail }">
+                                       <h3  style="color:#FF0000"><c:if test="${properties.blankemail ne '' && not empty properties.blankemail }">
                     <c:out value="${properties.blankemail }" escapeXml="false"/>
               
                 </c:if></h3>
