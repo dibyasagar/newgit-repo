@@ -20,7 +20,7 @@
    
  %> 
             <div id="email-component" class="article-detail">
-                <h1>Intel High Performance Computing</h1>
+                
                     
                 <div class="sections">
                     
@@ -77,12 +77,7 @@
                                     </div>
                                     <div class="item frmlbl">
                                         <div class="toolbar">
-                                        <div id="erroption" style="display:none">
-                                                  <h3  display=false backgroundcolor="##FF0000"><c:if test="${properties.notopic ne '' && not empty properties.notopic }">
-                                                    <c:out value="${properties.notopic}" escapeXml="false"/>
-              
-                                                    </c:if></h3>
-                                                </div>
+                                        
                                        <%if(questionCount>1){%>   
                                             <div class="selectbox">
                         
@@ -117,7 +112,12 @@
                                         
                                    
                                    <%}%>
-                                   
+                                   <div id="erroption" style="display:none">
+                                                  <h3  style="color:#FF0000"><c:if test="${properties.notopic ne '' && not empty properties.notopic }">
+                                                    <c:out value="${properties.notopic}" escapeXml="false"/>
+              
+                                                    </c:if></h3>
+                                                </div>
                                     </div>
                                 </div>
                                 <div class="item frmlbl">
@@ -375,4 +375,4 @@
         <script type="text/javascript" src="js/example-controller.js"></script>  
            
 
-     
+      

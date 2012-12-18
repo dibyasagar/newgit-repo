@@ -150,21 +150,25 @@
                         xtype="textfield"/>
                     <blankemail
                         jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
                         fieldLabel="Blank Email Error Copy"
                         name="./blankemail"
                         xtype="textfield"/>
                     <wrongemail
                         jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
                         fieldLabel="Wrong Email Error Copy"
                         name="./wrongemail"
                         xtype="textfield"/>
                     <notopic
                         jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
                         fieldLabel="No Topic Error Copy"
                         name="./notopic"
                         xtype="textfield"/>
                     <error
                         jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
                         fieldLabel="General Error Message"
                         name="./systemerror"
                         xtype="textfield"/>
