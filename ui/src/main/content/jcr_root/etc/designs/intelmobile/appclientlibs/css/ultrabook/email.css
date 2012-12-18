@@ -56,7 +56,7 @@
 }
 #email-component .sections .items .item h3.form-label
 {
-    color:#666666;font-size:130%;border-left:none;font-weight:400;
+    color:#666666;font-size:130%;border-left:none;font-weight:600;
 }
 #email-component .sections .items .item .chbox-label
 {
@@ -68,11 +68,11 @@
 /* For Email Contact Start*/
 #email-contact h3.form-label
 {
-    color:#666666;font-size:110%;border-left:none;font-weight:600;
+    color:#666666;font-size:110%;border-left:none;font-weight:800;
 }
 #email-contact .items .item h3.form-label
 {
-    color:#666666;font-size:110%;border-left:none;font-weight:400;
+    color:#666666;font-size:110%;border-left:none;font-weight:600;
 }
 #email-contact .grad
 {
@@ -145,7 +145,12 @@
     list-style: none outside none;
     margin-bottom:5px;
 }
-
+.items .item {
+background: white;
+margin: 0 0 1px 0;
+padding: 0em 10px 1em 10px;
+overflow: hidden;
+}
 
 /* For Email Contact End*/  
   
