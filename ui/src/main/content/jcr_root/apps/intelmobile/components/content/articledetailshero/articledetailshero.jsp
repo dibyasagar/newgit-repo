@@ -19,7 +19,7 @@
  %> 
  
 <c:choose>
-	<c:when	test="${properties.imagePath ne '' && not empty properties.imagePath }">
+	<c:when	test="${fn:length(articleImages)>0 }">
 		<c:set var="style" value="" />
 	</c:when>
 	<c:otherwise>
