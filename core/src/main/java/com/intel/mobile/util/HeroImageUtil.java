@@ -82,8 +82,8 @@ public class HeroImageUtil {
 		 try {
 		 Node detailNode = currentPage.getContentResource().getChild("showcase").adaptTo(Node.class);
 		 
-		 if(detailNode.hasProperty("picture")&& detailNode.getProperty("picture") != null){
-			 image = detailNode.getProperty("picture").getString();
+		 if(detailNode.hasProperty("heroimageReference")&& detailNode.getProperty("heroimageReference") != null){
+			 image = detailNode.getProperty("heroimageReference").getString();
 			 showcaseImageList.add(image);
 		 }
 		 if(detailNode.hasProperty("picture1")&& detailNode.getProperty("picture1") != null){
