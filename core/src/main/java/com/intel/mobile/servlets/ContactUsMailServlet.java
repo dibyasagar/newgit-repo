@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 import com.intel.mobile.util.IntelUtil;
 import com.intel.mobile.util.Status;
 
-@Component(immediate = true, metatype = false, label = "Processor Spec Email Servlet")
+@Component(immediate = true, metatype = false, label = "Conatct Us Email Servlet")
 @Service(value = javax.servlet.Servlet.class)
 @Properties({ @Property(name = "sling.servlet.paths", value = "/bin/contactUs") })
 
