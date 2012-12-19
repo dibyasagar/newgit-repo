@@ -40,11 +40,11 @@ public class ContactUsMailServlet extends SlingAllMethodsServlet{
 		String datetime=request.getParameter("datetime");
 		//String body= datetime + firstName + fromAddress + signupInfo;
 		StringBuffer body = new StringBuffer();
-		body.append("Date/Time: ").append(datetime).append( "<br />");
-		body.append("Name: ").append(firstName).append( "<br />");
-		body.append("Email: ").append(fromAddress).append( "<br />");
+		body.append("Date/Time: ").append(datetime).append("<br />");
+		body.append("Name: ").append(firstName).append("<br />");
+		body.append("Email: ").append(fromAddress).append("<br />");
 		if(signupInfo!=null)
-		body.append("Subscription: ").append(signupInfo).append( "<br />");
+		body.append("Subscription: ").append(signupInfo).append("<br />");
 		String subject=request.getParameter("subject");	
 		LOGGER.info("Subject : "+subject);
 		LOGGER.info("fromAddress : "+fromAddress);
