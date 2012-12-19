@@ -664,8 +664,8 @@ public class IntelUtil {
 			email.setFrom(from); 
 			email.setSubject(subject); 
 			email.addPart(multipart);
-			email.setTextMsg(body);
-			//email.setContent(body,"text/html");
+			//email.setTextMsg(body);
+			email.setContent(body,"text/html");
 			mailService.send(email);
 
 		} catch(MessagingException e) {
