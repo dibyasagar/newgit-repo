@@ -204,9 +204,9 @@ intel && intel.mobile && intel.mobile.register('carousel', {
             winWidth = $(_cached.carousel[cIDX]).width() // setting the max width to the parent container
             tileWidth = '',
             scrollDistance = (_cached.carouselInfo[cIDX].curTile - 1) * winWidth,
-            openStyle3d =   '-webkit-transform: translate3d(-' + scrollDistance + 'px,' + '0' + 'px,0);' + 
-                            '-moz-transform: translate3d(-' + scrollDistance + 'px,' + '0' + 'px,0);' + 
-                            'transform: translate3d(-' + scrollDistance + 'px,' + '0' + 'px,0););';
+            openStyle3d =   '-webkit-transform: translate3d(-' + (scrollDistance+8) + 'px,' + '0' + 'px,0);' + 
+                            '-moz-transform: translate3d(-' + (scrollDistance+8) + 'px,' + '0' + 'px,0);' + 
+                            'transform: translate3d(-' + (scrollDistance+8) + 'px,' + '0' + 'px,0););';
         
         _cached.carouselInfo[cIDX].maxScroll = Math.ceil( _cached.carouselInfo[cIDX].totalTiles / _cached.carouselInfo[cIDX].showTiles ); // set how many tiles we can scroll before we hit the end
         _cached.carouselInfo[cIDX].showTiles = parseInt($(_cached.carousel[cIDX]).attr('data-count'), 10); // set how many tiles we want to see at a time from the data-count attribute
@@ -331,9 +331,9 @@ intel && intel.mobile && intel.mobile.register('carousel', {
             scrollDistance = ( ($(_cached.carousel[cIDX]).width() + rightMargin) * _cached.carouselInfo[cIDX].curTile) - ( ($(_cached.carousel[cIDX]).width() + rightMargin) * 2),
             pag = $('.pagination', _cached.carousel[cIDX]),
             i = pag.length,
-            openStyle3d =   '-webkit-transform: translate3d(-' + scrollDistance + 'px,' + '0' + 'px,0);' + 
-                            '-moz-transform: translate3d(-' + scrollDistance + 'px,' + '0' + 'px,0);' + 
-                            'transform: translate3d(-' + scrollDistance + 'px,' + '0' + 'px,0););';
+            openStyle3d =   '-webkit-transform: translate3d(-' + (scrollDistance+8) + 'px,' + '0' + 'px,0);' + 
+                            '-moz-transform: translate3d(-' + (scrollDistance+8) + 'px,' + '0' + 'px,0);' + 
+                            'transform: translate3d(-' + (scrollDistance+8) + 'px,' + '0' + 'px,0););';
 
 
         if (_cached.carouselInfo[cIDX].curTile === 1 ) { return }; // if we're at the end, stop
@@ -376,9 +376,9 @@ intel && intel.mobile && intel.mobile.register('carousel', {
             scrollDistance = ($(_cached.carousel[cIDX]).width() + rightMargin-4) * _cached.carouselInfo[cIDX].curTile,
             pag = $('.pagination', _cached.carousel[cIDX]),
             i = pag.length, 
-            openStyle3d =   '-webkit-transform: translate3d(-' + scrollDistance + 'px,' + '0' + 'px,0);' + 
-                            '-moz-transform: translate3d(-' + scrollDistance + 'px,' + '0' + 'px,0);' + 
-                            'transform: translate3d(-' + scrollDistance + 'px,' + '0' + 'px,0););';   
+            openStyle3d =   '-webkit-transform: translate3d(-' + (scrollDistance+5) + 'px,' + '0' + 'px,0);' + 
+                            '-moz-transform: translate3d(-' + (scrollDistance+5) + 'px,' + '0' + 'px,0);' + 
+                            'transform: translate3d(-' + (scrollDistance+5) + 'px,' + '0' + 'px,0););';   
 
         if (_cached.carouselInfo[cIDX].curTile === _cached.carouselInfo[cIDX].maxScroll ) { return; } // if we're at the end, stop
 
@@ -413,7 +413,7 @@ intel && intel.mobile && intel.mobile.register('carousel', {
     /*right :
     */ 
     swipeRight : function (evt, cIDX) {
-	
+		
         var self = this,
             _cached = self.cache,
             caroContent = $('.carousel-content', _cached.carousel[cIDX]), // set carousel context
@@ -423,9 +423,9 @@ intel && intel.mobile && intel.mobile.register('carousel', {
             scrollDistance = ( ($(_cached.carousel[cIDX]).width() + rightMargin-3) * _cached.carouselInfo[cIDX].curTile) - ( ($(_cached.carousel[cIDX]).width() + rightMargin) * 2),
             pag = $('.pagination', _cached.carousel[cIDX]),
             i = pag.length,
-            openStyle3d =   '-webkit-transform: translate3d(-' + scrollDistance + 'px,' + '0' + 'px,0);' + 
-                            '-moz-transform: translate3d(-' + scrollDistance + 'px,' + '0' + 'px,0);' + 
-                            'transform: translate3d(-' + scrollDistance + 'px,' + '0' + 'px,0););';
+            openStyle3d =   '-webkit-transform: translate3d(-' + (scrollDistance+7) + 'px,' + '0' + 'px,0);' + 
+                            '-moz-transform: translate3d(-' + (scrollDistance+7) + 'px,' + '0' + 'px,0);' + 
+                            'transform: translate3d(-' + (scrollDistance+7) + 'px,' + '0' + 'px,0););';
 
 
         if (_cached.carouselInfo[cIDX].curTile === 1 ) { return }; // if we're at the end, stop
