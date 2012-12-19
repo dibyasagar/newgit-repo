@@ -805,7 +805,7 @@ ul.accordion .content {
   /*text-indent: -1.25em; commented by shishir for Jira Issue - IMUAT-300*/
 }
 #product-details .features li:before {
-  content: "?";
+  content: "•";
   padding-right: 0.15em; /* changed by shishir form 0.85 to 0.15 */
   color: #00aeef;
 }
@@ -1310,6 +1310,12 @@ ul.accordion li {
 .navigation-container .navigation .click-right.end {
   background-position: right -54px;
 }
+#article-landing .navigation-container .navigation .click-left.end {
+  background-position: 0 0 !important;
+}
+#product-showcase .navigation-container .navigation .click-left.end {
+  background-position: 0 0 !important;
+}
 .navigation-container .navigation .click-left.end {
   background-position: 0 0;
 }
@@ -1687,6 +1693,16 @@ ul.accordion li {
   padding-top: .5em;
   margin-top: -1.5em;
 }
+#product-showcase .navigation-container .navigation .click-left
+{
+	 background-position: 0 -103px !important;
+}
+
+#article-landing .navigation-container .navigation .click-left
+{
+	 background-position: 0 -103px !important;
+}
+
 #article-landing .hero .carousel .navigation a {
   display: inline-block;
   text-shadow: 0px 2px 5px black;
@@ -1696,9 +1712,12 @@ ul.accordion li {
   background-size: 100%;
 }
 #article-landing .hero .carousel .navigation .click-right {
-  background-position: right -54px;
+
+  background-position: right -155px;
 }
-#article-landing .hero .carousel .navigation .click-right.end {
+
+#product-showcase .hero .carousel .navigation .click-right {
+
   background-position: right -155px;
 }
 #article-landing .hero .carousel .navigation .click-left.end {
@@ -3658,8 +3677,15 @@ html.csstransforms3d header:not(.ics404) .dropdown-menu.inited {
   color: #086db6;
 }
 /* added by shishir */
+
+#product-showcase .hero div.content {
+margin-top:-30px !important;
+/*padding:0px !important;
+padding-left:1em !important;*/
+}
+
 #article-landing .hero div.content {
-/*margin-top:0px !important;*/
+margin-top:-30px !important;
 /*padding:0px !important;
 padding-left:1em !important;*/
 }
@@ -4665,15 +4691,6 @@ html.csstransforms3d header.ics404 #search-menu {
   padding-top: .5em;
   /*margin-top: -1.5em;*/
 }
-#article-landing .hero .carousel .navigation a {
-  display: inline-block;
-  text-shadow: 0px 2px 5px black;
-  height: 40px;
-  width: 30px;
-  background: url(/etc/designs/intelmobile/img/spr_CAROUSEL-arrows.png) no-repeat 0 0;
-  background-size: 100%;
-}
-
 
 
 #article-landing .hero .carousel .navigation .pagination {
@@ -4691,12 +4708,13 @@ html.csstransforms3d header.ics404 #search-menu {
   z-index: 999 !important;
 }
 #article-landing .hero .carousel .navigation .click-right.end {
-  background-position: right -155px;
-}
-#article-landing .hero .carousel .navigation .click-right {
+
   background-position: right -54px;
 }
+#product-showcase .hero .carousel .navigation .click-right.end {
 
+  background-position: right -54px;
+}
 
 #article-landing .hero .carousel .carousel-content li {
   /* new code for PDP */
