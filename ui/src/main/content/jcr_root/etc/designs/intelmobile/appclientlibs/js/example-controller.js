@@ -1544,28 +1544,22 @@ intel && intel.mobile && intel.mobile.register('videoPlayer', {
             'onStateChange': onPlayerStateChange
             }
         });
-    },
+    }//,
 
     // 4. The API will call this function when the video player is ready.
-    onPlayerReady : function onPlayerReady(event) {
+    /*
+  onPlayerReady : function onPlayerReady(event) {
        //event.target.playVideo();
         event.target.setPlaybackQuality('medium');
     }
+    */
 });
-
-/*
-function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING) {
-        event.target.setPlaybackQuality('hd720');  // <-- WORKS!
-    }
-}
-*/
+ 
 // global scope for youtube API
 function onYouTubeIframeAPIReady() {
-    var el = $('.video-container'),
-        i = el.length;
-
-    while (i--) {
-        intel.mobile.controller.videoPlayer.loadVideoPlayer(el[i])
-    }
+var el = $('.video-container'),
+i = el.length;
+while (i--) {
+intel.mobile.controller.videoPlayer.loadVideoPlayer(el[i])
+}
 }
