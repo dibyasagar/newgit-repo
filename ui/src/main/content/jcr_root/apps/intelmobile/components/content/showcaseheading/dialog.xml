@@ -130,7 +130,7 @@
                 allowUpload="{Boolean}false"
                 ddGroups="[media]"
                 fileNameParameter="./imageFileName"
-                fileReferenceParameter="./picture"
+                fileReferenceParameter="./heroimageReference"
                 name="./contentImage"
                 title="Image1"
                 xtype="smartimage"/>
