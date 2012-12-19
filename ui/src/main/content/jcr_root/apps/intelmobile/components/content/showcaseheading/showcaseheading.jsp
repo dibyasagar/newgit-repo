@@ -29,7 +29,7 @@ pageContext.setAttribute("openinnewwindow",properties.get("newwindow").toString(
        <div id="main" role="main">
                    <div id="product-showcase" class="products family">
                
-<c:if test="${properties.picture ne '' && properties.picture2 ne '' && properties.picture3 ne '' && properties.picture4 ne '' && properties.picture5 ne '' && properties.picture1 ne '' &&  properties.linkUrl ne '' && properties.linkCopy ne '' && properties.headingcopy ne ''}">
+<c:if test="${properties.heroimageReference ne '' && properties.picture2 ne '' && properties.picture3 ne '' && properties.picture4 ne '' && properties.picture5 ne '' && properties.picture1 ne '' &&  properties.linkUrl ne '' && properties.linkCopy ne '' && properties.headingcopy ne ''}">
                     <c:set var="window" value="_blank" />
                     <c:if test="${openinnewwindow eq 'no'}">
                       <c:set var="window" value="" />
