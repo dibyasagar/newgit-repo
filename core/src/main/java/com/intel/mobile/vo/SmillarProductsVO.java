@@ -43,6 +43,16 @@ public class SmillarProductsVO {
 		        this.url = url;
 		    }
 	 
-	 
+		    public boolean equals(Object prod) {
+		    	boolean isEqual = false;
+		    	if(prod instanceof SmillarProductsVO)
+		    	{
+		    		SmillarProductsVO prod1 = (SmillarProductsVO) prod;
+		    		if(prod1.getName().equals(this.getName())){
+		    			isEqual = true;
+		    		}
+		    	}
+		    	return isEqual;
+		    }
 	
 }
