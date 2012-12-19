@@ -4808,10 +4808,10 @@ html.csstransforms3d header.ics404 #search-menu {
   z-index: 999 !important;
 }
 #product-showcase .hero .carousel .navigation .click-right.end {
-  background-position: right -155px;
+  background-position: right -54px;
 }
 #product-showcase .hero .carousel .navigation .click-right {
-  background-position: right -54px;
+  background-position: right -155px;
 }
 
 
