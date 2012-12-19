@@ -72,7 +72,9 @@ public class SimillarProductUtil {
         			    }
         			   
         			    SmillarProductsVO productsInfo = new SmillarProductsVO(name, picture,bestPrice,url);
+        			    if(!similarResultList.contains(productsInfo)) {
         			    similarResultList.add(productsInfo);
+        			    }
         			}
         			//LOG.info("---similarResultList-----"+similarResultList);
         			
@@ -93,8 +95,8 @@ public class SimillarProductUtil {
 public  static String getProductUrl(Page categoryPage,String prodName,ResourceResolver resolver) {
 		
         String productUrl = "";
-		String queryStatement = "";
-		String pageStats = "";
+		//String queryStatement = "";
+		//String pageStats = "";
 		String tempUrl = categoryPage.getPath()+"/"+prodName;
 		Page reqPage = resolver.resolve(tempUrl).adaptTo(Page.class);
 	   if(reqPage.getProperties().get("cq:lastReplicationAction", "").equals("Activate")){
