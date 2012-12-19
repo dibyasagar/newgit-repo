@@ -1540,19 +1540,19 @@ intel && intel.mobile && intel.mobile.register('videoPlayer', {
 
             events: {
             //'onReady': self.onPlayerReady
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
+            'onReady': self.onPlayerReady,
+            //'onStateChange': onPlayerStateChange
             }
         });
-    }//,
+    },
 
     // 4. The API will call this function when the video player is ready.
-    /*
+    
   onPlayerReady : function onPlayerReady(event) {
        //event.target.playVideo();
         event.target.setPlaybackQuality('medium');
     }
-    */
+    
 });
  
 // global scope for youtube API
