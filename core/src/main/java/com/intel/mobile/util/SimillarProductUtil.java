@@ -59,6 +59,7 @@ public class SimillarProductUtil {
 				// long Count = similarNode.getSize();
 
 				while (similarNode.hasNext()) {
+					try {
 					Node tmpNode = similarNode.nextNode();
 					if (tmpNode.hasProperty("name")
 							&& tmpNode.getProperty("name") != null) {
@@ -90,7 +91,12 @@ public class SimillarProductUtil {
 					if (LOG.isDebugEnabled()) {
 						LOG.debug("---similarResultList-----"
 								+ similarResultList);
+					} 
+					} catch (Exception e) {
+						LOG.error("Error getting similar product URL "+e.getMessage());
+						LOG.debug(e.getMessage(), e);
 					}
+					
 
 				}
 			}
