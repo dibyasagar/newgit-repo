@@ -156,3 +156,37 @@ return false;
 }); 
 </script>  
                                                    
+<script>
+
+$(document).ready(function(){
+    
+if ( $.browser.msie ) {
+    
+    
+    var Emailtitle='<c:out value="${properties.emaildefault}"/>';
+    
+    
+    $("#email").val(Emailtitle);
+    document.getElementById("email").style.color="#666666";
+    $("#email").focus(function(){
+        if($("#email").val()==Emailtitle)
+        {
+
+            $("#email").val("");
+        }
+
+    });
+    
+    $("#email").blur(function(){
+
+        if($("#email").val()==="")
+        {
+
+            $("#email").val(Emailtitle);
+        }
+
+    });
+}    
+});
+
+</script> 
