@@ -117,7 +117,9 @@ public class SimillarProductUtil {
 			// String queryStatement = "";
 			// String pageStats = "";
 			String tempUrl = categoryPage.getPath() + "/" + prodName;
+			
 			Page reqPage = resolver.resolve(tempUrl).adaptTo(Page.class);
+			
 			if(reqPage != null){
 				ValueMap vm = reqPage.getProperties();
 				if(vm != null){
@@ -136,7 +138,7 @@ public class SimillarProductUtil {
 					LOG.debug("Properties are null "+prodName);
 				}
 			} else {
-				LOG.debug("Req MAP is null for product:"+prodName);
+				LOG.debug("Req Page is null for product:"+prodName);
 			}
 		} catch (Exception e) {
 			LOG.error("Exception getting product URL" + e.getMessage());
