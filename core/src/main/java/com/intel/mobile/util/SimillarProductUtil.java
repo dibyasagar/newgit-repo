@@ -67,6 +67,7 @@ public class SimillarProductUtil {
 						prodName = IntelUtil.normalizeName(name);
 						// url = categoryPage.getPath()+"/"+prodName;
 						url = getProductUrl(categoryPage, prodName, resolver);
+						
 					}
 					if (url != null && url != "") {
 						if (tmpNode.hasProperty("picture")
@@ -117,9 +118,25 @@ public class SimillarProductUtil {
 			// String pageStats = "";
 			String tempUrl = categoryPage.getPath() + "/" + prodName;
 			Page reqPage = resolver.resolve(tempUrl).adaptTo(Page.class);
-			if (reqPage.getProperties().get("cq:lastReplicationAction", "")
-					.equals("Activate")) {
-				productUrl = tempUrl;
+			if(reqPage != null){
+				ValueMap vm = reqPage.getProperties();
+				if(vm != null){
+					Object activateStatusObj = vm.get("cq:lastReplicationAction");
+					if(activateStatusObj != null && activateStatusObj instanceof String) {
+						String activationStatus = (String) activateStatusObj;
+						if("Activate".equals(activationStatus)){
+							productUrl = tempUrl;
+						} else {
+							LOG.debug("Product is deactivated "+prodName);
+						}
+					} else {
+						LOG.debug("activateStatusObj is null :"+prodName);
+					}
+				} else {
+					LOG.debug("Properties are null "+prodName);
+				}
+			} else {
+				LOG.debug("Req MAP is null for product:"+prodName);
 			}
 		} catch (Exception e) {
 			LOG.error("Exception getting product URL" + e.getMessage());
