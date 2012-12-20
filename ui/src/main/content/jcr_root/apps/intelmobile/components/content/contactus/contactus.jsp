@@ -58,7 +58,6 @@
                                         <div class="text-input">
                                                   <input id="fName" name="fName" type="text" class="text" placeholder="<c:out value="${properties.defaultname}"/>"/>
                                                 </div>
-                                                
                                         <div id="errname" style="display:none">
                                        <h3  style="color:#FF0000"><c:if test="${properties.blankname ne '' && not empty properties.blankname }">
                                             <c:out value="${properties.blankname}" escapeXml="false"/>
@@ -368,11 +367,59 @@
       });
     });  */ 
 </script>
-        
-        <!--#include file="includes/footer.html"-->
-        <!--#include file="includes/script-includes.html"-->
-        <script type="text/javascript" src="js/plugins.js"></script>        
-        <script type="text/javascript" src="js/example-controller.js"></script>  
-           
+ 
 
+<script>
+
+$(document).ready(function(){
+    
+if ( $.browser.msie ) {
+	var fNameTitle='<c:out value="${properties.defaultname}"/>';
+	var Emailtitle='<c:out value="${properties.defaultemail}"/>';
+    $("#fName").val(fNameTitle);
+	document.getElementById("fName").style.color="#666666";
+    $("#fName").focus(function(){
+		if($("#fName").val()==fNameTitle)
+		{
+
+			$("#fName").val("");
+		}
+
+    });
+	
+	$("#fName").blur(function(){
+
+		if($("#fName").val()==="")
+		{
+
+			$("#fName").val(fNameTitle);
+		}
+
+    });
+	
+	$("#email").val(Emailtitle);
+	document.getElementById("email").style.color="#666666";
+    $("#email").focus(function(){
+		if($("#email").val()==Emailtitle)
+		{
+
+			$("#email").val("");
+		}
+
+    });
+	
+	$("#email").blur(function(){
+
+		if($("#email").val()==="")
+		{
+
+			$("#email").val(Emailtitle);
+		}
+
+    });
+}    
+});
+
+</script> 
+ 
       
