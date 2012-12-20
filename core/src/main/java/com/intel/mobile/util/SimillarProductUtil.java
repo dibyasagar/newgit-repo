@@ -6,17 +6,13 @@ import java.util.List;
 import javax.jcr.Node;
 
 import javax.jcr.NodeIterator;
-import javax.jcr.PathNotFoundException;
-import javax.jcr.Property;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import javax.jcr.Value;
-import javax.jcr.ValueFormatException;
 import javax.jcr.query.Query;
 import javax.jcr.query.QueryManager;
 import javax.jcr.query.QueryResult;
 
-import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -25,7 +21,6 @@ import org.apache.sling.jcr.api.SlingRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.day.cq.replication.ReplicationActionType;
 import com.day.cq.wcm.api.Page;
 import com.intel.mobile.constants.IntelMobileConstants;
 import com.intel.mobile.vo.SmillarProductsVO;
@@ -46,7 +41,7 @@ public class SimillarProductUtil {
 		String id = "";
 		String categoryPath = "";
 		String prodName = "";
-        Boolean activationstatus= false;
+
 		Page categoryPage = currentPage.getParent();
 		// LOG.info("-----categoryPage ----"+categoryPage.getPath());
 		List<SmillarProductsVO> similarResultList = new ArrayList<SmillarProductsVO>();
@@ -71,10 +66,10 @@ public class SimillarProductUtil {
 						name = tmpNode.getProperty("name").getString();
 						prodName = IntelUtil.normalizeName(name);
 						// url = categoryPage.getPath()+"/"+prodName;
-						//url = getProductUrl(categoryPage, prodName, resolver);
-						activationstatus=getActivationStatus(similarProductnode,prodName,resolver);
+						url = getProductUrl(categoryPage, prodName, resolver);
+						
 					}
-					if (activationstatus==true) {
+					if (url != null && url != "") {
 						if (tmpNode.hasProperty("picture")
 								&& tmpNode.getProperty("picture") != null) {
 							picture = tmpNode.getProperty("picture")
@@ -152,47 +147,7 @@ public class SimillarProductUtil {
 		return productUrl;
 
 	}
-public static boolean getActivationStatus(Node productCategoryListingNode,String prodName, ResourceResolver resolver){
-	Node jcrContent = null;
-	//Node product=null;
-	//String prodName=null;
-	Boolean activationstatus = null;
-	//Node productCategoryListingNode=null;
-	Node productNode=null;
-	try {
-		if(productCategoryListingNode.hasNode(prodName)){
-			productNode = productCategoryListingNode.getNode(prodName);
-			jcrContent = productNode.getNode(IntelMobileConstants.NODE_JCR_CONTENT);
-			if(jcrContent != null)
-			{
-				if(jcrContent.hasProperty("cq:lastReplicationAction")) {
-					Property prop  = jcrContent.getProperty("cq:lastReplicationAction");
-					if(prop != null)
-					{
-						String activated = prop.getString();
-						if(activated != null && activated.equals(ReplicationActionType.ACTIVATE))
-						{
-							activationstatus =true;
-						}
-					}
-				
-				
-}
-			}
-		}
-	} catch (PathNotFoundException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} catch (ValueFormatException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} catch (RepositoryException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-return activationstatus;
-}	
-	
+
 	public static List getCmsSimilarProducts(String reqPages[],
 			ResourceResolver resolver) {
 
