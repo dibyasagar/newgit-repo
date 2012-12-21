@@ -20,7 +20,7 @@
 <div class="content">
           <%
 if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
-    out.println("Double Click to Edit Hpc Enquiry Component");
+    out.println("Double Click to Edit Email Subscription Signup Component");
 }
 %>
                                
