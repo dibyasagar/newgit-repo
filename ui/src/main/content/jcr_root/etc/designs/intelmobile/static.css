@@ -805,7 +805,8 @@ ul.accordion .content {
   /*text-indent: -1.25em; commented by shishir for Jira Issue - IMUAT-300*/
 }
 #product-details .features li:before {
-  content: "•";
+  /*content: "•";*/
+  content: "\2022";
   padding-right: 0.15em; /* changed by shishir form 0.85 to 0.15 */
   color: #00aeef;
 }
