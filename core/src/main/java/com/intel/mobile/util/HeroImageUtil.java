@@ -6,6 +6,7 @@ import java.util.List;
 import javax.jcr.Node;
 
 
+import org.apache.sling.api.resource.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,9 +25,19 @@ public class HeroImageUtil {
 		String image5 = "";
 		String image6 = "";
 		Node heroNode = null ;
+		Node articleNode=null;
 		List<String> articleImageList  = new ArrayList<String>();
 		 try {
-			 Node articleNode = currentPage.getContentResource().getChild("articleHead").adaptTo(Node.class);
+			// if(currentPage.getContentResource().getChild("articleHead")!=null)
+			 //Resource articleresource=currentPage.getContentResource().getChild("articleHead");
+			
+			 Node articleresource=currentPage.getContentResource().adaptTo(Node.class);
+			 LOG.info("ArticleResource ---"+articleresource);
+			 if(articleresource.hasNode("articleHead"))
+			 articleNode=articleresource.getNode("articleHead");
+			
+				 //if(articleresource!=null)
+			// Node articleNode = articleresource.adaptTo(Node.class);
 			 LOG.info("detailNode ---"+articleNode);
 			 if(articleNode != null){
 				 if(articleNode.hasNode("articledetailshero")){
@@ -62,7 +73,7 @@ public class HeroImageUtil {
 			 LOG.info("---articleImageList ---"+articleImageList);	
 			 }
 			 catch(Exception e){
-				 LOG.error("Error getArticleImage method " + e.getMessage());
+				 LOG.error("Error getArticleImage method :",e );
 			 }
 		
 	
@@ -77,12 +88,15 @@ public class HeroImageUtil {
 		String image3 = "";
 		String image4 = "";
 		String image5 = "";
-		
-		 List<String> showcaseImageList  = new ArrayList<String>();
+		Node detailNode=null;
+		List<String> showcaseImageList  = new ArrayList<String>();
 		 try {
-		 Node detailNode = currentPage.getContentResource().getChild("showcase").adaptTo(Node.class);
-		 
-		 if(detailNode.hasProperty("heroimageReference")&& detailNode.getProperty("heroimageReference") != null){
+		// Node detailNode = currentPage.getContentResource().getChild("showcase").adaptTo(Node.class);
+		 Node showcase=currentPage.getContentResource().adaptTo(Node.class);
+		 if(showcase.hasNode("showcase"))	 
+			 detailNode=showcase.getNode("showcase");
+			
+		if(detailNode.hasProperty("heroimageReference")&& detailNode.getProperty("heroimageReference") != null){
 			 image = detailNode.getProperty("heroimageReference").getString();
 			 showcaseImageList.add(image);
 		 }
