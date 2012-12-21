@@ -191,8 +191,8 @@ intel && intel.mobile && intel.mobile.register('carousel', {
             };
         window.setTimeout(resize, 10) // on rotation wait 500ms for window data
     },
-	
-	
+    
+    
     
     setsize : function (cIDX) {
         var self = this,
@@ -204,9 +204,9 @@ intel && intel.mobile && intel.mobile.register('carousel', {
             winWidth = $(_cached.carousel[cIDX]).width() // setting the max width to the parent container
             tileWidth = '',
             scrollDistance = (_cached.carouselInfo[cIDX].curTile - 1) * winWidth,
-            openStyle3d =   '-webkit-transform: translate3d(-' + (scrollDistance+8) + 'px,' + '0' + 'px,0);' + 
-                            '-moz-transform: translate3d(-' + (scrollDistance+8) + 'px,' + '0' + 'px,0);' + 
-                            'transform: translate3d(-' + (scrollDistance+8) + 'px,' + '0' + 'px,0););';
+            openStyle3d =   '-webkit-transform: translate3d(-' + (scrollDistance) + 'px,' + '0' + 'px,0);' + 
+                            '-moz-transform: translate3d(-' + (scrollDistance) + 'px,' + '0' + 'px,0);' + 
+                            'transform: translate3d(-' + (scrollDistance) + 'px,' + '0' + 'px,0););';
         
         _cached.carouselInfo[cIDX].maxScroll = Math.ceil( _cached.carouselInfo[cIDX].totalTiles / _cached.carouselInfo[cIDX].showTiles ); // set how many tiles we can scroll before we hit the end
         _cached.carouselInfo[cIDX].showTiles = parseInt($(_cached.carousel[cIDX]).attr('data-count'), 10); // set how many tiles we want to see at a time from the data-count attribute
@@ -255,7 +255,7 @@ intel && intel.mobile && intel.mobile.register('carousel', {
             self.swipeRight('click', 0);
         
         }
-		*/
+        */
          
 
         //if (window.innerWidth>window.innerHeight) { // is it landscape?
@@ -276,8 +276,8 @@ intel && intel.mobile && intel.mobile.register('carousel', {
                 caroContent.attr( 'style', "" );
                 //self.incrementPagination(0); // populate pagination div
                 self.MoveRightCaro(0);
-				//caroContent.attr( 'style', "" );
-				
+                //caroContent.attr( 'style', "" );
+                
                 
                 
             }
@@ -286,7 +286,7 @@ intel && intel.mobile && intel.mobile.register('carousel', {
         {
            
             if (_cached.carouselInfo[cIDX].showTiles === 2) { // currently 2-up layouts switch to show 3 in landscape
-				
+                
                 tileWidth = (winWidth / 2) - 2; // show 3 up if landscape
                 _cached.carouselInfo[cIDX].maxScroll = Math.ceil( _cached.carouselInfo[cIDX].totalTiles / 2 );
                 _cached.carouselInfo[cIDX].showTiles = 2;
@@ -301,54 +301,60 @@ intel && intel.mobile && intel.mobile.register('carousel', {
                 caroContent.attr( 'style', "" );
                 //self.incrementPagination(0); // populate pagination div
                 self.MoveRightCaro(0);
-				//caroContent.attr( 'style', "" );
-				
+                //caroContent.attr( 'style', "" );
+                
                 
                 
             }
-		
-			//caroContent.attr( 'style', "" );
+        
+            //caroContent.attr( 'style', "" );
             //self.incrementPagination(0); // populate pagination div
             //self.MoveRightCaro(0);
-			//caroContent.attr( 'style', "" );
-			
+            //caroContent.attr( 'style', "" );
+            
         
         }
-		
+        
         
 
     },
-	/*right :
+    /*right :
     */ 
     MoveRightCaro : function (cIDX) {
-
+       
         var self = this,
             _cached = self.cache,
             caroContent = $('.carousel-content', _cached.carousel[cIDX]), // set carousel context
             caroType = (caroContent.find('.video-container').length <= 0) ? 'images' : 'video',
             animateType = ($('html').hasClass('iphone3')) ? 'js' : '3d',
             rightMargin = parseInt($('.carousel-content li', _cached.carousel[cIDX]).css('margin-right').split('px')[0], 10),
-            scrollDistance = ( ($(_cached.carousel[cIDX]).width() + rightMargin) * _cached.carouselInfo[cIDX].curTile) - ( ($(_cached.carousel[cIDX]).width() + rightMargin) * 2),
+          scrollDistance = ( ($(_cached.carousel[cIDX]).width() + rightMargin) * _cached.carouselInfo[cIDX].curTile) - ( ($(_cached.carousel[cIDX]).width() + rightMargin) * 2),
             pag = $('.pagination', _cached.carousel[cIDX]),
             i = pag.length,
-            openStyle3d =   '-webkit-transform: translate3d(-' + (scrollDistance+8) + 'px,' + '0' + 'px,0);' + 
-                            '-moz-transform: translate3d(-' + (scrollDistance+8) + 'px,' + '0' + 'px,0);' + 
-                            'transform: translate3d(-' + (scrollDistance+8) + 'px,' + '0' + 'px,0););';
+            openStyle3d =   '-webkit-transform: translate3d(-' + (scrollDistance) + 'px,' + '0' + 'px,0);' + 
+                            '-moz-transform: translate3d(-' + (scrollDistance) + 'px,' + '0' + 'px,0);' + 
+                            'transform: translate3d(-' + (scrollDistance) + 'px,' + '0' + 'px,0););';
 
 
-        if (_cached.carouselInfo[cIDX].curTile === 1 ) { return }; // if we're at the end, stop
+        
+        //if (_cached.carouselInfo[cIDX].curTile === 1 ) { return }; // if we're at the end, stop
 
         if (Modernizr.touch === false) { // touch is not enabled
             $('.navigation .click-left').removeClass('end');
         }
+        
+        //alert("caro type: "+caroType+" | Animate: "+animateType );
+        
 
         if( caroType === 'images' && animateType === '3d' ) {
 
             //caroContent.attr( 'style', openStyle3d );
+            // alert("called right caro");
             _cached.carouselInfo[cIDX].curTile = 1;
             self.incrementPaginationCaro(0);
 
         } else {
+             //alert("called right caro else");
             caroContent.animate({left : '+='+ ($(_cached.carousel[cIDX]).width() + rightMargin) }, 200, function () {
                 _cached.carouselInfo[cIDX].curTile = 1;
                 self.incrementPaginationCaro(0);
@@ -366,7 +372,10 @@ intel && intel.mobile && intel.mobile.register('carousel', {
     /* SWIPE HANDLERS
     left : */
     swipeLeft : function (evt, cIDX) {
-		
+        //alert("left");
+      
+         
+        
         var self = this,
             _cached = self.cache,
             caroContent = $('.carousel-content', _cached.carousel[cIDX]), // set carousel context
@@ -379,6 +388,7 @@ intel && intel.mobile && intel.mobile.register('carousel', {
             openStyle3d =   '-webkit-transform: translate3d(-' + (scrollDistance+5) + 'px,' + '0' + 'px,0);' + 
                             '-moz-transform: translate3d(-' + (scrollDistance+5) + 'px,' + '0' + 'px,0);' + 
                             'transform: translate3d(-' + (scrollDistance+5) + 'px,' + '0' + 'px,0););';   
+           
 
         if (_cached.carouselInfo[cIDX].curTile === _cached.carouselInfo[cIDX].maxScroll ) { return; } // if we're at the end, stop
 
@@ -413,7 +423,7 @@ intel && intel.mobile && intel.mobile.register('carousel', {
     /*right :
     */ 
     swipeRight : function (evt, cIDX) {
-		
+        //alert("right");
         var self = this,
             _cached = self.cache,
             caroContent = $('.carousel-content', _cached.carousel[cIDX]), // set carousel context
@@ -423,9 +433,9 @@ intel && intel.mobile && intel.mobile.register('carousel', {
             scrollDistance = ( ($(_cached.carousel[cIDX]).width() + rightMargin-3) * _cached.carouselInfo[cIDX].curTile) - ( ($(_cached.carousel[cIDX]).width() + rightMargin) * 2),
             pag = $('.pagination', _cached.carousel[cIDX]),
             i = pag.length,
-            openStyle3d =   '-webkit-transform: translate3d(-' + (scrollDistance+7) + 'px,' + '0' + 'px,0);' + 
-                            '-moz-transform: translate3d(-' + (scrollDistance+7) + 'px,' + '0' + 'px,0);' + 
-                            'transform: translate3d(-' + (scrollDistance+7) + 'px,' + '0' + 'px,0););';
+            openStyle3d =   '-webkit-transform: translate3d(-' + (scrollDistance) + 'px,' + '0' + 'px,0);' + 
+                            '-moz-transform: translate3d(-' + (scrollDistance) + 'px,' + '0' + 'px,0);' + 
+                            'transform: translate3d(-' + (scrollDistance) + 'px,' + '0' + 'px,0););';
 
 
         if (_cached.carouselInfo[cIDX].curTile === 1 ) { return }; // if we're at the end, stop
@@ -455,20 +465,20 @@ intel && intel.mobile && intel.mobile.register('carousel', {
             }
         }       
     },
-	
-	
+    
+    
 
     incrementPagination : function(cIDX) {
         var self = this,
             _cached = self.cache;
-			
+            
 
 
         $('.pagination', _cached.carousel[cIDX]).each(function(i) {
             $(this).children('span').each(function(idx) { // make the next pagination dot active
                 var idx = idx +1;
                 if ( (idx) === _cached.carouselInfo[cIDX].curTile ) {
-					
+                    
                     $(this).addClass('active');
                 } else {
                     $(this).removeClass('active');
@@ -476,28 +486,36 @@ intel && intel.mobile && intel.mobile.register('carousel', {
             })
         })
     },
-	
-	incrementPaginationCaro : function(cIDX) {
+    
+    incrementPaginationCaro : function(cIDX) {
+        
         var self = this,
             _cached = self.cache;
-			
-
-		//$('.pagination')[0].children('span')[0].addClass('active');
-		
+            
+           
+        //$('.pagination')[0].children('span')[0].addClass('active');
+       // var pag=$('.pagination span');
+        //alert(pag.length);
+         //$('.navigation-container .navigation .pagination span:last-child').removeClass('active');       
+        
+       
         $('.pagination', _cached.carousel[cIDX]).each(function(i) {
             $(this).children('span').each(function(idx) { // make the next pagination dot active
-				
-                var idx = idx +1;
-				
+                
+                var idx = idx+1;
+              
+                
                 if ( (idx) === _cached.carouselInfo[cIDX].curTile ) {
-					
+                    //  alert("my idx: "+idx+" | caroIDX: "+_cached.carouselInfo[cIDX].curTile);
                     $(this).addClass('active');
                 } else {
+                   // alert("my elseidx: "+idx+" | caroIDX: "+_cached.carouselInfo[cIDX].curTile);
                     $(this).removeClass('active');
                 }
             })
         })
-		
+        
+        
     },
 
     pagination : function (cIDX) {
