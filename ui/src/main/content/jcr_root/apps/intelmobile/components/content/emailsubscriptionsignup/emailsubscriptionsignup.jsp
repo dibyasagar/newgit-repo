@@ -38,24 +38,7 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
                                             
                                 </div>
                             </div>
-<div id="wrongemail" style="display:none">
-                                       <h3  style="color:#FF0000"><c:if test="${properties.wrongemail ne '' && not empty properties.wrongemail }">
-                    <c:out value="${properties.wrongemail }" escapeXml="false"/>
-              
-                </c:if></h3>
-</div>
-<div  style="display:none" id="errpopup">
-            <h3  style="color:#FF0000"><c:if test="${properties.systemerror ne '' && not empty properties.systemerror }">
-                    <c:out value="${properties.systemerror}" escapeXml="false"/>
-              
-                </c:if></h3>
-            </div>            
- <div id="blankemail" style="display:none">
-                                       <h3  style="color:#FF0000"><c:if test="${properties.blankemail ne '' && not empty properties.blankemail }">
-                    <c:out value="${properties.blankemail }" escapeXml="false"/>
-              
-                </c:if></h3>
-</div>
+
  
 <input type="hidden" id="fromemailaddr" name="fromemail" value="<%=properties.get("source",String.class)%>" />                                     
 <input type="hidden" id="toemailaddr" name="toemail" value="<%=properties.get("destination",String.class)%>" />                                        
@@ -80,15 +63,32 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
                                             </td>
                                         </tr>
                                     </tbody></table>        
-                                    
+  <div id="wrongemail" style="display:none">
+                                       <h4  style="color:#FF0000"><c:if test="${properties.wrongemail ne '' && not empty properties.wrongemail }">
+                    <c:out value="${properties.wrongemail }" escapeXml="false"/>
+              
+                </c:if></h4>
+</div>
+<div  style="display:none" id="errpopup">
+            <h4  style="color:#FF0000"><c:if test="${properties.systemerror ne '' && not empty properties.systemerror }">
+                    <c:out value="${properties.systemerror}" escapeXml="false"/>
+              
+                </c:if></h4>
+            </div>            
+ <div id="blankemail" style="display:none">
+                                       <h4  style="color:#FF0000"><c:if test="${properties.blankemail ne '' && not empty properties.blankemail }">
+                    <c:out value="${properties.blankemail }" escapeXml="false"/>
+              
+                </c:if></h4>
+</div>                                  
                                             
                                 </div>
                                 
  <div  style="display:none" id="popup">
-            <h3  display=false backgroundcolor="#8B8989"><c:if test="${properties.successcopy ne '' && not empty properties.successcopy }">
+            <h4  display=false backgroundcolor="#8B8989"><c:if test="${properties.successcopy ne '' && not empty properties.successcopy }">
                     <c:out value="${properties.successcopy }" escapeXml="false"/>
               
-                </c:if></h3>
+                </c:if></h4>
   </div 
   
  
