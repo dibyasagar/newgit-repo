@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/email.css" media="all">      
 
                         
- 
+<div id="main" role="main">
 <div id="email-contact" class="article-detail"> 
 
                     <div class="hero">
@@ -22,8 +22,6 @@
 if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
     out.println("Double Click to Edit Email Subscription Signup Component");
 }
-boolean isChecked = properties.get("checkbox", false);
-pageContext.setAttribute("subjectcheck",isChecked);
 %>
                                
                             <div class="grad"> 
@@ -102,7 +100,7 @@ pageContext.setAttribute("subjectcheck",isChecked);
                   
                 </div>
             </div>
-         
+ </div>        
 
  <script>
 $("#emailsubmit").click(function() {
@@ -132,13 +130,16 @@ var failure = function(err) {
         // TODO - clear the form
     };
 // we want to store the values from the form input box, then send via ajax below
+var subjectcheck="false";
 var fromemailaddr= $('#fromemailaddr').attr('value');
 var toemailaddr= $('#toemailaddr').attr('value');
 var emailbody= $('#emailbody').attr('value'); 
 var signupinfo= $('#signupinfo').attr('value'); 
 var useremail= $('#email').attr('value');
 var mailsubject=$('#subject').attr('value');
-var subjectcheck='<c:out value="${subjectcheck}"/>';
+<c:if test="${properties.emailsubject ne '' && not empty properties.emailsubject }">
+subjectcheck="true";
+</c:if>
 var mailvalidate=checkEmail();
 if(mailvalidate){
 if(subjectcheck=="true"){
