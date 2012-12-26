@@ -6,7 +6,7 @@
 <%@include file="/libs/foundation/global.jsp"%>
 <%@page session="false"%>
 
- <div id="main" role="main">
+
             <%
  pageContext.setAttribute("wcmMode",WCMMode.fromRequest(request));
  if(WCMMode.fromRequest(request) == WCMMode.EDIT) {
@@ -132,7 +132,7 @@
                                         
                                        
                                         <div class="text-input">
-                                            <input id="email" name="email" type="email" class="text" placeholder="<c:out value="${properties.defaultemail}"/>"/>
+                                            <input id="contactemail" name="contactemail" type="email" class="text" placeholder="<c:out value="${properties.defaultemail}"/>"/>
                                              <input type="hidden" name="toAddress" id="toAddress" value="${properties.destination}">
                                             <input type="hidden" id="signupchecked" name="signupchecked" value="${properties.signmetext}" />                            
                                             <input type="hidden" id="signupunchecked" name="signupunchecked" value="${properties.dontsignmetext}" />
@@ -148,7 +148,7 @@
               
                 </c:if></h3>
                                      </div>
-                            <div id="blankemail" style="display:none">
+                            <div id="contactblankemail" style="display:none">
                                        <h3  style="color:#FF0000"><c:if test="${properties.blankemail ne '' && not empty properties.blankemail }">
                     <c:out value="${properties.blankemail }" escapeXml="false"/>
               
@@ -157,13 +157,13 @@
                                      
                                      
                                <div  style="display:none" id="popup">
-            <h3  display=false backgroundcolor="#8B8989"><c:if test="${properties.successcopy ne '' && not empty properties.successcopy }">
+            <h3  style="color:#086DB6"><c:if test="${properties.successcopy ne '' && not empty properties.successcopy }">
                     <c:out value="${properties.successcopy}" escapeXml="false"/>
               
                 </c:if></h3>
             </div>     
                            <div  style="display:none" id="errpopup">
-            <h3  display=false backgroundcolor="#8B8989"><c:if test="${properties.systemerror ne '' && not empty properties.systemerror }">
+            <h3  style="color:#FF0000"><c:if test="${properties.systemerror ne '' && not empty properties.systemerror }">
                     <c:out value="${properties.systemerror}" escapeXml="false"/>
               
                 </c:if></h3>
@@ -193,7 +193,7 @@
                                     </div>  
                </c:if>                     
                                     <div class="item">
-                                        <li class="compare-btn"><a href="#" class="button primary" id="submit"><c:if test="${properties.submit ne '' && not empty properties.submit }">
+                                        <li class="compare-btn"><a href="#" class="button primary" id="contactsubmit"><c:if test="${properties.submit ne '' && not empty properties.submit }">
                     <c:out value="${properties.submit}" escapeXml="false"/>
               
                 </c:if></a></li>
@@ -206,21 +206,21 @@
                             </div>
                 </div>
         </div>        
-   </div>     
+       
          
         <script>
 
-   $("#submit").click(function() {
+   $("#contactsubmit").click(function() {
       $('#erroption').hide();
       $('#errname').hide();
       $('#erremail').hide();
-      $('#blankemail').hide();
+      $('#contactblankemail').hide();
        $('#errpopup').hide();
       function checkEmail() { 
-      var sEmail = $('#email').val();
+      var sEmail = $('#contactemail').val();
       var filter = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i; 
      if(sEmail=="" || sEmail== null){
-      $('#blankemail').show();
+      $('#contactblankemail').show();
          return false;
     }
      else{ 
@@ -374,47 +374,47 @@
 $(document).ready(function(){
     
 if ( $.browser.msie ) {
-	var fNameTitle='<c:out value="${properties.defaultname}"/>';
-	var Emailtitle='<c:out value="${properties.defaultemail}"/>';
+    var fNameTitle='<c:out value="${properties.defaultname}"/>';
+    var Emailtitle='<c:out value="${properties.defaultemail}"/>';
     $("#fName").val(fNameTitle);
-	document.getElementById("fName").style.color="#666666";
+    document.getElementById("fName").style.color="#666666";
     $("#fName").focus(function(){
-		if($("#fName").val()==fNameTitle)
-		{
+        if($("#fName").val()==fNameTitle)
+        {
 
-			$("#fName").val("");
-		}
-
-    });
-	
-	$("#fName").blur(function(){
-
-		if($("#fName").val()==="")
-		{
-
-			$("#fName").val(fNameTitle);
-		}
+            $("#fName").val("");
+        }
 
     });
-	
-	$("#email").val(Emailtitle);
-	document.getElementById("email").style.color="#666666";
-    $("#email").focus(function(){
-		if($("#email").val()==Emailtitle)
-		{
+    
+    $("#fName").blur(function(){
 
-			$("#email").val("");
-		}
+        if($("#fName").val()==="")
+        {
+
+            $("#fName").val(fNameTitle);
+        }
 
     });
-	
-	$("#email").blur(function(){
+    
+    $("#contactemail").val(Emailtitle);
+    document.getElementById("contactemail").style.color="#666666";
+    $("#contactemail").focus(function(){
+        if($("#contactemail").val()==Emailtitle)
+        {
 
-		if($("#email").val()==="")
-		{
+            $("#contactemail").val("");
+        }
 
-			$("#email").val(Emailtitle);
-		}
+    });
+    
+    $("#contactemail").blur(function(){
+
+        if($("#contactemail").val()==="")
+        {
+
+            $("#contactemail").val(Emailtitle);
+        }
 
     });
 }    
