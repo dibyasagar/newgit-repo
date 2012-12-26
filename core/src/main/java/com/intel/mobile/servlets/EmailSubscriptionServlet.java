@@ -44,17 +44,19 @@ public class EmailSubscriptionServlet extends SlingAllMethodsServlet{
 		String useremailAddress = request.getParameter("email");
 		String sourceemailAddress = request.getParameter("fromemail");
 		String destemailAddress = request.getParameter("toemail");
-		
+		String subject=request.getParameter("subject");
+		if(subject==null)
+		subject="";	
 		String mailbody=request.getParameter("body");
 		LOGGER.info("emailAddress : "+useremailAddress);
 		LOGGER.info("source : "+sourceemailAddress);
 		LOGGER.info("destination : "+destemailAddress);
-		
+		LOGGER.info("subject : "+subject);
 		LOGGER.info("mailbody: "+mailbody);
 	    StringBuffer useremailBody = new StringBuffer();
 		useremailBody.append(mailbody).append("\n");
 		
-		IntelUtil.sendMail(useremailAddress,sourceemailAddress, "Email Subscription", mailbody.toString(), null, null, "", "");
+		IntelUtil.sendMail(useremailAddress,sourceemailAddress,subject, mailbody.toString(), null, null, "", "");
 		
       
 	
