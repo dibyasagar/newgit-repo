@@ -64,6 +64,19 @@
                         fieldLabel="Submit Button Copy"
                         name="./submit"
                         xtype="textfield"/>
+                    <emailsubject
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Subject"
+                        name="./emailsubject"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <subjectcheckbox
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Check to add subject"
+                        name="./checkbox"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </emailinfo>
             <address

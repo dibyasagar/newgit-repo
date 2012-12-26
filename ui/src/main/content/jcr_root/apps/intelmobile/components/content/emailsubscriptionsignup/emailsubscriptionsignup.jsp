@@ -22,9 +22,12 @@
 if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
     out.println("Double Click to Edit Email Subscription Signup Component");
 }
+boolean isChecked = properties.get("checkbox", false);
+pageContext.setAttribute("subjectcheck",isChecked);
 %>
                                
                             <div class="grad"> 
+                                
                                 <h3 class="form-label"><c:if test="${properties.confirmtext ne '' && not empty properties.confirmtext}">
                     <c:out value="${properties.confirmtext}"/>
                 </c:if>  </h3>
@@ -43,7 +46,7 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
 <input type="hidden" id="fromemailaddr" name="fromemail" value="<%=properties.get("source",String.class)%>" />                                     
 <input type="hidden" id="toemailaddr" name="toemail" value="<%=properties.get("destination",String.class)%>" />                                        
 <input type="hidden" id="emailbody" name="body" value="<%=properties.get("mailbody",String.class)%>" />                                            
-                           
+<input type="hidden" id="subject" name="subject" value="<%=properties.get("emailsubject",String.class)%>" />                              
                             <div class="items">
                                 <div class="item">
                                     <table class="contact-table">
@@ -54,7 +57,7 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
                                                 </div>
                                             </td>
                                             <td>
-                                                     <li class="compare-btn email-btn"><a href="#" id="submit" class="button primary"><c:if test="${properties.submit ne '' && not empty properties.submit }">
+                                                     <li class="compare-btn email-btn"><a href="#" id="emailsubmit" class="button primary"><c:if test="${properties.submit ne '' && not empty properties.submit }">
                     <c:out value="${properties.submit }" escapeXml="false"/>
               
                 </c:if></a></li>
@@ -63,6 +66,8 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
                                             </td>
                                         </tr>
                                     </tbody></table>        
+<<<<<<< .mine
+<<<<<<< .mine
   <div id="wrongemail" style="display:none">
                                        <h4  style="color:#FF0000"><c:if test="${properties.wrongemail ne '' && not empty properties.wrongemail }">
                     <c:out value="${properties.wrongemail }" escapeXml="false"/>
@@ -81,11 +86,63 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
               
                 </c:if></h4>
 </div>                                  
+=======
+  <div id="wrongemail" style="display:none">
+                                       <h4  style="color:#FF0000"><c:if test="${properties.wrongemail ne '' && not empty properties.wrongemail }">
+                    <c:out value="${properties.wrongemail }" escapeXml="false"/>
+              
+                </c:if></h4>
+</div>
+<div  style="display:none" id="syserrpopup">
+            <h4  style="color:#FF0000"><c:if test="${properties.systemerror ne '' && not empty properties.systemerror }">
+                    <c:out value="${properties.systemerror}" escapeXml="false"/>
+              
+                </c:if></h4>
+            </div>            
+ <div id="blankemail" style="display:none">
+                                       <h4  style="color:#FF0000"><c:if test="${properties.blankemail ne '' && not empty properties.blankemail }">
+                    <c:out value="${properties.blankemail }" escapeXml="false"/>
+              
+                </c:if></h4>
+</div>                                  
+>>>>>>> .theirs
+=======
+  <div id="wrongemail" style="display:none">
+                                       <h4  style="color:#FF0000"><c:if test="${properties.wrongemail ne '' && not empty properties.wrongemail }">
+                    <c:out value="${properties.wrongemail }" escapeXml="false"/>
+              
+                </c:if></h4>
+</div>
+<div  style="display:none" id="syserrpopup">
+            <h4  style="color:#FF0000"><c:if test="${properties.systemerror ne '' && not empty properties.systemerror }">
+                    <c:out value="${properties.systemerror}" escapeXml="false"/>
+              
+                </c:if></h4>
+            </div>            
+ <div id="blankemail" style="display:none">
+                                       <h4  style="color:#FF0000"><c:if test="${properties.blankemail ne '' && not empty properties.blankemail }">
+                    <c:out value="${properties.blankemail }" escapeXml="false"/>
+              
+                </c:if></h4>
+</div>                                  
+>>>>>>> .theirs
                                             
                                 </div>
                                 
+<<<<<<< .mine
+<<<<<<< .mine
  <div  style="display:none" id="popup">
             <h4  display=false backgroundcolor="#8B8989"><c:if test="${properties.successcopy ne '' && not empty properties.successcopy }">
+=======
+ <div  style="display:none" id="emailpopup">
+            <h4  display=false backgroundcolor="#8B8989"><c:if test="${properties.successcopy ne '' && not empty properties.successcopy }">
+>>>>>>> .theirs
+                    <c:out value="${properties.successcopy }" escapeXml="false"/>
+              
+=======
+ <div  style="display:none" id="emailpopup">
+            <h4  display=false backgroundcolor="#8B8989"><c:if test="${properties.successcopy ne '' && not empty properties.successcopy }">
+>>>>>>> .theirs
                     <c:out value="${properties.successcopy }" escapeXml="false"/>
               
                 </c:if></h4>
@@ -102,7 +159,7 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
    </div>         
 
  <script>
-$("#submit").click(function() {
+$("#emailsubmit").click(function() {
   $('#blankemail').hide();
   $('#wrongemail').hide();
     $('#mailerr').hide();
@@ -134,27 +191,51 @@ var toemailaddr= $('#toemailaddr').attr('value');
 var emailbody= $('#emailbody').attr('value'); 
 var signupinfo= $('#signupinfo').attr('value'); 
 var useremail= $('#email').attr('value');
+var mailsubject=$('#subject').attr('value');
+var subjectcheck='<c:out value="${subjectcheck}"/>';
 var mailvalidate=checkEmail();
 if(mailvalidate){
+if(subjectcheck=="true"){
+$.ajax({
+        type: "POST",
+        url: "/bin/EmailSub",
+        data: "fromemail="+ fromemailaddr+ "&toemail="+ useremail + "&body=" + emailbody + "&email=" + useremail +  "&subject=" + mailsubject,
+        success: function(){
+           $('#emailpopup').show();
+             $('#emailpopup').fadeOut(5000); 
+            },
+    error: function(xhr, status, err) { 
+            $('#syserrpopup').show();
+            //failure(err);
+        } 
+    }); // End .ajax fucntion 
+}
+else{
 $.ajax({
         type: "POST",
         url: "/bin/EmailSub",
         data: "fromemail="+ fromemailaddr+ "&toemail="+ useremail + "&body=" + emailbody + "&email=" + useremail,
         success: function(){
-           $('#popup').show();
-             $('#popup').fadeOut(5000); 
+           $('#emailpopup').show();
+           $('#emailpopup').fadeOut(5000); 
             },
     error: function(xhr, status, err) { 
-            $('#errpopup').show();
+            $('#syserrpopup').show();
             //failure(err);
         } 
     }); // End .ajax fucntion 
-} 
+
+}
+
+
+}
 else
 $('#mailerr').show();
 return false;
 }); 
 </script>  
+<<<<<<< .mine
+<<<<<<< .mine
                                                    
 <script>
 
@@ -189,4 +270,75 @@ if ( $.browser.msie ) {
 }    
 });
 
-</script> 
+</script> =======
+                                                   
+<script>
+
+$(document).ready(function(){
+    
+if ( $.browser.msie ) {
+    
+    
+    var Emailtitle='<c:out value="${properties.emaildefault}"/>';
+    
+    
+    $("#email").val(Emailtitle);
+    document.getElementById("email").style.color="#666666";
+    $("#email").focus(function(){
+        if($("#email").val()==Emailtitle)
+        {
+
+            $("#email").val("");
+        }
+
+    });
+    
+    $("#email").blur(function(){
+
+        if($("#email").val()==="")
+        {
+
+            $("#email").val(Emailtitle);
+        }
+
+    });
+}    
+});
+
+</script>   >>>>>>> .theirs
+=======
+                                                   
+<script>
+
+$(document).ready(function(){
+    
+if ( $.browser.msie ) {
+    
+    
+    var Emailtitle='<c:out value="${properties.emaildefault}"/>';
+    
+    
+    $("#email").val(Emailtitle);
+    document.getElementById("email").style.color="#666666";
+    $("#email").focus(function(){
+        if($("#email").val()==Emailtitle)
+        {
+
+            $("#email").val("");
+        }
+
+    });
+    
+    $("#email").blur(function(){
+
+        if($("#email").val()==="")
+        {
+
+            $("#email").val(Emailtitle);
+        }
+
+    });
+}    
+});
+
+</script>   >>>>>>> .theirs
