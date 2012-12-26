@@ -6,7 +6,7 @@
 <%@include file="/libs/foundation/global.jsp"%>
 <%@page session="false"%>
 
-
+ <div id="main" role="main">
             <%
  pageContext.setAttribute("wcmMode",WCMMode.fromRequest(request));
  if(WCMMode.fromRequest(request) == WCMMode.EDIT) {
@@ -207,7 +207,7 @@
                 </div>
         </div>        
        
-         
+  </div>       
         <script>
 
    $("#contactsubmit").click(function() {
