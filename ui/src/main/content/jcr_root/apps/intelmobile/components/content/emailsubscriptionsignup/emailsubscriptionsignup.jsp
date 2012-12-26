@@ -9,9 +9,9 @@
 %><%@page session="false" %><%@page import="com.day.cq.wcm.api.WCMMode"%>
 
 <link rel="stylesheet" href="/etc/designs/intelmobile/appclientlibs/css/ultrabook/email.css" media="all">      
-<div id="main" role="main"> 
+
                         
-   
+ 
 <div id="email-contact" class="article-detail"> 
 
                     <div class="hero">
@@ -66,27 +66,6 @@ pageContext.setAttribute("subjectcheck",isChecked);
                                             </td>
                                         </tr>
                                     </tbody></table>        
-<<<<<<< .mine
-<<<<<<< .mine
-  <div id="wrongemail" style="display:none">
-                                       <h4  style="color:#FF0000"><c:if test="${properties.wrongemail ne '' && not empty properties.wrongemail }">
-                    <c:out value="${properties.wrongemail }" escapeXml="false"/>
-              
-                </c:if></h4>
-</div>
-<div  style="display:none" id="errpopup">
-            <h4  style="color:#FF0000"><c:if test="${properties.systemerror ne '' && not empty properties.systemerror }">
-                    <c:out value="${properties.systemerror}" escapeXml="false"/>
-              
-                </c:if></h4>
-            </div>            
- <div id="blankemail" style="display:none">
-                                       <h4  style="color:#FF0000"><c:if test="${properties.blankemail ne '' && not empty properties.blankemail }">
-                    <c:out value="${properties.blankemail }" escapeXml="false"/>
-              
-                </c:if></h4>
-</div>                                  
-=======
   <div id="wrongemail" style="display:none">
                                        <h4  style="color:#FF0000"><c:if test="${properties.wrongemail ne '' && not empty properties.wrongemail }">
                     <c:out value="${properties.wrongemail }" escapeXml="false"/>
@@ -105,44 +84,11 @@ pageContext.setAttribute("subjectcheck",isChecked);
               
                 </c:if></h4>
 </div>                                  
->>>>>>> .theirs
-=======
-  <div id="wrongemail" style="display:none">
-                                       <h4  style="color:#FF0000"><c:if test="${properties.wrongemail ne '' && not empty properties.wrongemail }">
-                    <c:out value="${properties.wrongemail }" escapeXml="false"/>
-              
-                </c:if></h4>
-</div>
-<div  style="display:none" id="syserrpopup">
-            <h4  style="color:#FF0000"><c:if test="${properties.systemerror ne '' && not empty properties.systemerror }">
-                    <c:out value="${properties.systemerror}" escapeXml="false"/>
-              
-                </c:if></h4>
-            </div>            
- <div id="blankemail" style="display:none">
-                                       <h4  style="color:#FF0000"><c:if test="${properties.blankemail ne '' && not empty properties.blankemail }">
-                    <c:out value="${properties.blankemail }" escapeXml="false"/>
-              
-                </c:if></h4>
-</div>                                  
->>>>>>> .theirs
                                             
                                 </div>
                                 
-<<<<<<< .mine
-<<<<<<< .mine
- <div  style="display:none" id="popup">
-            <h4  display=false backgroundcolor="#8B8989"><c:if test="${properties.successcopy ne '' && not empty properties.successcopy }">
-=======
  <div  style="display:none" id="emailpopup">
             <h4  display=false backgroundcolor="#8B8989"><c:if test="${properties.successcopy ne '' && not empty properties.successcopy }">
->>>>>>> .theirs
-                    <c:out value="${properties.successcopy }" escapeXml="false"/>
-              
-=======
- <div  style="display:none" id="emailpopup">
-            <h4  display=false backgroundcolor="#8B8989"><c:if test="${properties.successcopy ne '' && not empty properties.successcopy }">
->>>>>>> .theirs
                     <c:out value="${properties.successcopy }" escapeXml="false"/>
               
                 </c:if></h4>
@@ -156,7 +102,7 @@ pageContext.setAttribute("subjectcheck",isChecked);
                   
                 </div>
             </div>
-   </div>         
+         
 
  <script>
 $("#emailsubmit").click(function() {
@@ -234,8 +180,6 @@ $('#mailerr').show();
 return false;
 }); 
 </script>  
-<<<<<<< .mine
-<<<<<<< .mine
                                                    
 <script>
 
@@ -270,75 +214,4 @@ if ( $.browser.msie ) {
 }    
 });
 
-</script> =======
-                                                   
-<script>
-
-$(document).ready(function(){
-    
-if ( $.browser.msie ) {
-    
-    
-    var Emailtitle='<c:out value="${properties.emaildefault}"/>';
-    
-    
-    $("#email").val(Emailtitle);
-    document.getElementById("email").style.color="#666666";
-    $("#email").focus(function(){
-        if($("#email").val()==Emailtitle)
-        {
-
-            $("#email").val("");
-        }
-
-    });
-    
-    $("#email").blur(function(){
-
-        if($("#email").val()==="")
-        {
-
-            $("#email").val(Emailtitle);
-        }
-
-    });
-}    
-});
-
-</script>   >>>>>>> .theirs
-=======
-                                                   
-<script>
-
-$(document).ready(function(){
-    
-if ( $.browser.msie ) {
-    
-    
-    var Emailtitle='<c:out value="${properties.emaildefault}"/>';
-    
-    
-    $("#email").val(Emailtitle);
-    document.getElementById("email").style.color="#666666";
-    $("#email").focus(function(){
-        if($("#email").val()==Emailtitle)
-        {
-
-            $("#email").val("");
-        }
-
-    });
-    
-    $("#email").blur(function(){
-
-        if($("#email").val()==="")
-        {
-
-            $("#email").val(Emailtitle);
-        }
-
-    });
-}    
-});
-
-</script>   >>>>>>> .theirs
+</script>   
