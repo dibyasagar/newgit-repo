@@ -66,18 +66,12 @@
                         xtype="textfield"/>
                     <emailsubject
                         jcr:primaryType="nt:unstructured"
-                        allowBlank="{Boolean}false"
+                        allowBlank="{Boolean}true"
                         fieldLabel="Subject"
                         name="./emailsubject"
                         validateOnBlur="true"
                         xtype="textfield"/>
-                    <subjectcheckbox
-                        jcr:primaryType="nt:unstructured"
-                        fieldLabel="Check to add subject"
-                        name="./checkbox"
-                        type="checkbox"
-                        xtype="selection"/>
-                </items>
+                    </items>
             </emailinfo>
             <address
                 jcr:primaryType="cq:Panel"
