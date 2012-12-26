@@ -65,7 +65,7 @@
                                 <h1>
                                     <c:out value="${properties.title}" escapeXml="false" />
                                 </h1>
-						    </div>
+                            </div>
 
                         </c:otherwise>
                     </c:choose>
@@ -90,7 +90,7 @@
                             <a class="ui-link" href="${validLink}"
                                 title="<c:out value="${properties.text}" escapeXml="false"/>"
                                 target="${window}"
-                                data-wap="{&quot;linktype&quot;:&quot;shop&quot;}"> <span><c:out
+                                data-wap='{"linktype":"shop"}'> <span><c:out
                                         value="${properties.text}" escapeXml="false" /></span></a>
                         </div>
                     </c:if>
@@ -151,7 +151,7 @@
                                  <span class="learn learn_ru"
                                     data-more="<c:out value="${learnmore}" escapeXml="false"/>"
                                     data-wap='{"linktype":"learn"}' 
-									data-less="<c:out value="${properties.close}" escapeXml="false"/>">
+                                    data-less="<c:out value="${properties.close}" escapeXml="false"/>">
                                     <c:out value="${learnmore}" escapeXml="false" />
                                 </span>
                              </c:when>
@@ -159,7 +159,7 @@
                                  <span class="learn"
                                     data-more="<c:out value="${learnmore}" escapeXml="false"/>"
                                     data-wap='{"linktype":"learn"}' 
-									data-less="<c:out value="${properties.close}" escapeXml="false"/>">
+                                    data-less="<c:out value="${properties.close}" escapeXml="false"/>">
                                     <c:out value="${learnmore}" escapeXml="false" />
                                 </span>
                             </c:otherwise>
@@ -179,7 +179,7 @@
                         <a class="ui-link" href="${validLink}"
                             title="<c:out value="${properties.text}" escapeXml="false"/>"
                             target="${window}"
-                            data-wap="{&quot;linktype&quot;:&quot;shop&quot;}"> <span><c:out
+                            data-wap='{"linktype":"shop"}'> <span><c:out
                                     value="${properties.text}" escapeXml="false" /></span></a>
                     </div>
 
