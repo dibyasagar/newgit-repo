@@ -22,16 +22,16 @@ if(campaignHeaderNode.hasProperty("sectiontitle")&& campaignFooterNode.hasProper
   String newwindow = "";
   String linkUrl= "";
   if(campaignFooterNode.hasProperty("buttontext")){
-	  buttontext=campaignFooterNode.getProperty("buttontext").getString();
+      buttontext=campaignFooterNode.getProperty("buttontext").getString();
   }
   if(campaignFooterNode.hasProperty("newwindow")){
-	  newwindow=campaignFooterNode.getProperty("newwindow").getString(); 
+      newwindow=campaignFooterNode.getProperty("newwindow").getString(); 
   }
   if(campaignFooterNode.hasProperty("newwindow")){
-	  linkUrl=campaignFooterNode.getProperty("linkUrl").getString(); 
+      linkUrl=campaignFooterNode.getProperty("linkUrl").getString(); 
   }
   if (linkUrl != null) {
-	  validLink = IntelUtil.getLinkUrl(linkUrl,resourceResolver);
+      validLink = IntelUtil.getLinkUrl(linkUrl,resourceResolver);
   }    
   pageContext.setAttribute("title",sectiontitle);
   pageContext.setAttribute("buttontext",buttontext);
@@ -46,67 +46,67 @@ if(campaignHeaderNode.hasProperty("sectiontitle")&& campaignFooterNode.hasProper
 %>
 <%-- Menus --%>
 
-		<div class="ultrabook menus wapwrapper" data-component-id="1" data-component="ubholiday-usp-nav-mobile">
+        <div class="ultrabook menus wapwrapper" data-component-id="1" data-component="ubholiday-usp-nav-mobile">
 
-			<nav class="menus-a clear">
+            <nav class="menus-a clear">
 
-				<div class="head">
-				<h1><c:out value="${title}" escapeXml="false"/></h1>
-				</div>
+                <div class="head">
+                <h1><c:out value="${title}" escapeXml="false"/></h1>
+                </div>
 
-				<div class="close"></div>
+                <div class="close"></div>
 
-				<div class="clear"></div>
+                <div class="clear"></div>
 
-				<div class="column left">
+                <div class="column left">
                      
                      <c:forEach  items="${leftMenuItems}" var="item">  
                      
                      <div class="item menus-2">
-                     	<img src="${item.imagePath}"/> 
-						<a class="inside ui-link" href="#slide-${item.cellId}" title="${item.name}">${item.name}</a>
-					 </div>
+                        <img src="${item.imagePath}"/> 
+                        <a class="inside ui-link" href="#slide-${item.cellId}" title="${item.name}">${item.name}</a>
+                     </div>
                      
                      </c:forEach>
 
-				</div>
+                </div>
 
-				<div class="column right">
+                <div class="column right">
 
-					<c:forEach  items="${rightMenuItems}" var="item">  
-					<div class="item menus-4">
-					<img src="${item.imagePath}"/> 
-					<a class="inside ui-link" href="#slide-${item.cellId}" title="${item.name}">${item.name}</a>
-					</div>
-					</c:forEach>
-					
-					<c:if test="${validLink ne '' && not empty validLink}">
-        	            <c:set var="window" value="" />
-				        <c:if test="${newwindow eq 'yes'}">
+                    <c:forEach  items="${rightMenuItems}" var="item">  
+                    <div class="item menus-4">
+                    <img src="${item.imagePath}"/> 
+                    <a class="inside ui-link" href="#slide-${item.cellId}" title="${item.name}">${item.name}</a>
+                    </div>
+                    </c:forEach>
+                    
+                    <c:if test="${validLink ne '' && not empty validLink}">
+                        <c:set var="window" value="" />
+                        <c:if test="${newwindow eq 'yes'}">
                            <c:set var="window" value="_blank" />
                         </c:if>
-        		    <div class="shop">
-        		        <a class="ui-link" href="${validLink}" title="Shop Ultrabook™" target="${window}" data-wap="{&quot;linktype&quot;:&quot;shop&quot;}">
+                    <div class="shop">
+                        <a class="ui-link" href="${validLink}" title="<c:out value="${buttontext}" escapeXml="false"/>" target="${window}" data-wap='{"linktype":"shop"}'>
                         <span><c:out value="${buttontext}" escapeXml="false"/></span></a>
-        		    </div>
-				
-        	      </c:if>
-				
-				</div>
+                    </div>
+                
+                  </c:if>
+                
+                </div>
 
-			</nav>
+            </nav>
 
-		</div>
+        </div>
 
 
 
 <div class="ultrabook content" id="ultrabook_content">
-			<%-- Nav --%>
-			<div style="top: 70px; " role="banner" class="sticky ui-header ui-bar-a" data-role="header"></div>
+            <%-- Nav --%>
+            <div style="top: 70px; " role="banner" class="sticky ui-header ui-bar-a" data-role="header"></div>
 
- 	
- 			<%-- Parsys Component Start --%>
-			<cq:include path="contentPar" resourceType="foundation/components/parsys"/>
-			<%-- Parys Component End --%>
+    
+            <%-- Parsys Component Start --%>
+            <cq:include path="contentPar" resourceType="foundation/components/parsys"/>
+            <%-- Parys Component End --%>
 <cq:include path="disclaimer" resourceType="intelmobile/components/content/disclaimer"/>
 </div>
