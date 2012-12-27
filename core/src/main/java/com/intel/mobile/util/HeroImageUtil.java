@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.jcr.Node;
+import javax.jcr.NodeIterator;
 
 import org.apache.sling.api.resource.Resource;
 import org.slf4j.Logger;
@@ -42,9 +43,19 @@ public class HeroImageUtil {
 			// Node articleNode = articleresource.adaptTo(Node.class);
 			LOG.info("detailNode ---" + articleNode);
 			if (articleNode != null) {
-				if (articleNode.hasNode("articledetailshero")) {
-					heroNode = articleNode.getNode("articledetailshero");
-					LOG.info("heroNode ---" + heroNode);
+				NodeIterator articleNodes = articleNode.getNodes();
+				while(articleNodes.hasNext()) {
+					Node articleNode1 = articleNodes.nextNode();
+					if(articleNode1 != null) {
+						if(articleNode1.hasProperty("sling:resourceType") && articleNode1.getProperty("sling:resourceType") != null) {
+							String resourceType = articleNode1.getProperty("sling:resourceType").getString();
+							if(resourceType.equals("intelmobile/components/content/articledetailshero")) {
+								heroNode = articleNode1;
+								break;
+							}
+						}
+						
+					}
 				}
 
 				if (heroNode != null) {
