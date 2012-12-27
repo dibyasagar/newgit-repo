@@ -270,7 +270,7 @@
             // TODO - clear the form
            };
          // we want to store the values from the form input box, then send via ajax below
-      var fromAddress= $('#email').attr('value');
+      var fromAddress= $('#contactemail').attr('value');
        var toAddress= $('#toAddress').attr('value');
        var firstName=$('#fName').attr('value');
       //alert(firstName);
