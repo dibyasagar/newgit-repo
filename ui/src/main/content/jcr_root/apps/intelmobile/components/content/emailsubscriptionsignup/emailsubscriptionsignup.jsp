@@ -67,18 +67,6 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
               
                 </c:if></h4>
 </div>
-
-                                       <div class="item">
-                                           <li class="compare-btn email-btn">
-                                               <a href="#" id="emailsubmit" class="button primary">
-                                                   <c:if test="${properties.submit ne '' && not empty properties.submit }">
-                                                        <c:out value="${properties.submit }" escapeXml="false"/>
-                                                   </c:if>
-                                               </a>
-                                            </li>
-                                       
-                                       </div>
-
 <div  style="display:none" id="syserrpopup">
             <h4  style="color:#FF0000"><c:if test="${properties.systemerror ne '' && not empty properties.systemerror }">
                     <c:out value="${properties.systemerror}" escapeXml="false"/>
@@ -101,6 +89,18 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
                 </c:if></h4>
   </div 
   
+                                       <div class="item">
+                                           <li class="compare-btn email-btn">
+                                               <a href="#" id="emailsubmit" class="button primary">
+                                                   <c:if test="${properties.submit ne '' && not empty properties.submit }">
+                                                        <c:out value="${properties.submit }" escapeXml="false"/>
+                                                   </c:if>
+                                               </a>
+                                            </li>
+                                       
+                                       </div>
+
+
  
  </form>                                  
                                  
