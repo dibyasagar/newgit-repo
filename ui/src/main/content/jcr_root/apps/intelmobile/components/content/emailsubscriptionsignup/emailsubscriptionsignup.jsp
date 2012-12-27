@@ -79,16 +79,12 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
               
                 </c:if></h4>
 </div>                                  
-                                            
-                                </div>
-                                
- <div  style="display:none" id="emailpopup">
+  <div  style="display:none" id="emailpopup">
             <h4  display=false backgroundcolor="#8B8989"><c:if test="${properties.successcopy ne '' && not empty properties.successcopy }">
                     <c:out value="${properties.successcopy }" escapeXml="false"/>
               
                 </c:if></h4>
-  </div 
-  
+  </div>  
                                        <div class="item">
                                            <li class="compare-btn email-btn">
                                                <a href="#" id="emailsubmit" class="button primary">
@@ -100,7 +96,11 @@ if (WCMMode.fromRequest(request) == WCMMode.EDIT) {
                                        
                                        </div>
 
-
+                                        
+                                </div>
+                                
+ 
+  
  
  </form>                                  
                                  
