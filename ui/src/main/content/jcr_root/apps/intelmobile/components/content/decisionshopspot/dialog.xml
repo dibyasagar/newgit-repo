@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Decision Shop Spot"
+    width="100%"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Decision Shop Spot">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <metaphoreslink
+                        jcr:primaryType="cq:Widget"
+                        editable="{Boolean}true"
+                        fieldLabel="Metaphores Page URL"
+                        name="./metaphoresUrl"
+                        predicate="hierarchy"
+                        xtype="pathfield"/>
+                    <ultrabooklink
+                        jcr:primaryType="cq:Widget"
+                        editable="{Boolean}true"
+                        fieldLabel="Ultrabook Page URL"
+                        name="./ultrabookUrl"
+                        predicate="hierarchy"
+                        xtype="pathfield"/>
+                    <suffleboardlink
+                        jcr:primaryType="cq:Widget"
+                        editable="{Boolean}true"
+                        fieldLabel="Suffleboard Page URL"
+                        name="./suffleboardUrl"
+                        predicate="hierarchy"
+                        xtype="pathfield"/>
+                </items>
+            </tab1>
+            <tab2
+                jcr:primaryType="cq:Panel"
+                title="Metaphore Text">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <image_x0020_title
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Metaphore Image Title"
+                        name="./metaphoretitle"
+                        xtype="textfield"/>
+                    <imagetext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Metaphore Image Text"
+                        name="./metaphoretext"
+                        xtype="textfield"/>
+                </items>
+            </tab2>
+            <tab3
+                jcr:primaryType="cq:Panel"
+                title="Ultrabook Text">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <image_x0020_title
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Ultrabook Image Title"
+                        name="./ultrabooktitle"
+                        xtype="textfield"/>
+                    <imagetext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Ultrabook Image Text"
+                        name="./ultrabooktext"
+                        xtype="textfield"/>
+                </items>
+            </tab3>
+            <tab4
+                jcr:primaryType="cq:Panel"
+                title="ShuffleBoard Text">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <image_x0020_title
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="ShuffleBoard Image Title"
+                        name="./shuffleboardtitle"
+                        xtype="textfield"/>
+                    <imagetext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="ShuffleBoard Image Text"
+                        name="./shuffleboardtext"
+                        xtype="textfield"/>
+                </items>
+            </tab4>
+        </items>
+    </items>
+</jcr:root>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Email signup"
+    width="100%"
+    xtype="dialog">
+    <items jcr:primaryType="cq:TabPanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <emailinfo
+                jcr:primaryType="cq:Panel"
+                title="Email info">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <wantemail
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel=" Heading"
+                        name="./confirmtext"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <emaillabel
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="SubHeading"
+                        name="./emaillabel"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <emailbody
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Email Body."
+                        fieldLabel="Email Body"
+                        name="./mailbody"
+                        validateOnBlur="true"
+                        xtype="richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <styles
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <subsuperscript
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <image
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                    </emailbody>
+                    <emaildefault
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Email Default Copy"
+                        name="./emaildefault"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <submit
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Submit Button Copy"
+                        fieldLabel="Submit Button Copy"
+                        name="./submit"
+                        xtype="textfield"/>
+                    <emailsubject
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}true"
+                        fieldLabel="Subject"
+                        name="./emailsubject"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    </items>
+            </emailinfo>
+            <address
+                jcr:primaryType="cq:Panel"
+                title="Address">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <source
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Source email address"
+                        fieldLabel="Source address"
+                        name="./source"
+                        regex="/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i"
+                        regexText="Please enter a valid email address"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                </items>
+            </address>
+            <tab5
+                jcr:primaryType="cq:Panel"
+                title="Success and Errors ">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <success
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Success Copy"
+                        name="./successcopy"
+                        xtype="textfield"/>
+                    <blankemail
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Blank Email Error Copy"
+                        name="./blankemail"
+                        xtype="textfield"/>
+                    <wrongemail
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Wrong Email Error Copy"
+                        name="./wrongemail"
+                        xtype="textfield"/>
+                    <error
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="General Error Message"
+                        name="./systemerror"
+                        xtype="textfield"/>
+                </items>
+            </tab5>
+        </items>
+    </items>
+</jcr:root>
